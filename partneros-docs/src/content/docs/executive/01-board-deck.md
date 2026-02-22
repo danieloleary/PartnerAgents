@@ -6,16 +6,16 @@ template_number: X.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: strategic
 phase: enablement
 time_required: 4-8 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["story numbers matter", "template purpose", "use"]
 ---
 > **Board presentations should tell a story. Numbers matter—but narrative matters more.** — Dan O'Leary

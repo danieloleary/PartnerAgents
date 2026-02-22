@@ -6,16 +6,16 @@ template_number: I.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["ll fail building", "makes sense price", "capabilities integrations uptime", "don t track", "useless without action", "don t want"]
 ---
 > **Your partners won't sell against competitors they don't understand. Give them the specific scenarios, the exact objections, and the precise counters—and watch win rates double.** — Dan O'Leary

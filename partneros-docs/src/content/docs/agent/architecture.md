@@ -1,3 +1,25 @@
+---
+title: System Architecture
+category: strategic
+version: 1.0.0
+author: PartnerOS Team
+tier:
+skill_level: advanced
+purpose: strategic
+phase: strategy
+time_required: 1 hour
+difficulty: medium
+prerequisites:
+description: Overview of the PartnerOS multi-agent system architecture and state management
+outcomes:
+  - Understand the Orchestrator/Driver pattern
+  - Identify technical debt and scaling paths
+skills_gained:
+  - System Design
+  - Multi-agent coordination
+keywords: ["architecture review", "multi-agent system", "state management", "orchestrator", "technical debt"]
+---
+
 # PartnerOS System Architecture Review
 
 *Date: May 22, 2024*

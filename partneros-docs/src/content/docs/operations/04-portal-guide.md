@@ -6,16 +6,16 @@ template_number: O.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: beginner
 purpose: operational
 phase: onboarding
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["partner portal guide", "best partner portal", "t find what", "template purpose", "need", "use"]
 ---
 > **The best partner portal is one partners actually use. If they can't find what they need, it's useless.** — Dan O'Leary

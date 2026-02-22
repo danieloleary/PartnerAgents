@@ -4,7 +4,7 @@ description: Expert framework for auditing and improving PartnerOS templates to 
 version: 3.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tags: 
+tags:
 keywords: ["expert level framework", "frontmatter title start", "content here note", "important information caution", "links every metric", "tables should have"]
 ---
 # Template Quality Auditor (Expert Edition)

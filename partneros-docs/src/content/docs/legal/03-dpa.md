@@ -6,16 +6,16 @@ template_number: L.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: operational
 phase: recruitment
 time_required: 2-4 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["gdpr compliance work", "right"]
 ---
 > **Data protection isn't optional. Get this right or face serious consequences.** — Dan O'Leary

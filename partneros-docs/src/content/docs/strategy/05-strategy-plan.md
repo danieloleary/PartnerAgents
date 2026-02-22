@@ -6,16 +6,16 @@ template_number: I.5
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: strategic
 phase: strategy
 time_required: 8-16 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["actually execute because", "measures program success", "translates business objectives", "most urgent go", "sharepoint i used", "got comments approvals"]
 ---
 > **Your partner strategy isn't a document—it's a commitment. Write something you can actually execute, because your partners will read it and decide whether to invest in you.** — Dan O'Leary

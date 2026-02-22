@@ -6,16 +6,16 @@ template_number: S.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["potential risk assess", "template purpose", "use"]
 ---
 > **Security isn't optional. Every partner is a potential risk—assess them properly.** — Dan O'Leary
