@@ -6,16 +6,16 @@ template_number: O.2
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: beginner
 purpose: operational
 phase: enablement
 time_required: 30 minutes
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["short focused", "template purpose", "use"]
 ---
 > **Weekly stands prevent small issues from becoming big problems. Keep them short, focused, and action-oriented.** — Dan O'Leary

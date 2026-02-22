@@ -6,16 +6,16 @@ template_number: III.8
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: beginner
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["great case study", "solution what did", "template purpose", "solution", "re", "use"]
 ---
 > **A great case study is worth 100 sales calls. Invest in capturing partner success stories—they're your most powerful sales tool.** — Dan O'Leary

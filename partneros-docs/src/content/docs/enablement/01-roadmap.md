@@ -6,16 +6,16 @@ template_number: III.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["x more likely", "year speed matters", "days lose momentum", "partner enablement roadmap", "days programs", "roadmap provides"]
 ---
 > **The best enablement programs get partners to first deal in 30 days. Programs that stretch to 90 days lose momentum—and partners.** — Dan O'Leary

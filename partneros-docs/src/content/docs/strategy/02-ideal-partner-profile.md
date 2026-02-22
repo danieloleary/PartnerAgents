@@ -6,16 +6,16 @@ template_number: I.2
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["structured objective framework", "fit primary vertical", "requires hand holding", "measure certified professionals", "offer ongoing support", "lead flow slowed"]
 ---
 > **The partner you choose in Year 1 will define your channel for years. Get this wrong, and you'll spend Years 2-4 digging yourself out.** — Dan O'Leary

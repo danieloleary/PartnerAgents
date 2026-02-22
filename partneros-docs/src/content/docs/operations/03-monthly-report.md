@@ -6,16 +6,16 @@ template_number: O.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: operations
 time_required: 1-2 hours
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["template purpose", "honest", "use"]
 ---
 > **Monthly reports keep you honest. The numbers don't lie—use them to improve.** — Dan O'Leary

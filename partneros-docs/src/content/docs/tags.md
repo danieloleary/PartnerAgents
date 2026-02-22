@@ -1,8 +1,8 @@
 ---
 title: Tags
 description: Browse templates by topic
-skills_gained:
-prerequisites:
+skills_gained: 
+prerequisites: 
 keywords: ["topic tags"]
 ---
 # Tags

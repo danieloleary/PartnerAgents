@@ -6,16 +6,16 @@ template_number: F.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: advanced
 purpose: strategic
 phase: enablement
 time_required: 2-3 hours
 difficulty: hard
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["template purpose", "s", "use"]
 ---
 > **Revenue share is for partnerships where both sides bring unique value. It's not for transactional relationships.** — Dan O'Leary

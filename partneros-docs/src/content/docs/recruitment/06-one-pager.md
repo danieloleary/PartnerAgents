@@ -6,16 +6,16 @@ template_number: II.6
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1 hour
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["gets read how", "access enterprise customers", "one pager should", "works one pagers", "don t understand", "reach more customers"]
 ---
 > **If you can't explain your partnership value in one page, you don't understand it well enough.** — Dan O'Leary

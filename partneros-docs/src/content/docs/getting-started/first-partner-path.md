@@ -13,8 +13,8 @@ phase: onboarding
 time_required: 4 weeks
 difficulty: easy
 prerequisites: []
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["first signed partner", "first partner signed", "defines company size", "guide adjust based", "common questions what", "prospect list start"]
 description: The exact sequence to go from zero to your first signed partner in 4 weeks.
 ---

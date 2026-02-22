@@ -6,16 +6,16 @@ template_number: II.8
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: advanced
 purpose: operational
 phase: recruitment
 time_required: 4-8 hours
 difficulty: hard
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["don t rush", "specific situation jurisdiction", "things go wrong", "legal advice how", "framework work", "legal team"]
 ---
 > **The agreement protects both parties. Don't skip it, don't rush it, and always involve legal.** — Dan O'Leary

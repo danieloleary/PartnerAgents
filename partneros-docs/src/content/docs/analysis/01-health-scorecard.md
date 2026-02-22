@@ -6,16 +6,16 @@ template_number: A.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: analysis
 time_required: 1-2 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["partner health scorecard", "template purpose", "growth", "use", "executives"]
 ---
 > **The best partners aren't just profitable—they're healthy. Track engagement, capability, and growth—not just revenue.** — Dan O'Leary

@@ -4,17 +4,17 @@ category: operational
 version: 1.1.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: beginner
 purpose: operational
 phase: onboarding
 time_required: 10 minutes
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: Get up and running with PartnerOS in 10 minutes - no install required
-outcomes:
-skills_gained:
-keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
+outcomes: 
+skills_gained: 
+keywords: ["code block paste", "specific partner qualify", "template categories what", "template minutes find", "step instructions what", "repo bash clone"]
 ---
 # PartnerOS Quick Start
 

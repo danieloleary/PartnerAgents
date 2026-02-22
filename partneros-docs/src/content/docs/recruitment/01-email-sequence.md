@@ -6,16 +6,16 @@ template_number: II.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["follow up gets", "converts cold prospects", "meeting steps research", "optimize weekly review", "thought there might", "natural fit between"]
 ---
 > **The first email gets you read. The follow-up gets you replied to. Most people give up after one email—and that's why they fail at partner recruitment.** — Dan O'Leary

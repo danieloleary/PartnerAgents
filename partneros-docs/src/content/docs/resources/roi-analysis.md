@@ -8,8 +8,8 @@ last_updated: 2026-02-21
 author: PartnerOS Team
 description: >
 Quantify the full value of PartnerOS - including AI agents, automation, and templates. Real ROI: 2,500%+ with break-even at 1 partner deal.
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["just partner deal", "would cost k", "full time role", "would take hours", "house hire engineers", "custom included updates"]
 ---
 # PartnerOS ROI Analysis

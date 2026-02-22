@@ -6,16 +6,16 @@ template_number: II.5
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["other things competing", "best pitch decks", "legacy solutions because", "while improving outcomes", "resellers emphasize margins", "partner recruitment conversations"]
 ---
 > **Your pitch deck should answer one question: "Why should I spend my limited time and resources on this partnership instead of the other 10 things competing for my attention?"** — Dan O'Leary

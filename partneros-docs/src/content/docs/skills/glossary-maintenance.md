@@ -7,15 +7,15 @@ template_number: SK.3
 version: 1.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: operations
 time_required: 15-30 minutes
 difficulty: easy
-prerequisites:
-outcomes:
-skills_gained:
+prerequisites: 
+outcomes: 
+skills_gained: 
 keywords: ["organized alphabetically find", "generating enough opportunities", "update last updated", "hyphenated words sort", "frontmatter run tests", "link related terms"]
 ---
 > **"A glossary is only as good as its consistency. Every term should have a definition, a 'why it matters,' and a 'how to measure it.'"**

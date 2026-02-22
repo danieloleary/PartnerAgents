@@ -6,16 +6,16 @@ template_number: II.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["sales team uses", "sales both qualify", "kills partnerships before", "evaluate potential partners", "data driven decisions", "solution integration skills"]
 ---
 > **Qualifying partners isn't about saying no—it's about saying yes to the right partners. Skip qualification and you'll spend 18 months pursuing partners who were never going to work.** — Dan O'Leary

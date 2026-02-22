@@ -6,16 +6,16 @@ template_number: I.6
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 4-8 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["t articulate why", "progression paths why", "re building capability", "ve demonstrated commitment", "met month path", "don t audit"]
 ---
 > **Your program architecture is a promise to partners. Make promises you can keep—and keep every promise you make. A broken promise destroys more trust than a bad product.** — Dan O'Leary

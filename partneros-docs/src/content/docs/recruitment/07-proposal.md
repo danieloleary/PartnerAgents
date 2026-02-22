@@ -6,16 +6,16 @@ template_number: II.7
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites:
+prerequisites: 
 description: >
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["branding min send", "i d love", "available date time", "key strengths why", "send proposals then", "respond follow up"]
 ---
 > **The proposal is where deals are won or lost. A weak proposal kills strong interest. A strong proposal closes the deal.** — Dan O'Leary
