@@ -52,7 +52,7 @@ def save_partners(partners: List[Dict]):
         json.dump(partners, f, indent=2)
     _partners_cache = partners
     _partners_by_name = {p["name"].lower(): p for p in partners}
-    _stats_cache = None
+    _stats_cache = None  # Invalidate stats cache
     try:
         _last_mtime = os.path.getmtime(PARTNERS_FILE)
     except Exception:
@@ -147,6 +147,7 @@ def get_partner_stats() -> Dict:
     """Get overall partner stats with caching."""
     global _stats_cache
 
+    # Reload partners if needed (handles external file changes)
     partners = load_partners()
 
     if _stats_cache is not None:
