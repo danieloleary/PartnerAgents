@@ -1,5 +1,10 @@
 """Partner state management."""
 
+# TODO: Technical Debt - Divergent state management.
+# This implementation uses a single partners.json file, while the CLI agent
+# in scripts/partner_agent/ uses a directory-per-partner approach.
+# These should be unified into a single persistence layer.
+
 import json
 import os
 import html

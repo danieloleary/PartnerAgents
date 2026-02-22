@@ -643,6 +643,10 @@ async def chat(request: Request):
             }
         )
 
+    # TODO: Technical Debt - This currently bypasses the Orchestrator/Driver system
+    # and calls the LLM directly. Should be refactored to use orchestrator.call_driver()
+    # or a routing agent to maintain architectural consistency.
+
     # Try LLM first, fallback on error
     try:
         response = await call_llm(user_message, api_key, model, use_cache)
