@@ -17,6 +17,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import uvicorn
 import httpx
 import hashlib
+import html
+from collections import OrderedDict
 from contextlib import asynccontextmanager
 
 from partner_agents.drivers import (
@@ -34,12 +36,17 @@ from partner_agents import partner_state
 # In-memory rate limiting
 import time
 
-rate_limit_store = {}
-response_cache = {}
+# Use OrderedDict for LRU behavior
+rate_limit_store = OrderedDict()
+response_cache = OrderedDict()
 
 
 def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) -> bool:
     """Simple rate limiter - max 20 requests per minute per IP."""
+    # Prevent memory leak by removing oldest entry if it grows too large
+    if len(rate_limit_store) > 1000:
+        rate_limit_store.popitem(last=False)
+
     now = time.time()
     if ip not in rate_limit_store:
         rate_limit_store[ip] = []
@@ -65,9 +72,42 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="PartnerOS", lifespan=lifespan)
 
+
+@app.middleware("http")
+async def limit_payload_size(request: Request, call_next):
+    """Limit request body size to 1MB to prevent DoS."""
+    if request.method == "POST":
+        content_length = request.headers.get("content-length")
+        if content_length and int(content_length) > 1_000_000:
+            return JSONResponse({"error": "Payload too large"}, status_code=413)
+    return await call_next(request)
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """Add security-related headers to all responses."""
+    response = await call_next(request)
+    # Content Security Policy - allow self, Tailwind CDN, and Google Fonts
+    csp = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        "font-src https://fonts.gstatic.com;"
+    )
+    response.headers["Content-Security-Policy"] = csp
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["localhost", "127.0.0.1"],  # Restrict to local for security
+    allow_origins=[
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        "http://localhost:4321",
+    ],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
@@ -478,7 +518,7 @@ async def home():
 async def chat(request: Request):
     data = await request.json()
     user_message = data.get("message", "")
-    api_key = data.get("apiKey", "") or os.environ.get("OPENROUTER_API_KEY", "")
+    api_key = str(data.get("apiKey", "")) or os.environ.get("OPENROUTER_API_KEY", "")
 
     # Input sanitization - prevent injection
     if not user_message or len(user_message.strip()) == 0:
@@ -493,11 +533,16 @@ async def chat(request: Request):
             }
         )
 
-    # Sanitize: remove potentially dangerous patterns
-    sanitized = user_message.replace("<script", "").replace("</script", "")
+    # Sanitize: prevent XSS by escaping HTML entities
+    sanitized = html.escape(user_message)
 
-    # Rate limiting check
-    client_ip = request.client.host if request.client else "unknown"
+    # Rate limiting check - use X-Forwarded-For if behind proxy
+    client_ip = request.headers.get("x-forwarded-for")
+    if client_ip:
+        client_ip = client_ip.split(",")[0].strip()
+    else:
+        client_ip = request.client.host if request.client else "unknown"
+
     if not check_rate_limit(client_ip):
         return JSONResponse(
             {
@@ -521,17 +566,17 @@ async def chat(request: Request):
         client = getattr(request.app.state, "client", None) if hasattr(request, "app") else None
 
         if client:
-            response = await call_llm(user_message, api_key, client)
+            response = await call_llm(sanitized, api_key, client)
         else:
             async with httpx.AsyncClient() as temp_client:
-                response = await call_llm(user_message, api_key, temp_client)
+                response = await call_llm(sanitized, api_key, temp_client)
 
         if response.get("response"):
             return JSONResponse(response)
         raise Exception("Empty response")
     except Exception as e:
         # Fallback on any error
-        return JSONResponse(get_fallback_response(user_message))
+        return JSONResponse(get_fallback_response(sanitized))
 
 
 @app.get("/api/partners")
@@ -578,11 +623,16 @@ app.add_api_route("/api/partners/{name}", delete_partner, methods=["DELETE"])
 
 async def call_llm(message: str, api_key: str, client: httpx.AsyncClient) -> dict:
     """Call OpenRouter LLM with partner context."""
-    # Simple cache - hash the message
-    cache_key = hashlib.sha256(message.encode()).hexdigest()[:16]
-    cache_time = response_cache.get(cache_key)
-    if cache_time and time.time() - cache_time.get("ts", 0) < 300:
-        return cache_time.get("result")
+    # Prevent memory leak by removing oldest entry if it grows too large
+    if len(response_cache) > 1000:
+        response_cache.popitem(last=False)
+
+    # Cache key includes hash of api_key to prevent auth bypass/cache poisoning
+    key_hash = hashlib.sha256(f"{message}:{api_key}".encode()).hexdigest()[:16]
+
+    cache_entry = response_cache.get(key_hash)
+    if cache_entry and time.time() - cache_entry.get("ts", 0) < 300:
+        return cache_entry.get("result")
 
     # Build context about agents
     system_prompt = """You are the orchestrator of PartnerOS - an AI partner team. 
@@ -648,7 +698,7 @@ Be helpful, concise, and actionable."""
         reply = choices[0].get("message", {}).get("content", "No response")
 
         result = {"response": reply, "agent": "Partner Manager"}
-        response_cache[cache_key] = {"result": result, "ts": time.time()}
+        response_cache[key_hash] = {"result": result, "ts": time.time()}
         return result
 
     except Exception as e:

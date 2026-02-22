@@ -59,6 +59,13 @@ class FastAPI:
 
         return decorator
 
+    def middleware(self, middleware_type: str):
+        def decorator(func: Callable[..., Any]):
+            # Shim just stores the middleware but doesn't execute it for now
+            return func
+
+        return decorator
+
     def post(self, path: str):
         def decorator(func: Callable[..., Any]):
             self.routes.append(_Route(path=path, endpoint=func, methods={"POST"}))
