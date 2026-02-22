@@ -15,7 +15,7 @@ keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prer
 - Web UI loads API key from localStorage on page load
 - Chat refreshes API key before each message send
 - Markdown CSS styling for tables, blockquotes, code, headers
-- 141 tests passing
+- 163 tests passing
 
 ---
 
@@ -79,7 +79,7 @@ keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prer
 - Security: Rate limiting, input sanitization, CORS restrictions
 - Web UI: Partner deletion, keyboard shortcuts, response caching
 - Links: Fixed broken relative links in templates
-- Tests: 141 tests passing
+- Tests: 163 tests passing
 
 ---
 
@@ -178,7 +178,7 @@ keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prer
 
 ### 📊 Metrics
 - **Before**: 130 tests
-- **After**: 141 tests (11 new tests added in prior versions)
+- **After**: 163 tests (11 new tests added in prior versions)
 - **All tests passing**: ✅
 - **Build status**: 69 pages built successfully
 

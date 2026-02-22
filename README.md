@@ -34,7 +34,7 @@ Building a world-class partner program is hard. Most companies:
 | **Multi-Agent AI Team** | 7 specialized AI agents that collaborate on partner work |
 | **AI-Powered Agent** | Local AI partner assistant runs offline with Ollama — no API keys required |
 | **Enterprise-Ready** | Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths |
-| **Tested & Validated** | 141 automated tests ensure reliability across templates and agents |
+| **Tested & Validated** | 163 automated tests ensure reliability across templates and agents |
 | **A+ Quality Templates** | Every template rewritten with expert voice, Starlight formatting, and progressive levels |
 | **Beautiful Web UI** | Chat interface with Markdown rendering, API key management, and partner CRM |
 

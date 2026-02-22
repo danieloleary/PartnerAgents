@@ -344,7 +344,7 @@ python scripts/onboard.py
 | test_build.py (7 tests) | PASSING (3 skipped) |
 | test_deployed_links.py (6 tests) | PASSING |
 
-**Total: 141 tests passing**
+**Total: 163 tests passing**
 
 ---
 
@@ -439,7 +439,7 @@ The system currently runs in **fallback mode** - responses are generated locally
 | test_build.py (7 tests) | PASSING (3 skipped) |
 | test_deployed_links.py (6 tests) | PASSING |
 
-**Total: 141 tests passing**
+**Total: 163 tests passing**
 
 ---
 

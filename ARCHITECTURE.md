@@ -66,7 +66,7 @@ PartnerOS/
 │   └── package_zip.py             # Package as distributable .zip
 ├── .company-config/               # Company customization (gitignored)
 │   └── customize.yaml             # Their company name, logo, colors
-├── tests/                         # Quality gates (141 tests)
+├── tests/                         # Quality gates (163 tests)
 ├── partneros-docs/                  # Starlight/Astro docs site
 │   ├── src/content/docs/           # Documentation source
 │   └── astro.config.mjs           # Starlight configuration
