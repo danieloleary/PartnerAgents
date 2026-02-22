@@ -53,6 +53,6 @@ Work with legal to customize for your situation.
 
 ## Related Templates
 
-- [NDA](../legal/01-nda/) — Pre-MSA
-- [DPA](../legal/03-dpa/) — Data protection
-- [SLA](../legal/04-sla/) — Service levels
+- [NDA](../legal/01-nda.md) — Pre-MSA
+- [DPA](../legal/03-dpa.md) — Data protection
+- [SLA](../legal/04-sla.md) — Service levels

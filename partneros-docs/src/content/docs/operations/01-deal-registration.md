@@ -56,6 +56,6 @@ This policy defines deal registration process and protection.
 
 ## Related Templates
 
-- [Weekly Standup](../operations/02-weekly-standup/) — Review deals
-- [Monthly Report](../operations/03-monthly-report/) — Track pipeline
-- [Portal Guide](../operations/04-portal-guide/) — Registration system
+- [Weekly Standup](../operations/02-weekly-standup.md) — Review deals
+- [Monthly Report](../operations/03-monthly-report.md) — Track pipeline
+- [Portal Guide](../operations/04-portal-guide.md) — Registration system

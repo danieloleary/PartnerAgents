@@ -230,9 +230,9 @@ Clear roles prevent "who owns this?" debates. Use RACI: Responsible, Accountable
 
 | Cadence | Template | Purpose |
 |---------|----------|---------|
-| Weekly | [Partner Pipeline Template](../operations/03-monthly-report/) | Track in-flight deals |
-| Monthly | [Partner Success Metrics](../enablement/06-success-metrics/) | Track program health |
-| Quarterly | [QBR Template](../enablement/07-qbr-template/) | Executive review |
+| Weekly | [Partner Pipeline Template](../operations/03-monthly-report.md) | Track in-flight deals |
+| Monthly | [Partner Success Metrics](../enablement/06-success-metrics.md) | Track program health |
+| Quarterly | [QBR Template](../enablement/07-qbr-template.md) | Executive review |
 
 ---
 
@@ -376,8 +376,8 @@ Most resistance isn't malice. It's fear—of more work, loss of control, or fail
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Your overall partner strategy
-- [Program Architecture](../strategy/06-program-architecture/) — Tiers and benefits design
-- [Partner Success Metrics](../enablement/06-success-metrics/) — What to track
-- [QBR Template](../enablement/07-qbr-template/) — Quarterly reviews with leadership
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Your overall partner strategy
+- [Program Architecture](../strategy/06-program-architecture.md) — Tiers and benefits design
+- [Partner Success Metrics](../enablement/06-success-metrics.md) — What to track
+- [QBR Template](../enablement/07-qbr-template.md) — Quarterly reviews with leadership
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

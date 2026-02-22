@@ -57,6 +57,6 @@ This standup reviews weekly partner progress.
 
 ## Related Templates
 
-- [Deal Registration](../operations/01-deal-registration/) — Manage deals
-- [Monthly Report](../operations/03-monthly-report/) — Broader review
-- [Success Metrics](../enablement/06-success-metrics/) — Track KPIs
+- [Deal Registration](../operations/01-deal-registration.md) — Manage deals
+- [Monthly Report](../operations/03-monthly-report.md) — Broader review
+- [Success Metrics](../enablement/06-success-metrics.md) — Track KPIs

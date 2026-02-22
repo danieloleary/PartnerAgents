@@ -143,7 +143,7 @@ The TAM is $48B.
 ```
 The TAM (Total Addressable Market) is $48B.
 
-See the [Partner Program Glossary](../resources/glossary/) for definitions.
+See the [Partner Program Glossary](../resources/glossary.md) for definitions.
 ```
 
 **Note:** Don't link to individual anchor terms like `(#tam)` - these break. Just use plain text for terms and link to the glossary page.
@@ -160,7 +160,7 @@ Points to `01-email-note.md` in the same folder.
 
 ### Cross-Folder Links (Relative)
 ```markdown
-[Success Metrics](../enablement/06-success-metrics/)
+[Success Metrics](../enablement/06-success-metrics.md)
 ```
 Goes up one level (`..`), then into `enablement/`.
 
@@ -266,6 +266,6 @@ Before submitting a template, verify:
 
 ## Related Resources
 
-- [Template Quality Audit Skill](./template-quality-audit/)
-- [Find and Fix Broken Links Skill](./find-broken-links/)
-- [Partner Program Glossary](../resources/glossary/)
+- [Template Quality Audit Skill](./template-quality-audit.md)
+- [Find and Fix Broken Links Skill](./find-broken-links.md)
+- [Partner Program Glossary](../resources/glossary.md)

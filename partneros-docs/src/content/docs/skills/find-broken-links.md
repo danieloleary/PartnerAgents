@@ -74,7 +74,7 @@ python3 scripts/fix_all_links.py
 | Type | Format | Example |
 |------|--------|---------|
 | Same folder | `template-name/` | `[Email Sequence](01-email-sequence/)` |
-| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics/)` |
+| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics.md)` |
 | Index page | folder name only | `[Recruitment](recruitment/)` |
 
 ### Common Mistakes to Fix

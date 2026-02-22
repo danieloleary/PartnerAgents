@@ -141,7 +141,7 @@ The third mistake? Forgetting internal comms. Your sales team needs to know part
 
 ## Related Templates
 
-- [Partner Kickoff Deck](../enablement/09-kickoff-deck/) — Day 1 meeting
-- [Training Deck](../enablement/02-training-deck/) — Training materials
-- [Certification Program](../enablement/03-certification/) — Certification path
-- [Deal Registration Policy](../operations/01-deal-registration/) — Opportunity rules
+- [Partner Kickoff Deck](../enablement/09-kickoff-deck.md) — Day 1 meeting
+- [Training Deck](../enablement/02-training-deck.md) — Training materials
+- [Certification Program](../enablement/03-certification.md) — Certification path
+- [Deal Registration Policy](../operations/01-deal-registration.md) — Opportunity rules

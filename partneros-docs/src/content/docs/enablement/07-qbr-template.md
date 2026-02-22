@@ -79,6 +79,6 @@ This template structures quarterly business reviews with partners.
 
 ## Related Templates
 
-- [Success Metrics](../enablement/06-success-metrics/) — Metrics to review
-- [Internal Alignment](../strategy/07-internal-alignment/) — Stakeholder alignment
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Success Metrics](../enablement/06-success-metrics.md) — Metrics to review
+- [Internal Alignment](../strategy/07-internal-alignment.md) — Stakeholder alignment
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

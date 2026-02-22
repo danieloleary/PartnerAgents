@@ -118,6 +118,6 @@ Partners who aren't onboarded properly underperform. This checklist ensures noth
 
 ## Related Templates
 
-- [Agreement Template](../recruitment/08-agreement/) — What leads here
-- [Success Metrics](../enablement/06-success-metrics/) — What to track
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Agreement Template](../recruitment/08-agreement.md) — What leads here
+- [Success Metrics](../enablement/06-success-metrics.md) — What to track
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

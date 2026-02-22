@@ -324,7 +324,7 @@ Some partners avoid competitive deals because they don't want to "bad mouth" com
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case/) — Build business case with competitive context
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Integrate competitive positioning into strategy
-- [Co-Marketing Playbook](../enablement/04-co-marketing/) — Joint competitive campaigns
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Business Case](../strategy/01-partner-business-case.md) — Build business case with competitive context
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Integrate competitive positioning into strategy
+- [Co-Marketing Playbook](../enablement/04-co-marketing.md) — Joint competitive campaigns
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

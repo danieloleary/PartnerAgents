@@ -57,6 +57,6 @@ This structure defines partner commission rates and payment terms.
 
 ## Related Templates
 
-- [Rebate Program](../finance/02-rebate/) — Volume incentives
-- [Revenue Share](../finance/03-revenue-share/) — Joint revenue
-- [Program Architecture](../strategy/06-program-architecture/) — Tier structure
+- [Rebate Program](../finance/02-rebate.md) — Volume incentives
+- [Revenue Share](../finance/03-revenue-share.md) — Joint revenue
+- [Program Architecture](../strategy/06-program-architecture.md) — Tier structure

@@ -68,6 +68,6 @@ This scorecard assesses overall partner health.
 
 ## Related Templates
 
-- [Success Metrics](../enablement/06-success-metrics/) — Track KPIs
-- [QBR Template](../enablement/07-qbr-template/) — Review with partner
-- [Board Deck](../executive/01-board-deck/) — Report to executives
+- [Success Metrics](../enablement/06-success-metrics.md) — Track KPIs
+- [QBR Template](../enablement/07-qbr-template.md) — Review with partner
+- [Board Deck](../executive/01-board-deck.md) — Report to executives

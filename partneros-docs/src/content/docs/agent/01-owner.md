@@ -63,8 +63,8 @@ Use The Owner when you need:
 
 ## Related Agents
 
-- [Partner Manager](./02-partner-manager/) - Day-to-day partner management
-- [Partner Leader](./07-partner-leader/) - Board presentations and ROI analysis
+- [Partner Manager](./02-partner-manager.md) - Day-to-day partner management
+- [Partner Leader](./07-partner-leader.md) - Board presentations and ROI analysis
 
 ---
 

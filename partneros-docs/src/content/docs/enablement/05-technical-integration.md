@@ -82,6 +82,6 @@ This guide helps technical partners build and maintain integrations.
 
 ## Related Templates
 
-- [Certification Program](../enablement/03-certification/) — Technical certification
-- [Success Metrics](../enablement/06-success-metrics/) — Track integration health
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Certification Program](../enablement/03-certification.md) — Technical certification
+- [Success Metrics](../enablement/06-success-metrics.md) — Track integration health
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

@@ -57,6 +57,6 @@ This guide helps partners achieve SOC 2 compliance.
 
 ## Related Templates
 
-- [Security Questionnaire](../security/01-security-questionnaire/) — Assessment
-- [DPA](../legal/03-dpa/) — Data protection
-- [SLA](../legal/04-sla/) — Service levels
+- [Security Questionnaire](../security/01-security-questionnaire.md) — Assessment
+- [DPA](../legal/03-dpa.md) — Data protection
+- [SLA](../legal/04-sla.md) — Service levels

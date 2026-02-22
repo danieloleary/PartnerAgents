@@ -346,7 +346,7 @@ I once had a great discovery call, didn't take notes, and forgot the key insight
 
 ## Related Templates
 
-- [Qualification Framework](../recruitment/03-qualification-framework/) — How to score this prospect
-- [Proposal Template](../recruitment/07-proposal/) — What to send after discovery
-- [Pitch Deck](../recruitment/05-pitch-deck/) — Visual for deeper dives
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Qualification Framework](../recruitment/03-qualification-framework.md) — How to score this prospect
+- [Proposal Template](../recruitment/07-proposal.md) — What to send after discovery
+- [Pitch Deck](../recruitment/05-pitch-deck.md) — Visual for deeper dives
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

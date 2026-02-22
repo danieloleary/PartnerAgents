@@ -52,6 +52,6 @@ Essential for GDPR compliance. Work with legal.
 
 ## Related Templates
 
-- [MSA](../legal/02-msa/) — Overall agreement
-- [SLA](../legal/04-sla/) — Service levels
-- [Security Questionnaire](../security/01-security-questionnaire/) — Security assessment
+- [MSA](../legal/02-msa.md) — Overall agreement
+- [SLA](../legal/04-sla.md) — Service levels
+- [Security Questionnaire](../security/01-security-questionnaire.md) — Security assessment

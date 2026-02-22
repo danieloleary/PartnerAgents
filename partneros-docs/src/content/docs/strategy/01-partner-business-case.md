@@ -421,4 +421,4 @@ This is your secret weapon. CFOs are trained to say no to new initiatives. Make 
 - [Ideal Partner Profile](../02-ideal-partner-profile/)
 - [Partner Strategy Plan](../05-strategy-plan/)
 - [Program Architecture](../06-program-architecture/)
-- [Partner Program Glossary](../resources/glossary/)
+- [Partner Program Glossary](../resources/glossary.md)

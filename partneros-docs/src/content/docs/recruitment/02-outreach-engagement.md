@@ -351,8 +351,8 @@ Week 2 content shouldn't sell — it should help. Share articles, insights, usef
 
 ## Related Templates
 
-- [Email Sequence](../recruitment/01-email-sequence/) — Core email templates
-- [Discovery Call Script](../recruitment/04-discovery-call/) — What to do after they say yes
-- [Pitch Deck](../recruitment/05-pitch-deck/) — Visual for meetings
-- [Partnership One-Pager](../recruitment/06-one-pager/) — Leave-behind document
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Email Sequence](../recruitment/01-email-sequence.md) — Core email templates
+- [Discovery Call Script](../recruitment/04-discovery-call.md) — What to do after they say yes
+- [Pitch Deck](../recruitment/05-pitch-deck.md) — Visual for meetings
+- [Partnership One-Pager](../recruitment/06-one-pager.md) — Leave-behind document
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

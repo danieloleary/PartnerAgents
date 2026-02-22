@@ -50,5 +50,5 @@ This workflow guides you through onboarding a new partner from contract signing 
 
 ## Related Templates
 
-- [Kickoff Deck](../enablement/09-kickoff-deck/)
-- [Onboarding Checklist](../recruitment/09-onboarding/)
+- [Kickoff Deck](../enablement/09-kickoff-deck.md)
+- [Onboarding Checklist](../recruitment/09-onboarding.md)

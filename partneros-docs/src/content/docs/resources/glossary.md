@@ -467,7 +467,7 @@ A comparison of a metric to the same period in the previous year.
 
 ## Related Resources
 
-- [Partner Business Case Template](../strategy/01-partner-business-case/)
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/)
-- [Partner Program Architecture](../strategy/06-program-architecture/)
-- [Partner Success Metrics](../enablement/06-success-metrics/)
+- [Partner Business Case Template](../strategy/01-partner-business-case.md)
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md)
+- [Partner Program Architecture](../strategy/06-program-architecture.md)
+- [Partner Success Metrics](../enablement/06-success-metrics.md)

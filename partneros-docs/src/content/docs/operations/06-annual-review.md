@@ -243,7 +243,7 @@ For Gold partners, include:
 
 ## Related Templates
 
-- [QBR Template](../enablement/07-qbr-template/) — Quarterly reviews
-- [Partner Success Metrics](../enablement/06-success-metrics/) — Performance tracking
-- [Partner Health Scorecard](../analysis/01-health-scorecard/) — Health assessment
-- [Annual Partner Report](../operations/03-monthly-report/) — Reporting template
+- [QBR Template](../enablement/07-qbr-template.md) — Quarterly reviews
+- [Partner Success Metrics](../enablement/06-success-metrics.md) — Performance tracking
+- [Partner Health Scorecard](../analysis/01-health-scorecard.md) — Health assessment
+- [Annual Partner Report](../operations/03-monthly-report.md) — Reporting template

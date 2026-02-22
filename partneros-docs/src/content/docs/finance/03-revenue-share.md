@@ -57,6 +57,6 @@ This model defines revenue sharing for strategic partnerships.
 
 ## Related Templates
 
-- [Commission Structure](../finance/01-commission/) — Standard commissions
-- [Rebate Program](../finance/02-rebate/) — Volume incentives
-- [MSA](../legal/02-msa/) — Legal agreement
+- [Commission Structure](../finance/01-commission.md) — Standard commissions
+- [Rebate Program](../finance/02-rebate.md) — Volume incentives
+- [MSA](../legal/02-msa.md) — Legal agreement

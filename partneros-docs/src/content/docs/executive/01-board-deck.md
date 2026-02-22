@@ -58,6 +58,6 @@ This deck communicates partner program to the board.
 
 ## Related Templates
 
-- [Strategy Plan](../strategy/05-strategy-plan/) — Program strategy
-- [Success Metrics](../enablement/06-success-metrics/) — Track KPIs
-- [Health Scorecard](../analysis/01-health-scorecard/) — Detailed assessment
+- [Strategy Plan](../strategy/05-strategy-plan.md) — Program strategy
+- [Success Metrics](../enablement/06-success-metrics.md) — Track KPIs
+- [Health Scorecard](../analysis/01-health-scorecard.md) — Detailed assessment

@@ -69,11 +69,11 @@ graph LR
 
 | Step | Template | What Happens |
 |------|----------|--------------|
-| 1 | [Ideal Partner Profile](../../strategy/02-ideal-partner-profile/) | Evaluate if partner matches your IPP |
-| 2 | [Qualification Framework](../../recruitment/03-qualification-framework/) | Score partner on fit criteria |
-| 3 | [Discovery Call Script](../../recruitment/04-discovery-call/) | Prepare qualification call |
-| 4 | [Pitch Deck](../../recruitment/05-pitch-deck/) | Customize your pitch |
-| 5 | [Proposal Template](../../recruitment/07-proposal/) | Draft the partnership proposal |
+| 1 | [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) | Evaluate if partner matches your IPP |
+| 2 | [Qualification Framework](../recruitment/03-qualification-framework.md) | Score partner on fit criteria |
+| 3 | [Discovery Call Script](../recruitment/04-discovery-call.md) | Prepare qualification call |
+| 4 | [Pitch Deck](../recruitment/05-pitch-deck.md) | Customize your pitch |
+| 5 | [Proposal Template](../recruitment/07-proposal.md) | Draft the partnership proposal |
 
 ```mermaid
 graph LR
@@ -127,11 +127,11 @@ python agent.py --playbook recruit --partner "Acme Corp"
 
 | Step | Template | What Happens |
 |------|----------|--------------|
-| 1 | [Agreement Template](../../recruitment/08-agreement/) | Finalize partnership agreement |
-| 2 | [Onboarding Checklist](../../recruitment/09-onboarding/) | Track activation tasks |
-| 3 | [Enablement Roadmap](../../enablement/01-roadmap/) | Plan learning journey |
-| 4 | [Training Deck](../../enablement/02-training-deck/) | Customize training plan |
-| 5 | [ICP Alignment Tracker](../../recruitment/10-icp-tracker/) | Align on target accounts |
+| 1 | [Agreement Template](../recruitment/08-agreement.md) | Finalize partnership agreement |
+| 2 | [Onboarding Checklist](../recruitment/09-onboarding.md) | Track activation tasks |
+| 3 | [Enablement Roadmap](../enablement/01-roadmap.md) | Plan learning journey |
+| 4 | [Training Deck](../enablement/02-training-deck.md) | Customize training plan |
+| 5 | [ICP Alignment Tracker](../recruitment/10-icp-tracker.md) | Align on target accounts |
 
 ```mermaid
 graph LR
@@ -182,10 +182,10 @@ python agent.py --playbook onboard --partner "Acme Corp"
 
 | Step | Template | What Happens |
 |------|----------|--------------|
-| 1 | [Success Metrics](../../enablement/06-success-metrics/) | Gather performance data |
-| 2 | [ICP Alignment Tracker](../../recruitment/10-icp-tracker/) | Review pipeline and accounts |
-| 3 | [QBR Template](../../enablement/07-qbr-template/) | Prepare full QBR document |
-| 4 | [Strategy Plan](../../strategy/05-strategy-plan/) | Update strategic alignment |
+| 1 | [Success Metrics](../enablement/06-success-metrics.md) | Gather performance data |
+| 2 | [ICP Alignment Tracker](../recruitment/10-icp-tracker.md) | Review pipeline and accounts |
+| 3 | [QBR Template](../enablement/07-qbr-template.md) | Prepare full QBR document |
+| 4 | [Strategy Plan](../strategy/05-strategy-plan.md) | Update strategic alignment |
 
 ```mermaid
 graph LR
@@ -236,11 +236,11 @@ python agent.py --playbook qbr --partner "Acme Corp"
 
 | Step | Template | What Happens |
 |------|----------|--------------|
-| 1 | [Partner Business Case](../../strategy/01-partner-business-case/) | Build expansion business case |
-| 2 | [Partner Strategy Plan](../../strategy/05-strategy-plan/) | Update partnership strategy |
-| 3 | [Co-Marketing Playbook](../../enablement/04-co-marketing/) | Plan joint marketing |
-| 4 | [Technical Integration](../../enablement/05-technical-integration/) | Deepen integration |
-| 5 | [Internal Alignment](../../strategy/07-internal-alignment/) | Get internal buy-in |
+| 1 | [Partner Business Case](../strategy/01-partner-business-case.md) | Build expansion business case |
+| 2 | [Partner Strategy Plan](../strategy/05-strategy-plan.md) | Update partnership strategy |
+| 3 | [Co-Marketing Playbook](../enablement/04-co-marketing.md) | Plan joint marketing |
+| 4 | [Technical Integration](../enablement/05-technical-integration.md) | Deepen integration |
+| 5 | [Internal Alignment](../strategy/07-internal-alignment.md) | Get internal buy-in |
 
 ```mermaid
 graph LR
@@ -291,10 +291,10 @@ python agent.py --playbook expand --partner "Acme Corp"
 
 | Step | Template | What Happens |
 |------|----------|--------------|
-| 1 | [Exit Checklist](../../strategy/08-exit-checklist/) | Plan the exit process |
-| 2 | [ICP Alignment Tracker](../../recruitment/10-icp-tracker/) | Review affected customers |
-| 3 | [Success Metrics](../../enablement/06-success-metrics/) | Document final performance |
-| 4 | [Exit Checklist](../../strategy/08-exit-checklist/) | Execute wind-down |
+| 1 | [Exit Checklist](../strategy/08-exit-checklist.md) | Plan the exit process |
+| 2 | [ICP Alignment Tracker](../recruitment/10-icp-tracker.md) | Review affected customers |
+| 3 | [Success Metrics](../enablement/06-success-metrics.md) | Document final performance |
+| 4 | [Exit Checklist](../strategy/08-exit-checklist.md) | Execute wind-down |
 
 ```mermaid
 graph LR
@@ -336,15 +336,15 @@ Add new playbooks by creating YAML files in `playbooks/`:
 name: Partner Renewal
 description: Annual partnership renewal process
 steps:
-  - template: ../../enablement/06-success-metrics.md
+  - template: ../enablement/06-success-metrics.md
     name: Review Metrics
     prompt: |
       Review the partner's performance over the past year.
 
-  - template: ../../enablement/07-qbr-template.md
+  - template: ../enablement/07-qbr-template.md
     name: Renewal Discussion
     prompt: |
       Prepare talking points for the renewal conversation.
 ```
 
-See [Configuration](configuration/) for more customization options.
+See [Configuration](configuration.md) for more customization options.

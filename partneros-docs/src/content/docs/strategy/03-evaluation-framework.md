@@ -477,6 +477,6 @@ A partner who scores 4.0 today may score 2.0 in 6 months. People leave, prioriti
 
 ## Related Templates
 
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Define what you're looking for before evaluating
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Build strategy from evaluation results
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Define what you're looking for before evaluating
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Build strategy from evaluation results
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

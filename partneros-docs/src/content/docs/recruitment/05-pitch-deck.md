@@ -258,7 +258,7 @@ A clear, consistent pitch builds credibility. When every partner conversation us
 
 ## Related Templates
 
-- [Discovery Call Script](../recruitment/04-discovery-call/) — What leads to this deck
-- [One-Pager](../recruitment/06-one-pager/) — Leave-behind version
-- [Proposal Template](../recruitment/07-proposal/) — Formal follow-up
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Discovery Call Script](../recruitment/04-discovery-call.md) — What leads to this deck
+- [One-Pager](../recruitment/06-one-pager.md) — Leave-behind version
+- [Proposal Template](../recruitment/07-proposal.md) — Formal follow-up
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here
