@@ -17,7 +17,7 @@ prerequisites: [Partner Business Case Template]
 outcomes: [ROI calculation spreadsheet, Investment case, Payback period analysis]
 skills_gained: [Financial modeling, ROI analysis, Investment planning]
 tags: [roi, calculator, finance, investment, metrics]
-keywords: ["compelling financial case", "justify investment why", "isn t guesswork", "money back aim", "first minutes define", "board presentations include"]
+keywords: ["compelling financial case", "justify investment why", "isn t guesswork", "paybackmonths paybackmonths n", "money back aim", "first minutes define"]
 ---
 Use this template to build a compelling financial case for your partner program—or to validate an existing one.
 
@@ -103,6 +103,514 @@ Use this section to estimate revenue from your partner program.
 | **Net Partner Revenue** | -$67,500 | $130,000 | $557,500 |
 | **ROI** | -31% | 35% | 80% |
 | **Payback Period** | 17 months | 9 months | 7 months |
+
+---
+
+## Interactive ROI Calculator
+
+Use this interactive calculator to model your own partner program. Enter your assumptions below:
+
+<div class="roi-calculator">
+  <div class="roi-inputs">
+    <h3>📊 Your Assumptions</h3>
+    
+    <div class="input-group">
+      <label>Active Partners (Year 1)</label>
+      <input type="number" id="partners-y1" value="10" min="1" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Active Partners (Year 2)</label>
+      <input type="number" id="partners-y2" value="25" min="1" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Active Partners (Year 3)</label>
+      <input type="number" id="partners-y3" value="50" min="1" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Revenue per Partner ($)</label>
+      <input type="number" id="revenue-per-partner" value="15000" min="0" step="1000" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Partner Manager Cost ($/year)</label>
+      <input type="number" id="pm-cost" value="120000" min="0" step="10000" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Marketing Funds (% of revenue)</label>
+      <input type="number" id="marketing-pct" value="20" min="0" max="100" oninput="calculateROI()">
+      <span class="hint">% of partner revenue</span>
+    </div>
+    
+    <div class="input-group">
+      <label>Training Cost per Partner ($/year)</label>
+      <input type="number" id="training-cost" value="2500" min="0" step="100" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Technology Cost ($/year)</label>
+      <input type="number" id="tech-cost" value="20000" min="0" step="1000" oninput="calculateROI()">
+    </div>
+    
+    <div class="input-group">
+      <label>Commission Rate (%)</label>
+      <input type="number" id="commission-pct" value="15" min="0" max="100" oninput="calculateROI()">
+    </div>
+    
+    <div class="scenario-buttons">
+      <button onclick="setScenario('conservative')" class="scenario-btn">📉 Conservative</button>
+      <button onclick="setScenario('base')" class="scenario-btn active">📊 Base</button>
+      <button onclick="setScenario('optimistic')" class="scenario-btn">📈 Optimistic</button>
+    </div>
+  </div>
+  
+  <div class="roi-results">
+    <h3>📈 Your Results</h3>
+    
+    <div class="result-card roi-card">
+      <div class="result-label">Overall ROI (3-Year)</div>
+      <div class="result-value" id="overall-roi">149%</div>
+    </div>
+    
+    <div class="result-card payback-card">
+      <div class="result-label">Payback Period</div>
+      <div class="result-value" id="payback-period">14 months</div>
+    </div>
+    
+    <div class="result-card net-card">
+      <div class="result-label">Net Revenue (3-Year)</div>
+      <div class="result-value" id="net-revenue">$1,890,000</div>
+    </div>
+    
+    <div class="results-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Year 1</th>
+            <th>Year 2</th>
+            <th>Year 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Revenue</td>
+            <td id="rev-y1">$150,000</td>
+            <td id="rev-y2">$375,000</td>
+            <td id="rev-y3">$750,000</td>
+          </tr>
+          <tr>
+            <td>Costs</td>
+            <td id="cost-y1">$217,500</td>
+            <td id="cost-y2">$370,000</td>
+            <td id="cost-y3">$692,500</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>Net</strong></td>
+            <td id="net-y1"><strong>-$67,500</strong></td>
+            <td id="net-y2"><strong>$5,000</strong></td>
+            <td id="net-y3"><strong>$57,500</strong></td>
+          </tr>
+          <tr>
+            <td>ROI</td>
+            <td id="roi-y1">-31%</td>
+            <td id="roi-y2">1%</td>
+            <td id="roi-y3">8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="chart">
+      <div class="chart-bar-group">
+        <div class="chart-label">Y1</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar revenue" id="bar-rev-y1" style="height: 20%"></div>
+          <div class="chart-bar cost" id="bar-cost-y1" style="height: 29%"></div>
+        </div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-label">Y2</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar revenue" id="bar-rev-y2" style="height: 50%"></div>
+          <div class="chart-bar cost" id="bar-cost-y2" style="height: 49%"></div>
+        </div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-label">Y3</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar revenue" id="bar-rev-y3" style="height: 100%"></div>
+          <div class="chart-bar cost" id="bar-cost-y3" style="height: 92%"></div>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="legend-color revenue"></span> Revenue</span>
+        <span class="legend-item"><span class="legend-color cost"></span> Costs</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.roi-calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--sl-color-gray-6);
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .roi-calculator {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roi-inputs h3, .roi-results h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--sl-color-white);
+}
+
+.input-group {
+  margin-bottom: 0.75rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-3);
+  margin-bottom: 0.25rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.25rem;
+  background: var(--sl-color-gray-7);
+  color: var(--sl-color-white);
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--sl-color-accent);
+}
+
+.input-group .hint {
+  font-size: 0.75rem;
+  color: var(--sl-color-gray-4);
+}
+
+.scenario-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.scenario-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.25rem;
+  background: var(--sl-color-gray-7);
+  color: var(--sl-color-gray-3);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.scenario-btn:hover {
+  border-color: var(--sl-color-accent);
+}
+
+.scenario-btn.active {
+  background: var(--sl-color-accent-low);
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-white);
+}
+
+.result-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.roi-card {
+  background: linear-gradient(135deg, #22c55e20, #16a34a20);
+  border: 1px solid #22c55e40;
+}
+
+.payback-card {
+  background: linear-gradient(135deg, #3b82f620, #2563eb20);
+  border: 1px solid #3b82f640;
+}
+
+.net-card {
+  background: linear-gradient(135deg, #a855f720, #7c3aed20);
+  border: 1px solid #a855f740;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-gray-3);
+  margin-bottom: 0.25rem;
+}
+
+.result-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--sl-color-white);
+}
+
+.results-table {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.5rem;
+  text-align: right;
+  border-bottom: 1px solid var(--sl-color-gray-6);
+}
+
+.results-table th:first-child,
+.results-table td:first-child {
+  text-align: left;
+}
+
+.results-table th {
+  color: var(--sl-color-gray-3);
+  font-weight: normal;
+}
+
+.results-table .highlight td {
+  background: var(--sl-color-gray-6);
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 120px;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--sl-color-gray-6);
+}
+
+.chart-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.chart-label {
+  font-size: 0.75rem;
+  color: var(--sl-color-gray-4);
+  margin-bottom: 0.5rem;
+}
+
+.chart-bar-container {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.chart-bar {
+  width: 20px;
+  border-radius: 2px 2px 0 0;
+  transition: height 0.3s ease;
+}
+
+.chart-bar.revenue {
+  background: #22c55e;
+}
+
+.chart-bar.cost {
+  background: #ef4444;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--sl-color-gray-4);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-color.revenue {
+  background: #22c55e;
+}
+
+.legend-color.cost {
+  background: #ef4444;
+}
+</style>
+
+<script>
+function calculateROI() {
+  const partnersY1 = parseInt(document.getElementById('partners-y1').value) || 0;
+  const partnersY2 = parseInt(document.getElementById('partners-y2').value) || 0;
+  const partnersY3 = parseInt(document.getElementById('partners-y3').value) || 0;
+  const revenuePerPartner = parseInt(document.getElementById('revenue-per-partner').value) || 0;
+  const pmCost = parseInt(document.getElementById('pm-cost').value) || 0;
+  const marketingPct = parseInt(document.getElementById('marketing-pct').value) || 0;
+  const trainingCost = parseInt(document.getElementById('training-cost').value) || 0;
+  const techCost = parseInt(document.getElementById('tech-cost').value) || 0;
+  const commissionPct = parseInt(document.getElementById('commission-pct').value) || 0;
+  
+  // Calculate revenue per year
+  const revY1 = partnersY1 * revenuePerPartner;
+  const revY2 = partnersY2 * revenuePerPartner;
+  const revY3 = partnersY3 * revenuePerPartner;
+  
+  // Calculate costs per year
+  const costY1 = pmCost + (revY1 * marketingPct / 100) + (partnersY1 * trainingCost) + techCost + (revY1 * commissionPct / 100);
+  const costY2 = pmCost * 1.08 + (revY2 * marketingPct / 100) + (partnersY2 * trainingCost) + techCost * 1.1 + (revY2 * commissionPct / 100);
+  const costY3 = pmCost * 1.17 + (revY3 * marketingPct / 100) + (partnersY3 * trainingCost) + techCost * 1.2 + (revY3 * commissionPct / 100);
+  
+  // Net revenue
+  const netY1 = revY1 - costY1;
+  const netY2 = revY2 - costY2;
+  const netY3 = revY3 - costY3;
+  
+  // ROI per year
+  const roiY1 = costY1 > 0 ? (revY1 - costY1) / costY1 * 100 : 0;
+  const roiY2 = costY2 > 0 ? (revY2 - costY2) / costY2 * 100 : 0;
+  const roiY3 = costY3 > 0 ? (revY3 - costY3) / costY3 * 100 : 0;
+  
+  // Overall 3-year ROI
+  const totalRevenue = revY1 + revY2 + revY3;
+  const totalCosts = costY1 + costY2 + costY3;
+  const overallROI = totalCosts > 0 ? (totalRevenue - totalCosts) / totalCosts * 100 : 0;
+  
+  // Payback period (months to break-even)
+  let paybackMonths = 0;
+  let cumulativeNet = 0;
+  const monthlyRevY1 = revY1 / 12;
+  const monthlyCostY1 = costY1 / 12;
+  for (let i = 1; i <= 36; i++) {
+    const monthlyNet = (i <= 12 ? monthlyRevY1 : i <= 24 ? monthlyRevY2 / 12 : monthlyRevY3 / 12) - 
+                      (i <= 12 ? monthlyCostY1 : i <= 24 ? costY2 / 12 : costY3 / 12);
+    cumulativeNet += monthlyNet;
+    if (cumulativeNet >= 0 && paybackMonths === 0) {
+      paybackMonths = i;
+    }
+  }
+  if (paybackMonths === 0) paybackMonths = "N/A";
+  
+  // Update UI
+  document.getElementById('overall-roi').textContent = Math.round(overallROI) + '%';
+  document.getElementById('overall-roi').style.color = overallROI >= 0 ? '#22c55e' : '#ef4444';
+  
+  document.getElementById('payback-period').textContent = typeof paybackMonths === 'number' ? paybackMonths + ' months' : 'N/A';
+  
+  const netRevenue = netY1 + netY2 + netY3;
+  document.getElementById('net-revenue').textContent = '$' + netRevenue.toLocaleString();
+  document.getElementById('net-revenue').style.color = netRevenue >= 0 ? '#22c55e' : '#ef4444';
+  
+  // Table
+  document.getElementById('rev-y1').textContent = '$' + revY1.toLocaleString();
+  document.getElementById('rev-y2').textContent = '$' + revY2.toLocaleString();
+  document.getElementById('rev-y3').textContent = '$' + revY3.toLocaleString();
+  
+  document.getElementById('cost-y1').textContent = '$' + Math.round(costY1).toLocaleString();
+  document.getElementById('cost-y2').textContent = '$' + Math.round(costY2).toLocaleString();
+  document.getElementById('cost-y3').textContent = '$' + Math.round(costY3).toLocaleString();
+  
+  document.getElementById('net-y1').innerHTML = '<strong>' + (netY1 >= 0 ? '$' + Math.round(netY1).toLocaleString() : '-$' + Math.abs(Math.round(netY1)).toLocaleString()) + '</strong>';
+  document.getElementById('net-y1').style.color = netY1 >= 0 ? '#22c55e' : '#ef4444';
+  document.getElementById('net-y2').innerHTML = '<strong>' + (netY2 >= 0 ? '$' + Math.round(netY2).toLocaleString() : '-$' + Math.abs(Math.round(netY2)).toLocaleString()) + '</strong>';
+  document.getElementById('net-y2').style.color = netY2 >= 0 ? '#22c55e' : '#ef4444';
+  document.getElementById('net-y3').innerHTML = '<strong>' + (netY3 >= 0 ? '$' + Math.round(netY3).toLocaleString() : '-$' + Math.abs(Math.round(netY3)).toLocaleString()) + '</strong>';
+  document.getElementById('net-y3').style.color = netY3 >= 0 ? '#22c55e' : '#ef4444';
+  
+  document.getElementById('roi-y1').textContent = Math.round(roiY1) + '%';
+  document.getElementById('roi-y1').style.color = roiY1 >= 0 ? '#22c55e' : '#ef4444';
+  document.getElementById('roi-y2').textContent = Math.round(roiY2) + '%';
+  document.getElementById('roi-y2').style.color = roiY2 >= 0 ? '#22c55e' : '#ef4444';
+  document.getElementById('roi-y3').textContent = Math.round(roiY3) + '%';
+  document.getElementById('roi-y3').style.color = roiY3 >= 0 ? '#22c55e' : '#ef4444';
+  
+  // Chart
+  const maxValue = Math.max(revY1, revY2, revY3, costY1, costY2, costY3);
+  document.getElementById('bar-rev-y1').style.height = (revY1 / maxValue * 100) + '%';
+  document.getElementById('bar-rev-y2').style.height = (revY2 / maxValue * 100) + '%';
+  document.getElementById('bar-rev-y3').style.height = (revY3 / maxValue * 100) + '%';
+  document.getElementById('bar-cost-y1').style.height = (costY1 / maxValue * 100) + '%';
+  document.getElementById('bar-cost-y2').style.height = (costY2 / maxValue * 100) + '%';
+  document.getElementById('bar-cost-y3').style.height = (costY3 / maxValue * 100) + '%';
+}
+
+function setScenario(scenario) {
+  document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  if (scenario === 'conservative') {
+    document.getElementById('partners-y1').value = 5;
+    document.getElementById('partners-y2').value = 10;
+    document.getElementById('partners-y3').value = 20;
+    document.getElementById('revenue-per-partner').value = 10000;
+    document.getElementById('marketing-pct').value = 15;
+    document.getElementById('training-cost').value = 3000;
+    document.getElementById('commission-pct').value = 10;
+  } else if (scenario === 'base') {
+    document.getElementById('partners-y1').value = 10;
+    document.getElementById('partners-y2').value = 25;
+    document.getElementById('partners-y3').value = 50;
+    document.getElementById('revenue-per-partner').value = 15000;
+    document.getElementById('marketing-pct').value = 20;
+    document.getElementById('training-cost').value = 2500;
+    document.getElementById('commission-pct').value = 15;
+  } else if (scenario === 'optimistic') {
+    document.getElementById('partners-y1').value = 20;
+    document.getElementById('partners-y2').value = 50;
+    document.getElementById('partners-y3').value = 100;
+    document.getElementById('revenue-per-partner').value = 20000;
+    document.getElementById('marketing-pct').value = 25;
+    document.getElementById('training-cost').value = 2000;
+    document.getElementById('commission-pct').value = 20;
+  }
+  
+  calculateROI();
+}
+
+// Initial calculation
+calculateROI();
+</script>
 
 ---
 
