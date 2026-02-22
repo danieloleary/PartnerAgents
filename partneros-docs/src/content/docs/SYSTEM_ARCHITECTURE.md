@@ -1,3 +1,7 @@
+---
+title: PartnerOS System Architecture Review
+keywords: ["skills metaphor uses", "partner count grows", "partially duplicate functionality", "solid architectural decision", "support concurrent access", "html js css"]
+---
 # PartnerOS System Architecture Review
 
 *Date: May 22, 2024*
