@@ -6,16 +6,16 @@ template_number: F.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: strategic
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["simple partners should", "want keep", "template purpose", "able", "calculate", "earnings"]
 ---
 > **Commission structures should reward behavior you want. Keep it simple—partners should be able to calculate their earnings in their head.** — Dan O'Leary
@@ -57,6 +57,6 @@ This structure defines partner commission rates and payment terms.
 
 ## Related Templates
 
-- [Rebate Program](../finance/02-rebate/) — Volume incentives
-- [Revenue Share](../finance/03-revenue-share/) — Joint revenue
-- [Program Architecture](../strategy/06-program-architecture/) — Tier structure
+- [Rebate Program](../finance/02-rebate.md) — Volume incentives
+- [Revenue Share](../finance/03-revenue-share.md) — Joint revenue
+- [Program Architecture](../strategy/06-program-architecture.md) — Tier structure

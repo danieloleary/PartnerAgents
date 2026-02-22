@@ -6,16 +6,16 @@ template_number: II.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["propose something valuable", "structured framework effectively", "balances information gathering", "rapport building why", "natural fit between", "cover quick overview"]
 ---
 > **The discovery call is where partnerships are won or lost. Ask the right questions, listen more than you talk, and always leave with a clear next step.** — Dan O'Leary
@@ -346,7 +346,7 @@ I once had a great discovery call, didn't take notes, and forgot the key insight
 
 ## Related Templates
 
-- [Qualification Framework](../recruitment/03-qualification-framework/) — How to score this prospect
-- [Proposal Template](../recruitment/07-proposal/) — What to send after discovery
-- [Pitch Deck](../recruitment/05-pitch-deck/) — Visual for deeper dives
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Qualification Framework](../recruitment/03-qualification-framework.md) — How to score this prospect
+- [Proposal Template](../recruitment/07-proposal.md) — What to send after discovery
+- [Pitch Deck](../recruitment/05-pitch-deck.md) — Visual for deeper dives
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

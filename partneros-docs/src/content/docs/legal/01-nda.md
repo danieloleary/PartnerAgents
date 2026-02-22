@@ -6,16 +6,16 @@ template_number: L.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: beginner
 purpose: operational
 phase: recruitment
 time_required: 1 hour
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["share anything sensitive", "nda before", "about distrust", "s", "template"]
 ---
 > **Sign the NDA before you share anything sensitive. It's not about distrust—it's about professionalism.** — Dan O'Leary
@@ -51,6 +51,6 @@ Have your legal team review before use. This is a template, not legal advice.
 
 ## Related Templates
 
-- [MSA](../legal/02-msa/) — Full agreement
-- [DPA](../legal/03-dpa/) — Data protection
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [MSA](../legal/02-msa.md) — Full agreement
+- [DPA](../legal/03-dpa.md) — Data protection
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

@@ -6,16 +6,16 @@ template_number: L.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["upfront track", "template purpose", "use"]
 ---
 > **Clear SLAs prevent arguments. Define them upfront, track them religiously.** — Dan O'Leary
@@ -59,6 +59,6 @@ This agreement defines support levels and response times.
 
 ## Related Templates
 
-- [MSA](../legal/02-msa/) — Overall agreement
-- [DPA](../legal/03-dpa/) — Data protection
-- [Success Metrics](../enablement/06-success-metrics/) — Track SLA compliance
+- [MSA](../legal/02-msa.md) — Overall agreement
+- [DPA](../legal/03-dpa.md) — Data protection
+- [Success Metrics](../enablement/06-success-metrics.md) — Track SLA compliance

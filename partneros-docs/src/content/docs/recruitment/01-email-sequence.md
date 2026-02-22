@@ -6,16 +6,16 @@ template_number: II.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["follow up gets", "converts cold prospects", "meeting steps research", "optimize weekly review", "thought there might", "natural fit between"]
 ---
 > **The first email gets you read. The follow-up gets you replied to. Most people give up after one email—and that's why they fail at partner recruitment.** — Dan O'Leary
@@ -344,8 +344,8 @@ I've sent 6, 7, 8 emails. The people who respond typically respond by email 4. A
 
 ## Related Templates
 
-- [Outreach/Engagement Sequence](../recruitment/02-outreach-engagement/) — Multi-touch engagement beyond email
-- [Discovery Call Script](../recruitment/04-discovery-call/) — What to do after they reply
-- [Pitch Deck](../recruitment/05-pitch-deck/) — Visual presentation for meetings
-- [Partnership One-Pager](../recruitment/06-one-pager/) — Leave-behind document
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Outreach/Engagement Sequence](../recruitment/02-outreach-engagement.md) — Multi-touch engagement beyond email
+- [Discovery Call Script](../recruitment/04-discovery-call.md) — What to do after they reply
+- [Pitch Deck](../recruitment/05-pitch-deck.md) — Visual presentation for meetings
+- [Partnership One-Pager](../recruitment/06-one-pager.md) — Leave-behind document
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

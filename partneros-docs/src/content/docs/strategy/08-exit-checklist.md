@@ -6,16 +6,16 @@ template_number: I.8
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: operational
 phase: strategy
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["end partnerships matters", "protects all parties", "make hasty decisions", "coordinated team assign", "ending effective date", "crm access date"]
 ---
 > **How you end partnerships matters as much as how you start them. A messy exit creates enemies; a graceful exit creates potential future allies.** — Dan O'Leary
@@ -451,8 +451,8 @@ You never know when paths will cross again. The partner landscape is small. A gr
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Strategic context for exits
-- [Program Architecture](../strategy/06-program-architecture/) — Tier and agreement structure
-- [Partner Success Metrics](../enablement/06-success-metrics/) — Performance tracking leading to exit decisions
-- [QBR Template](../enablement/07-qbr-template/) — Regular reviews that can identify exit triggers
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Strategic context for exits
+- [Program Architecture](../strategy/06-program-architecture.md) — Tier and agreement structure
+- [Partner Success Metrics](../enablement/06-success-metrics.md) — Performance tracking leading to exit decisions
+- [QBR Template](../enablement/07-qbr-template.md) — Regular reviews that can identify exit triggers
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

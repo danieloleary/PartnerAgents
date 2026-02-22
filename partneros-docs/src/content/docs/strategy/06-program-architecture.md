@@ -6,16 +6,16 @@ template_number: I.6
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 4-8 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["t articulate why", "progression paths why", "re building capability", "ve demonstrated commitment", "met month path", "don t audit"]
 ---
 > **Your program architecture is a promise to partners. Make promises you can keep—and keep every promise you make. A broken promise destroys more trust than a bad product.** — Dan O'Leary
@@ -347,7 +347,7 @@ Have clear demotion criteria before you launch. It's easier to prevent tier cree
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Strategy that drives architecture
-- [Internal Alignment Playbook](../strategy/07-internal-alignment/) — Get buy-in on program design
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Strategy that drives architecture
+- [Internal Alignment Playbook](../strategy/07-internal-alignment.md) — Get buy-in on program design
 - [Commission Structure](../finance/01-commission-structure/) — Financial incentives by tier
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

@@ -6,17 +6,17 @@ template_number: I.1
 version: 3.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: strategic
 phase: strategy
 time_required: 8-16 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
 purpose_detailed: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["document traces back", "secret weapon cfos", "risk averse showing", "one document choose", "once easy wins", "should stand alone"]
 ---
 This template walks you through building a business case that will get CFO approval. Every section is designed to answer the questions executives actually ask—and use the metrics they actually care about. This is not a generic template. It's built from what works in real boardrooms.
@@ -421,4 +421,4 @@ This is your secret weapon. CFOs are trained to say no to new initiatives. Make 
 - [Ideal Partner Profile](../02-ideal-partner-profile/)
 - [Partner Strategy Plan](../05-strategy-plan/)
 - [Program Architecture](../06-program-architecture/)
-- [Partner Program Glossary](../resources/glossary/)
+- [Partner Program Glossary](../resources/glossary.md)

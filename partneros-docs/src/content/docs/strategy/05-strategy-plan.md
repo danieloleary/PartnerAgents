@@ -6,16 +6,16 @@ template_number: I.5
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: strategic
 phase: strategy
 time_required: 8-16 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["actually execute because", "measures program success", "translates business objectives", "most urgent go", "sharepoint i used", "got comments approvals"]
 ---
 > **Your partner strategy isn't a document—it's a commitment. Write something you can actually execute, because your partners will read it and decide whether to invest in you.** — Dan O'Leary
@@ -349,8 +349,8 @@ In every strategy document, list who owns what. When the VP of Sales sees their 
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case/) — Business justification for partner investment
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Define target partners
-- [Program Architecture](../strategy/06-program-architecture/) — Tier structure and benefits
-- [Internal Alignment Playbook](../strategy/07-internal-alignment/) — Get stakeholder buy-in
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Business Case](../strategy/01-partner-business-case.md) — Business justification for partner investment
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Define target partners
+- [Program Architecture](../strategy/06-program-architecture.md) — Tier structure and benefits
+- [Internal Alignment Playbook](../strategy/07-internal-alignment.md) — Get stakeholder buy-in
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

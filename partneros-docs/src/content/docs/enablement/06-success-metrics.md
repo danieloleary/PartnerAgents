@@ -6,16 +6,16 @@ template_number: III.6
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["template purpose", "partner involvement", "metrics", "matter", "track", "use"]
 ---
 > **What gets measured gets managed. Pick the 5 metrics that matter and track them religiously.** — Dan O'Leary
@@ -75,6 +75,6 @@ This framework defines key metrics for partner success.
 
 ## Related Templates
 
-- [QBR Template](../enablement/07-qbr-template/) — Review metrics with partners
-- [Health Scorecard](../analysis/01-health-scorecard/) — Detailed assessment
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [QBR Template](../enablement/07-qbr-template.md) — Review metrics with partners
+- [Health Scorecard](../analysis/01-health-scorecard.md) — Detailed assessment
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

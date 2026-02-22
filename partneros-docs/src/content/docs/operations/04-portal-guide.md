@@ -6,16 +6,16 @@ template_number: O.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: beginner
 purpose: operational
 phase: onboarding
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["partner portal guide", "best partner portal", "t find what", "template purpose", "need", "use"]
 ---
 > **The best partner portal is one partners actually use. If they can't find what they need, it's useless.** — Dan O'Leary
@@ -56,6 +56,6 @@ This guide helps partners use the portal effectively.
 
 ## Related Templates
 
-- [Onboarding Checklist](../recruitment/09-onboarding/) — Portal setup
-- [Deal Registration](../operations/01-deal-registration/) — Register deals
-- [Success Metrics](../enablement/06-success-metrics/) — Track performance
+- [Onboarding Checklist](../recruitment/09-onboarding.md) — Portal setup
+- [Deal Registration](../operations/01-deal-registration.md) — Register deals
+- [Success Metrics](../enablement/06-success-metrics.md) — Track performance

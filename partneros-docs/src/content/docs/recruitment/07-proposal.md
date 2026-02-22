@@ -6,16 +6,16 @@ template_number: II.7
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["branding min send", "i d love", "available date time", "key strengths why", "send proposals then", "respond follow up"]
 ---
 > **The proposal is where deals are won or lost. A weak proposal kills strong interest. A strong proposal closes the deal.** — Dan O'Leary
@@ -278,8 +278,8 @@ Don't wait for them to respond. Follow up on day 3: "Just wanted to make sure yo
 
 ## Related Templates
 
-- [Discovery Call Script](../recruitment/04-discovery-call/) — What leads to this
-- [Pitch Deck](../recruitment/05-pitch-deck/) — Presentation version
-- [One-Pager](../recruitment/06-one-pager/) — Concise version
-- [Agreement Template](../recruitment/08-agreement/) — Legal follow-up
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Discovery Call Script](../recruitment/04-discovery-call.md) — What leads to this
+- [Pitch Deck](../recruitment/05-pitch-deck.md) — Presentation version
+- [One-Pager](../recruitment/06-one-pager.md) — Concise version
+- [Agreement Template](../recruitment/08-agreement.md) — Legal follow-up
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

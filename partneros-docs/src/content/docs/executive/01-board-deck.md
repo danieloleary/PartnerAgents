@@ -6,16 +6,16 @@ template_number: X.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: strategic
 phase: enablement
 time_required: 4-8 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["story numbers matter", "template purpose", "use"]
 ---
 > **Board presentations should tell a story. Numbers matter—but narrative matters more.** — Dan O'Leary
@@ -58,6 +58,6 @@ This deck communicates partner program to the board.
 
 ## Related Templates
 
-- [Strategy Plan](../strategy/05-strategy-plan/) — Program strategy
-- [Success Metrics](../enablement/06-success-metrics/) — Track KPIs
-- [Health Scorecard](../analysis/01-health-scorecard/) — Detailed assessment
+- [Strategy Plan](../strategy/05-strategy-plan.md) — Program strategy
+- [Success Metrics](../enablement/06-success-metrics.md) — Track KPIs
+- [Health Scorecard](../analysis/01-health-scorecard.md) — Detailed assessment

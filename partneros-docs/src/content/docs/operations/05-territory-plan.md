@@ -242,7 +242,7 @@ For executive updates:
 
 ## Related Templates
 
-- [Partner Program Charter](../strategy/09-partner-charter/) — Program governance
-- [Deal Registration Policy](../operations/01-deal-registration/) — Opportunity rules
-- [Partner Business Review](../operations/06-annual-review/) — Quarterly reviews
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Partner criteria
+- [Partner Program Charter](../strategy/09-partner-charter.md) — Program governance
+- [Deal Registration Policy](../operations/01-deal-registration.md) — Opportunity rules
+- [Partner Business Review](../operations/06-annual-review.md) — Quarterly reviews
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Partner criteria

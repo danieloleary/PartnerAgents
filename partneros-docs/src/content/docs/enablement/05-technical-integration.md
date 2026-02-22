@@ -6,16 +6,16 @@ template_number: III.5
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: operational
 phase: enablement
 time_required: 2-4 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["technical integration guide", "best integrations", "customer value", "apis make", "template purpose", "wrestling"]
 ---
 > **The best integrations are invisible. Partners should focus on customer value, not wrestling with APIs. Make it easy.** — Dan O'Leary
@@ -82,6 +82,6 @@ This guide helps technical partners build and maintain integrations.
 
 ## Related Templates
 
-- [Certification Program](../enablement/03-certification/) — Technical certification
-- [Success Metrics](../enablement/06-success-metrics/) — Track integration health
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Certification Program](../enablement/03-certification.md) — Technical certification
+- [Success Metrics](../enablement/06-success-metrics.md) — Track integration health
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

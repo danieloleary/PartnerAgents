@@ -6,16 +6,16 @@ template_number: O.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: beginner
 purpose: operational
 phase: operations
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["upfront enforce", "template purpose", "use"]
 ---
 > **Clear deal registration rules prevent arguments. Define them upfront, enforce them consistently.** — Dan O'Leary
@@ -56,6 +56,6 @@ This policy defines deal registration process and protection.
 
 ## Related Templates
 
-- [Weekly Standup](../operations/02-weekly-standup/) — Review deals
-- [Monthly Report](../operations/03-monthly-report/) — Track pipeline
-- [Portal Guide](../operations/04-portal-guide/) — Registration system
+- [Weekly Standup](../operations/02-weekly-standup.md) — Review deals
+- [Monthly Report](../operations/03-monthly-report.md) — Track pipeline
+- [Portal Guide](../operations/04-portal-guide.md) — Registration system

@@ -6,16 +6,16 @@ template_number: III.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 4-8 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["program establishes standards", "template purpose", "partner expertise", "use"]
 ---
 > **Certification isn't about checking boxes—it's about ensuring every partner deliverable meets your standards. Cut corners here and your brand suffers.** — Dan O'Leary
@@ -64,6 +64,6 @@ This program establishes standards for partner expertise and validates competenc
 
 ## Related Templates
 
-- [Training Deck](../enablement/02-training-deck/) — Training materials
-- [Enablement Roadmap](../enablement/01-roadmap/) — Timeline
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Training Deck](../enablement/02-training-deck.md) — Training materials
+- [Enablement Roadmap](../enablement/01-roadmap.md) — Timeline
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

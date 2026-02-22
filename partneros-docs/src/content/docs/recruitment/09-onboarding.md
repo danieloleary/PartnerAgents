@@ -6,16 +6,16 @@ template_number: II.9
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: onboarding
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["x more likely", "orientation week training", "certification week enablement", "partner onboarding checklist", "first days define", "onboarding why"]
 ---
 > **The first 30 days define the partnership. Get them productive fast or watch momentum die.** — Dan O'Leary
@@ -118,6 +118,6 @@ Partners who aren't onboarded properly underperform. This checklist ensures noth
 
 ## Related Templates
 
-- [Agreement Template](../recruitment/08-agreement/) — What leads here
-- [Success Metrics](../enablement/06-success-metrics/) — What to track
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Agreement Template](../recruitment/08-agreement.md) — What leads here
+- [Success Metrics](../enablement/06-success-metrics.md) — What to track
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

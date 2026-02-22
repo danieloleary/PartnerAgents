@@ -153,6 +153,6 @@ The third mistake? Not tracking SLA metrics. You can't improve what you don't me
 
 ## Related Templates
 
-- [Partner Portal Guide](../operations/04-portal-guide/) — Self-service resources
+- [Partner Portal Guide](../operations/04-portal-guide.md) — Self-service resources
 - [SLA Template](../legal/05-sla/) — Legal agreement
-- [Partner Success Metrics](../enablement/06-success-metrics/) — Performance tracking
+- [Partner Success Metrics](../enablement/06-success-metrics.md) — Performance tracking

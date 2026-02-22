@@ -6,16 +6,16 @@ template_number: II.10
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["re leaving money", "t reach map", "complementary coverage how", "icp alignment tracker", "tracker maps", "template purpose"]
 ---
 > **If you don't know which accounts your partners can access, you're leaving money on the table.** — Dan O'Leary
@@ -97,6 +97,6 @@ Understanding account overlap prevents channel conflict and enables smarter co-s
 
 ## Related Templates
 
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — What to look for
-- [Qualification Framework](../recruitment/03-qualification-framework/) — How to qualify
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — What to look for
+- [Qualification Framework](../recruitment/03-qualification-framework.md) — How to qualify
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

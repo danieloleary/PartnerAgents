@@ -169,6 +169,6 @@ The third mistake? Not involving sales early. If sales isn't aligned, the progra
 
 ## Related Templates
 
-- [Deal Registration Policy](../operations/01-deal-registration/) — Opportunity rules
-- [Partner Territory Plan](../operations/05-territory-plan/) — Coverage model
-- [Commission Structure](../finance/01-commission/) — Compensation alignment
+- [Deal Registration Policy](../operations/01-deal-registration.md) — Opportunity rules
+- [Partner Territory Plan](../operations/05-territory-plan.md) — Coverage model
+- [Commission Structure](../finance/01-commission.md) — Compensation alignment

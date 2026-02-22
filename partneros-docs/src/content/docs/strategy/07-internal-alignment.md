@@ -6,16 +6,16 @@ template_number: I.7
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["one time event", "goal isn t", "re warm intros", "re more willing", "re actually easier", "one more ask"]
 ---
 > **The Problem:** Most partner programs fail not because of the partners—but because internal teams (Sales, Marketing, Product) weren't aligned. Sales ignores partners. Marketing doesn't support partner campaigns. Product won't build integrations. This template fixes that. — Dan O'Leary
@@ -230,9 +230,9 @@ Clear roles prevent "who owns this?" debates. Use RACI: Responsible, Accountable
 
 | Cadence | Template | Purpose |
 |---------|----------|---------|
-| Weekly | [Partner Pipeline Template](../operations/03-monthly-report/) | Track in-flight deals |
-| Monthly | [Partner Success Metrics](../enablement/06-success-metrics/) | Track program health |
-| Quarterly | [QBR Template](../enablement/07-qbr-template/) | Executive review |
+| Weekly | [Partner Pipeline Template](../operations/03-monthly-report.md) | Track in-flight deals |
+| Monthly | [Partner Success Metrics](../enablement/06-success-metrics.md) | Track program health |
+| Quarterly | [QBR Template](../enablement/07-qbr-template.md) | Executive review |
 
 ---
 
@@ -376,8 +376,8 @@ Most resistance isn't malice. It's fear—of more work, loss of control, or fail
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Your overall partner strategy
-- [Program Architecture](../strategy/06-program-architecture/) — Tiers and benefits design
-- [Partner Success Metrics](../enablement/06-success-metrics/) — What to track
-- [QBR Template](../enablement/07-qbr-template/) — Quarterly reviews with leadership
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Your overall partner strategy
+- [Program Architecture](../strategy/06-program-architecture.md) — Tiers and benefits design
+- [Partner Success Metrics](../enablement/06-success-metrics.md) — What to track
+- [QBR Template](../enablement/07-qbr-template.md) — Quarterly reviews with leadership
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

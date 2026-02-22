@@ -6,16 +6,16 @@ template_number: III.4
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["s about telling", "template purpose", "story", "use"]
 ---
 > **Co-marketing isn't about spending money together—it's about telling a story you couldn't tell alone. Find that story and double down.** — Dan O'Leary
@@ -83,6 +83,6 @@ This playbook guides successful joint marketing campaigns with partners.
 
 ## Related Templates
 
-- [Success Metrics](../enablement/06-success-metrics/) — Track results
-- [QBR Template](../enablement/07-qbr-template/) — Review with partners
-- [Partner Program Glossary](../resources/glossary/) — Definitions
+- [Success Metrics](../enablement/06-success-metrics.md) — Track results
+- [QBR Template](../enablement/07-qbr-template.md) — Review with partners
+- [Partner Program Glossary](../resources/glossary.md) — Definitions

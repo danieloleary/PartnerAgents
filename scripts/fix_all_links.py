@@ -42,13 +42,14 @@ def fix_links(content, filepath):
         if not link:
             return match.group(0)
 
-        # Remove .md from end (but not from middle of path)
-        if link.endswith(".md"):
-            link = link[:-3]  # Remove .md
-
-        # Add trailing slash for Starlight folder routing
-        if link and not link.endswith("/"):
-            link = link + "/"
+        # Ensure .md extension for better tool compatibility (Lychee, etc.)
+        # Starlight handles .md extensions automatically during build.
+        if not link.endswith((".md", ".mdx", "/")):
+            # Check if .md file exists
+            if (filepath.parent / (link + ".md")).exists():
+                link = link + ".md"
+            elif (filepath.parent / (link + ".mdx")).exists():
+                link = link + ".mdx"
 
         return f"]({link})"
 
@@ -68,12 +69,12 @@ def fix_links(content, filepath):
         if link_clean.endswith((".png", ".jpg", ".jpeg", ".svg", ".gif")):
             return m.group(0)
 
-        # Remove .md and add trailing slash
-        if link.endswith(".md"):
-            link = link[:-3]
-
-        if link and not link.endswith("/"):
-            link = link + "/"
+        # Ensure extension
+        if not link.endswith((".md", ".mdx", "/")):
+            if (filepath.parent / (link + ".md")).exists():
+                link = link + ".md"
+            elif (filepath.parent / (link + ".mdx")).exists():
+                link = link + ".mdx"
 
         return f"]({link})"
 
@@ -92,10 +93,11 @@ def fix_links(content, filepath):
 
         # Fix the link
         new_link = link
-        if new_link.endswith(".md"):
-            new_link = new_link[:-3]
-        if new_link and not new_link.endswith("/"):
-            new_link = new_link + "/"
+        if not new_link.endswith((".md", ".mdx", "/")):
+            if (filepath.parent / (new_link + ".md")).exists():
+                new_link = new_link + ".md"
+            elif (filepath.parent / (new_link + ".mdx")).exists():
+                new_link = new_link + ".mdx"
 
         # Replace
         old_link = f"]({link})"

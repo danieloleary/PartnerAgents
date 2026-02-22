@@ -6,16 +6,16 @@ template_number: I.2
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["structured objective framework", "fit primary vertical", "requires hand holding", "measure certified professionals", "offer ongoing support", "lead flow slowed"]
 ---
 > **The partner you choose in Year 1 will define your channel for years. Get this wrong, and you'll spend Years 2-4 digging yourself out.** — Dan O'Leary
@@ -105,7 +105,7 @@ Coverage Model: National
 
 ### Customer Base & ICP Alignment
 
-This is where most IPPs fail. They check for "some overlap" without quantifying it. You need hard numbers here—percentage of shared [Ideal Customer Profile (ICP)](../resources/glossary/) accounts, average deal size alignment, and decision-maker access.
+This is where most IPPs fail. They check for "some overlap" without quantifying it. You need hard numbers here—percentage of shared [Ideal Customer Profile (ICP)](../resources/glossary.md) accounts, average deal size alignment, and decision-maker access.
 
 **What to evaluate:**
 
@@ -158,7 +158,7 @@ If they say "we'll figure it out" when asked about support capabilities, walk. T
 
 ### Unique Integrations or IP
 
-Partners with proprietary integrations or [Intellectual Property (IP)](../resources/glossary/) create defensible value. They can't easily be replaced, and customers benefit from differentiated solutions.
+Partners with proprietary integrations or [Intellectual Property (IP)](../resources/glossary.md) create defensible value. They can't easily be replaced, and customers benefit from differentiated solutions.
 
 **What to evaluate:**
 
@@ -178,7 +178,7 @@ Your sales model must match theirs—or one of you will be unhappy. Enterprise p
 
 **What to evaluate:**
 
-- **Engagement model preference**: Co-sell, referral, resale, [OEM]( ../resources/glossary/), managed services?
+- **Engagement model preference**: Co-sell, referral, resale, [OEM](../resources/glossary.md), managed services?
 - **Deal registration experience**: Do they have a process? Do they use it?
 - **Average sales cycle**: 30 days and 6 months are wildly different partners.
 
@@ -413,7 +413,7 @@ These categories require a minimum score of 3—or automatic disqualification:
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case/) — Build the business case for specific partnerships
-- [3C/4C Evaluation Framework](../strategy/03-evaluation-framework/) — Detailed scoring for partner selection
-- [Strategy Plan](../strategy/05-strategy-plan/) — Full go-to-market strategy using IPP
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Partner Business Case](../strategy/01-partner-business-case.md) — Build the business case for specific partnerships
+- [3C/4C Evaluation Framework](../strategy/03-evaluation-framework.md) — Detailed scoring for partner selection
+- [Strategy Plan](../strategy/05-strategy-plan.md) — Full go-to-market strategy using IPP
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

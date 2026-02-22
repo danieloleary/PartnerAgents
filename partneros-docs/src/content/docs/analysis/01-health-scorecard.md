@@ -6,16 +6,16 @@ template_number: A.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: analysis
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["partner health scorecard", "template purpose", "growth", "use", "executives"]
 ---
 > **The best partners aren't just profitable—they're healthy. Track engagement, capability, and growth—not just revenue.** — Dan O'Leary
@@ -68,6 +68,6 @@ This scorecard assesses overall partner health.
 
 ## Related Templates
 
-- [Success Metrics](../enablement/06-success-metrics/) — Track KPIs
-- [QBR Template](../enablement/07-qbr-template/) — Review with partner
-- [Board Deck](../executive/01-board-deck/) — Report to executives
+- [Success Metrics](../enablement/06-success-metrics.md) — Track KPIs
+- [QBR Template](../enablement/07-qbr-template.md) — Review with partner
+- [Board Deck](../executive/01-board-deck.md) — Report to executives

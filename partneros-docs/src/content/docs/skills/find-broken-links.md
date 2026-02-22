@@ -6,15 +6,15 @@ template_number: SK.1
 version: 1.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: operations
 time_required: 15-30 minutes
 difficulty: easy
 prerequisites: []
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 description: How to find and fix broken internal links in PartnerOS documentation.
 keywords: ["starlight documentation when", "fixed pages", "md file", "skill use", "use", "find"]
 ---
@@ -74,7 +74,7 @@ python3 scripts/fix_all_links.py
 | Type | Format | Example |
 |------|--------|---------|
 | Same folder | `template-name/` | `[Email Sequence](01-email-sequence/)` |
-| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics/)` |
+| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics.md)` |
 | Index page | folder name only | `[Recruitment](recruitment/)` |
 
 ### Common Mistakes to Fix

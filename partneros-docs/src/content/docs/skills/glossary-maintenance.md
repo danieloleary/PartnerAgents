@@ -7,15 +7,15 @@ template_number: SK.3
 version: 1.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: operations
 time_required: 15-30 minutes
 difficulty: easy
-prerequisites: 
-outcomes: 
-skills_gained: 
+prerequisites:
+outcomes:
+skills_gained:
 keywords: ["organized alphabetically find", "generating enough opportunities", "update last updated", "hyphenated words sort", "frontmatter run tests", "link related terms"]
 ---
 > **"A glossary is only as good as its consistency. Every term should have a definition, a 'why it matters,' and a 'how to measure it.'"**
@@ -215,14 +215,14 @@ To link related terms in the glossary:
 
 For cross-references to other templates, use relative links:
 ```markdown
-- [Partner Business Case Template](../strategy/01-partner-business-case/)
+- [Partner Business Case Template](../strategy/01-partner-business-case.md)
 ```
 
 ---
 
 ## Related Resources
 
-- [Partner Program Glossary](../resources/glossary/)
-- [Starlight Formatting Guide](./starlight-formatting/)
-- [Template Quality Audit](./template-quality-audit/)
-- [Find and Fix Broken Links](./find-broken-links/)
+- [Partner Program Glossary](../resources/glossary.md)
+- [Starlight Formatting Guide](./starlight-formatting.md)
+- [Template Quality Audit](./template-quality-audit.md)
+- [Find and Fix Broken Links](./find-broken-links.md)

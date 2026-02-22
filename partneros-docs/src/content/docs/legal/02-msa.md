@@ -6,16 +6,16 @@ template_number: L.2
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: advanced
 purpose: strategic
 phase: recruitment
 time_required: 4-8 hours
 difficulty: hard
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["master service agreement", "conditions term duration", "legal", "customize"]
 ---
 > **The MSA protects both sides. Don't rush it—get legal involved early.** — Dan O'Leary
@@ -53,6 +53,6 @@ Work with legal to customize for your situation.
 
 ## Related Templates
 
-- [NDA](../legal/01-nda/) — Pre-MSA
-- [DPA](../legal/03-dpa/) — Data protection
-- [SLA](../legal/04-sla/) — Service levels
+- [NDA](../legal/01-nda.md) — Pre-MSA
+- [DPA](../legal/03-dpa.md) — Data protection
+- [SLA](../legal/04-sla.md) — Service levels

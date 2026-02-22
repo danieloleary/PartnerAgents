@@ -6,16 +6,16 @@ template_number: I.3
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["c framework originated", "objective comparable scores", "defensible decisions whether", "designated practice lead", "warning sign profitability", "profitable burning cash"]
 ---
 > **The partner evaluation score is only as good as the questions you ask. Skip the hard questions now, and you'll be explaining the partnership failure later.** — Dan O'Leary
@@ -477,6 +477,6 @@ A partner who scores 4.0 today may score 2.0 in 6 months. People leave, prioriti
 
 ## Related Templates
 
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Define what you're looking for before evaluating
-- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Build strategy from evaluation results
-- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Define what you're looking for before evaluating
+- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Build strategy from evaluation results
+- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here

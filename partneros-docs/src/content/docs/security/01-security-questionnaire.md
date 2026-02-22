@@ -6,16 +6,16 @@ template_number: S.1
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["potential risk assess", "template purpose", "use"]
 ---
 > **Security isn't optional. Every partner is a potential risk—assess them properly.** — Dan O'Leary
@@ -56,6 +56,6 @@ This questionnaire assesses partner security practices.
 
 ## Related Templates
 
-- [SOC 2 Compliance](../security/02-soc2-compliance/) — Compliance guide
-- [DPA](../legal/03-dpa/) — Data protection
-- [Security Guide](../resources/glossary/) — Definitions
+- [SOC 2 Compliance](../security/02-soc2-compliance.md) — Compliance guide
+- [DPA](../legal/03-dpa.md) — Data protection
+- [Security Guide](../resources/glossary.md) — Definitions
