@@ -33,11 +33,11 @@ def add_partner(
     """Add a new partner."""
     partners = load_partners()
 
-    # Sanitize inputs
-    name = html.escape(name.strip())[:100]
-    email = html.escape(email.strip())[:100]
-    contact = html.escape(contact.strip())[:100]
-    tier = html.escape(tier.strip())[:50]
+    # Ensure inputs are strings and sanitize
+    name = html.escape(str(name).strip())[:100]
+    email = html.escape(str(email).strip())[:100]
+    contact = html.escape(str(contact).strip())[:100]
+    tier = html.escape(str(tier).strip())[:50]
 
     # Check if exists
     for p in partners:
@@ -93,8 +93,12 @@ def register_deal(partner_name: str, deal_value: int, account: str) -> Dict:
     partners = load_partners()
     for p in partners:
         if p["name"].lower() == partner_name.lower():
-            # Sanitize inputs
-            account = html.escape(account.strip())[:100]
+            # Ensure inputs are strings and sanitize
+            account = html.escape(str(account).strip())[:100]
+            try:
+                deal_value = int(deal_value)
+            except (ValueError, TypeError):
+                deal_value = 0
 
             deal = {
                 "id": f"deal-{len(p.get('deals', [])) + 1}",

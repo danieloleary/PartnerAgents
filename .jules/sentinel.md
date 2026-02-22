@@ -13,3 +13,8 @@ keywords: ["partner management vulnerability", "application was vulnerable", "mo
 **Vulnerability:** `CORSMiddleware` was configured with `allow_origins=["*"]` and `allow_credentials=True`.
 **Learning:** This is an insecure combination that is rejected by modern browsers and can lead to CSRF-like attacks if sensitive data is involved.
 **Prevention:** When using wildcard origins (`*`), always set `allow_credentials=False`. If credentials are required, specific origins must be listed.
+
+## 2026-02-21 - Insufficient Chat Input Sanitization & DoS Risk
+**Vulnerability:** The `web.py` chat interface used a weak blacklist approach (`.replace("<script", "")`) that was easily bypassed and not even applied to the final LLM payload. Additionally, the in-memory rate limiter was vulnerable to memory exhaustion as it never purged unique IP entries.
+**Learning:** Sanitization must be an "active" part of the data flow, not a side-effect that is ignored. Blacklisting specific tags is insufficient against modern XSS vectors. In-memory stores for request tracking must have bounds or expiration logic to prevent DoS.
+**Prevention:** Use regex-based tag stripping or established sanitization libraries on both input (LLM protection) and output (XSS protection). Implement pruning logic for in-memory state objects to prevent unbounded growth.
