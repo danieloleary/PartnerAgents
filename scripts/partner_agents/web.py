@@ -11,11 +11,12 @@ import sys
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+import httpx
 
 # Add scripts to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import uvicorn
-import httpx
 
 from partner_agents.drivers import (
     DanAgent,
@@ -31,6 +32,7 @@ from partner_agents import partner_state
 
 # In-memory rate limiting
 import time
+from collections import deque
 
 rate_limit_store = {}
 response_cache = {}
@@ -41,13 +43,15 @@ CACHE_TTL_SECONDS = 300
 
 
 def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) -> bool:
-    """Simple rate limiter - max 20 requests per minute per IP."""
+    """Simple rate limiter using deque for efficient pruning."""
     now = time.time()
     if ip not in rate_limit_store:
-        rate_limit_store[ip] = []
+        rate_limit_store[ip] = deque()
 
-    # Remove old requests
-    rate_limit_store[ip] = [t for t in rate_limit_store[ip] if now - t < window_seconds]
+    # Efficiently remove old requests from the left
+    window_start = now - window_seconds
+    while rate_limit_store[ip] and rate_limit_store[ip][0] < window_start:
+        rate_limit_store[ip].popleft()
 
     if len(rate_limit_store[ip]) >= max_requests:
         return False
@@ -56,7 +60,17 @@ def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) 
     return True
 
 
-app = FastAPI(title="PartnerOS")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage application lifespan and shared resources."""
+    # Initialize shared client
+    app.state.http_client = httpx.AsyncClient()
+    yield
+    # Clean up
+    await app.state.http_client.aclose()
+
+
+app = FastAPI(title="PartnerOS", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -645,7 +659,11 @@ async def chat(request: Request):
 
     # Try LLM first, fallback on error
     try:
-        response = await call_llm(user_message, api_key, model, use_cache)
+        # Get shared client from app state with defensive checks for shim compatibility
+        app_state = getattr(request.app, "state", None)
+        http_client = getattr(app_state, "http_client", None) if app_state else None
+
+        response = await call_llm(user_message, api_key, model, use_cache, client=http_client)
         if response.get("response"):
             return JSONResponse(response)
         raise Exception("Empty response")
@@ -700,9 +718,9 @@ async def call_llm(
     api_key: str,
     model: str = "openai/gpt-4o-mini",
     use_cache: bool = True,
+    client: httpx.AsyncClient = None,
 ) -> dict:
     """Call OpenRouter LLM with partner context."""
-    import httpx
     import hashlib
 
     # Simple cache - hash the message AND model
@@ -728,9 +746,10 @@ You have 7 specialized agents:
 When user asks something, respond as the most appropriate agent(s).
 Be helpful, concise, and actionable."""
 
-    async with httpx.AsyncClient() as client:
+    # Internal function to do the actual call
+    async def _do_call(c: httpx.AsyncClient):
         try:
-            response = await client.post(
+            response = await c.post(
                 "https://openrouter.ai/api/v1/chat/completions",
                 headers={
                     "Authorization": f"Bearer {api_key}",
@@ -788,6 +807,13 @@ Be helpful, concise, and actionable."""
 
         except Exception as e:
             return get_fallback_response(message)
+
+    if client:
+        return await _do_call(client)
+    else:
+        # Fallback if no shared client provided
+        async with httpx.AsyncClient() as new_client:
+            return await _do_call(new_client)
 
 
 def get_fallback_response(message: str) -> dict:
