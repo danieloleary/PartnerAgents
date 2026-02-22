@@ -12,17 +12,34 @@ class _Route:
 
 
 class Request:
-    def __init__(self, payload: Optional[dict] = None):
+    def __init__(self, payload: Optional[dict] = None, app: Any = None):
         self._payload = payload or {}
+        self.app = app
 
     async def json(self) -> dict:
         return self._payload
 
 
+class _State:
+    def __init__(self):
+        self._data = {}
+
+    def __getattr__(self, name):
+        return self._data.get(name)
+
+    def __setattr__(self, name, value):
+        if name == "_data":
+            super().__setattr__(name, value)
+        else:
+            self._data[name] = value
+
+
 class FastAPI:
-    def __init__(self, title: str = "FastAPI"):
+    def __init__(self, title: str = "FastAPI", lifespan: Any = None):
         self.title = title
+        self.lifespan = lifespan
         self.routes: list[_Route] = []
+        self.state = _State()
 
     def add_middleware(self, *args, **kwargs) -> None:
         return None

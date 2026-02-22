@@ -16,6 +16,8 @@ from fastapi.middleware.cors import CORSMiddleware
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import uvicorn
 import httpx
+import hashlib
+from contextlib import asynccontextmanager
 
 from partner_agents.drivers import (
     DanAgent,
@@ -52,7 +54,16 @@ def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) 
     return True
 
 
-app = FastAPI(title="PartnerOS")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage application lifespan and shared resources."""
+    # Initialize shared httpx client for connection pooling
+    async with httpx.AsyncClient() as client:
+        app.state.client = client
+        yield
+
+
+app = FastAPI(title="PartnerOS", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -80,7 +91,7 @@ for name, agent in agents.items():
 
 @app.get("/", response_class=HTMLResponse)
 async def home():
-    return """<!DOCTYPE html>
+    return r"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -502,7 +513,15 @@ async def chat(request: Request):
 
     # Try LLM first, fallback on error
     try:
-        response = await call_llm(user_message, api_key)
+        # Use shared client from app state if available, otherwise fallback to temporary client
+        client = getattr(request.app.state, "client", None) if hasattr(request, "app") else None
+
+        if client:
+            response = await call_llm(user_message, api_key, client)
+        else:
+            async with httpx.AsyncClient() as temp_client:
+                response = await call_llm(user_message, api_key, temp_client)
+
         if response.get("response"):
             return JSONResponse(response)
         raise Exception("Empty response")
@@ -515,7 +534,8 @@ async def chat(request: Request):
 async def get_partners():
     """Get all partners."""
     partners = partner_state.list_partners()
-    stats = partner_state.get_partner_stats()
+    # Reuse the already loaded partners list to avoid redundant file I/O
+    stats = partner_state.get_partner_stats(partners)
     return JSONResponse({"partners": partners, "stats": stats})
 
 
@@ -552,11 +572,8 @@ async def delete_partner(name: str):
 app.add_api_route("/api/partners/{name}", delete_partner, methods=["DELETE"])
 
 
-async def call_llm(message: str, api_key: str) -> dict:
+async def call_llm(message: str, api_key: str, client: httpx.AsyncClient) -> dict:
     """Call OpenRouter LLM with partner context."""
-    import httpx
-    import hashlib
-
     # Simple cache - hash the message
     cache_key = hashlib.sha256(message.encode()).hexdigest()[:16]
     cache_time = response_cache.get(cache_key)
@@ -577,62 +594,61 @@ You have 7 specialized agents:
 When user asks something, respond as the most appropriate agent(s).
 Be helpful, concise, and actionable."""
 
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.post(
-                "https://openrouter.ai/api/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "model": "minimax/minimax-m2.5",
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": message},
-                    ],
-                },
-                timeout=30.0,
-            )
+    try:
+        response = await client.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "minimax/minimax-m2.5",
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": message},
+                ],
+            },
+            timeout=30.0,
+        )
 
-            if response.status_code == 401:
-                # API key invalid - use fallback responses
-                return get_fallback_response(message)
-
-            # Check for invalid API key errors (2049)
-            try:
-                result = response.json()
-                if (
-                    "base_resp" in result
-                    and result.get("base_resp", {}).get("status_code") == 2049
-                ):
-                    return get_fallback_response(message)
-            except:
-                pass
-
-            if response.status_code != 200:
-                return {
-                    "response": f"API Error ({response.status_code}): {response.text[:200]}",
-                    "agent": "system",
-                }
-
-            result = response.json()
-
-            choices = result.get("choices")
-            if not choices:
-                return {
-                    "response": f"API returned no choices: {result}",
-                    "agent": "system",
-                }
-
-            reply = choices[0].get("message", {}).get("content", "No response")
-
-            result = {"response": reply, "agent": "Partner Manager"}
-            response_cache[cache_key] = {"result": result, "ts": time.time()}
-            return result
-
-        except Exception as e:
+        if response.status_code == 401:
+            # API key invalid - use fallback responses
             return get_fallback_response(message)
+
+        # Check for invalid API key errors (2049)
+        try:
+            result = response.json()
+            if (
+                "base_resp" in result
+                and result.get("base_resp", {}).get("status_code") == 2049
+            ):
+                return get_fallback_response(message)
+        except:
+            pass
+
+        if response.status_code != 200:
+            return {
+                "response": f"API Error ({response.status_code}): {response.text[:200]}",
+                "agent": "system",
+            }
+
+        result = response.json()
+
+        choices = result.get("choices")
+        if not choices:
+            return {
+                "response": f"API returned no choices: {result}",
+                "agent": "system",
+            }
+
+        reply = choices[0].get("message", {}).get("content", "No response")
+
+        result = {"response": reply, "agent": "Partner Manager"}
+        response_cache[cache_key] = {"result": result, "ts": time.time()}
+        return result
+
+    except Exception as e:
+        return get_fallback_response(message)
 
 
 def get_fallback_response(message: str) -> dict:

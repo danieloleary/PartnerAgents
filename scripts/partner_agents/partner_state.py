@@ -110,9 +110,10 @@ def register_deal(partner_name: str, deal_value: int, account: str) -> Dict:
     return None
 
 
-def get_partner_stats() -> Dict:
+def get_partner_stats(partners: List[Dict] = None) -> Dict:
     """Get overall partner stats."""
-    partners = load_partners()
+    if partners is None:
+        partners = load_partners()
     tiers = {"Gold": 0, "Silver": 0, "Bronze": 0}
     total_deals = 0
     total_value = 0
