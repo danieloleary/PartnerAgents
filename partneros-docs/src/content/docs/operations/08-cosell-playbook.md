@@ -218,7 +218,7 @@ The third mistake? Not tracking partner attribution. You can't improve what you 
 
 ## Related Templates
 
-- [Deal Registration Policy](../operations/01-deal-registration.md) — Opportunity protection
-- [Partner Territory Plan](../operations/05-territory-plan.md) — Coverage rules
-- [Partner Business Review](../operations/06-annual-review.md) — Strategic alignment
-- [Commission Structure](../finance/01-commission.md) — Compensation
+- [Deal Registration Policy](../operations/01-deal-registration/) — Opportunity protection
+- [Partner Territory Plan](../operations/05-territory-plan/) — Coverage rules
+- [Partner Business Review](../operations/06-annual-review/) — Strategic alignment
+- [Commission Structure](../finance/01-commission/) — Compensation

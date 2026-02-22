@@ -258,7 +258,7 @@ Complete for comprehensive kickoff (1-2 hours):
 
 ## Related Templates
 
-- [Partner Onboarding Checklist](../recruitment/09-onboarding.md) — Complete onboarding workflow
-- [Training Deck](../enablement/02-training-deck.md) — Training materials
-- [Certification Program](../enablement/03-certification.md) — Certification path
-- [Deal Registration Policy](../operations/01-deal-registration.md) — Opportunity protection
+- [Partner Onboarding Checklist](../recruitment/09-onboarding/) — Complete onboarding workflow
+- [Training Deck](../enablement/02-training-deck/) — Training materials
+- [Certification Program](../enablement/03-certification/) — Certification path
+- [Deal Registration Policy](../operations/01-deal-registration/) — Opportunity protection

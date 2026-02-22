@@ -77,6 +77,6 @@ This guide helps capture compelling partner success stories.
 
 ## Related Templates
 
-- [Co-Marketing Playbook](../enablement/04-co-marketing.md) — Promote case studies
-- [Success Metrics](../enablement/06-success-metrics.md) — Quantify results
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Co-Marketing Playbook](../enablement/04-co-marketing/) — Promote case studies
+- [Success Metrics](../enablement/06-success-metrics/) — Quantify results
+- [Partner Program Glossary](../resources/glossary/) — Definitions

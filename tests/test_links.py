@@ -131,6 +131,9 @@ class TestLinkFormatting:
                         continue
 
                     if ".md" in link and not link.startswith("http"):
+                        # Allow .mdx files (valid in Starlight)
+                        if link.endswith(".mdx"):
+                            continue
                         failures.append(
                             f"{f.relative_to(docs_dir)}: link contains .md: {link}"
                         )

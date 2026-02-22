@@ -83,6 +83,6 @@ This playbook guides successful joint marketing campaigns with partners.
 
 ## Related Templates
 
-- [Success Metrics](../enablement/06-success-metrics.md) — Track results
-- [QBR Template](../enablement/07-qbr-template.md) — Review with partners
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Success Metrics](../enablement/06-success-metrics/) — Track results
+- [QBR Template](../enablement/07-qbr-template/) — Review with partners
+- [Partner Program Glossary](../resources/glossary/) — Definitions

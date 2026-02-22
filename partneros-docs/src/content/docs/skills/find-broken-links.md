@@ -74,14 +74,14 @@ python3 scripts/fix_all_links.py
 | Type | Format | Example |
 |------|--------|---------|
 | Same folder | `template-name/` | `[Email Sequence](01-email-sequence/)` |
-| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics.md)` |
+| Cross folder | `../folder/template/` | `[Success Metrics](../enablement/06-success-metrics/)` |
 | Index page | folder name only | `[Recruitment](recruitment/)` |
 
 ### Common Mistakes to Fix
 
 | Wrong | Correct |
 |-------|---------|
-| `(01-template.md)` | `(01-template/)` |
+| `(01-template/)` | `(01-template/)` |
 | `(../folder/01-template.md/)` | `(../folder/01-template/)` |
 | `((link))` | `(link)` |
 

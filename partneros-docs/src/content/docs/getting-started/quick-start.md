@@ -14,7 +14,7 @@ prerequisites:
 description: Get up and running with PartnerOS in 10 minutes - no install required
 outcomes: 
 skills_gained: 
-keywords: ["code block paste", "specific partner qualify", "template categories what", "template minutes find", "step instructions what", "repo bash clone"]
+keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
 ---
 # PartnerOS Quick Start
 
@@ -51,9 +51,9 @@ Find the template that fits your need. Each template includes:
 
 For new partner programs:
 
-1. [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Who do you want as partners?
-2. [Partner Business Case](../strategy/01-partner-business-case.md) — Justify the investment
-3. [Program Architecture](../strategy/06-program-architecture.md) — Design your tiers and benefits
+1. [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Who do you want as partners?
+2. [Partner Business Case](../strategy/01-partner-business-case/) — Justify the investment
+3. [Program Architecture](../strategy/06-program-architecture/) — Design your tiers and benefits
 
 ---
 
@@ -143,20 +143,20 @@ python agent.py --playbook recruit --partner "Acme Corp"
 
 ### For New Partner Programs
 
-1. [Define your Ideal Partner](../strategy/02-ideal-partner-profile.md) — Who do you want?
-2. [Build the Business Case](../strategy/01-partner-business-case.md) — Why is this worth it?
-3. [Design Your Program](../strategy/06-program-architecture.md) — Tiers and benefits
+1. [Define your Ideal Partner](../strategy/02-ideal-partner-profile/) — Who do you want?
+2. [Build the Business Case](../strategy/01-partner-business-case/) — Why is this worth it?
+3. [Design Your Program](../strategy/06-program-architecture/) — Tiers and benefits
 
 ### For Signing a Specific Partner
 
-1. [Qualify them](../recruitment/03-qualification-framework.md) — Are they a good fit?
-2. [Discovery Call](../recruitment/04-discovery-call.md) — Learn about them
-3. [Send Proposal](../recruitment/07-proposal.md) — Make it official
+1. [Qualify them](../recruitment/03-qualification-framework/) — Are they a good fit?
+2. [Discovery Call](../recruitment/04-discovery-call/) — Learn about them
+3. [Send Proposal](../recruitment/07-proposal/) — Make it official
 
 ### For Ongoing Management
 
-- [QBR Template](../enablement/07-qbr-template.md) — Quarterly reviews
-- [Success Metrics](../enablement/06-success-metrics.md) — Track performance
+- [QBR Template](../enablement/07-qbr-template/) — Quarterly reviews
+- [Success Metrics](../enablement/06-success-metrics/) — Track performance
 
 ---
 

@@ -58,9 +58,9 @@ Use Partner Manager when you need:
 
 ## Related Agents
 
-- [The Owner](./01-owner.md) - Executive approvals
-- [Partner Operations](./04-partner-operations.md) - Deal and commission processing
-- [Partner Marketing](./03-partner-marketing.md) - Joint campaigns
+- [The Owner](./01-owner/) - Executive approvals
+- [Partner Operations](./04-partner-operations/) - Deal and commission processing
+- [Partner Marketing](./03-partner-marketing/) - Joint campaigns
 
 ---
 

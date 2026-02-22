@@ -349,8 +349,8 @@ In every strategy document, list who owns what. When the VP of Sales sees their 
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case.md) — Business justification for partner investment
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Define target partners
-- [Program Architecture](../strategy/06-program-architecture.md) — Tier structure and benefits
-- [Internal Alignment Playbook](../strategy/07-internal-alignment.md) — Get stakeholder buy-in
-- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here
+- [Partner Business Case](../strategy/01-partner-business-case/) — Business justification for partner investment
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Define target partners
+- [Program Architecture](../strategy/06-program-architecture/) — Tier structure and benefits
+- [Internal Alignment Playbook](../strategy/07-internal-alignment/) — Get stakeholder buy-in
+- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here

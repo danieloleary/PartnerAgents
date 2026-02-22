@@ -75,6 +75,6 @@ This framework defines key metrics for partner success.
 
 ## Related Templates
 
-- [QBR Template](../enablement/07-qbr-template.md) — Review metrics with partners
-- [Health Scorecard](../analysis/01-health-scorecard.md) — Detailed assessment
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [QBR Template](../enablement/07-qbr-template/) — Review metrics with partners
+- [Health Scorecard](../analysis/01-health-scorecard/) — Detailed assessment
+- [Partner Program Glossary](../resources/glossary/) — Definitions

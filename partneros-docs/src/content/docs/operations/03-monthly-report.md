@@ -56,6 +56,6 @@ This report tracks monthly partner program performance.
 
 ## Related Templates
 
-- [Weekly Standup](../operations/02-weekly-standup.md) — Weekly review
-- [Success Metrics](../enablement/06-success-metrics.md) — Metrics framework
-- [QBR Template](../enablement/07-qbr-template.md) — Quarterly review
+- [Weekly Standup](../operations/02-weekly-standup/) — Weekly review
+- [Success Metrics](../enablement/06-success-metrics/) — Metrics framework
+- [QBR Template](../enablement/07-qbr-template/) — Quarterly review

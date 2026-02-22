@@ -177,6 +177,6 @@ The third mistake? Ignoring churn clawbacks. They seem harsh but prevent gaming 
 
 ## Related Templates
 
-- [Commission Structure](../finance/01-commission.md) — Overview
-- [Rebate Program](../finance/02-rebate.md) — Volume incentives
-- [Revenue Sharing](../finance/03-revenue-share.md) — Alternative model
+- [Commission Structure](../finance/01-commission/) — Overview
+- [Rebate Program](../finance/02-rebate/) — Volume incentives
+- [Revenue Sharing](../finance/03-revenue-share/) — Alternative model

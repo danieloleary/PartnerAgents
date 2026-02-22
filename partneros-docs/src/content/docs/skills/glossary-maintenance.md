@@ -215,14 +215,14 @@ To link related terms in the glossary:
 
 For cross-references to other templates, use relative links:
 ```markdown
-- [Partner Business Case Template](../strategy/01-partner-business-case.md)
+- [Partner Business Case Template](../strategy/01-partner-business-case/)
 ```
 
 ---
 
 ## Related Resources
 
-- [Partner Program Glossary](../resources/glossary.md)
-- [Starlight Formatting Guide](./starlight-formatting.md)
-- [Template Quality Audit](./template-quality-audit.md)
-- [Find and Fix Broken Links](./find-broken-links.md)
+- [Partner Program Glossary](../resources/glossary/)
+- [Starlight Formatting Guide](./starlight-formatting/)
+- [Template Quality Audit](./template-quality-audit/)
+- [Find and Fix Broken Links](./find-broken-links/)

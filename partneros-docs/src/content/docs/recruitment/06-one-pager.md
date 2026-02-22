@@ -121,7 +121,7 @@ We're looking for strategic partners to help us reach more customers and build d
 
 ## Related Templates
 
-- [Pitch Deck](../recruitment/05-pitch-deck.md) — Full presentation version
-- [Proposal Template](../recruitment/07-proposal.md) — Detailed follow-up
-- [Discovery Call Script](../recruitment/04-discovery-call.md) — What leads here
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Pitch Deck](../recruitment/05-pitch-deck/) — Full presentation version
+- [Proposal Template](../recruitment/07-proposal/) — Detailed follow-up
+- [Discovery Call Script](../recruitment/04-discovery-call/) — What leads here
+- [Partner Program Glossary](../resources/glossary/) — Definitions

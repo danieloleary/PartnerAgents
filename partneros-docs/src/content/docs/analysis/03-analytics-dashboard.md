@@ -172,7 +172,7 @@ The third mistake? Ignoring partner-facing dashboards. Partners want to see thei
 
 ## Related Templates
 
-- [Partner Health Scorecard](../analysis/01-health-scorecard.md) — Health assessment
-- [Partner Success Metrics](../enablement/06-success-metrics.md) — KPI definitions
-- [Monthly Partner Report](../operations/03-monthly-report.md) — Reporting templates
-- [ROI Calculator](../analysis/02-roi-calculator.md) — Financial analytics
+- [Partner Health Scorecard](../analysis/01-health-scorecard/) — Health assessment
+- [Partner Success Metrics](../enablement/06-success-metrics/) — KPI definitions
+- [Monthly Partner Report](../operations/03-monthly-report/) — Reporting templates
+- [ROI Calculator](../analysis/02-roi-calculator/) — Financial analytics

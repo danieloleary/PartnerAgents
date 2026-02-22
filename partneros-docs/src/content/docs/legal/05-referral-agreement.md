@@ -110,6 +110,6 @@ Use for referral-only partners who won't be reselling directly.
 
 ## Related Templates
 
-- [Mutual NDA](../legal/01-nda.md) — Confidentiality
-- [MSA](../legal/02-msa.md) — Full partnership agreement
-- [Commission Structure](../finance/01-commission.md) — Compensation details
+- [Mutual NDA](../legal/01-nda/) — Confidentiality
+- [MSA](../legal/02-msa/) — Full partnership agreement
+- [Commission Structure](../finance/01-commission/) — Compensation details

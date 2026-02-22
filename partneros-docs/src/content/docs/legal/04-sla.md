@@ -59,6 +59,6 @@ This agreement defines support levels and response times.
 
 ## Related Templates
 
-- [MSA](../legal/02-msa.md) — Overall agreement
-- [DPA](../legal/03-dpa.md) — Data protection
-- [Success Metrics](../enablement/06-success-metrics.md) — Track SLA compliance
+- [MSA](../legal/02-msa/) — Overall agreement
+- [DPA](../legal/03-dpa/) — Data protection
+- [Success Metrics](../enablement/06-success-metrics/) — Track SLA compliance

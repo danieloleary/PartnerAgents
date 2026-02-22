@@ -344,8 +344,8 @@ I've sent 6, 7, 8 emails. The people who respond typically respond by email 4. A
 
 ## Related Templates
 
-- [Outreach/Engagement Sequence](../recruitment/02-outreach-engagement.md) — Multi-touch engagement beyond email
-- [Discovery Call Script](../recruitment/04-discovery-call.md) — What to do after they reply
-- [Pitch Deck](../recruitment/05-pitch-deck.md) — Visual presentation for meetings
-- [Partnership One-Pager](../recruitment/06-one-pager.md) — Leave-behind document
-- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here
+- [Outreach/Engagement Sequence](../recruitment/02-outreach-engagement/) — Multi-touch engagement beyond email
+- [Discovery Call Script](../recruitment/04-discovery-call/) — What to do after they reply
+- [Pitch Deck](../recruitment/05-pitch-deck/) — Visual presentation for meetings
+- [Partnership One-Pager](../recruitment/06-one-pager/) — Leave-behind document
+- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here

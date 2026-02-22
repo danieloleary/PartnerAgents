@@ -347,7 +347,7 @@ Have clear demotion criteria before you launch. It's easier to prevent tier cree
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Strategy that drives architecture
-- [Internal Alignment Playbook](../strategy/07-internal-alignment.md) — Get buy-in on program design
+- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Strategy that drives architecture
+- [Internal Alignment Playbook](../strategy/07-internal-alignment/) — Get buy-in on program design
 - [Commission Structure](../finance/01-commission-structure/) — Financial incentives by tier
-- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here
+- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here

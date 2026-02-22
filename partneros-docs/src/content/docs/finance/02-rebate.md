@@ -57,6 +57,6 @@ This program rewards partners who exceed targets.
 
 ## Related Templates
 
-- [Commission Structure](../finance/01-commission.md) — Base commissions
-- [Revenue Share](../finance/03-revenue-share.md) — Joint revenue
-- [Success Metrics](../enablement/06-success-metrics.md) — Track performance
+- [Commission Structure](../finance/01-commission/) — Base commissions
+- [Revenue Share](../finance/03-revenue-share/) — Joint revenue
+- [Success Metrics](../enablement/06-success-metrics/) — Track performance

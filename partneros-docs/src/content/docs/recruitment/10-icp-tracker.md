@@ -97,6 +97,6 @@ Understanding account overlap prevents channel conflict and enables smarter co-s
 
 ## Related Templates
 
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — What to look for
-- [Qualification Framework](../recruitment/03-qualification-framework.md) — How to qualify
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — What to look for
+- [Qualification Framework](../recruitment/03-qualification-framework/) — How to qualify
+- [Partner Program Glossary](../resources/glossary/) — Definitions

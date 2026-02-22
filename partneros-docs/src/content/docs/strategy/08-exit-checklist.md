@@ -451,8 +451,8 @@ You never know when paths will cross again. The partner landscape is small. A gr
 
 ## Related Templates
 
-- [Partner Strategy Plan](../strategy/05-strategy-plan.md) — Strategic context for exits
-- [Program Architecture](../strategy/06-program-architecture.md) — Tier and agreement structure
-- [Partner Success Metrics](../enablement/06-success-metrics.md) — Performance tracking leading to exit decisions
-- [QBR Template](../enablement/07-qbr-template.md) — Regular reviews that can identify exit triggers
-- [Partner Program Glossary](../resources/glossary.md) — Definitions of all terms used here
+- [Partner Strategy Plan](../strategy/05-strategy-plan/) — Strategic context for exits
+- [Program Architecture](../strategy/06-program-architecture/) — Tier and agreement structure
+- [Partner Success Metrics](../enablement/06-success-metrics/) — Performance tracking leading to exit decisions
+- [QBR Template](../enablement/07-qbr-template/) — Regular reviews that can identify exit triggers
+- [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here

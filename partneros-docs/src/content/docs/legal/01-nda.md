@@ -51,6 +51,6 @@ Have your legal team review before use. This is a template, not legal advice.
 
 ## Related Templates
 
-- [MSA](../legal/02-msa.md) — Full agreement
-- [DPA](../legal/03-dpa.md) — Data protection
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [MSA](../legal/02-msa/) — Full agreement
+- [DPA](../legal/03-dpa/) — Data protection
+- [Partner Program Glossary](../resources/glossary/) — Definitions

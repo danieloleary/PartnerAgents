@@ -212,7 +212,7 @@ For board presentations, include:
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case.md) — Build the full business justification
-- [Commission Structure](../finance/01-commission.md) — Detailed commission calculations
-- [Partner Program Charter](../strategy/09-partner-charter.md) — Program governance and goals
-- [Partner Health Scorecard](../analysis/01-health-scorecard.md) — Ongoing performance tracking
+- [Partner Business Case](../strategy/01-partner-business-case/) — Build the full business justification
+- [Commission Structure](../finance/01-commission/) — Detailed commission calculations
+- [Partner Program Charter](../strategy/09-partner-charter/) — Program governance and goals
+- [Partner Health Scorecard](../analysis/01-health-scorecard/) — Ongoing performance tracking

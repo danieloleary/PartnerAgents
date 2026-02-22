@@ -78,6 +78,6 @@ This deck provides comprehensive training for partner sales and technical teams.
 
 ## Related Templates
 
-- [Enablement Roadmap](../enablement/01-roadmap.md) — Training timeline
-- [Certification Program](../enablement/03-certification.md) — Certification path
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Enablement Roadmap](../enablement/01-roadmap/) — Training timeline
+- [Certification Program](../enablement/03-certification/) — Certification path
+- [Partner Program Glossary](../resources/glossary/) — Definitions

@@ -144,7 +144,7 @@ A clear roadmap aligns expectations between you and the partner. It creates acco
 
 ## Related Templates
 
-- [Training Deck](../enablement/02-training-deck.md) — Training materials
-- [Certification Program](../enablement/03-certification.md) — Certification path
-- [Success Metrics](../enablement/06-success-metrics.md) — What to track
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Training Deck](../enablement/02-training-deck/) — Training materials
+- [Certification Program](../enablement/03-certification/) — Certification path
+- [Success Metrics](../enablement/06-success-metrics/) — What to track
+- [Partner Program Glossary](../resources/glossary/) — Definitions

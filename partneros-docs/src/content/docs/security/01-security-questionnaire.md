@@ -56,6 +56,6 @@ This questionnaire assesses partner security practices.
 
 ## Related Templates
 
-- [SOC 2 Compliance](../security/02-soc2-compliance.md) — Compliance guide
-- [DPA](../legal/03-dpa.md) — Data protection
-- [Security Guide](../resources/glossary.md) — Definitions
+- [SOC 2 Compliance](../security/02-soc2-compliance/) — Compliance guide
+- [DPA](../legal/03-dpa/) — Data protection
+- [Security Guide](../resources/glossary/) — Definitions

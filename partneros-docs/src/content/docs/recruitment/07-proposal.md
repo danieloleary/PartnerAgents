@@ -278,8 +278,8 @@ Don't wait for them to respond. Follow up on day 3: "Just wanted to make sure yo
 
 ## Related Templates
 
-- [Discovery Call Script](../recruitment/04-discovery-call.md) — What leads to this
-- [Pitch Deck](../recruitment/05-pitch-deck.md) — Presentation version
-- [One-Pager](../recruitment/06-one-pager.md) — Concise version
-- [Agreement Template](../recruitment/08-agreement.md) — Legal follow-up
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Discovery Call Script](../recruitment/04-discovery-call/) — What leads to this
+- [Pitch Deck](../recruitment/05-pitch-deck/) — Presentation version
+- [One-Pager](../recruitment/06-one-pager/) — Concise version
+- [Agreement Template](../recruitment/08-agreement/) — Legal follow-up
+- [Partner Program Glossary](../resources/glossary/) — Definitions

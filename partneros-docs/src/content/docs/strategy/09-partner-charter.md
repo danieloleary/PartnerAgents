@@ -274,7 +274,7 @@ For board presentations, lead with:
 
 ## Related Templates
 
-- [Partner Business Case](../strategy/01-partner-business-case.md) — Financial justification
-- [Ideal Partner Profile](../strategy/02-ideal-partner-profile.md) — Detailed partner criteria
-- [Program Architecture](../strategy/06-program-architecture.md) — Tier structure
-- [Internal Alignment Playbook](../strategy/07-internal-alignment.md) — Stakeholder buy-in
+- [Partner Business Case](../strategy/01-partner-business-case/) — Financial justification
+- [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Detailed partner criteria
+- [Program Architecture](../strategy/06-program-architecture/) — Tier structure
+- [Internal Alignment Playbook](../strategy/07-internal-alignment/) — Stakeholder buy-in

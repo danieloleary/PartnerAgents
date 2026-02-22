@@ -56,6 +56,6 @@ This guide helps partners use the portal effectively.
 
 ## Related Templates
 
-- [Onboarding Checklist](../recruitment/09-onboarding.md) — Portal setup
-- [Deal Registration](../operations/01-deal-registration.md) — Register deals
-- [Success Metrics](../enablement/06-success-metrics.md) — Track performance
+- [Onboarding Checklist](../recruitment/09-onboarding/) — Portal setup
+- [Deal Registration](../operations/01-deal-registration/) — Register deals
+- [Success Metrics](../enablement/06-success-metrics/) — Track performance

@@ -133,6 +133,6 @@ A clear agreement prevents misunderstandings. It defines what's expected, what h
 
 ## Related Templates
 
-- [Proposal Template](../recruitment/07-proposal.md) — What leads to agreement
-- [Onboarding Checklist](../recruitment/09-onboarding.md) — What happens after signing
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Proposal Template](../recruitment/07-proposal/) — What leads to agreement
+- [Onboarding Checklist](../recruitment/09-onboarding/) — What happens after signing
+- [Partner Program Glossary](../resources/glossary/) — Definitions

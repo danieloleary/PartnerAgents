@@ -24,9 +24,9 @@ This is the master skill. For specific tasks, use these dedicated skills:
 
 | Skill | When to Use |
 |-------|-------------|
-| [Starlight Formatting Guide](./starlight-formatting.md) | Formatting templates for Starlight/Astro |
-| [Glossary Maintenance](./glossary-maintenance.md) | Adding/updating glossary terms |
-| [Find and Fix Broken Links](./find-broken-links.md) | Fixing broken link issues |
+| [Starlight Formatting Guide](./starlight-formatting/) | Formatting templates for Starlight/Astro |
+| [Glossary Maintenance](./glossary-maintenance/) | Adding/updating glossary terms |
+| [Find and Fix Broken Links](./find-broken-links/) | Fixing broken link issues |
 
 ---
 
@@ -104,7 +104,7 @@ Templates are rendered using **Astro Starlight**, which has specific formatting 
    ```
 
 4. **Glossary cross-references**
-   - Use links to the [Partner Program Glossary](../resources/glossary.md)
+   - Use links to the [Partner Program Glossary](../resources/glossary/)
    - Link terms like: `TAM`, `SAM`, `SOM` (plain text, not links)
    - Every metric in tables should have a definition
 

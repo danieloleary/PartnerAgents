@@ -52,5 +52,5 @@ keywords: ["partner strategy how", "day execution"]
 
 ## Related Agents
 
-- [The Owner](./01-owner.md) - Final approvals
-- [Partner Manager](./02-partner-manager.md) - Day-to-day execution
+- [The Owner](./01-owner/) - Final approvals
+- [Partner Manager](./02-partner-manager/) - Day-to-day execution

@@ -64,6 +64,6 @@ This program establishes standards for partner expertise and validates competenc
 
 ## Related Templates
 
-- [Training Deck](../enablement/02-training-deck.md) — Training materials
-- [Enablement Roadmap](../enablement/01-roadmap.md) — Timeline
-- [Partner Program Glossary](../resources/glossary.md) — Definitions
+- [Training Deck](../enablement/02-training-deck/) — Training materials
+- [Enablement Roadmap](../enablement/01-roadmap/) — Timeline
+- [Partner Program Glossary](../resources/glossary/) — Definitions
