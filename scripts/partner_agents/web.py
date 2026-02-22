@@ -114,6 +114,8 @@ async def home():
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        button:focus { outline: none; }
+        button:focus-visible { outline: 2px solid #06b6d4; outline-offset: 2px; }
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
         }
@@ -376,10 +378,11 @@ async def home():
                 
                 if (data.partners.length === 0) {
                     container.innerHTML = `
-                        <div class="text-center py-8 px-4">
-                            <div class="text-4xl mb-3">📦</div>
-                            <div class="text-slate-400 text-sm mb-2">No partners yet</div>
-                            <div class="text-slate-500 text-xs">Add your first partner using the form above</div>
+                        <div class="text-center py-8 px-4 bg-slate-800/30 rounded-lg border border-dashed border-slate-700">
+                            <div class="text-4xl mb-3">🤝</div>
+                            <div class="text-slate-400 text-sm mb-1">No partners joined yet</div>
+                            <div class="text-slate-500 text-xs mb-4">Start your ecosystem by adding your first partner.</div>
+                            <button onclick="showAddPartnerForm()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg text-sm transition font-medium">Add First Partner</button>
                         </div>
                     `;
                     return;
@@ -394,7 +397,7 @@ async def home():
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="px-2 py-1 rounded-full text-xs ${p.tier === 'Gold' ? 'bg-yellow-600' : p.tier === 'Silver' ? 'bg-gray-400' : 'bg-orange-600'}">${p.tier}</span>
-                                <button onclick="deletePartner('${escapeHTML(p.name)}')" class="text-slate-500 hover:text-red-400 transition" title="Delete partner">🗑️</button>
+                                <button onclick="deletePartner('${escapeHTML(p.name)}')" class="text-slate-500 hover:text-red-400 transition" title="Delete partner" aria-label="Delete partner ${escapeHTML(p.name)}">🗑️</button>
                             </div>
                         </div>
                         <div class="text-xs text-slate-500">${p.deals?.length || 0} deals • ${p.status || 'Onboarding'}</div>
@@ -407,6 +410,7 @@ async def home():
         
         function showAddPartnerForm() {
             document.getElementById('addPartnerModal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('partnerName').focus(), 10);
         }
         
         function hideAddPartnerForm() {
