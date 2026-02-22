@@ -364,6 +364,35 @@ python scripts/onboard.py
 
 ---
 
+## Phase 9: Future Enhancements (Proposed) 🚀
+
+*Goal: Advanced features and robust ecosystem integration*
+
+| # | Item | Purpose |
+|---|------|---------|
+| 9.1 | **Unified State Management** | Consolidate CLI and Web state into a single shared database via `partner_state.py`. |
+| 9.2 | **Web UI Markdown Rendering** | Use `marked.js` to properly format agent responses in the browser. |
+| 9.3 | **Real Orchestrator Integration** | Use `Orchestrator` and specialized agent drivers in the Web UI. |
+| 9.4 | **Interactive Web Playbooks** | Port the step-by-step playbook engine to the Web UI. |
+| 9.5 | **Secure API Key Management** | Add a "Settings" modal for local API key storage. |
+| 9.6 | **Partner CRM Dashboard** | Enhanced partner view with health, deals, and activity timeline. |
+| 9.7 | **Logic-Driven Agent Skills** | Upgrade skills to perform actual state updates and record milestones. |
+| 9.8 | **In-Browser Doc Generation** | Integrated template filling and PDF download in the browser. |
+| 9.9 | **Decoupled Frontend** | Refactor Web UI into separate Jinja2 templates and static assets. |
+| 9.10| **Unified Cross-Platform Tests** | Integration tests for data integrity between CLI and Web. |
+| 9.11| **Multi-Partner Filtering** | Add robust search and filtering (Tier/Status/Vertical) to Web UI. |
+| 9.12| **Automated Health Scores** | Dynamic calculation based on activity and deal velocity. |
+| 9.13| **Playbook Task Deadlines** | Add target dates and "overdue" alerts to steps. |
+| 9.14| **Consolidated Activity Feed** | Unified chronological audit trail for every partner. |
+| 9.15| **CRM Export Framework** | Salesforce/HubSpot integration and CSV exports. |
+| 9.16| **Advanced Onboarding Meta** | Collect more program-specific data for finance/legal auto-fills. |
+| 9.17| **Agent Persona Restrictions** | Role-based approval flows for high-stakes actions. |
+| 9.18| **Mobile-First UX** | Responsive mobile optimizations and touch-friendly actions. |
+| 9.19| **Smart Template Linking** | Agents provide direct links to recommended Markdown templates. |
+| 9.20| **Static Partner Portal Gen** | Generate shareable one-pagers or mini-sites for partners. |
+
+---
+
 ## Current Mode: Fallback
 
 The system currently runs in **fallback mode** - responses are generated locally rather than via LLM. This is more reliable. LLM can be enabled later with a valid API key.
