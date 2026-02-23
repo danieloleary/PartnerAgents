@@ -57,7 +57,7 @@ async def chat(request: Request):
     data = await request.json()
     user_message = data.get("message", "")
     api_key = data.get("apiKey", "") or os.environ.get("OPENROUTER_API_KEY", "")
-    model = data.get("model", "openai/gpt-4o-mini")
+    model = data.get("model", "qwen/qwen3.5-plus-02-15")
 
     if not user_message or len(user_message.strip()) == 0:
         return JSONResponse({"response": "Please enter a message.", "agent": "system"})
@@ -80,12 +80,13 @@ async def chat(request: Request):
 
     sanitized = re.sub(r"<[^>]*?>", "", user_message)
 
-    # Route to document generation if detected
+    # Route to document/action generation if detected
     try:
         router_instance = router.Router()
         context = {"partners": partner_state.list_partners()}
         route_result = await router_instance.route(sanitized, context)
 
+        # Check for document OR action requests
         if route_result.is_document_request and route_result.intents:
             intent = route_result.intents[0]
             partner_name = intent.entities.get("partner_name")
@@ -98,6 +99,7 @@ async def chat(request: Request):
                     }
                 )
 
+            # Create partner if doesn't exist
             partner = partner_state.get_partner(partner_name)
             if not partner:
                 partner = partner_state.add_partner(
@@ -105,8 +107,14 @@ async def chat(request: Request):
                     tier=intent.entities.get("tier", "Bronze"),
                 )
 
+            # Handle action types (onboard, campaign, etc.) - create NDA by default
+            doc_type = intent.name
+            if intent.type == "action":
+                # Actions get an NDA document created
+                doc_type = "nda"
+
             doc_result = document_generator.create_document(
-                doc_type=intent.name,
+                doc_type=doc_type,
                 partner_name=partner_name,
                 fields=intent.entities,
             )
@@ -114,7 +122,7 @@ async def chat(request: Request):
             if doc_result:
                 partner_state.add_document(
                     partner_name=partner_name,
-                    doc_type=intent.name,
+                    doc_type=doc_type,
                     template=doc_result["template"],
                     file_path=doc_result["path"],
                     fields=doc_result["fields"],
@@ -123,10 +131,10 @@ async def chat(request: Request):
 
                 return JSONResponse(
                     {
-                        "response": f"Created **{intent.name.upper()}** for **{partner_name}**\n\nSaved to: `{doc_result['relative_path']}`",
+                        "response": f"Created **{doc_type.upper()}** for **{partner_name}** and started **{intent.name}** process!\n\nSaved to: `{doc_result['relative_path']}`",
                         "agent": "engine",
                         "document": {
-                            "type": intent.name,
+                            "type": doc_type,
                             "partner": partner_name,
                             "path": doc_result["relative_path"],
                         },
@@ -800,7 +808,9 @@ HTML = """<!DOCTYPE html>
         <main class="arena">
             <header class="arena-header">
                 <div class="arena-title">New Chat</div>
-                <div class="cmd-hint">Cmd+K for settings</div>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <button onclick="showSettings()" style="background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--text-secondary); cursor: pointer; font-size: 13px;">⚙️ Settings</button>
+                </div>
             </header>
             
             <div class="messages" id="messages">
@@ -874,7 +884,7 @@ HTML = """<!DOCTYPE html>
         }
         
         function getModel() {
-            return localStorage.getItem('partneros_model') || 'openai/gpt-4o-mini';
+            return localStorage.getItem('partneros_model') || 'qwen/qwen3.5-plus-02-15';
         }
         
         // Toggle nav
@@ -947,7 +957,7 @@ HTML = """<!DOCTYPE html>
             if (key !== null) {
                 localStorage.setItem('partneros_api_key', key);
             }
-            const model = prompt('Model (openai/gpt-4o-mini):', getModel());
+            const model = prompt('Model (qwen/qwen3.5-plus-02-15):', getModel());
             if (model !== null) {
                 localStorage.setItem('partneros_model', model);
             }

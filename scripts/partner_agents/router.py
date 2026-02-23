@@ -176,19 +176,24 @@ class Router:
             # Fallback: simple keyword matching
             intents = self._fallback_route(user_message)
 
-        # Check if this is a document request
-        is_document = any(i.type == "document" for i in intents)
+        # Check if this is a document or action request
+        is_document = any(i.type in ("document", "action") for i in intents)
 
         # Build response
         if is_document:
+            # Prefer document intents, fall back to action intents
             doc_intents = [i for i in intents if i.type == "document"]
-            doc = doc_intents[0]
-            template_info = get_template_for_intent(doc.name)
-
-            if template_info:
-                response = f"I'll create a {doc.name.upper()} for {doc.entities.get('partner_name', 'your partner')}."
+            if doc_intents:
+                doc = doc_intents[0]
+                template_info = get_template_for_intent(doc.name)
+                if template_info:
+                    response = f"I'll create a {doc.name.upper()} for {doc.entities.get('partner_name', 'your partner')}."
+                else:
+                    response = f"I understand you want to create a {doc.name}, but I don't have a template for that yet."
             else:
-                response = f"I understand you want to create a {doc.name}, but I don't have a template for that yet."
+                # It's an action (onboard, campaign, etc.)
+                action = intents[0]
+                response = f"I'll help you {action.name} for {action.entities.get('partner_name', 'your partner')}."
         else:
             response = None  # Fall back to chat
 
@@ -210,29 +215,70 @@ class Router:
             "dpa": ["dpa", "data processing", "privacy"],
         }
 
+        # Action keywords - these create partners with documents
+        action_keywords = {
+            "onboard": ["onboard", "onboarding", "on-board"],
+            "recruit": ["recruit", "recruitment", "add partner"],
+            "campaign": ["campaign", "launch campaign", "marketing"],
+            "deal": ["deal", "register deal", "register a deal"],
+        }
+
+        # Helper to extract partner name
+        def extract_partner(text):
+            words = text.split()
+            # First try with prepositions (for, with, to, of)
+            for i, word in enumerate(words):
+                if word.lower() in ["for", "with", "to", "of"]:
+                    if i + 1 < len(words):
+                        partner = " ".join(words[i + 1 :]).strip(".,!?")
+                        partner = " ".join(partner.split()[:2])
+                        if partner and partner[0].isupper():
+                            return partner
+            # Try: action verb is followed directly by partner name
+            # e.g., "onboard TestCo" -> partner is after "onboard"
+            action_words = ["onboard", "onboarding", "recruit", "add", "create"]
+            for i, word in enumerate(words):
+                word_lower = word.lower().rstrip("s")  # handle "onboards" -> "onboard"
+                if word_lower in action_words:
+                    if i + 1 < len(words):
+                        partner = " ".join(words[i + 1 :]).strip(".,!?")
+                        partner = " ".join(partner.split()[:2])
+                        if partner and partner[0].isupper():
+                            return partner
+            return None
+
+        # Check for document requests
         for doc_type, keywords in doc_keywords.items():
             if any(k in msg for k in keywords):
-                # Extract partner name (simple heuristic)
-                partner_name = None
-                words = user_message.split()
-                for i, word in enumerate(words):
-                    if word.lower() in ["for", "with", "to"]:
-                        if i + 1 < len(words):
-                            # Take the next word(s) as partner name
-                            partner_name = " ".join(words[i + 1 : i + 3]).strip(".,!")
-                            break
-
+                partner_name = extract_partner(user_message)
                 intents.append(
                     Intent(
                         type="document",
                         name=doc_type,
                         agents=["engine"],
                         entities={"partner_name": partner_name},
-                        confidence=0.7,
+                        confidence=0.8,
                         missing_fields=["partner_name"] if not partner_name else [],
                     )
                 )
                 break
+
+        # Check for action requests (create partner + generate docs)
+        if not intents:
+            for action, keywords in action_keywords.items():
+                if any(k in msg for k in keywords):
+                    partner_name = extract_partner(user_message)
+                    intents.append(
+                        Intent(
+                            type="action",
+                            name=action,
+                            agents=["architect", "engine"],
+                            entities={"partner_name": partner_name},
+                            confidence=0.8,
+                            missing_fields=["partner_name"] if not partner_name else [],
+                        )
+                    )
+                    break
 
         if not intents:
             # Default to chat
