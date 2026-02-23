@@ -387,6 +387,42 @@ python scripts/onboard.py
 | 9.14| **Consolidated Activity Feed** | Unified chronological audit trail for every partner. |
 | 9.15| **CRM Export Framework** | Salesforce/HubSpot integration and CSV exports. |
 | 9.16| **Advanced Onboarding Meta** | Collect more program-specific data for finance/legal auto-fills. |
+
+---
+
+## Phase 10: PPTX Template Generation (Beta) 🚀
+
+*Goal: Add downloadable PowerPoint templates to PartnerOS*
+
+**Status:** Board Deck shipped (Feb 22, 2026) ✅
+
+### Features
+- Generate professional PPTX from templates using `python-pptx`
+- Demo data JSON for customization
+- PartnerOS branding (indigo #6366F1)
+- Error handling and validation
+
+### Roadmap - Next 4 Templates
+
+| # | Template | Status | Description |
+|---|---------|--------|-------------|
+| 10.1 | **Pitch Deck** | PENDING | Partner recruitment pitch deck (recruitment/05-pitch-deck.md) |
+| 10.2 | **QBR Template** | PENDING | Quarterly Business Review (enablement/07-qbr-template.md) |
+| 10.3 | **Onboarding Checklist** | PENDING | Visual onboarding flow (recruitment/09-onboarding.md) |
+| 10.4 | **Co-Marketing Playbook** | PENDING | Campaign templates (enablement/04-co-marketing.md) |
+
+### Technical Debt
+| # | Item | Priority |
+|---|------|----------|
+| T1 | Add more PPTX tests | HIGH |
+| T2 | Create base PPTX template class | MEDIUM |
+| T3 | Support custom branding | MEDIUM |
+| T4 | Add PDF export option | LOW |
+
+### Files
+- `scripts/generate_pptx.py` - Main generator script
+- `examples/demo-company/board-deck-data.json` - Demo data
+- `partneros-docs/public/assets/pptx/` - Generated PPTX files |
 | 9.17| **Agent Persona Restrictions** | Role-based approval flows for high-stakes actions. |
 | 9.18| **Mobile-First UX** | Responsive mobile optimizations and touch-friendly actions. |
 | 9.19| **Smart Template Linking** | Agents provide direct links to recommended Markdown templates. |

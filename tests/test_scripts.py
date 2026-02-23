@@ -138,3 +138,41 @@ def test_manage_templates_subcommands():
     assert "update" in result.stdout
     assert "revise" in result.stdout
     assert "enhance" in result.stdout
+
+
+def test_generate_pptx_import():
+    """Test generate_pptx.py can be imported."""
+    import subprocess
+
+    result = subprocess.run(
+        ["python3", str(REPO_ROOT / "scripts" / "generate_pptx.py"), "--help"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0 or "generate" in result.stdout.lower()
+
+
+def test_generate_pptx_demo_data_exists():
+    """Test demo data file exists for PPTX generation."""
+    demo_data_path = REPO_ROOT / "examples" / "demo-company" / "board-deck-data.json"
+    assert demo_data_path.exists(), "Demo data file should exist for board deck"
+
+
+def test_generate_pptx_output():
+    """Test generate_pptx.py creates output file."""
+    import subprocess
+    import os
+
+    # Run the generator
+    result = subprocess.run(
+        ["python3", str(REPO_ROOT / "scripts" / "generate_pptx.py")],
+        capture_output=True,
+        text=True,
+    )
+
+    # Check output file was created
+    pptx_path = (
+        REPO_ROOT / "partneros-docs" / "public" / "assets" / "pptx" / "board-deck.pptx"
+    )
+    assert pptx_path.exists(), f"PPTX file should be created at {pptx_path}"
+    assert pptx_path.stat().st_size > 0, "PPTX file should not be empty"

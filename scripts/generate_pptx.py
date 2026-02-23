@@ -506,8 +506,34 @@ def generate_board_deck(output_path=None):
     script_dir = Path(__file__).parent.resolve()
     root_dir = script_dir.parent
     data_path = root_dir / "examples" / "demo-company" / "board-deck-data.json"
-    with open(data_path, "r") as f:
-        data = json.load(f)
+
+    # Validate data file exists
+    if not data_path.exists():
+        print(f"ERROR: Demo data file not found: {data_path}")
+        print("Please create examples/demo-company/board-deck-data.json")
+        return None
+
+    # Load and validate JSON
+    try:
+        with open(data_path, "r") as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {data_path}: {e}")
+        return None
+
+    # Validate required fields
+    required_fields = [
+        "company",
+        "quarter",
+        "summary",
+        "top_partners",
+        "roadmap",
+        "ask",
+    ]
+    missing = [f for f in required_fields if f not in data]
+    if missing:
+        print(f"ERROR: Missing required fields in demo data: {missing}")
+        return None
 
     # Create presentation
     prs = Presentation()
