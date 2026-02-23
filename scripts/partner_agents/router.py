@@ -272,6 +272,46 @@ class Router:
                             return partner
             return None
 
+        # Check for skill requests FIRST (status, email, commission, qbr, roi)
+        # This must happen before action check so calc/commission triggers correctly
+        skill_keywords = {
+            "status": ["status", "check", "how is", "health"],
+            "email": ["email", "write email", "send email", "outreach"],
+            "commission": [
+                "commission",
+                "calc",
+                "calculate",
+                "payout",
+                "how much",
+                "earn",
+            ],
+            "qbr": ["qbr", "quarterly", "review meeting", "schedule", "meeting"],
+            "roi": ["roi", "return on", "program value", "impact"],
+        }
+
+        for skill, keywords in skill_keywords.items():
+            if any(k in msg for k in keywords):
+                partner_name = extract_partner(user_message)
+
+                skill_intent = Intent(
+                    type="skill",
+                    name=f"skill_{skill}",
+                    agents=[
+                        "architect"
+                        if skill == "status"
+                        else "engine"
+                        if skill in ["commission"]
+                        else "spark"
+                        if skill == "email"
+                        else "champion"
+                    ],
+                    entities={"partner_name": partner_name, "skill": skill},
+                    confidence=0.7,
+                    missing_fields=["partner_name"] if not partner_name else [],
+                )
+                intents.append(skill_intent)
+                break
+
         # Check for document requests
         for doc_type, keywords in doc_keywords.items():
             if any(k in msg for k in keywords):
@@ -328,7 +368,7 @@ class Router:
                             missing_fields=["partner_name"] if not partner_name else [],
                         )
                     )
-                    break
+                break
 
         if not intents:
             # Default to chat
@@ -342,37 +382,5 @@ class Router:
                     missing_fields=[],
                 )
             )
-
-        # Check for skill requests (status, email, commission, qbr, roi)
-        skill_keywords = {
-            "status": ["status", "check", "how is", "health"],
-            "email": ["email", "write email", "send email", "outreach"],
-            "commission": ["commission", "calc", "calculate", "payout"],
-            "qbr": ["qbr", "quarterly", "review meeting", "schedule"],
-            "roi": ["roi", "return on", "program value", "impact"],
-        }
-
-        for skill, keywords in skill_keywords.items():
-            if any(k in msg for k in keywords):
-                partner_name = extract_partner(user_message)
-
-                skill_intent = Intent(
-                    type="skill",
-                    name=f"skill_{skill}",
-                    agents=[
-                        "architect"
-                        if skill == "status"
-                        else "engine"
-                        if skill in ["commission"]
-                        else "spark"
-                        if skill == "email"
-                        else "champion"
-                    ],
-                    entities={"partner_name": partner_name, "skill": skill},
-                    confidence=0.7,
-                    missing_fields=["partner_name"] if not partner_name else [],
-                )
-                intents.append(skill_intent)
-                break
 
         return intents

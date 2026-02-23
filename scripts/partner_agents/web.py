@@ -41,6 +41,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import uvicorn
 
 from partner_agents import partner_state, router, document_generator, chat_orchestrator
+from partner_agents import skills
 
 # Rate limiting
 rate_limit_store = {}
