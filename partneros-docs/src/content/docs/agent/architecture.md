@@ -2,7 +2,7 @@
 title: System Architecture
 category: strategic
 version: 1.0.0
-author: PartnerOS Team
+author: PartnerAgents Team
 tier:
 skill_level: advanced
 purpose: strategic

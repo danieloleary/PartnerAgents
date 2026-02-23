@@ -6,7 +6,7 @@ category: finance
 template_number: WF.4
 version: 1.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 skill_level: advanced
 purpose: financial
 phase: operations

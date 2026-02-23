@@ -3,7 +3,7 @@ title: Quick Start
 category: operational
 version: 1.1.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Bronze
 skill_level: beginner
 purpose: operational
@@ -24,7 +24,7 @@ keywords: ["code block paste", "recruitment qualification framework", "specific 
 
 ## Step 1: Browse Online (2 minutes)
 
-**No install needed.** Just explore at [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
+**No install needed.** Just explore at [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents/)
 
 Browse the template categories:
 
@@ -86,7 +86,7 @@ Want more power? Clone the repo:
 
 ```bash
 # Clone the repo
-git clone https://github.com/danieloleary/PartnerOS.git
+git clone https://github.com/danieloleary/PartnerAgents.git
 cd PartnerOS
 
 # Set up your company info
@@ -107,7 +107,7 @@ python agent.py --playbook recruit --partner "Acme Corp"
 
     **Best for:** Just need a few templates, no setup.
 
-    1. Browse [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
+    1. Browse [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents/)
     2. Find templates that fit your needs
     3. Copy and customize
 
@@ -162,7 +162,7 @@ python agent.py --playbook recruit --partner "Acme Corp"
 
 ## Need Help?
 
-- **Questions?** Open an issue on [GitHub](https://github.com/danieloleary/PartnerOS/issues)
+- **Questions?** Open an issue on [GitHub](https://github.com/danieloleary/PartnerAgents/issues)
 - **Want a specific template?** Suggest it on GitHub
 - **Found an issue?** Fix it and PR!
 

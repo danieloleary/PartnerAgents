@@ -19,7 +19,7 @@ def test_app_created():
     from scripts.partner_agents.web import app
 
     assert app is not None
-    assert app.title == "PartnerOS"
+    assert app.title == "PartnerAgents"
 
 
 def test_chat_endpoint_exists():

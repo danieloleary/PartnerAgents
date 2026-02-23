@@ -2,7 +2,7 @@
 title: Agent Setup
 category: operational
 version: 1.0.0
-author: PartnerOS Team
+author: PartnerAgents Team
 tier:
 skill_level: intermediate
 purpose: operational
@@ -33,7 +33,7 @@ Get the Partner Agent running locally or in GitHub Actions.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/danieloleary/PartnerOS.git
+git clone https://github.com/danieloleary/PartnerAgents.git
 cd PartnerOS/scripts/partner_agent
 ```
 

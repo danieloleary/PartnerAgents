@@ -5,7 +5,7 @@ category: analytical
 template_number: R.1
 version: 2.0.0
 last_updated: 2026-02-21
-author: PartnerOS Team
+author: PartnerAgents Team
 description: >
 Quantify the full value of PartnerOS - including AI agents, automation, and templates. Real ROI: 2,500%+ with break-even at 1 partner deal.
 outcomes:

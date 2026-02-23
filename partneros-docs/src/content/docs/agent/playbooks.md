@@ -2,7 +2,7 @@
 title: Playbooks
 category: operational
 version: 1.0.0
-author: PartnerOS Team
+author: PartnerAgents Team
 tier:
 skill_level: intermediate
 purpose: operational

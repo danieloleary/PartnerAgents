@@ -1,13 +1,13 @@
 ---
-title: PartnerOS
+title: PartnerAgents
 keywords: ["partner program automation", "chat with partner program", "AI partner management", "natural language partner ops", "partner CLI", "partner chat agent"]
 ---
 
-# PartnerOS — Chat With Your Partner Program
+# PartnerAgents — AI Agents for Partner Programs
 
-**Tell PartnerOS what you need. Watch it happen.**
+**Tell PartnerAgents what you need. Watch it happen.**
 
-[![Deploy Docs](https://github.com/danieloleary/PartnerOS/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/danieloleary/PartnerOS/actions/workflows/deploy-docs.yml)
+[![Deploy Docs](https://github.com/danieloleary/PartnerAgents/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/danieloleary/PartnerAgents/actions/workflows/deploy-docs.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -15,7 +15,7 @@ keywords: ["partner program automation", "chat with partner program", "AI partne
 ## Chat CLI — The Killer Feature
 
 ```bash
-# One-shot: tell PartnerOS what you need
+# One-shot: tell PartnerAgents what you need
 $ python scripts/partner_agents/cli.py "onboard Acme"
 ✅ Created partner: Acme Corp (Silver tier)
 ✅ Generated NDA, MSA, DPA from templates
@@ -30,7 +30,7 @@ $ python scripts/partner_agents/cli.py "show status for Acme"
 
 # Interactive: chat session with memory
 $ python scripts/partner_agents/cli.py
-🤖 PartnerOS > email Acme about QBR
+🤖 PartnerAgents > email Acme about QBR
 📧 Generated QBR invitation email for Acme Corp
    Subject: QBR Schedule - Acme Corp Q4 2025
 ```
@@ -57,11 +57,11 @@ Building a world-class partner program is hard. Most companies:
 - **Struggle to scale** — Manual workflows that break as partner count grows
 - **Miss revenue** — No systematic approach to partner-driven growth
 
-**PartnerOS solves this.**
+**PartnerAgents solves this.**
 
 ---
 
-## Why PartnerOS?
+## Why PartnerAgents?
 
 | Benefit | Description |
 |---------|-------------|
@@ -76,9 +76,9 @@ Building a world-class partner program is hard. Most companies:
 
 ---
 
-## The PartnerOS AI Team
+## The PartnerAgents AI Team
 
-PartnerOS includes a multi-agent system with 7 specialized AI agents that collaborate on partner work:
+PartnerAgents includes a multi-agent system with 7 specialized AI agents that collaborate on partner work:
 
 | Agent | Role | Skills | Templates |
 |-------|------|--------|-----------|
@@ -135,7 +135,7 @@ result = agents['partner_manager'].call_skill('architect_onboard', {
 
 ## Live Demo
 
-**👉 [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)**
+**👉 [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)**
 
 Browse the full documentation, explore templates, and see the AI Agent in action.
 
@@ -147,10 +147,10 @@ Browse the full documentation, explore templates, and see the AI Agent in action
 
 ```bash
 # Clone the repo
-git clone https://github.com/danieloleary/PartnerOS.git
-cd PartnerOS
+git clone https://github.com/danieloleary/PartnerAgents.git
+cd PartnerAgents
 
-# One-shot: tell PartnerOS what you need
+# One-shot: tell PartnerAgents what you need
 python scripts/partner_agents/cli.py "onboard Acme Corp"
 
 # Interactive: start a chat session
@@ -168,7 +168,7 @@ python scripts/partner_agents/web.py
 
 ### Option 3: Browse Online
 
-**[danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)** — Full documentation with all templates.
+**[danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)** — Full documentation with all templates.
 
 ---
 
@@ -188,7 +188,7 @@ python scripts/partner_agents/web.py
 
 ## Enterprise Partner Framework
 
-PartnerOS implements a three-tier partner model:
+PartnerAgents implements a three-tier partner model:
 
 ### Bronze (Registered)
 - Self-service enablement portal
@@ -215,7 +215,7 @@ PartnerOS implements a three-tier partner model:
 ## Project Structure
 
 ```
-PartnerOS/
+PartnerAgents/
 ├── docs/                      # 40 templates & documentation (single source of truth)
 │   ├── strategy/              # Strategy templates (8)
 │   ├── recruitment/           # Recruitment templates (10)
@@ -337,6 +337,6 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 ## Resources
 
-- **Documentation:** [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)
-- **GitHub:** [github.com/danieloleary/PartnerOS](https://github.com/danieloleary/PartnerOS)
+- **Documentation:** [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)
+- **GitHub:** [github.com/danieloleary/PartnerAgents](https://github.com/danieloleary/PartnerAgents)
 - **Issues:** Report bugs and feature requests on GitHub

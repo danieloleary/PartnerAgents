@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PartnerOS CLI - Chat with the agent swarm from your terminal.
+PartnerAgents CLI - Chat with the agent swarm from your terminal.
 
 Usage:
     # Interactive mode
@@ -498,7 +498,7 @@ async def interactive_mode(api_key: str, model: str):
         api_key = get_api_key(required=True)
 
     print("=" * 50)
-    print("PartnerOS CLI - Chat with the agent swarm")
+    print("PartnerAgents CLI - Chat with the agent swarm")
     print("=" * 50)
     print()
     print("Commands:")
@@ -536,7 +536,7 @@ async def one_shot_mode(message: str, api_key: str, model: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="PartnerOS CLI - Chat with the agent swarm",
+        description="PartnerAgents CLI - Chat with the agent swarm",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

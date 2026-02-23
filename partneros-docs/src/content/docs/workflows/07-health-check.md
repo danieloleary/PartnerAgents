@@ -6,7 +6,7 @@ category: executive
 template_number: WF.7
 version: 1.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 skill_level: intermediate
 purpose: operational
 phase: retention

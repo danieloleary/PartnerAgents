@@ -1,18 +1,18 @@
 ---
-title: Welcome to PartnerOS
+title: Welcome to PartnerAgents
 description: Chat with your partner program. Tell it what you need — "onboard Acme", "register deal for X, $50k" — and watch it happen.
 template: splash
 hero:
-  tagline: Tell PartnerOS what you need. Watch it happen.
+  tagline: Tell PartnerAgents what you need. Watch it happen.
   image:
     file: /src/assets/logo.svg
   actions:
     - text: Try the CLI
-      link: /PartnerOS/getting-started/quick-start/
+      link: /PartnerAgents/getting-started/quick-start/
       icon: right-arrow
       variant: primary
     - text: See the Skills
-      link: /PartnerOS/skills/
+      link: /PartnerAgents/skills/
       icon: open-book
 ---
 
@@ -23,15 +23,15 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ```bash
 $ python scripts/partner_agents/cli.py
 
-🤖 PartnerOS > onboard Acme
+🤖 PartnerAgents > onboard Acme
 ✅ Created partner: Acme Corp (Silver tier)
 ✅ Generated NDA, MSA, DPA from templates
 ✅ Created onboarding checklist
 
-🤖 PartnerOS > register deal for Acme, $50,000
+🤖 PartnerAgents > register deal for Acme, $50,000
 ✅ Deal registered: Acme Corp - $50,000 (90-day protection)
 
-🤖 PartnerOS > show status for Acme
+🤖 PartnerAgents > show status for Acme
 📊 Acme Corp Status:
    Tier: Silver | Deals: 3 | Revenue: $125,000 | Health: 85%
 ```
@@ -72,8 +72,8 @@ $ python scripts/partner_agents/cli.py
 
 ```bash
 # Clone the repo
-git clone https://github.com/danieloleary/PartnerOS.git
-cd PartnerOS
+git clone https://github.com/danieloleary/PartnerAgents.git
+cd PartnerAgents
 
 # Try the CLI (one-shot)
 python scripts/partner_agents/cli.py "status Acme"
@@ -88,7 +88,7 @@ python scripts/partner_agents/web.py
 
 ---
 
-## Why PartnerOS?
+## Why PartnerAgents?
 
 <CardGrid stagger>
 	<Card title="40 Ready-to-Use Templates" icon="📋">
@@ -101,7 +101,7 @@ python scripts/partner_agents/web.py
 		Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths
 	</Card>
 	<Card title="AI-Powered Chat" icon="💬">
-		Tell PartnerOS what you need in plain English. Natural language → executed actions.
+		Tell PartnerAgents what you need in plain English. Natural language → executed actions.
 	</Card>
 </CardGrid>
 
@@ -125,4 +125,4 @@ python scripts/partner_agents/web.py
 
 ---
 
-**PartnerOS** — Give them the playbook + the coach.
+**PartnerAgents** — Give them the playbook + the coach.

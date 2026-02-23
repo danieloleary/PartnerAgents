@@ -230,7 +230,7 @@ python scripts/fill_template.py --template docs/recruitment/01-email-sequence.md
 
 ```bash
 # Clone the repo
-git clone https://github.com/danieloleary/PartnerOS.git
+git clone https://github.com/danieloleary/PartnerAgents.git
 cd PartnerOS
 
 # Quick start

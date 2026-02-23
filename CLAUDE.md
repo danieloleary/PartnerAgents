@@ -23,7 +23,7 @@ This file provides guidance for AI assistants working in this repository.
 - **Python 3.10+** (for union type syntax `type | None`)
 - **Node.js 20+** (for Starlight docs build)
 
-**Live site:** https://danieloleary.github.io/PartnerOS
+**Live site:** https://danieloleary.github.io/PartnerAgents
 
 ---
 
@@ -106,7 +106,7 @@ npm run dev
 # Build static site to dist/
 npm run build
 
-# Deploys to https://danieloleary.github.io/PartnerOS/ on push to main
+# Deploys to https://danieloleary.github.io/PartnerAgents/ on push to main
 ```
 
 ### Partner Agent
@@ -240,7 +240,7 @@ section: Strategy          # Strategy, Recruitment, Enablement, Legal, Finance, 
 category: strategic        # strategic, operational, tactical, legal, financial, security, executive, analytical
 template_number: I.1       # Roman numeral section + number
 version: "1.0.0"
-author: PartnerOS Team
+author: PartnerAgents Team
 last_updated: 2026-02-20
 tier: Silver               # Bronze, Silver, Gold
 skill_level: intermediate  # beginner, intermediate, advanced

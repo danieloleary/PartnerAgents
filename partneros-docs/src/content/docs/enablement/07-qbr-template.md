@@ -5,7 +5,7 @@ category: tactical
 template_number: III.7
 version: 2.0.0
 last_updated: 2026-02-21
-author: PartnerOS Team
+author: PartnerAgents Team
 tier:
 skill_level: intermediate
 purpose: operational

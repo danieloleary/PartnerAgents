@@ -5,7 +5,7 @@ category: executive
 template_number: X.1
 version: 2.0.0
 last_updated: 2026-02-21
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Bronze
 skill_level: advanced
 purpose: strategic

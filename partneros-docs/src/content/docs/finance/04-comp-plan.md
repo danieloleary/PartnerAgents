@@ -5,7 +5,7 @@ section: Finance
 category: financial
 template_number: F.4
 version: 1.0.0
-author: PartnerOS Team
+author: PartnerAgents Team
 last_updated: 2026-02-22
 tier: Gold
 skill_level: advanced

@@ -1,8 +1,8 @@
 ---
-title: PartnerOS Backlog - Prioritized Roadmap
+title: PartnerAgents Backlog - Prioritized Roadmap
 keywords: ["issues vision give", "advisor help customize", "implement target companies", "show prospects easy", "system currently runs", "fallback mode responses"]
 ---
-# PartnerOS Backlog - Prioritized Roadmap
+# PartnerAgents Backlog - Prioritized Roadmap
 
 *Generated: February 19, 2026*
 *Updated: February 23, 2026*
@@ -64,7 +64,7 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 
 ## Tracking Issues
 
-- **GitHub Issues:** https://github.com/danieloleary/PartnerOS/issues
+- **GitHub Issues:** https://github.com/danieloleary/PartnerAgents/issues
 - **Labels:** `p1`, `p2`, `p3` for priority, `enhancement`, `bug`, `docs`
 - **Use issues to track detailed tasks** - link PRs to issues
 
@@ -78,14 +78,14 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 - Agent = The coach (guides them through it)
 - You = The advisor (help customize and implement)
 
-**Target:** Companies that can drop in PartnerOS and immediately have a world-class partner program.
+**Target:** Companies that can drop in PartnerAgents and immediately have a world-class partner program.
 
 ---
 
 ## Current State (v2.2 - February 23, 2026)
 
 **Platform:** Starlight/Astro (no more MkDocs!)
-**Live Site:** https://danieloleary.github.io/PartnerOS/
+**Live Site:** https://danieloleary.github.io/PartnerAgents/
 
 ### What's Built
 - 67 templates across 9 categories (A+ quality standard)
@@ -137,7 +137,7 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 | 1.1 | **Fix CLI End-to-End** | `onboard Acme` actually creates partner + docs | 4 hrs | DONE |
 | 1.2 | **Demo Video** | Record 2-min video showing CLI in action | 2 hrs | PENDING |
 | 1.3 | **Landing Page CTA** | Add "Join Waitlist" to landing page | 2 hrs | PENDING |
-| 1.4 | **Waitlist Page** | Simple page: "PartnerOS is coming" + email capture | 2 hrs | PENDING |
+| 1.4 | **Waitlist Page** | Simple page: "PartnerAgents is coming" + email capture | 2 hrs | PENDING |
 | 1.5 | **Post to Hacker News** | Launch post to measure interest | 1 hr | PENDING |
 | 1.6 | **Post to LinkedIn** | Share demo, get first users | 1 hr | PENDING |
 
@@ -466,14 +466,14 @@ python scripts/onboard.py
 
 ## Phase 10: PPTX Template Generation (Beta) 🚀
 
-*Goal: Add downloadable PowerPoint templates to PartnerOS*
+*Goal: Add downloadable PowerPoint templates to PartnerAgents*
 
 **Status:** Board Deck shipped (Feb 22, 2026) ✅
 
 ### Features
 - Generate professional PPTX from templates using `python-pptx`
 - Demo data JSON for customization
-- PartnerOS branding (indigo #6366F1)
+- PartnerAgents branding (indigo #6366F1)
 - Error handling and validation
 
 ### Roadmap - Next 4 Templates

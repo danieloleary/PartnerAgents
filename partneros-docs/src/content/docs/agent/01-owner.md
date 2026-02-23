@@ -6,7 +6,7 @@ category: executive
 template_number: AGENT.1
 version: 1.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Gold
 skill_level: advanced
 purpose: executive

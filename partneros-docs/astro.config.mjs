@@ -9,13 +9,13 @@ export default defineConfig({
 	integrations: [
 		react(),
 		starlight({
-			title: 'PartnerOS',
+			title: 'PartnerAgents',
 			description: 'The complete playbook for building and scaling strategic partnerships with AI-powered automation.',
 			logo: {
 				src: './src/assets/logo.svg',
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/danieloleary/PartnerOS' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/danieloleary/PartnerAgents' },
 				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/danieloleary' },
 			],
 			customCss: [
@@ -89,7 +89,7 @@ export default defineConfig({
 							const footer = document.querySelector('footer') || document.querySelector('.footer');
 							if (footer) {
 								const feedbackLink = document.createElement('a');
-								feedbackLink.href = 'https://github.com/danieloleary/PartnerOS/issues/new?title=Feedback: ' + encodeURIComponent(document.title);
+								feedbackLink.href = 'https://github.com/danieloleary/PartnerAgents/issues/new?title=Feedback: ' + encodeURIComponent(document.title);
 								feedbackLink.target = '_blank';
 								feedbackLink.className = 'feedback-btn';
 								feedbackLink.innerHTML = '💬 Give Feedback';

@@ -5,7 +5,7 @@ category: legal
 template_number: L.1
 version: 2.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Bronze
 skill_level: beginner
 purpose: operational

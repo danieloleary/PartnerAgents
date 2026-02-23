@@ -3,7 +3,7 @@ title: Template Quality Auditor (Expert Edition)
 description: Expert framework for auditing and improving PartnerOS templates to A+ standard - with insider tactics, metrics, and stakeholder strategies
 version: 3.0.0
 last_updated: 2026-02-21
-author: PartnerOS Team
+author: PartnerAgents Team
 tags:
 keywords: ["expert level framework", "frontmatter title start", "content here note", "important information caution", "links every metric", "tables should have"]
 ---
@@ -405,7 +405,7 @@ category: [strategic|operational|tactical|legal|financial|security|executive|ana
 template_number: [I.1, II.2, etc.]
 version: 1.0.0
 last_updated: [YYYY-MM-DD]
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: [Bronze|Silver|Gold]
 skill_level: [beginner|intermediate|advanced]
 purpose: [strategic|operational|tactical]

@@ -6,7 +6,7 @@ category: finance
 template_number: WF.5
 version: 1.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 skill_level: intermediate
 purpose: financial
 phase: operations

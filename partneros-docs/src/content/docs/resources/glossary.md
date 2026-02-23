@@ -5,7 +5,7 @@ section: Resources
 template_number: R.1
 version: 1.0.0
 last_updated: 2026-02-21
-author: PartnerOS Team
+author: PartnerAgents Team
 tier:
 skill_level: beginner
 purpose: strategic

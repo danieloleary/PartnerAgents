@@ -1,4 +1,4 @@
-# PartnerOS Chat Orchestrator - Status
+# PartnerAgents Chat Orchestrator - Status
 
 ## What's Built
 

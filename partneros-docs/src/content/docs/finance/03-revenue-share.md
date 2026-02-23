@@ -5,7 +5,7 @@ category: financial
 template_number: F.3
 version: 2.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Gold
 skill_level: advanced
 purpose: strategic

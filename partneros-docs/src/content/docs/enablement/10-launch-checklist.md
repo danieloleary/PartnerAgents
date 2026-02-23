@@ -5,7 +5,7 @@ section: Enablement
 category: tactical
 template_number: III.10
 version: 1.0.0
-author: PartnerOS Team
+author: PartnerAgents Team
 last_updated: 2026-02-22
 tier: Silver
 skill_level: intermediate

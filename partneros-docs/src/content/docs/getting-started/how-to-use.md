@@ -3,7 +3,7 @@ title: How to Use Templates
 category: operational
 version: 1.0.0
 last_updated: 2026-02-22
-author: PartnerOS Team
+author: PartnerAgents Team
 tier: Bronze
 skill_level: intermediate
 purpose: operational
@@ -173,6 +173,6 @@ Before using a customized template, verify:
 
 ## Getting Help
 
-- **Questions about templates?** Open a [GitHub Issue](https://github.com/danieloleary/PartnerOS/issues)
+- **Questions about templates?** Open a [GitHub Issue](https://github.com/danieloleary/PartnerAgents/issues)
 - **Want to contribute?** See the contribution guidelines
 - **Need custom templates?** Fork the repo and build your own!
