@@ -818,22 +818,22 @@ HTML = """<!DOCTYPE html>
                     <h1>PartnerOS</h1>
                     <p>Your AI partner team. Try these:</p>
                     <div class="quick-actions">
-                        <div class="quick-action" onclick="sendMessage('onboard Vertex')">
+                        <button class="quick-action" onclick="sendMessage('onboard Vertex')">
                             <h3>Onboard Partner</h3>
                             <p>Start onboarding a new partner</p>
-                        </div>
-                        <div class="quick-action" onclick="sendMessage('status of Vertex')">
+                        </button>
+                        <button class="quick-action" onclick="sendMessage('status of Vertex')">
                             <h3>Check Status</h3>
                             <p>See where things stand</p>
-                        </div>
-                        <div class="quick-action" onclick="sendMessage('launch campaign for Vertex')">
+                        </button>
+                        <button class="quick-action" onclick="sendMessage('launch campaign for Vertex')">
                             <h3>Launch Campaign</h3>
                             <p>Start a co-marketing campaign</p>
-                        </div>
-                        <div class="quick-action" onclick="sendMessage('register a deal for Vertex, $50000')">
+                        </button>
+                        <button class="quick-action" onclick="sendMessage('register a deal for Vertex, 50000')">
                             <h3>Register Deal</h3>
                             <p>Record a new deal</p>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -995,6 +995,17 @@ HTML = """<!DOCTYPE html>
         
         // Send message
         async function sendMessage(text) {
+            // Check for API key first - prompt if missing
+            let apiKey = getApiKey();
+            if (!apiKey) {
+                apiKey = prompt('Enter your OpenRouter API key (starts with sk-or-v1-):');
+                if (apiKey) {
+                    localStorage.setItem('partneros_api_key', apiKey);
+                } else {
+                    return;
+                }
+            }
+            
             const input = document.getElementById('input');
             const msg = text || input.value.trim();
             if (!msg) return;
@@ -1017,7 +1028,7 @@ HTML = """<!DOCTYPE html>
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                         message: msg,
-                        apiKey: getApiKey(),
+                        apiKey: apiKey,
                         model: getModel()
                     })
                 });
