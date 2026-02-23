@@ -2,7 +2,7 @@
 """
 Partner State Management Module
 
-Unified state management for PartnerOS - used by both CLI agent and Web UI.
+Unified state management for PartnerAgents - used by both CLI agent and Web UI.
 Handles partner lifecycle tracking, milestones, and progress.
 
 Usage:

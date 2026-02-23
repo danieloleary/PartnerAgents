@@ -18,7 +18,7 @@ class TestDeployedLinks:
             pytest.skip("Run 'npm run build' first")
 
     def test_no_absolute_partneros_links_in_source(self):
-        """Verify source docs don't use hardcoded /PartnerOS/ links."""
+        """Verify source docs don't use hardcoded /PartnerAgents/ links."""
         failures = []
 
         # Skip example/documentation files that intentionally show links
@@ -32,7 +32,7 @@ class TestDeployedLinks:
                 continue
 
             content = f.read_text()
-            matches = re.findall(r"\]\(/PartnerOS/[^)]+\)", content)
+            matches = re.findall(r"\]\(/PartnerAgents/[^)]+\)", content)
             if matches:
                 failures.append(f"{rel_path}: {matches}")
 
@@ -42,12 +42,12 @@ class TestDeployedLinks:
                 continue
 
             content = f.read_text()
-            matches = re.findall(r"\]\(/PartnerOS/[^)]+\)", content)
+            matches = re.findall(r"\]\(/PartnerAgents/[^)]+\)", content)
             if matches:
                 failures.append(f"{rel_path}: {matches}")
 
         assert len(failures) == 0, (
-            f"Found absolute /PartnerOS links in source (use relative links instead):\n"
+            f"Found absolute /PartnerAgents links in source (use relative links instead):\n"
             + "\n".join(failures)
         )
 
@@ -55,7 +55,7 @@ class TestDeployedLinks:
         """Verify source docs don't use absolute / links (breaks deployed site).
 
         Links like [foo](/foo/) will work locally but 404 on deployed site
-        because base is /PartnerOS. Use relative links (../foo/) instead.
+        because base is /PartnerAgents. Use relative links (../foo/) instead.
         """
         failures = []
 
@@ -105,7 +105,7 @@ class TestDeployedLinks:
         """Verify built site uses correct links for navigation.
 
         Starlight auto-handles the base URL. Hero actions should have
-        /PartnerOS/ prefix (configured in index.mdx).
+        /PartnerAgents/ prefix (configured in index.mdx).
         """
         index_html = DIST_DIR / "index.html"
         if not index_html.exists():
@@ -113,12 +113,12 @@ class TestDeployedLinks:
 
         content = index_html.read_text()
 
-        # Hero actions SHOULD have /PartnerOS/ prefix now (fixed in index.mdx)
-        assert 'href="/PartnerOS/getting-started/' in content, (
-            "Hero links should have /PartnerOS/ prefix in built HTML"
+        # Hero actions SHOULD have /PartnerAgents/ prefix now (fixed in index.mdx)
+        assert 'href="/PartnerAgents/getting-started/' in content, (
+            "Hero links should have /PartnerAgents/ prefix in built HTML"
         )
-        assert 'href="/PartnerOS/strategy/' in content, (
-            "Hero links should have /PartnerOS/ prefix in built HTML"
+        assert 'href="/PartnerAgents/strategy/' in content, (
+            "Hero links should have /PartnerAgents/ prefix in built HTML"
         )
 
     def test_base_url_config_present(self):
@@ -128,7 +128,7 @@ class TestDeployedLinks:
 
         assert "base:" in content, "Missing base URL config"
         assert "site:" in content, "Missing site URL config"
-        assert "/PartnerOS" in content, "base should be set to /PartnerOS"
+        assert "/PartnerAgents" in content, "base should be set to /PartnerAgents"
 
     def test_build_produces_valid_html(self):
         """Verify build produces valid HTML with correct base."""
@@ -139,8 +139,8 @@ class TestDeployedLinks:
         content = index_html.read_text()
 
         # Should have correct base path in assets
-        assert "/PartnerOS/_astro/" in content, (
-            "Assets should reference /PartnerOS/_astro/"
+        assert "/PartnerAgents/_astro/" in content, (
+            "Assets should reference /PartnerAgents/_astro/"
         )
 
     def test_assets_use_base_url(self):
@@ -152,5 +152,5 @@ class TestDeployedLinks:
         content = index_html.read_text()
 
         # Find asset references
-        astro_assets = re.findall(r'href="(/PartnerOS/_astro/[^"]+)"', content)
+        astro_assets = re.findall(r'href="(/PartnerAgents/_astro/[^"]+)"', content)
         assert len(astro_assets) > 0, "Should have Astro assets with base URL"

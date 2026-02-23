@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Document Generator - Load, fill, and save templates for PartnerOS
+Document Generator - Load, fill, and save templates for PartnerAgents
 Handles template loading from Starlight docs and saves filled documents.
 
 Supported document types:
@@ -23,7 +23,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 
-# Base directory - PartnerOS root
+# Base directory - PartnerAgents root
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 TEMPLATES_DIR = REPO_ROOT / "partneros-docs" / "src" / "content" / "docs"
 DOCUMENTS_DIR = REPO_ROOT / "partners"

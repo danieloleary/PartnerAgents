@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PartnerOS F1 Dream Team - Orchestrator
+PartnerAgents F1 Dream Team - Orchestrator
 The Race Engineer - coordinates all drivers.
 """
 

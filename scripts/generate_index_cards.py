@@ -26,7 +26,7 @@ ICON_MAP = {
 CATEGORY_INFO = {
     "getting-started": {
         "title": "Getting Started",
-        "description": "Start here! Quick guides to help you get up and running with PartnerOS.",
+        "description": "Start here! Quick guides to help you get up and running with PartnerAgents.",
     },
     "strategy": {
         "title": "Partner Strategy Templates",

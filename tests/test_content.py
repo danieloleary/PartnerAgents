@@ -1,4 +1,4 @@
-"""Tests for content quality in PartnerOS documentation."""
+"""Tests for content quality in PartnerAgents documentation."""
 
 import re
 import pytest

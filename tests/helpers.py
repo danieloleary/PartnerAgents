@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test utilities for PartnerOS Chat Orchestrator tests.
+Test utilities for PartnerAgents Chat Orchestrator tests.
 
 Provides helper functions for:
 - Partner creation/cleanup

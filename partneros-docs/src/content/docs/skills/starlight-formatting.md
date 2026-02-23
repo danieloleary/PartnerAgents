@@ -19,7 +19,7 @@ skills_gained:
 keywords: ["starlight formatting guide", "standard markdown following", "frontmatter title start", "important information caution", "roi when presenting", "email note md"]
 ---
 > **"The difference between a template that looks amateur and one that looks professional is in the formatting details."**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 ---
 

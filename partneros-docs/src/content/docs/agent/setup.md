@@ -34,7 +34,7 @@ Get the Partner Agent running locally or in GitHub Actions.
 
 ```bash
 git clone https://github.com/danieloleary/PartnerAgents.git
-cd PartnerOS/scripts/partner_agent
+cd PartnerAgents/scripts/partner_agent
 ```
 
 ### 2. Install Dependencies

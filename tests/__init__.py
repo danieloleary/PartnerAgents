@@ -1,1 +1,1 @@
-# PartnerOS Tests
+# PartnerAgents Tests

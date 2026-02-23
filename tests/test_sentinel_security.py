@@ -1,4 +1,4 @@
-"""Security tests for PartnerOS."""
+"""Security tests for PartnerAgents."""
 
 import sys
 import os

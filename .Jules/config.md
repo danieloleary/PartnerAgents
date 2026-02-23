@@ -1,7 +1,7 @@
-# Jules Configuration for PartnerOS
+# Jules Configuration for PartnerAgents
 
 ## Project Context
-PartnerOS is a complete playbook system for building and scaling strategic partnerships with AI-powered automation. It includes:
+PartnerAgents is a complete playbook system for building and scaling strategic partnerships with AI-powered automation. It includes:
 - 67 Markdown documentation templates (Starlight/Astro)
 - 14 Agent-First Templates (skill cards + workflows)
 - Python AI Partner Agent (Ollama, Anthropic, OpenAI, OpenRouter)
@@ -13,25 +13,25 @@ PartnerOS is a complete playbook system for building and scaling strategic partn
 
 ### Run Tests
 ```bash
-cd PartnerOS/PartnerOS
+cd PartnerAgents/PartnerAgents
 pytest tests/ -v
 ```
 
 ### Run Web UI
 ```bash
-cd PartnerOS/PartnerOS
+cd PartnerAgents/PartnerAgents
 python3 scripts/partner_agents/web.py
 ```
 
 ### Build Docs
 ```bash
-cd PartnerOS/PartnerOS/partneros-docs
+cd PartnerAgents/PartnerAgents/partneros-docs
 npm run build
 ```
 
 ### Run Linter
 ```bash
-cd PartnerOS/PartnerOS
+cd PartnerAgents/PartnerAgents
 python3 scripts/lint_markdown.py
 ```
 

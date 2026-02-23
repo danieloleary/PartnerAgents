@@ -19,13 +19,13 @@ skills_gained:
 keywords: ["organized alphabetically find", "generating enough opportunities", "update last updated", "hyphenated words sort", "frontmatter run tests", "link related terms"]
 ---
 > **"A glossary is only as good as its consistency. Every term should have a definition, a 'why it matters,' and a 'how to measure it.'"**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 ---
 
 ## Why Glossary Maintenance Matters
 
-The Partner Program Glossary is the single source of truth for terminology across all PartnerOS templates. Keeping it accurate ensures:
+The Partner Program Glossary is the single source of truth for terminology across all PartnerAgents templates. Keeping it accurate ensures:
 
 - ✅ Consistent terminology across templates
 - ✅ New users understand key concepts

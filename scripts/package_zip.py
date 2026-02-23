@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-package_zip.py - Package PartnerOS as a self-contained .zip for distribution.
+package_zip.py - Package PartnerAgents as a self-contained .zip for distribution.
 
 Creates a zip that works without git — just unzip and go.
 
@@ -81,7 +81,7 @@ def should_exclude(path: Path) -> bool:
 def collect_files(templates_only: bool) -> list:
     """Return list of (abs_path, zip_path) tuples."""
     files = []
-    prefix = "PartnerOS/"
+    prefix = "PartnerAgents/"
 
     # Always-include individual files
     for fname in ALWAYS_INCLUDE:
@@ -134,7 +134,7 @@ def build_manifest(files: list, version: str, templates_only: bool) -> dict:
             categories[cat] = categories.get(cat, 0) + 1
 
     return {
-        "name": "PartnerOS",
+        "name": "PartnerAgents",
         "version": version,
         "packaged_at": datetime.now().isoformat(),
         "package_type": "templates-only" if templates_only else "full",
@@ -147,7 +147,7 @@ def build_manifest(files: list, version: str, templates_only: bool) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Package PartnerOS as a distributable zip"
+        description="Package PartnerAgents as a distributable zip"
     )
     parser.add_argument(
         "--templates-only",
@@ -169,7 +169,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     suffix = "-templates-only" if args.templates_only else ""
-    zip_name = f"PartnerOS-{args.version}{suffix}.zip"
+    zip_name = f"PartnerAgents-{args.version}{suffix}.zip"
     zip_path = out_dir / zip_name
 
     print(f"Collecting files...")
@@ -182,11 +182,11 @@ def main():
     print(f"Building {zip_name}...")
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         # Write manifest
-        zf.writestr("PartnerOS/PACKAGE_MANIFEST.json", manifest_json)
+        zf.writestr("PartnerAgents/PACKAGE_MANIFEST.json", manifest_json)
 
         # Write a getting-started README at the root of the zip
         root_readme = (
-            "# PartnerOS\n\n"
+            "# PartnerAgents\n\n"
             "The complete playbook for building and scaling strategic partnerships.\n\n"
             "## Quick Start\n\n"
             "1. Open `docs/getting-started/quick-start.md`\n"
@@ -198,7 +198,7 @@ def main():
             f"Package version: {args.version}\n"
             f"Packaged: {manifest['packaged_at'][:10]}\n"
         )
-        zf.writestr("PartnerOS/GETTING_STARTED.md", root_readme)
+        zf.writestr("PartnerAgents/GETTING_STARTED.md", root_readme)
 
         # Write all collected files
         for abs_path, zip_entry in files:

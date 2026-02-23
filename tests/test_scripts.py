@@ -122,7 +122,7 @@ def test_manage_templates_import():
         text=True,
     )
     assert result.returncode == 0
-    assert "Manage PartnerOS" in result.stdout
+    assert "Manage PartnerAgents" in result.stdout
 
 
 def test_manage_templates_subcommands():

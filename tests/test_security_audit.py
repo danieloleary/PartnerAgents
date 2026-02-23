@@ -1,4 +1,4 @@
-"""Security audit tests - PartnerOS version."""
+"""Security audit tests - PartnerAgents version."""
 
 import sys
 import os

@@ -1,4 +1,4 @@
-"""Test template completeness and frontmatter - PartnerOS v2.0 (Starlight only)."""
+"""Test template completeness and frontmatter - PartnerAgents v2.0 (Starlight only)."""
 
 import os
 import re

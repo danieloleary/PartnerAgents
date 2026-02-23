@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PartnerOS F1 Dream Team - Base Agent
+PartnerAgents F1 Dream Team - Base Agent
 The chassis that all drivers inherit from.
 """
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Simple Markdown linter for PartnerOS repository."""
+"""Simple Markdown linter for PartnerAgents repository."""
 
 import sys
 from pathlib import Path

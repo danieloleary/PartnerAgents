@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PartnerOS Multi-Agent Demo
+PartnerAgents Multi-Agent Demo
 Scenario: New Partner Onboarding
 
 This demo shows how the 7-agent team collaborates to onboard a new partner.

@@ -10,18 +10,18 @@ phase: strategy
 time_required: 1 hour
 difficulty: medium
 prerequisites:
-description: Overview of the PartnerOS multi-agent system architecture and state management
+description: Overview of the PartnerAgents multi-agent system architecture and state management
 outcomes:
 skills_gained:
 keywords: ["skills metaphor uses", "partner count grows", "partially duplicate functionality", "solid architectural decision", "support concurrent access", "html js css"]
 ---
-# PartnerOS System Architecture Review
+# PartnerAgents System Architecture Review
 
 *Date: May 22, 2024*
 
 ## Overview
 
-PartnerOS currently consists of two distinct agent systems that share some conceptual goals but have diverged in implementation:
+PartnerAgents currently consists of two distinct agent systems that share some conceptual goals but have diverged in implementation:
 
 1.  **CLI Agent (`scripts/partner_agent/`)**: A robust, single-agent system designed for interactive playbook execution via the terminal.
 2.  **Web/Multi-Agent System (`scripts/partner_agents/`)**: A FastAPI-based web interface and an Orchestrator/Driver framework for a multi-agent team.

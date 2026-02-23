@@ -15,7 +15,7 @@ difficulty: easy
 prerequisites: []
 outcomes:
 skills_gained:
-description: How to find and fix broken internal links in PartnerOS documentation.
+description: How to find and fix broken internal links in PartnerAgents documentation.
 keywords: ["starlight documentation when", "fixed pages", "md file", "skill use", "use", "find"]
 ---
 > **Find and fix broken internal links in Starlight documentation.**
@@ -37,7 +37,7 @@ Use this skill when:
 Run the built-in test:
 
 ```bash
-cd PartnerOS
+cd PartnerAgents
 python3 -m pytest tests/test_templates.py::test_no_broken_internal_links -v
 ```
 
@@ -61,7 +61,7 @@ grep -r "I_Partner_Strategy" partneros-docs/src/content/docs/
 Run the link fixing script:
 
 ```bash
-cd PartnerOS
+cd PartnerAgents
 python3 scripts/fix_all_links.py
 ```
 

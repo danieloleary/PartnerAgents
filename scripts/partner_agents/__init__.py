@@ -1,5 +1,5 @@
 """
-PartnerOS Multi-Agent Partner Team
+PartnerAgents Multi-Agent Partner Team
 The collaborative partner program automation team.
 
 Team:

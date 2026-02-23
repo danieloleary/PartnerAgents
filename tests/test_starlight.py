@@ -79,7 +79,7 @@ class TestStarlightConfiguration:
         content = config_path.read_text()
 
         assert "base:" in content, "astro.config.mjs should have base URL"
-        assert "/PartnerOS" in content, "Base URL should be /PartnerOS"
+        assert "/PartnerAgents" in content, "Base URL should be /PartnerAgents"
 
     def test_astro_config_has_sidebar(self):
         """Verify astro.config.mjs has sidebar configuration."""

@@ -4,7 +4,7 @@ keywords: ["validating partneros end", "busy total proceed", "proposal documents
 ---
 # Test Partner: TechStart Inc
 
-*Realistic test case for validating PartnerOS end-to-end*
+*Realistic test case for validating PartnerAgents end-to-end*
 
 ---
 

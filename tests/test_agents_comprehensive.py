@@ -1,4 +1,4 @@
-"""Comprehensive tests for PartnerOS agents."""
+"""Comprehensive tests for PartnerAgents agents."""
 
 import sys
 from pathlib import Path

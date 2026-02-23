@@ -11,12 +11,12 @@ phase: onboarding
 time_required: 10 minutes
 difficulty: easy
 prerequisites: [Web browser]
-description: Get up and running with PartnerOS in 10 minutes—no install required.
+description: Get up and running with PartnerAgents in 10 minutes—no install required.
 outcomes: [Browse templates, Understand structure, Launch quickly]
 skills_gained: [Platform navigation, Template discovery, Quick start]
 keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
 ---
-# PartnerOS Quick Start
+# PartnerAgents Quick Start
 
 *From zero to your first partner in 10 minutes — no install required*
 
@@ -87,7 +87,7 @@ Want more power? Clone the repo:
 ```bash
 # Clone the repo
 git clone https://github.com/danieloleary/PartnerAgents.git
-cd PartnerOS
+cd PartnerAgents
 
 # Set up your company info
 python scripts/onboard.py
@@ -129,7 +129,7 @@ python agent.py --playbook recruit --partner "Acme Corp"
     **Best for:** Want AI to help execute playbooks.
 
     ```bash
-    cd PartnerOS/scripts/partner_agent
+    cd PartnerAgents/scripts/partner_agent
     pip install -r requirements.txt
     export ANTHROPIC_API_KEY=sk-ant-...
     python agent.py --playbook recruit --partner "Your Partner"

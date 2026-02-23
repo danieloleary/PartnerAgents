@@ -1,4 +1,4 @@
-"""Shared fixtures and constants for PartnerOS tests."""
+"""Shared fixtures and constants for PartnerAgents tests."""
 
 import pytest
 from pathlib import Path

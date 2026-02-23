@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tests for PartnerOS Chat Orchestrator and Document Generation
+Tests for PartnerAgents Chat Orchestrator and Document Generation
 
 Tests:
 1. Router intent detection (onboard, NDA, MSA, campaign, deal)

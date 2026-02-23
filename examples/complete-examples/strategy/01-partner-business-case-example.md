@@ -22,7 +22,7 @@ keywords: ["partner business cases", "document traces back", "initiative will en
 ---
 
 > **"The biggest mistake I see in partner business cases is asking for money without proving ROI. Every number in this document traces back to a specific revenue assumption. That's how you get buy-in from CFOs."**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 ---
 
@@ -341,4 +341,4 @@ Interviewed 8 MSPs currently partnering with competitors:
 
 ---
 
-*This business case was prepared following the PartnerOS Business Case Template (I.1). For questions, contact the Strategy Team.*
+*This business case was prepared following the PartnerAgents Business Case Template (I.1). For questions, contact the Strategy Team.*

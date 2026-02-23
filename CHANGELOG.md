@@ -1,8 +1,8 @@
 ---
-title: PartnerOS CHANGELOG
+title: PartnerAgents CHANGELOG
 keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prerequisites"]
 ---
-# PartnerOS CHANGELOG
+# PartnerAgents CHANGELOG
 
 ## Version 2.1 (2026-02-22) - Web UI Enhancements
 

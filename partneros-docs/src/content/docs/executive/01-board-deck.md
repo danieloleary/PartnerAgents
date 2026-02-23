@@ -32,7 +32,7 @@ Board meetings are not status reports. They're strategic reviews. Your deck shou
   <p style="color: var(--sl-color-gray-3); margin: 0 0 20px 0;">
     Download the PPTX file to present to your board
   </p>
-  <a href="/PartnerOS/assets/pptx/board-deck.pptx" download style="
+  <a href="/PartnerAgents/assets/pptx/board-deck.pptx" download style="
     display: inline-flex;
     align-items: center;
     gap: 8px;

@@ -491,7 +491,7 @@ def test_partner_state_delete():
 
 
 if __name__ == "__main__":
-    print("Running PartnerOS v1.2 tests...")
+    print("Running PartnerAgents v1.2 tests...")
 
     test_agent_import()
     print("✓ Agent import test passed")
@@ -529,4 +529,4 @@ if __name__ == "__main__":
     test_generate_report_script_valid()
     print("✓ generate_report.py syntax test passed")
 
-    print("\nAll PartnerOS v1.2 tests passed!")
+    print("\nAll PartnerAgents v1.2 tests passed!")

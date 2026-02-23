@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Router Agent - Intent detection and entity extraction for PartnerOS
+Router Agent - Intent detection and entity extraction for PartnerAgents
 Uses LLM to understand user requests and route to appropriate actions.
 
 Detection patterns:
@@ -69,7 +69,7 @@ def _build_router_prompt(
     if context and context.get("partners"):
         partners_info = f"\n\nExisting partners: {', '.join([p['name'] for p in context['partners'][:10]])}"
 
-    prompt = f"""You are the PartnerOS Router. Your job is to understand what the user wants.
+    prompt = f"""You are the PartnerAgents Router. Your job is to understand what the user wants.
 
 User message: "{user_message}"{partners_info}
 

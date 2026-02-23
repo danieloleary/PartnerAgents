@@ -1,5 +1,5 @@
 ---
-title: PartnerOS ROI Analysis
+title: PartnerAgents ROI Analysis
 section: Resources
 category: analytical
 template_number: R.1
@@ -7,16 +7,16 @@ version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerAgents Team
 description: >
-Quantify the full value of PartnerOS - including AI agents, automation, and templates. Real ROI: 2,500%+ with break-even at 1 partner deal.
+Quantify the full value of PartnerAgents - including AI agents, automation, and templates. Real ROI: 2,500%+ with break-even at 1 partner deal.
 outcomes:
 skills_gained:
 keywords: ["just partner deal", "would cost k", "full time role", "would take hours", "house hire engineers", "custom included updates"]
 ---
-# PartnerOS ROI Analysis
+# PartnerAgents ROI Analysis
 
 ## Executive Summary
 
-PartnerOS delivers **2,500%+ ROI** and pays for itself with **just 1 partner deal**.
+PartnerAgents delivers **2,500%+ ROI** and pays for itself with **just 1 partner deal**.
 
 This isn't just about templates — this is about having a **full AI-powered partner team** that would cost $300K+ to build from scratch.
 
@@ -80,7 +80,7 @@ Quality assurance that would take ~140 hours to build.
 
 ## The Real ROI Calculation
 
-### Without PartnerOS (Build Everything)
+### Without PartnerAgents (Build Everything)
 
 | Category | Conservative Cost |
 |----------|-----------------|
@@ -93,7 +93,7 @@ Quality assurance that would take ~140 hours to build.
 | Learning curve & debugging | $30,000 |
 | **TOTAL** | **$347,000** |
 
-### With PartnerOS (Deploy & Customize)
+### With PartnerAgents (Deploy & Customize)
 
 | Category | Cost |
 |----------|------|
@@ -111,7 +111,7 @@ ROI = ($347,000 - $7,000) / $7,000 × 100
 ROI = 4,857%
 ```
 
-**PartnerOS delivers ~5,000% ROI on first implementation.**
+**PartnerAgents delivers ~5,000% ROI on first implementation.**
 
 ---
 
@@ -121,10 +121,10 @@ ROI = 4,857%
 |----------|-------|
 | Average partner deal | $100,000 |
 | Commission (20%) | $20,000 |
-| PartnerOS cost | $7,000 |
-| **Net after PartnerOS** | **$13,000 profit** |
+| PartnerAgents cost | $7,000 |
+| **Net after PartnerAgents** | **$13,000 profit** |
 
-Close **one** average partner deal and PartnerOS has already paid for itself — with $13K left over.
+Close **one** average partner deal and PartnerAgents has already paid for itself — with $13K left over.
 
 ---
 
@@ -143,7 +143,7 @@ Close **one** average partner deal and PartnerOS has already paid for itself —
 
 ---
 
-## What Would Actually Happen Without PartnerOS?
+## What Would Actually Happen Without PartnerAgents?
 
 ### Scenario A: Build In-House
 - Hire 1-2 engineers for 6 months = $100K+
@@ -161,7 +161,7 @@ Close **one** average partner deal and PartnerOS has already paid for itself —
 - Ongoing updates = $10K/year
 - Result: Expensive, not owned
 
-### Scenario D: PartnerOS
+### Scenario D: PartnerAgents
 - Deploy free open source
 - Customize in weeks
 - Own everything forever
@@ -171,7 +171,7 @@ Close **one** average partner deal and PartnerOS has already paid for itself —
 
 ## Competitive Comparison
 
-| Feature | Build In-House | Buy Software | Consultant | PartnerOS |
+| Feature | Build In-House | Buy Software | Consultant | PartnerAgents |
 |---------|---------------|--------------|------------|-----------|
 | **Upfront cost** | $300K+ | $50K+ | $50K+ | **$7,000** |
 | **Time to value** | 12-18 months | 3-6 months | 2-4 months | **1-2 weeks** |
@@ -187,7 +187,7 @@ Close **one** average partner deal and PartnerOS has already paid for itself —
 
 ### Why would anyone build this themselves?
 
-| Without PartnerOS | With PartnerOS |
+| Without PartnerAgents | With PartnerAgents |
 |------------------|----------------|
 | 12-18 months | 1-2 weeks |
 | $300K+ cost | $7,000 |
@@ -213,19 +213,19 @@ Close **one** average partner deal and PartnerOS has already paid for itself —
 
 ## Conclusion
 
-PartnerOS isn't just templates — it's a **complete partner program in a box** that would cost $300K+ and 18 months to build.
+PartnerAgents isn't just templates — it's a **complete partner program in a box** that would cost $300K+ and 18 months to build.
 
 **ROI: 5,000%**
 **Break-even: 1 deal**
 **Time to value: 2 weeks**
 
-The question isn't "can we afford PartnerOS?" — it's "how can we afford NOT to use it?"
+The question isn't "can we afford PartnerAgents?" — it's "how can we afford NOT to use it?"
 
 ---
 
 ## Next Steps
 
-1. **Deploy** - Get PartnerOS running (1 day)
+1. **Deploy** - Get PartnerAgents running (1 day)
 2. **Customize** - Add your company data (1 week)
 3. **Launch** - Go live with 3-5 partners
 4. **Measure** - Track ROI
@@ -233,7 +233,7 @@ The question isn't "can we afford PartnerOS?" — it's "how can we afford NOT to
 
 ---
 
-*PartnerOS ROI Analysis v2.0*
+*PartnerAgents ROI Analysis v2.0*
 *Generated: 2026-02-21*
 *Includes AI Agents, Playbooks, Templates, and Infrastructure*
 

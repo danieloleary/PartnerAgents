@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Shared skill handlers for PartnerOS.
+Shared skill handlers for PartnerAgents.
 
 This module provides skill response generation for both CLI and Web UI.
 Keeps skill logic in one place (DRY principle).

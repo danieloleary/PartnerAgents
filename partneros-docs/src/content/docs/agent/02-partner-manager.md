@@ -67,7 +67,7 @@ Use Partner Manager when you need:
 ## How to Invoke
 
 ```
-PartnerOS > Partner Manager > [Your Request]
+PartnerAgents > Partner Manager > [Your Request]
 ```
 
 Or use the command:

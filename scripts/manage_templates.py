@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Manage PartnerOS blueprint templates."""
+"""Manage PartnerAgents blueprint templates."""
 
 import argparse
 import datetime
@@ -24,7 +24,7 @@ try:
         template_number: str
         version: str = "1.0.0"
         last_updated: Optional[str] = None
-        author: str = "PartnerOS Team"
+        author: str = "PartnerAgents Team"
         tier: str = "Bronze"
         skill_level: str = "beginner"
         purpose: str
@@ -192,7 +192,7 @@ Output MUST be valid JSON with this exact structure:
     "template_number": "I.1",
     "version": "1.0.0",
     "last_updated": "2026-02-22",
-    "author": "PartnerOS Team",
+    "author": "PartnerAgents Team",
     "tier": "Bronze",
     "skill_level": "beginner",
     "purpose": "strategic",
@@ -309,7 +309,7 @@ Output MUST be valid JSON with this exact structure:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Manage PartnerOS blueprint templates")
+    parser = argparse.ArgumentParser(description="Manage PartnerAgents blueprint templates")
     sub = parser.add_subparsers(dest="cmd")
 
     c = sub.add_parser("create", help="Create a new template")

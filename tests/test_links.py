@@ -1,4 +1,4 @@
-"""Tests for link validation in PartnerOS documentation."""
+"""Tests for link validation in PartnerAgents documentation."""
 
 import re
 import pytest

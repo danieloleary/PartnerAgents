@@ -1,10 +1,10 @@
 ---
-title: PartnerOS Test Suite
+title: PartnerAgents Test Suite
 keywords: ["overall site structure", "tier which tiers", "skills gained what", "tests validate", "validation tests", "every push"]
 ---
-# PartnerOS Test Suite
+# PartnerAgents Test Suite
 
-This directory contains automated tests for PartnerOS.
+This directory contains automated tests for PartnerAgents.
 
 ## Running Tests
 

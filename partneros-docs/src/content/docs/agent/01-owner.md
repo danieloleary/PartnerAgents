@@ -71,7 +71,7 @@ Use The Owner when you need:
 ## How to Invoke
 
 ```
-PartnerOS > The Owner > [Your Request]
+PartnerAgents > The Owner > [Your Request]
 ```
 
 Or use the command:

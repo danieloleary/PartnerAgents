@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-export_pdf.py - Convert PartnerOS markdown templates to PDF.
+export_pdf.py - Convert PartnerAgents markdown templates to PDF.
 
 Requires: pip install weasyprint markdown (or uses pandoc if available)
 
@@ -23,9 +23,15 @@ DOCS_DIR = REPO_ROOT / "docs"
 DEFAULT_OUTPUT = REPO_ROOT / "exports" / "pdf"
 
 TEMPLATE_CATEGORIES = [
-    "strategy", "recruitment", "enablement",
-    "legal", "finance", "security",
-    "operations", "executive", "analysis",
+    "strategy",
+    "recruitment",
+    "enablement",
+    "legal",
+    "finance",
+    "security",
+    "operations",
+    "executive",
+    "analysis",
 ]
 
 CSS = """
@@ -81,7 +87,7 @@ blockquote {
 @page {
     margin: 2cm;
     @bottom-center {
-        content: "PartnerOS — danieloleary.github.io/PartnerAgents";
+        content: "PartnerAgents — danieloleary.github.io/PartnerAgents";
         font-size: 8pt;
         color: #94a3b8;
     }
@@ -128,14 +134,21 @@ def strip_frontmatter(content: str) -> str:
 def export_with_pandoc(md_path: Path, out_path: Path) -> bool:
     """Export using pandoc (preferred — better quality)."""
     cmd = [
-        "pandoc", str(md_path),
-        "-o", str(out_path),
+        "pandoc",
+        str(md_path),
+        "-o",
+        str(out_path),
         "--pdf-engine=wkhtmltopdf",
-        "--variable", "geometry:margin=2cm",
-        "--variable", "fontsize=11pt",
-        "--variable", f"footer-center=PartnerOS",
-        "--variable", "colorlinks=true",
-        "--variable", "linkcolor=blue",
+        "--variable",
+        "geometry:margin=2cm",
+        "--variable",
+        "fontsize=11pt",
+        "--variable",
+        f"footer-center=PartnerAgents",
+        "--variable",
+        "colorlinks=true",
+        "--variable",
+        "linkcolor=blue",
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
     return result.returncode == 0
@@ -158,8 +171,7 @@ def export_with_weasyprint(md_path: Path, out_path: Path) -> bool:
 <body>{html_body}</body>
 </html>"""
     HTML(string=html, base_url=str(DOCS_DIR)).write_pdf(
-        str(out_path),
-        stylesheets=[WeasyprintCSS(string=CSS)]
+        str(out_path), stylesheets=[WeasyprintCSS(string=CSS)]
     )
     return True
 
@@ -198,26 +210,27 @@ def list_templates():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Export PartnerOS templates to PDF"
+        description="Export PartnerAgents templates to PDF"
     )
     parser.add_argument(
-        "--template", "-t",
-        help="Single template path relative to docs/ (e.g. strategy/01-partner-business-case.md)"
+        "--template",
+        "-t",
+        help="Single template path relative to docs/ (e.g. strategy/01-partner-business-case.md)",
     )
     parser.add_argument(
-        "--category", "-c",
+        "--category",
+        "-c",
         choices=TEMPLATE_CATEGORIES,
-        help="Export all templates in a category"
+        help="Export all templates in a category",
     )
     parser.add_argument(
-        "--output", "-o",
+        "--output",
+        "-o",
         default=str(DEFAULT_OUTPUT),
-        help=f"Output directory (default: {DEFAULT_OUTPUT})"
+        help=f"Output directory (default: {DEFAULT_OUTPUT})",
     )
     parser.add_argument(
-        "--list", "-l",
-        action="store_true",
-        help="List available templates"
+        "--list", "-l", action="store_true", help="List available templates"
     )
     args = parser.parse_args()
 
@@ -236,6 +249,7 @@ def main():
     has_pandoc = bool(shutil.which("pandoc"))
     try:
         import weasyprint  # noqa: F401
+
         has_weasyprint = True
     except ImportError:
         has_weasyprint = False
@@ -245,7 +259,7 @@ def main():
             "PDF export requires either:\n"
             "  pandoc: https://pandoc.org/installing.html\n"
             "  weasyprint: pip install weasyprint markdown\n",
-            file=sys.stderr
+            file=sys.stderr,
         )
         sys.exit(1)
 

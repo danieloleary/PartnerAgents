@@ -22,7 +22,7 @@ class DriverConfig:
 class TeamConfig:
     """Full team configuration"""
 
-    team_name: str = "PartnerOS Dream Team"
+    team_name: str = "PartnerAgents Dream Team"
     season: str = "2026"
     drivers: Dict[str, DriverConfig] = field(default_factory=dict)
 

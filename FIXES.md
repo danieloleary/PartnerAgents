@@ -1,8 +1,8 @@
 ---
-title: PartnerOS v1.1 - FIXES DOCUMENTATION
+title: PartnerAgents v1.1 - FIXES DOCUMENTATION
 keywords: ["never actually resumed", "resume interrupted playbooks", "have claude sonnet", "exist fix python", "validate models against", "retryconfig def retry"]
 ---
-# PartnerOS v1.1 - FIXES DOCUMENTATION
+# PartnerAgents v1.1 - FIXES DOCUMENTATION
 
 This document details what was broken in v1.0 and how it was fixed in v1.1.
 

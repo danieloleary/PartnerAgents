@@ -1,8 +1,8 @@
 ---
-title: PartnerOS Examples
+title: PartnerAgents Examples
 keywords: ["showcase best practices", "format add", "own examples"]
 ---
-# PartnerOS Examples
+# PartnerAgents Examples
 
 This directory contains example fills showing what completed templates look like.
 

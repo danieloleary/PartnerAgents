@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Template Schema Standardizer
-Applies the new PartnerOS frontmatter schema to all templates.
+Applies the new PartnerAgents frontmatter schema to all templates.
 
 Schema fields added:
 - category: legal, operational, strategic, tactical, financial
@@ -227,7 +227,7 @@ def process_template(filepath, dry_run=False, verbose=False):
         frontmatter["version"] = "1.0.0"
 
     if "author" not in frontmatter:
-        frontmatter["author"] = "PartnerOS Team"
+        frontmatter["author"] = "PartnerAgents Team"
 
     if "prerequisites" not in frontmatter:
         frontmatter["prerequisites"] = []
@@ -258,7 +258,7 @@ def process_template(filepath, dry_run=False, verbose=False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Standardize PartnerOS template frontmatter"
+        description="Standardize PartnerAgents template frontmatter"
     )
     parser.add_argument(
         "--dry-run",

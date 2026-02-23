@@ -18,7 +18,7 @@ keywords: ["part ways do", "need partners", "re looking", "re building", "partne
 ---
 # Partner Lifecycle
 
-Every successful partnership follows a predictable lifecycle. PartnerOS provides templates for each phase.
+Every successful partnership follows a predictable lifecycle. PartnerAgents provides templates for each phase.
 
 ```mermaid
 graph TB

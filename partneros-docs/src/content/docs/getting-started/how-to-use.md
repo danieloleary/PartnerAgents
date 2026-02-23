@@ -18,7 +18,7 @@ keywords: ["information placeholder what", "startup pitch differs", "enterprise 
 ---
 # How to Use Templates
 
-Every template in PartnerOS is designed to be customized for your specific situation. Here's how to get the most out of them.
+Every template in PartnerAgents is designed to be customized for your specific situation. Here's how to get the most out of them.
 
 ---
 

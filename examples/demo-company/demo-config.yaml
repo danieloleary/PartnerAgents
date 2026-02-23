@@ -1,5 +1,5 @@
-# PartnerOS Demo Configuration
-# This file contains demo data for showing PartnerOS to prospects
+# PartnerAgents Demo Configuration
+# This file contains demo data for showing PartnerAgents to prospects
 # DO NOT USE IN PRODUCTION - For demo purposes only
 
 company:
@@ -65,7 +65,7 @@ pipeline:
 
 # Demo notes for presenter
 notes: |
-  This is demo data for showing PartnerOS capabilities.
+  This is demo data for showing PartnerAgents capabilities.
   Feel free to use realistic scenarios:
   - Show onboarding flow with "Digital Dynamics"
   - Show QBR metrics with "TechStart Solutions"

@@ -259,7 +259,7 @@ docling>=1.0.0
 
 ## Document Processing (Docling)
 
-PartnerOS includes Docling integration for parsing partner documents:
+PartnerAgents includes Docling integration for parsing partner documents:
 
 ```bash
 # Install with document processing support

@@ -21,7 +21,7 @@ keywords: ["document traces back", "secret weapon cfos", "risk averse showing", 
 This template walks you through building a business case that will get CFO approval. Every section is designed to answer the questions executives actually ask—and use the metrics they actually care about. This is not a generic template. It's built from what works in real boardrooms.
 
 > **"The biggest mistake I see in partner business cases is asking for money without proving ROI. Every number in this document traces back to a specific revenue assumption. That's how you get buy-in from CFOs."**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 :::tip[Insider Tip]
 The "Do Nothing" scenario is your secret weapon. CFOs are risk-averse—showing them the cost of inaction often works better than showing the upside. See Section 7 for how to frame this.

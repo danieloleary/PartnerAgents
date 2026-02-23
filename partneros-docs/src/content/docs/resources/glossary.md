@@ -19,7 +19,7 @@ skills_gained:
 keywords: ["low barrier entry", "reducing cac compared", "sustainable competitive advantage", "predictable recurring nature", "one year period", "leads generated lead"]
 ---
 > **"The difference between a novice and expert partner leader is vocabulary. When you use the right terms with the right metrics, you sound like someone who has done this before—and people trust that."**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 :::tip
 This glossary is your reference companion. When writing business cases or strategies, use these terms correctly and reference the specific metrics to sound like an expert.

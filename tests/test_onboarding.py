@@ -99,7 +99,7 @@ def test_examples_directory_structure():
 
 
 if __name__ == "__main__":
-    print("Running PartnerOS Onboarding Tests...\n")
+    print("Running PartnerAgents Onboarding Tests...\n")
 
     print("1. test_first_partner_path_documents_exist...")
     test_first_partner_path_documents_exist()

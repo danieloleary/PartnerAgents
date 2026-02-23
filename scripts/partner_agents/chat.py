@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PartnerOS CLI Chat Interface
+PartnerAgents CLI Chat Interface
 A beautiful, interactive chat interface for the multi-agent partner team.
 """
 
@@ -48,8 +48,8 @@ from partner_agents.drivers import (
 from partner_agents import Orchestrator
 
 
-class PartnerOSChat:
-    """Beautiful CLI chat interface for PartnerOS."""
+class PartnerAgentsChat:
+    """Beautiful CLI chat interface for PartnerAgents."""
 
     def __init__(self):
         self.console = Console()
@@ -59,7 +59,7 @@ class PartnerOSChat:
         self.partner_context = {}
 
     def print_banner(self):
-        """Print the PartnerOS banner."""
+        """Print the PartnerAgents banner."""
         banner = """
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
@@ -140,7 +140,7 @@ class PartnerOSChat:
   • [cyan]clear[/cyan] — Clear chat history
   • [cyan]exit[/cyan] — Quit
             """,
-            title="[bold]Welcome to PartnerOS[/bold]",
+            title="[bold]Welcome to PartnerAgents[/bold]",
             box=ROUNDED,
             style="cyan",
         )
@@ -572,7 +572,7 @@ class PartnerOSChat:
 
 def main():
     """Main entry point."""
-    chat = PartnerOSChat()
+    chat = PartnerAgentsChat()
     chat.chat_loop()
 
 

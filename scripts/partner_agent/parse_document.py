@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Docling Document Processor for PartnerOS
+Docling Document Processor for PartnerAgents
 
 Parses partner documents (PDFs, DOCX, PPTX) into structured Markdown/JSON.
-Part of the PartnerOS document processing toolkit.
+Part of the PartnerAgents document processing toolkit.
 
 Usage:
     python parse_document.py --input contract.pdf --output contract.md

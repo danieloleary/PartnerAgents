@@ -1,14 +1,14 @@
 ---
-title: CLAUDE.md — PartnerOS Codebase Guide
+title: CLAUDE.md — PartnerAgents Codebase Guide
 keywords: ["docs must start", "step kpis checklist", "agent py points", "length character set", "main partneros docs", "root linting runs"]
 ---
-# CLAUDE.md — PartnerOS Codebase Guide
+# CLAUDE.md — PartnerAgents Codebase Guide
 
 This file provides guidance for AI assistants working in this repository.
 
 ## Project Overview
 
-**PartnerOS** is a complete playbook system for building and scaling strategic partnerships, combining:
+**PartnerAgents** is a complete playbook system for building and scaling strategic partnerships, combining:
 
 - 67 Markdown documentation templates across 9 categories (rendered via **Starlight/Astro**)
 - 14 Agent-First Templates (7 skill cards + 7 workflow templates)
@@ -30,7 +30,7 @@ This file provides guidance for AI assistants working in this repository.
 ## Repository Structure
 
 ```
-PartnerOS/
+PartnerAgents/
 ├── partneros-docs/                  # Starlight/Astro docs site
 │   ├── src/content/docs/           # Documentation source (~65 .md/.mdx files)
 │   ├── astro.config.mjs            # Starlight configuration
@@ -86,7 +86,7 @@ PartnerOS/
 ├── ARCHITECTURE.md                # Architecture decisions and philosophy
 ├── README.md                      # Project overview
 ├── Example_Partner_Plan.md        # Sample partner plan document
-└── PartnerOS_Assistant_Agent_Design.md  # Agent architecture design doc
+└── PartnerAgents_Assistant_Agent_Design.md  # Agent architecture design doc
 ```
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: Template Quality Auditor (Expert Edition)
-description: Expert framework for auditing and improving PartnerOS templates to A+ standard - with insider tactics, metrics, and stakeholder strategies
+description: Expert framework for auditing and improving PartnerAgents templates to A+ standard - with insider tactics, metrics, and stakeholder strategies
 version: 3.0.0
 last_updated: 2026-02-21
 author: PartnerAgents Team
@@ -11,10 +11,10 @@ keywords: ["expert level framework", "frontmatter title start", "content here no
 
 ## Purpose
 
-This skill provides an **expert-level framework** for auditing and improving PartnerOS templates to A+ quality standard. Unlike generic templates, expert partner leaders bring strategic value—they know what moves the needle, what convinces stakeholders, and what goes wrong.
+This skill provides an **expert-level framework** for auditing and improving PartnerAgents templates to A+ quality standard. Unlike generic templates, expert partner leaders bring strategic value—they know what moves the needle, what convinces stakeholders, and what goes wrong.
 
 > **"The difference between a template that's a paperweight and one that drives revenue is understanding the person who'll read it—and what they actually care about."**
-> — Dan O'Leary, PartnerOS
+> — Dan O'Leary, PartnerAgents
 
 ---
 
@@ -541,5 +541,5 @@ Before marking a template as A+ complete, verify:
 
 ---
 
-*This skill is maintained by PartnerOS. For questions, contact the team.*
+*This skill is maintained by PartnerAgents. For questions, contact the team.*
 

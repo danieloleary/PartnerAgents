@@ -1,8 +1,8 @@
 ---
-title: PartnerOS Architecture
+title: PartnerAgents Architecture
 keywords: ["own create new", "specific playbooks train", "clone run locally", "scaling strategic partnerships", "key templates option", "company training how"]
 ---
-# PartnerOS Architecture
+# PartnerAgents Architecture
 *Last Updated: February 21, 2026*
 
 ---
@@ -15,14 +15,14 @@ keywords: ["own create new", "specific playbooks train", "clone run locally", "s
 - **Agent** = The coach (guides them through it)
 - **You** = The advisor (help customize and implement)
 
-PartnerOS is designed to be dropped into any company and immediately provide a world-class partner program - templates, processes, and AI guidance.
+PartnerAgents is designed to be dropped into any company and immediately provide a world-class partner program - templates, processes, and AI guidance.
 
 ---
 
 ## Target Use Cases
 
-1. **Internal Use** - Your company manages partners using PartnerOS
-2. **Sell to Others** - Companies license/use PartnerOS for their partner programs
+1. **Internal Use** - Your company manages partners using PartnerAgents
+2. **Sell to Others** - Companies license/use PartnerAgents for their partner programs
 3. **Hybrid** - Use internally AND sell to select partners
 
 **Target Companies:** All sizes (SMB to Enterprise)
@@ -33,7 +33,7 @@ PartnerOS is designed to be dropped into any company and immediately provide a w
 ## Directory Structure
 
 ```
-PartnerOS/
+PartnerAgents/
 ├── docs/                          # Templates (the core product) — 47 templates, 72 .md files
 │   ├── strategy/                  # Strategy templates (8) + index
 │   ├── recruitment/               # Recruitment templates (10) + index
@@ -75,9 +75,9 @@ PartnerOS/
 
 ---
 
-## What's Fixed (By PartnerOS)
+## What's Fixed (By PartnerAgents)
 
-These elements are owned by PartnerOS and should not be modified by using companies:
+These elements are owned by PartnerAgents and should not be modified by using companies:
 
 | Item | Description |
 |------|-------------|
@@ -221,7 +221,7 @@ python scripts/fill_template.py --template docs/recruitment/01-email-sequence.md
 ### Commercial Offerings
 - **Template Packs** - Additional vertical-specific templates
 - **Implementation** - Time spent customizing for their company
-- **Training** - How to use PartnerOS effectively
+- **Training** - How to use PartnerAgents effectively
 - **Support** - Ongoing advisor access
 
 ---
@@ -231,7 +231,7 @@ python scripts/fill_template.py --template docs/recruitment/01-email-sequence.md
 ```bash
 # Clone the repo
 git clone https://github.com/danieloleary/PartnerAgents.git
-cd PartnerOS
+cd PartnerAgents
 
 # Quick start
 python scripts/onboard.py
@@ -248,4 +248,4 @@ See [BACKLOG.md](BACKLOG.md) for prioritized feature list.
 
 ---
 
-*PartnerOS - The complete playbook for building and scaling strategic partnerships.*
+*PartnerAgents - The complete playbook for building and scaling strategic partnerships.*

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate Board Deck PowerPoint from template and demo data.
-Creates a beautiful, professional board presentation with PartnerOS branding.
+Creates a beautiful, professional board presentation with PartnerAgents branding.
 """
 
 import json
@@ -63,7 +63,7 @@ def add_slide_title(slide, title_text, subtitle_text=None):
 
 
 def add_brand_bar(slide, height=Inches(0.08)):
-    """Add PartnerOS brand color bar at top"""
+    """Add PartnerAgents brand color bar at top"""
     shape = slide.shapes.add_shape(
         MSO_SHAPE.RECTANGLE, Inches(0), Inches(0), Inches(10), height
     )
@@ -502,7 +502,7 @@ def create_ask_slide(prs, data):
 def generate_board_deck(output_path=None):
     """Generate the complete board deck presentation"""
 
-    # Load demo data - go up from scripts/ to PartnerOS root
+    # Load demo data - go up from scripts/ to PartnerAgents root
     script_dir = Path(__file__).parent.resolve()
     root_dir = script_dir.parent
     data_path = root_dir / "examples" / "demo-company" / "board-deck-data.json"

@@ -1,8 +1,8 @@
 ---
-title: PartnerOS Template Inventory
+title: PartnerAgents Template Inventory
 keywords: ["near identical copy", "planned templates", "docs", "served", "was"]
 ---
-# PartnerOS Template Inventory
+# PartnerAgents Template Inventory
 
 **Updated:** February 20, 2026
 **Single Source of Truth:** `docs/`

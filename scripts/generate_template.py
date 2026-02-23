@@ -94,7 +94,7 @@ category: {cat}
 template_number: {prefix}.{template_num}
 version: 1.0.0
 last_updated: {datetime.now().strftime("%Y-%m-%d")}
-author: PartnerOS Team
+author: PartnerAgents Team
 
 tier:
   - Bronze
@@ -190,7 +190,7 @@ def create_template(category, name, title=None):
 
 def interactive_mode():
     """Interactive template creation."""
-    print("\n=== PartnerOS Template Generator ===\n")
+    print("\n=== PartnerAgents Template Generator ===\n")
 
     print("Available categories:")
     for i, cat in enumerate(CATEGORIES.keys(), 1):
@@ -219,7 +219,7 @@ def interactive_mode():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate new PartnerOS template")
+    parser = argparse.ArgumentParser(description="Generate new PartnerAgents template")
     parser.add_argument(
         "--category", "-c", choices=list(CATEGORIES.keys()), help="Template category"
     )

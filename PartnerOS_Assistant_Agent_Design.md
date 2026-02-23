@@ -1,8 +1,8 @@
 ---
-title: PartnerOS Assistant Agent Design
+title: PartnerAgents Assistant Agent Design
 keywords: ["chase surface risks", "messy inputs then", "calendar meeting notes", "already exist memory", "db tables matching", "blocked feedback loop"]
 ---
-# PartnerOS Assistant Agent Design
+# PartnerAgents Assistant Agent Design
 
 ## What it does
 
@@ -148,7 +148,7 @@ Then flag it as a structural gap.
 ## Owners and dates
 
 - Owner: Dan (product owner).
-- DRI to build: one engineer (or whoever owns the PartnerOS repo).
+- DRI to build: one engineer (or whoever owns the PartnerAgents repo).
 - By Jan 17, 2026: finalize MVP spec (sources, outputs, UI, guardrails).
 - By Jan 31, 2026: MVP live for 2 pilot partners (one should be Accenture).
 

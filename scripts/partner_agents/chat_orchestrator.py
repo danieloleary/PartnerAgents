@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Chat Orchestrator - Main brain for the PartnerOS agent swarm
+Chat Orchestrator - Main brain for the PartnerAgents agent swarm
 Handles conversation memory, agent coordination, and skill execution.
 
 Agent Swarm (7 agents):
@@ -268,7 +268,7 @@ CURRENT PARTNER: {current_partner}
 
     skills_text = "\n".join(skills_list[:15])  # Limit for prompt size
 
-    prompt = f"""You are the PartnerOS Agent Swarm - a coordinated team of 7 specialized agents working together.
+    prompt = f"""You are the PartnerAgents Agent Swarm - a coordinated team of 7 specialized agents working together.
 
 Your job is to understand what the user wants and orchestrate the right agents to get it done.
 
