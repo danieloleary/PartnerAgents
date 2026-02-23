@@ -1,18 +1,55 @@
 ---
 title: PartnerOS
-keywords: ["scaling strategic partnerships", "scale manual workflows", "startup founders building", "multi agent system", "specialized ai agents", "ai agent"]
+keywords: ["partner program automation", "chat with partner program", "AI partner management", "natural language partner ops", "partner CLI", "partner chat agent"]
 ---
-# PartnerOS
 
-**The complete playbook for building and scaling strategic partnerships with AI-powered automation.**
+# PartnerOS — Chat With Your Partner Program
+
+**Tell PartnerOS what you need. Watch it happen.**
 
 [![Deploy Docs](https://github.com/danieloleary/PartnerOS/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/danieloleary/PartnerOS/actions/workflows/deploy-docs.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## The Problem
+## Chat CLI — The Killer Feature
 
+```bash
+# One-shot: tell PartnerOS what you need
+$ python scripts/partner_agents/cli.py "onboard Acme"
+✅ Created partner: Acme Corp (Silver tier)
+✅ Generated NDA, MSA, DPA from templates
+✅ Created onboarding checklist
+
+$ python scripts/partner_agents/cli.py "register deal for Acme, $50,000"
+✅ Deal registered: Acme Corp - $50,000 (90-day protection)
+
+$ python scripts/partner_agents/cli.py "show status for Acme"
+📊 Acme Corp Status:
+   Tier: Silver | Deals: 3 | Revenue: $125,000 | Health: 85%
+
+# Interactive: chat session with memory
+$ python scripts/partner_agents/cli.py
+🤖 PartnerOS > email Acme about QBR
+📧 Generated QBR invitation email for Acme Corp
+   Subject: QBR Schedule - Acme Corp Q4 2025
+```
+
+---
+
+## 5 AI Skills Ready to Go
+
+| Skill | Command Example | What It Does |
+|-------|-----------------|--------------|
+| **status** | `status Acme` | Partner health, deal count, revenue, health score |
+| **email** | `email Acme about renewal` | Generates personalized outreach emails |
+| **commission** | `commission for Acme Q4` | Calculates payouts, structures deals |
+| **qbr** | `qbr for Acme` | Builds quarterly business review deck |
+| **roi** | `roi for partner program` | Analyzes partner program ROI & metrics |
+
+---
+
+## The Problem
 Building a world-class partner program is hard. Most companies:
 
 - **Start from scratch** — Reinventing the wheel with every new partnership
@@ -28,15 +65,14 @@ Building a world-class partner program is hard. Most companies:
 
 | Benefit | Description |
 |---------|-------------|
-| **Complete Playbooks** | 7 end-to-end automation playbooks covering the entire partner lifecycle |
+| **Chat CLI** | Natural language commands: `onboard Acme`, `register deal for X, $50k` |
+| **5 Ready Skills** | status, email, commission, qbr, roi — all tested and working |
+| **Interactive + One-Shot** | Chat sessions or single commands |
 | **67 Ready-to-Use Templates** | Strategy (10), recruitment (10), enablement (9), legal (5), finance (4), security (2), operations (8), executive (1), analysis (2) |
-| **14 Agent-First Templates** | 7 skill cards + 7 workflow templates for AI-driven partner management |
-| **Multi-Agent AI Team** | 7 specialized AI agents that collaborate on partner work |
-| **AI-Powered Agent** | Local AI partner assistant runs offline with Ollama — no API keys required |
+| **7 Automation Playbooks** | recruit, onboard, qbr, expand, exit, co-marketing, support-escalation |
 | **Enterprise-Ready** | Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths |
-| **Tested & Validated** | 163 automated tests ensure reliability across templates and agents |
-| **A+ Quality Templates** | Every template rewritten with expert voice, Starlight formatting, and progressive levels |
-| **Beautiful Web UI** | Chat interface with Markdown rendering, API key management, and partner CRM |
+| **78 Tests Passing** | Every skill verified — run `pytest tests/test_chat_organizer.py -v` |
+| **Beautiful Web UI** | Chat interface at http://localhost:8000 |
 
 ---
 
@@ -107,45 +143,32 @@ Browse the full documentation, explore templates, and see the AI Agent in action
 
 ## Quick Start
 
-### Option 1: Run the AI Partner Agent (Recommended)
+### Option 1: Try the Chat CLI (Recommended)
 
 ```bash
 # Clone the repo
 git clone https://github.com/danieloleary/PartnerOS.git
-cd PartnerOS/scripts/partner_agent
+cd PartnerOS
 
-# Install dependencies
-pip install -r requirements.txt
+# One-shot: tell PartnerOS what you need
+python scripts/partner_agents/cli.py "onboard Acme Corp"
 
-# Set up local AI (free, private, offline)
-brew install ollama
-ollama pull llama3.2:3b
-
-# Run the agent
-export OLLAMA_ENDPOINT=http://localhost:11434
-export OLLAMA_MODEL=llama3.2:3b
-python agent.py
+# Interactive: start a chat session
+python scripts/partner_agents/cli.py
 ```
 
-Or use Anthropic API (cloud):
+### Option 2: Web UI
+
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-export PROVIDER=anthropic
-python agent.py
+# Run the web UI
+python scripts/partner_agents/web.py
+
+# Open http://localhost:8000
 ```
 
-### Option 2: Browse Online
+### Option 3: Browse Online
 
 **[danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)** — Full documentation with all templates.
-
-### Option 3: Run Locally
-
-```bash
-cd partneros-docs
-npm install
-npm run dev
-# Open http://localhost:4321
-```
 
 ---
 

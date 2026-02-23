@@ -253,6 +253,7 @@ class Router:
                             return partner
             # Try: action verb is followed directly by partner name
             # e.g., "onboard TestCo" -> partner is after "onboard"
+            # Also include skill keywords: "status Acme", "email Acme", etc.
             action_words = [
                 "onboard",
                 "onboarding",
@@ -260,14 +261,39 @@ class Router:
                 "add",
                 "create",
                 "register",
+                # Skill keywords that can be followed by partner name
+                "status",
+                "email",
+                "commission",
+                "calc",
+                "qbr",
+                "roi",
             ]
             for i, word in enumerate(words):
-                word_lower = word.lower().rstrip("s")  # handle "onboards" -> "onboard"
+                word_lower = word.lower()
+                # Handle plural/singular: strip 's' for verbs but not for 'status'
+                if word_lower != "status":
+                    word_lower = word_lower.rstrip("s")
                 if word_lower in action_words:
                     if i + 1 < len(words):
                         partner = " ".join(words[i + 1 :]).strip(".,!?")
-                        partner = partner.split(",")[0].strip()  # Stop at comma
-                        partner = " ".join(partner.split()[:2])
+                        # Stop at common non-partner words (about, for, regarding, etc.)
+                        skip_words = [
+                            "about",
+                            "for",
+                            "the",
+                            "a",
+                            "an",
+                            "to",
+                            "regarding",
+                        ]
+                        partner_parts = partner.split()
+                        filtered_parts = []
+                        for part in partner_parts:
+                            if part.lower() in skip_words:
+                                break
+                            filtered_parts.append(part)
+                        partner = " ".join(filtered_parts)
                         if partner and partner[0].isupper():
                             return partner
             return None
@@ -339,12 +365,26 @@ class Router:
                     if action == "deal":
                         import re
 
-                        # Match $X, $Xk, Xk, X,XXX patterns - simpler regex
+                        # Match deal amounts: $50,000 $50000 50k $50k etc
+                        # Try k suffix first: 50k or $50k
                         amount_match = re.search(
-                            r"\$?(\d+)(?:k)?", user_message, re.IGNORECASE
+                            r"\$?(\d+)(?:k)", user_message, re.IGNORECASE
                         )
+                        if not amount_match:
+                            # Try with commas: $50,000 (require comma for 3+ digits)
+                            amount_match = re.search(
+                                r"\$(\d{1,3}(?:,\d{3})+)", user_message
+                            )
+                        if not amount_match:
+                            # Try plain number without $: 50000
+                            amount_match = re.search(
+                                r"(?<!\d)(\d{4,})(?!\d)", user_message
+                            )
+                        if not amount_match:
+                            # Try plain number with $: $50000
+                            amount_match = re.search(r"\$(\d+)", user_message)
                         if amount_match:
-                            amount_str = amount_match.group(1)
+                            amount_str = amount_match.group(1).replace(",", "")
                             if not amount_str:
                                 continue
                             # Check if it's in thousands (k)
@@ -353,7 +393,7 @@ class Router:
                             else:
                                 amount = int(amount_str)
                             entities["amount"] = amount
-                            # Extract account name (everything after "for" before amount)
+                            # Extract account name (everything after "for" before amount or comma)
                             account_match = re.search(r"for\s+([^,$]+)", user_message)
                             if account_match:
                                 entities["account"] = account_match.group(1).strip()
@@ -368,7 +408,7 @@ class Router:
                             missing_fields=["partner_name"] if not partner_name else [],
                         )
                     )
-                break
+                    break  # Only break after finding a match
 
         if not intents:
             # Default to chat

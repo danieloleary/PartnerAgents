@@ -55,7 +55,7 @@ async def send_message(message: str, api_key: str, model: str) -> dict:
         context = {"partners": partner_state.list_partners()}
         route_result = await router_instance.route(sanitized, context)
 
-        # Check for document OR action OR skill requests
+        # Check for document OR action/skills if detected
         if route_result.intents and (
             route_result.is_document_request
             or route_result.intents[0].type in ["action", "skill"]
@@ -112,9 +112,141 @@ async def send_message(message: str, api_key: str, model: str) -> dict:
                         },
                     }
 
+            # Create partner if doesn't exist (skip for roi)
+            partner = None
+            if partner_name:
+                partner = partner_state.get_partner(partner_name)
+                if not partner:
+                    partner = partner_state.add_partner(
+                        name=partner_name,
+                        tier=intent.entities.get("tier", "Bronze"),
+                    )
+
+            # Handle deal registration
+            if intent.name == "deal":
+                amount = intent.entities.get("amount", 0)
+                account = intent.entities.get("account", partner_name)
+
+                print(
+                    f"DEBUG: intent.name={intent.name}, amount={amount}, account={account}",
+                    file=sys.stderr,
+                )
+
+                if isinstance(amount, str):
+                    amount_str = (
+                        amount.replace("$", "")
+                        .replace(",", "")
+                        .replace("k", "000")
+                        .replace("K", "000")
+                    )
+                    try:
+                        amount = int(float(amount_str))
+                    except:
+                        amount = 0
+
+                deal = partner_state.register_deal(partner_name, amount, account)
+
+                if deal:
+                    return {
+                        "response": f"Registered deal for **{partner_name}**!\n\nDeal Value: **${amount:,}**\nAccount: {account}\nStatus: {deal['status']}",
+                        "agent": "engine",
+                        "deal": {
+                            "partner": partner_name,
+                            "amount": amount,
+                            "account": account,
+                            "status": deal["status"],
+                        },
+                    }
+
             # Handle action types - create NDA by default (skip for skills)
             if intent.type == "action":
                 doc_type = intent.name
+
+                # Full onboarding: create NDA + MSA + DPA + checklist
+                if intent.name == "onboard":
+                    created_docs = []
+
+                    # Create NDA, MSA, DPA
+                    for doc in ["nda", "msa", "dpa"]:
+                        doc_result = document_generator.create_document(
+                            doc_type=doc,
+                            partner_name=partner_name,
+                            fields=intent.entities,
+                        )
+                        if doc_result:
+                            partner_state.add_document(
+                                partner_name=partner_name,
+                                doc_type=doc,
+                                template=doc_result["template"],
+                                file_path=doc_result["path"],
+                                fields=doc_result["fields"],
+                                status="draft",
+                            )
+                            created_docs.append(doc.upper())
+
+                    # Create onboarding checklist document
+                    checklist_content = f"""# Onboarding Checklist for {partner_name}
+
+## Week 1: Foundation
+- [ ] Send welcome email
+- [ ] Schedule kickoff call
+- [ ] Share partner portal access
+- [ ] Provide product training schedule
+
+## Week 2-3: Technical Enablement
+- [ ] Complete technical integration setup
+- [ ] Test API connections
+- [ ] Review documentation and resources
+- [ ] Set up sandbox environment
+
+## Week 4: Go-to-Market
+- [ ] Finalize joint GTM plan
+- [ ] Co-branded marketing materials
+- [ ] Announce partnership (if applicable)
+- [ ] First co-sell opportunity identified
+
+## First 90 Days
+- [ ] Complete certification (if applicable)
+- [ ] First deal registered
+- [ ] QBR scheduled
+- [ ] Expansion opportunities identified
+"""
+                    # Save checklist
+                    from pathlib import Path
+                    import os
+                    from datetime import datetime
+
+                    slug = partner_name.lower().replace(" ", "-")
+                    checklist_dir = Path(f"partners/{slug}/documents")
+                    checklist_dir.mkdir(parents=True, exist_ok=True)
+                    checklist_path = (
+                        checklist_dir
+                        / f"{datetime.now().strftime('%Y-%m-%d')}-onboarding-checklist.md"
+                    )
+                    checklist_path.write_text(checklist_content)
+
+                    partner_state.add_document(
+                        partner_name=partner_name,
+                        doc_type="checklist",
+                        template="recruitment/09-onboarding.md",
+                        file_path=str(checklist_path),
+                        fields={"partner_name": partner_name},
+                        status="draft",
+                    )
+                    created_docs.append("CHECKLIST")
+
+                    return {
+                        "response": f"## Onboarded **{partner_name}**!\n\nCreated:\n"
+                        + "\n".join([f"- {d}" for d in created_docs])
+                        + f"\n\nPartner is now ready for enablement!",
+                        "agent": "architect",
+                        "onboarding": {
+                            "partner": partner_name,
+                            "documents": created_docs,
+                        },
+                    }
+
+                # Single document creation for other actions
                 if intent.type == "action":
                     doc_type = "nda"
 

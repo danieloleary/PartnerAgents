@@ -48,6 +48,9 @@ rate_limit_store = {}
 RATE_LIMIT = 20
 RATE_WINDOW = 60
 
+# Response caching
+response_cache = {}
+
 # CORS middleware to allow browser requests
 app = FastAPI()
 app.add_middleware(

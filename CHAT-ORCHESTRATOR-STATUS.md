@@ -39,7 +39,7 @@ python scripts/partner_agents/cli.py "register deal for Acme, $50k"
 
 ## Test Suite
 
-### Tests: 73 passing
+### Tests: 81 passing
 
 | Class | Tests |
 |-------|-------|

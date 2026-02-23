@@ -30,6 +30,10 @@ __pycache__/
 scripts/partner_agent/state/
 scripts/partner_agent/*.log
 
+# Generated partner data (local testing)
+partners/
+scripts/partner_agents/partners.json
+
 # Private partner data (YOUR data, never committed upstream)
 .partner_data/
 

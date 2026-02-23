@@ -1,39 +1,72 @@
 ---
 title: Welcome to PartnerOS
-description: The complete playbook for building and scaling strategic partnerships with AI-powered automation.
+description: Chat with your partner program. Tell it what you need — "onboard Acme", "register deal for X, $50k" — and watch it happen.
 template: splash
 hero:
-  tagline: The complete playbook for building and scaling strategic partnerships with AI-powered automation
+  tagline: Tell PartnerOS what you need. Watch it happen.
   image:
     file: /src/assets/logo.svg
   actions:
-    - text: Get Started
+    - text: Try the CLI
       link: /PartnerOS/getting-started/quick-start/
       icon: right-arrow
       variant: primary
-    - text: View Templates
-      link: /PartnerOS/strategy/
+    - text: See the Skills
+      link: /PartnerOS/skills/
       icon: open-book
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Why PartnerOS?
+## Chat With Your Partner Program
+
+```bash
+$ python scripts/partner_agents/cli.py
+
+🤖 PartnerOS > onboard Acme
+✅ Created partner: Acme Corp (Silver tier)
+✅ Generated NDA, MSA, DPA from templates
+✅ Created onboarding checklist
+
+🤖 PartnerOS > register deal for Acme, $50,000
+✅ Deal registered: Acme Corp - $50,000 (90-day protection)
+
+🤖 PartnerOS > show status for Acme
+📊 Acme Corp Status:
+   Tier: Silver | Deals: 3 | Revenue: $125,000 | Health: 85%
+```
 
 <CardGrid stagger>
-	<Card title="40 Ready-to-Use Templates" icon="📋">
-		Strategy (8), Recruitment (10), Enablement (7), Legal (4), Finance (3), Security (2), Operations (4), Executive (1), Analysis (1)
+	<Card title="5 AI Skills Ready to Go" icon="⚡">
+		**status** — Partner health & deal status  
+		**email** — Generate outreach & follow-ups  
+		**commission** — Calculate payouts & structure  
+		**qbr** — Build quarterly business reviews  
+		**roi** — Partner program ROI analysis
 	</Card>
-	<Card title="7 AI-Powered Agents" icon="🤖">
-		Multi-agent system with 7 specialized AI agents that collaborate on partner work
+	<Card title="Natural Language Commands" icon="💬">
+		`"onboard [Partner]"` → Creates partner + generates NDA/MSA/DPA  
+		`"register deal for [Partner], $[amount]"` → Deal registration  
+		`"email [Partner] about QBR"` → Generates personalized email
 	</Card>
-	<Card title="7 Automation Playbooks" icon="⚡">
-		Cover the entire partner lifecycle: recruit, onboard, QBR, expand, exit, co-marketing, support
+	<Card title="Interactive or One-Shot" icon="🖥️">
+		**Interactive mode:** `python cli.py` — Chat session with memory  
+		**One-shot mode:** `cli.py "onboard Acme"` — Single command execution
 	</Card>
-	<Card title="Enterprise-Ready" icon="🏢">
-		Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths
+	<Card title="78 Tests Passing" icon="✅">
+		Every skill tested and verified. Run `pytest tests/test_chat_organizer.py -v` to see them all pass.
 	</Card>
 </CardGrid>
+
+## Before vs After
+
+| Task | Before | After |
+|------|--------|-------|
+| Onboard a partner | 2-3 hours, 5+ templates | `onboard Acme` → done in seconds |
+| Register a deal | Fill forms, check policies | `register deal for Acme, $50k` |
+| Send follow-up email | Write from scratch | `email Acme about renewal` |
+| Calculate commission | Spreadsheet formulas | `commission for Acme Q4` |
+| Build QBR | Copy slides, manually gather data | `qbr for Acme` → complete deck |
 
 ## Quick Start
 
@@ -42,11 +75,35 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 git clone https://github.com/danieloleary/PartnerOS.git
 cd PartnerOS
 
-# Start the web UI
-python scripts/partner_agents/web.py
+# Try the CLI (one-shot)
+python scripts/partner_agents/cli.py "status Acme"
 
+# Or start interactive chat
+python scripts/partner_agents/cli.py
+
+# Or run the web UI
+python scripts/partner_agents/web.py
 # Open http://localhost:8000
 ```
+
+---
+
+## Why PartnerOS?
+
+<CardGrid stagger>
+	<Card title="40 Ready-to-Use Templates" icon="📋">
+		Strategy (8), Recruitment (10), Enablement (7), Legal (4), Finance (3), Security (2), Operations (4), Executive (1), Analysis (1)
+	</Card>
+	<Card title="7 Automation Playbooks" icon="🤖">
+		Cover the entire partner lifecycle: recruit, onboard, QBR, expand, exit, co-marketing, support
+	</Card>
+	<Card title="Enterprise-Ready" icon="🏢">
+		Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths
+	</Card>
+	<Card title="AI-Powered Chat" icon="💬">
+		Tell PartnerOS what you need in plain English. Natural language → executed actions.
+	</Card>
+</CardGrid>
 
 ## Partner Lifecycle
 
