@@ -7,11 +7,15 @@ A beautiful web UI for the multi-agent partner team.
 import os
 import sys
 import re
+import time
+import hashlib
+from collections import deque, OrderedDict
 
 # Import fastapi BEFORE adding scripts to path (to avoid local test shim)
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.gzip import GZipMiddleware
 from contextlib import asynccontextmanager
 import httpx
 
@@ -31,35 +35,29 @@ from partner_agents.drivers import (
 from partner_agents import Orchestrator
 from partner_agents import partner_state
 
-# In-memory rate limiting
-import time
-from collections import deque
-
-rate_limit_store = {}
-response_cache = {}
+# In-memory rate limiting & caching with OrderedDict for efficient pruning
+rate_limit_store = OrderedDict()
+response_cache = OrderedDict()
 
 # Cache settings
 CACHE_ENABLED = True
 CACHE_TTL_SECONDS = 300
+MAX_CACHE_SIZE = 1000
 
 
 def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) -> bool:
-    """Simple rate limiter using deque for efficient pruning."""
+    """Simple rate limiter using deque for efficient pruning and OrderedDict for LRU-style eviction."""
     now = time.time()
 
-    # Defensive: prevent memory exhaustion if store grows too large
-    if len(rate_limit_store) > 1000:
-        # Clear entries older than the window
-        expired_ips = [
-            ip_key
-            for ip_key, times in rate_limit_store.items()
-            if not times or (now - times[-1] > window_seconds)
-        ]
-        for ip_key in expired_ips:
-            del rate_limit_store[ip_key]
-
     if ip not in rate_limit_store:
+        # Defensive: prevent memory exhaustion if store grows too large
+        # Using OrderedDict.popitem(last=False) is O(1) to remove the oldest entry
+        if len(rate_limit_store) >= MAX_CACHE_SIZE:
+            rate_limit_store.popitem(last=False)
         rate_limit_store[ip] = deque()
+    else:
+        # Move to end to track as most recently active (LRU)
+        rate_limit_store.move_to_end(ip)
 
     # Efficiently remove old requests from the left
     window_start = now - window_seconds
@@ -84,6 +82,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="PartnerOS", lifespan=lifespan)
+
+# Add GZip compression - significant performance boost for the ~30KB HTML home page
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 app.add_middleware(
     CORSMiddleware,
@@ -752,16 +753,18 @@ async def call_llm(
     client: httpx.AsyncClient = None,
 ) -> dict:
     """Call OpenRouter LLM with partner context."""
-    import hashlib
-
     # Simple cache - hash the message AND model
-    cache_key = hashlib.sha256(f"{model}:{message}".encode()).hexdigest()[:16]
+    # Include a hash of the API key to prevent cross-user leakage if keys differ
+    key_hash = hashlib.sha256(api_key.encode()).hexdigest()[:8]
+    cache_key = hashlib.sha256(f"{key_hash}:{model}:{message}".encode()).hexdigest()[:16]
 
     # Check cache settings - if cache disabled, skip it
     if use_cache:
-        cache_time = response_cache.get(cache_key)
-        if cache_time and time.time() - cache_time.get("ts", 0) < CACHE_TTL_SECONDS:
-            return cache_time.get("result")
+        cache_entry = response_cache.get(cache_key)
+        if cache_entry and time.time() - cache_entry.get("ts", 0) < CACHE_TTL_SECONDS:
+            # Move to end to mark as recently used (LRU)
+            response_cache.move_to_end(cache_key)
+            return cache_entry.get("result")
 
     # Build context about agents
     system_prompt = """You are the orchestrator of PartnerOS - an AI partner team. 
@@ -832,6 +835,9 @@ Be helpful, concise, and actionable."""
 
             # Only cache if user has caching enabled
             if use_cache:
+                # LRU pruning: if cache exceeds limit, remove oldest entry
+                if len(response_cache) >= MAX_CACHE_SIZE:
+                    response_cache.popitem(last=False)
                 response_cache[cache_key] = {"result": result, "ts": time.time()}
 
             return result

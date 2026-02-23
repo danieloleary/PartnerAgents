@@ -24,3 +24,7 @@
 ## Lessons Learned
 - **Shim Compatibility:** When modifying core library behavior (like adding `lifespan`), ensure the project's test shims are updated accordingly to avoid CI/CD failures.
 - **Defensive Programming:** Using `getattr(request.app, 'state', None)` is essential when the execution environment might not fully support the FastAPI spec.
+
+## 2026-02-23 - Compression & LRU Hardening
+**Learning:** Monolithic HTML responses and unbounded in-memory caches are silent performance killers. GZip reduced the home page payload from 30KB to 7KB (76% saving). Unbounded dicts for caching and rate limiting can lead to memory exhaustion; using `OrderedDict` with `popitem(last=False)` provides O(1) LRU pruning.
+**Action:** Always enable response compression for static/monolithic payloads and implement explicit size limits on all in-memory caches using OrderedDict or similar LRU patterns.
