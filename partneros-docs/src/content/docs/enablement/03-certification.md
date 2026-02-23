@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.3
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 4-8 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Training materials, Assessment criteria]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["program establishes standards", "template purpose", "partner expertise", "use"]
+  Certification program establishing standards for partner expertise.
+  Ensure every partner deliverable meets your quality standards.
+outcomes: [Certification levels, Assessment criteria, Quality standards]
+skills_gained: [Program design, Quality assurance, Competency testing]
+keywords: ["certification", "standards", "quality", "assessment", "expertise"]
 ---
 > **Certification isn't about checking boxes—it's about ensuring every partner deliverable meets your standards. Cut corners here and your brand suffers.** — Dan O'Leary
 

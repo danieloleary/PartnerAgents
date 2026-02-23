@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.6
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites: [CRM access, Reporting tools]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["template purpose", "partner involvement", "metrics", "matter", "track", "use"]
+  Key metrics to track partner program success. Pick 5 metrics that matter and
+  track them religiously—what gets measured gets managed.
+outcomes: [KPI dashboard, Success metrics, Performance tracking]
+skills_gained: [Metrics design, Performance measurement, Data analysis]
+keywords: ["metrics", "KPIs", "success", "measurement", "tracking"]
 ---
 > **What gets measured gets managed. Pick the 5 metrics that matter and track them religiously.** — Dan O'Leary
 

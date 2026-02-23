@@ -2,19 +2,19 @@
 title: Quick Start
 category: operational
 version: 1.1.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: beginner
 purpose: operational
 phase: onboarding
 time_required: 10 minutes
 difficulty: easy
-prerequisites: 
-description: Get up and running with PartnerOS in 10 minutes - no install required
-outcomes: 
-skills_gained: 
-keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
+prerequisites: [Web browser]
+description: Get up and running with PartnerOS in 10 minutes—no install required.
+outcomes: [Browse templates, Understand structure, Launch quickly]
+skills_gained: [Platform navigation, Template discovery, Quick start]
+keywords: ["quick start", "getting started", "fast", "minutes", "browse"]
 ---
 # PartnerOS Quick Start
 

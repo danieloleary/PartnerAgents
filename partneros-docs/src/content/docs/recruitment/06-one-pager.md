@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.6
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1 hour
 difficulty: easy
-prerequisites: 
+prerequisites: [Value proposition, Partner benefits]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["gets read how", "access enterprise customers", "one pager should", "works one pagers", "don t understand", "reach more customers"]
+  One-page leave-behind that explains partnership value in 2 minutes.
+  If you can't explain it in one page, you don't understand it well enough.
+outcomes: [One-page summary, Leave-behind document, Executive overview]
+skills_gained: [Messaging, Executive communication, Content creation]
+keywords: ["one-pager", "leave-behind", "summary", "executive summary"]
 ---
 > **If you can't explain your partnership value in one page, you don't understand it well enough.** — Dan O'Leary
 

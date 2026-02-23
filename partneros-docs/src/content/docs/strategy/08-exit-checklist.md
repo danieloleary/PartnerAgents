@@ -4,19 +4,21 @@ section: Strategy
 category: strategic
 template_number: I.8
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: operational
 phase: strategy
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Legal review, Partner manager involvement]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["end partnerships matters", "protects all parties", "make hasty decisions", "coordinated team assign", "ending effective date", "crm access date"]
+  Execute partner exits gracefully with a structured checklist. Protects your business,
+  maintains relationships, and avoids legal liability.
+outcomes: [Clean exit process, Legal protection, Relationship preservation]
+skills_gained: [Contract management, Legal compliance, Relationship management]
+keywords: ["exit", "termination", "offboarding", "partner exit", "churn"]
 ---
 > **How you end partnerships matters as much as how you start them. A messy exit creates enemies; a graceful exit creates potential future allies.** — Dan O'Leary
 

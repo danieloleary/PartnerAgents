@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 4-8 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Product knowledge, Sales methodology]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["trained poorly represent", "poorly invest", "template purpose", "partner sales", "training", "s"]
+  Training deck for partner sales and technical teams. Partners represent your brand—
+  invest in training or risk poor representation.
+outcomes: [Training deck, Certified partners, Product knowledge]
+skills_gained: [Training creation, Content development, Sales enablement]
+keywords: ["training", "deck", "sales enablement", "certification", "education"]
 ---
 > **Partners who are trained poorly represent you poorly. Invest in training—it's your brand on the line.** — Dan O'Leary
 

@@ -2,18 +2,19 @@
 title: How to Use Templates
 category: operational
 version: 1.0.0
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: onboarding
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
-description: Tips for customizing templates for your organization
-outcomes: 
-skills_gained: 
-keywords: ["information placeholder what", "startup pitch differs", "enterprise pitch keep", "first main content", "one workflow integration", "branding correct dates"]
+prerequisites: [Text editor]
+description: Tips for customizing templates for your organization.
+outcomes: [Customize templates, Use placeholders, Adapt to needs]
+skills_gained: [Template customization, Placeholder usage, Document adaptation]
+keywords: ["how to use", "templates", "customize", "placeholder", "adapt"]
 ---
 # How to Use Templates
 

@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Prospect list, Email templates]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["only send emails", "multi channel approach", "optimize weekly review", "think there could", "s useful happy", "engage genuinely ask"]
+  Multi-channel outreach combining email, LinkedIn, phone, and events.
+  Partners need 7 touchpoints across 3-4 channels before they respond.
+outcomes: [Multi-channel strategy, Touchpoint sequence, Engagement plan]
+skills_gained: [Multi-channel outreach, LinkedIn prospecting, Direct outreach]
+keywords: ["outreach", "multi-channel", "LinkedIn", "engagement", "prospecting"]
 ---
 > **Email alone doesn't work anymore. Today's partners are reached through 5-7 touchpoints across 3-4 channels before they respond. Single-channel outreach is just hoping.** — Dan O'Leary
 

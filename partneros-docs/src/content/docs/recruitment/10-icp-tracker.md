@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.10
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites: [ICP definition, Prospect list]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["re leaving money", "t reach map", "complementary coverage how", "icp alignment tracker", "tracker maps", "template purpose"]
+  Track which accounts partners can access. Map overlap AND complementary coverage—
+  best partners sell to accounts you can't reach.
+outcomes: [Account mapping, Coverage analysis, Priority accounts]
+skills_gained: [Account planning, ICP alignment, Territory mapping]
+keywords: ["ICP", "tracker", "account mapping", "coverage", "overlap"]
 ---
 > **If you don't know which accounts your partners can access, you're leaving money on the table.** — Dan O'Leary
 

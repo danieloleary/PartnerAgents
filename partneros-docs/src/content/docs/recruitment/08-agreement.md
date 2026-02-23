@@ -4,24 +4,26 @@ section: Recruitment
 category: operational
 template_number: II.8
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: operational
 phase: recruitment
 time_required: 4-8 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [Legal team, Proposal terms]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["don t rush", "specific situation jurisdiction", "things go wrong", "legal advice how", "framework work", "legal team"]
+  Partnership agreement template protecting both parties. Work with legal to customize
+  for your jurisdiction and risk tolerance.
+outcomes: [Signed agreement, Legal protection, Partnership launch]
+skills_gained: [Contract management, Legal review, Negotiation]
+keywords: ["agreement", "contract", "partnership", "legal", "MSA"]
 ---
 > **The agreement protects both parties. Don't skip it, don't rush it, and always involve legal.** — Dan O'Leary
 
-:::caution[LEGAL REVIEW REQUIRED]
-This template provides a framework. Work with your legal team to customize for your specific situation, jurisdiction, and risk tolerance. This is not legal advice.
+:::caution
+LEGAL REVIEW REQUIRED: This template provides a framework. Work with your legal team to customize for your specific situation, jurisdiction, and risk tolerance. This is not legal advice.
 :::
 
 ## How to Use This Template

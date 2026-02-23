@@ -4,24 +4,27 @@ section: Legal
 category: legal
 template_number: L.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: strategic
 phase: recruitment
 time_required: 4-8 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [Legal team, Commercial terms]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["master service agreement", "conditions term duration", "legal", "customize"]
+  Master Service Agreement governing the partnership terms and conditions.
+  Get legal involved early—this protects both sides.
+outcomes: [Signed MSA, Legal protection, Partnership framework]
+skills_gained: [Contract negotiation, Legal review, Agreement management]
+keywords: ["MSA", "master service agreement", "contract", "terms", "legal"]
 ---
+
 > **The MSA protects both sides. Don't rush it—get legal involved early.** — Dan O'Leary
 
-:::caution[LEGAL REVIEW REQUIRED]
-Work with legal to customize for your situation.
+:::caution
+LEGAL REVIEW REQUIRED: Work with legal to customize for your situation.
 :::
 
 ---

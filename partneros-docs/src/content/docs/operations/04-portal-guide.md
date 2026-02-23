@@ -4,19 +4,21 @@ section: Operations
 category: operational
 template_number: O.4
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: beginner
 purpose: operational
 phase: onboarding
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites: [PRM system, Portal access]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["partner portal guide", "best partner portal", "t find what", "template purpose", "need", "use"]
+  Guide for using the partner portal (PRM). Best portal is one partners actually use—
+  if they can't find what they need, it's useless.
+outcomes: [Portal training, Self-service enable, Partner adoption]
+skills_gained: [Portal management", "Self-service", "Enablement"]
+keywords: ["portal", "PRM", "self-service", "training", "adoption"]
 ---
 > **The best partner portal is one partners actually use. If they can't find what they need, it's useless.** — Dan O'Leary
 

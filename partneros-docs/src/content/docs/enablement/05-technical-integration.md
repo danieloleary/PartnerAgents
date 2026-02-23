@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.5
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: operational
 phase: enablement
 time_required: 2-4 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [API documentation, Technical resources]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["technical integration guide", "best integrations", "customer value", "apis make", "template purpose", "wrestling"]
+  Guide for technical integration between your platform and partner systems.
+  Best integrations are invisible—make it easy for partners.
+outcomes: [Integration docs, Technical enablement, Partner capability]
+skills_gained: [Technical writing, API integration, Developer experience]
+keywords: ["integration", "API", "technical", "developer", "connectors"]
 ---
 > **The best integrations are invisible. Partners should focus on customer value, not wrestling with APIs. Make it easy.** — Dan O'Leary
 

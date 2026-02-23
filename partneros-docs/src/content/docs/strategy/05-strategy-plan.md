@@ -4,19 +4,21 @@ section: Strategy
 category: strategic
 template_number: I.5
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: strategic
 phase: strategy
 time_required: 8-16 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [Business case, ICP, Program architecture]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["actually execute because", "measures program success", "translates business objectives", "most urgent go", "sharepoint i used", "got comments approvals"]
+  Create a comprehensive partner strategy that translates business objectives into
+  actionable plans. Keep it concise enough to execute—5 pages max.
+outcomes: [Executable strategy document, Stakeholder alignment, Clear priorities]
+skills_gained: [Strategic planning, Executive communication, GTM strategy]
+keywords: ["strategy", "plan", "GTM", "go-to-market", "partner strategy"]
 ---
 > **Your partner strategy isn't a document—it's a commitment. Write something you can actually execute, because your partners will read it and decide whether to invest in you.** — Dan O'Leary
 

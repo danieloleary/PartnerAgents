@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.7
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Discovery notes, Terms and compensation]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["branding min send", "i d love", "available date time", "key strengths why", "send proposals then", "respond follow up"]
+  Formal partnership proposal based on discovery call findings. Send within 48 hours
+  of the call—speed signals seriousness.
+outcomes: [Formal proposal, Partnership terms, Deal closure]
+skills_gained: [Proposal writing, Deal structuring, Commercial terms]
+keywords: ["proposal", "partnership", "terms", "commercial", "deal"]
 ---
 > **The proposal is where deals are won or lost. A weak proposal kills strong interest. A strong proposal closes the deal.** — Dan O'Leary
 

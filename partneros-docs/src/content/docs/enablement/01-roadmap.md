@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Training materials, Certification program]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["x more likely", "year speed matters", "days lose momentum", "partner enablement roadmap", "days programs", "roadmap provides"]
+  Timeline for partner enablement from signing to first deal. Best programs get
+  partners to revenue in 30 days—90+ days kills momentum.
+outcomes: [Enablement timeline, Training plan, Fast ramp]
+skills_gained: [Enablement planning, Training design, Program management]
+keywords: ["roadmap", "enablement", "training", "timeline", "onboarding"]
 ---
 > **The best enablement programs get partners to first deal in 30 days. Programs that stretch to 90 days lose momentum—and partners.** — Dan O'Leary
 

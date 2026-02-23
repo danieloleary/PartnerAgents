@@ -4,19 +4,21 @@ section: Strategy
 category: strategic
 template_number: I.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Market research, Top partner analysis]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["structured objective framework", "fit primary vertical", "requires hand holding", "measure certified professionals", "offer ongoing support", "lead flow slowed"]
+  Define your perfect partner using a structured framework across 5 key attributes:
+  foundational fit, capability, go-to-market, commitment, and economics.
+outcomes: [Objective partner criteria, Scoring matrix, Prioritized prospect list]
+skills_gained: [Partner evaluation, Scoring frameworks, Strategic filtering]
+keywords: ["ICP", "ideal partner profile", "partner selection", "partner criteria", "scoring"]
 ---
 > **The partner you choose in Year 1 will define your channel for years. Get this wrong, and you'll spend Years 2-4 digging yourself out.** — Dan O'Leary
 

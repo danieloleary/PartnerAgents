@@ -4,19 +4,21 @@ section: Operations
 category: operational
 template_number: O.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: beginner
 purpose: operational
 phase: enablement
 time_required: 30 minutes
 difficulty: easy
-prerequisites: 
+prerequisites: [Partner updates, Pipeline data]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["short focused", "template purpose", "use"]
+  Weekly team sync for partner program operations. Short, focused standups prevent
+  small issues from becoming big problems.
+outcomes: [Weekly priorities, Issue identification, Quick decisions]
+skills_gained: [Team coordination, Issue management, Quick standups]
+keywords: ["standup", "weekly", "sync", "meeting", "operations"]
 ---
 > **Weekly stands prevent small issues from becoming big problems. Keep them short, focused, and action-oriented.** — Dan O'Leary
 

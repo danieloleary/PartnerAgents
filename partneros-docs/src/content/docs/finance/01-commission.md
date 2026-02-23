@@ -4,19 +4,21 @@ section: Finance
 category: financial
 template_number: F.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: strategic
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Compensation strategy, Revenue model]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["simple partners should", "want keep", "template purpose", "able", "calculate", "earnings"]
+  Commission structure for partner payouts. Keep it simple—partners should calculate
+  earnings in their head. Reward behavior you want.
+outcomes: [Commission rates, Tier structure, Payout framework]
+skills_gained: [Compensation design, Financial modeling, Incentive structures]
+keywords: ["commission", "compensation", "payout", "revenue share", "incentives"]
 ---
 > **Commission structures should reward behavior you want. Keep it simple—partners should be able to calculate their earnings in their head.** — Dan O'Leary
 

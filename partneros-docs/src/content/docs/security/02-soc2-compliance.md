@@ -4,19 +4,21 @@ section: Security
 category: compliance
 template_number: S.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Compliance requirements, Audit support]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["template purpose", "checkbox", "s", "commitment", "use"]
+  Guide for SOC 2 compliance requirements. SOC 2 isn't a checkbox—it's a
+  commitment to security. Help partners understand the journey.
+outcomes: [Compliance roadmap, Audit preparation, Security standards]
+skills_gained: [SOC 2", "Compliance", "Audit preparation", "Security standards]
+keywords: ["SOC 2", "compliance", "audit", "security", "certification"]
 ---
 > **SOC 2 isn't a checkbox—it's a commitment to security. Help partners understand the journey.** — Dan O'Leary
 

@@ -4,19 +4,21 @@ section: Enablement
 category: tactical
 template_number: III.4
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [MDF budget, Marketing materials]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["s about telling", "template purpose", "story", "use"]
+  Joint marketing campaigns with partners. Co-marketing is about telling a story
+  you couldn't tell alone—find that story and double down.
+outcomes: [Campaign ideas, Joint events, Lead generation]
+skills_gained: [Joint marketing, Campaign planning, Event coordination]
+keywords: ["co-marketing", "campaign", "MDF", "joint marketing", "events"]
 ---
 > **Co-marketing isn't about spending money together—it's about telling a story you couldn't tell alone. Find that story and double down.** — Dan O'Leary
 

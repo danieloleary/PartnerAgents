@@ -4,20 +4,22 @@ section: Strategy
 category: strategic
 template_number: I.1
 version: 3.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: strategic
 phase: strategy
 time_required: 8-16 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [Market research data, Competitive analysis, Financial model]
 description: >
-purpose_detailed: >
-outcomes: 
-skills_gained: 
-keywords: ["document traces back", "secret weapon cfos", "risk averse showing", "one document choose", "once easy wins", "should stand alone"]
+  Build a CFO-ready business case for your partner program with ROI projections,
+  risk analysis, and implementation roadmap. This template addresses executive
+  concerns and gets approvals.
+outcomes: [CFO-approved budget, Executive sponsorship secured, Clear ROI model]
+skills_gained: [Financial modeling, Executive communication, Strategic planning]
+keywords: ["business case", "ROI", "CFO approval", "partner program funding", "investment"]
 ---
 This template walks you through building a business case that will get CFO approval. Every section is designed to answer the questions executives actually ask—and use the metrics they actually care about. This is not a generic template. It's built from what works in real boardrooms.
 

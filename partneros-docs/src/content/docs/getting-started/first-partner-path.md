@@ -4,7 +4,7 @@ section: Getting Started
 category: operational
 template_number: GS.1
 version: 1.0.0
-last_updated: 2026-02-20
+last_updated: 2026-02-22
 author: PartnerOS Team
 tier: Bronze
 skill_level: beginner
@@ -13,10 +13,10 @@ phase: onboarding
 time_required: 4 weeks
 difficulty: easy
 prerequisites: []
-outcomes: 
-skills_gained: 
-keywords: ["first signed partner", "first partner signed", "defines company size", "guide adjust based", "common questions what", "prospect list start"]
 description: The exact sequence to go from zero to your first signed partner in 4 weeks.
+outcomes: [First partner signed, Complete onboarding, Revenue]
+skills_gained: [Onboarding execution, Partner recruitment, Program launch]
+keywords: ["first partner", "onboarding", "path", "4 weeks", "getting started"]
 ---
 > **The exact sequence to go from zero to your first signed partner in 4 weeks.**
 

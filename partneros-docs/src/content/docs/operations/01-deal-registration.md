@@ -4,19 +4,21 @@ section: Operations
 category: operational
 template_number: O.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: beginner
 purpose: operational
 phase: operations
 time_required: 1-2 hours
 difficulty: easy
-prerequisites: 
+prerequisites: [CRM system, Protection period]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["upfront enforce", "template purpose", "use"]
+  Deal registration rules protecting partner opportunities. Clear rules prevent
+  arguments—define upfront, enforce consistently.
+outcomes: [Deal protection, Registration rules, Conflict prevention]
+skills_gained: [Deal management", "Pipeline protection", "Policy enforcement]
+keywords: ["deal registration", "protection", "pipeline", "conflict", "policy"]
 ---
 > **Clear deal registration rules prevent arguments. Define them upfront, enforce them consistently.** — Dan O'Leary
 

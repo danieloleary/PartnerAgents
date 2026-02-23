@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.9
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: onboarding
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Signed agreement, Partner contact]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["x more likely", "orientation week training", "certification week enablement", "partner onboarding checklist", "first days define", "onboarding why"]
+  Structured onboarding for new partners. First 30 days define the partnership—
+  get them productive fast or watch momentum die.
+outcomes: [Onboarding plan, Productive partner, Fast ramp]
+skills_gained: [Onboarding, Enablement, Relationship management]
+keywords: ["onboarding", "checklist", "activation", "ramp", "new partner"]
 ---
 > **The first 30 days define the partnership. Get them productive fast or watch momentum die.** — Dan O'Leary
 

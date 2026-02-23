@@ -4,19 +4,21 @@ section: Finance
 category: financial
 template_number: F.2
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: intermediate
 purpose: strategic
 phase: enablement
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Revenue targets, Volume thresholds]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["just participation", "partners who", "template purpose", "re", "all", "use"]
+  Volume-based rebate program rewarding performance. Rebates are for partners
+  who are all-in—not just participation.
+outcomes: [Rebate tiers, Volume thresholds, Performance incentives]
+skills_gained: [Volume incentives, Financial planning, Partner motivation]
+keywords: ["rebate", "volume", "bonus", "performance", "incentives"]
 ---
 > **Rebates reward performance, not just participation. They're for partners who are all-in.** — Dan O'Leary
 

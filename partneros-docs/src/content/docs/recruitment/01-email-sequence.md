@@ -4,19 +4,21 @@ section: Recruitment
 category: operational
 template_number: II.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Target prospect list, ICP definition]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["follow up gets", "converts cold prospects", "meeting steps research", "optimize weekly review", "thought there might", "natural fit between"]
+  A 4-email sequence for cold outreach to potential partners. Follow-up is key—
+  most people give up after one email.
+outcomes: [Email templates, Follow-up sequence, Meeting bookings]
+skills_gained: [Cold outreach, Email writing, Sales prospecting]
+keywords: ["email", "outreach", "recruitment", "sequence", "cold email"]
 ---
 > **The first email gets you read. The follow-up gets you replied to. Most people give up after one email—and that's why they fail at partner recruitment.** — Dan O'Leary
 

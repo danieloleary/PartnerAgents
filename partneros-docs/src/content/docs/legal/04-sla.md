@@ -4,19 +4,21 @@ section: Legal
 category: legal
 template_number: L.4
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Support definitions, Legal review]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["upfront track", "template purpose", "use"]
+  Service Level Agreement defining support commitments and response times.
+  Clear SLAs prevent arguments—define upfront, track religiously.
+outcomes: [SLA terms, Support commitments, Performance standards]
+skills_gained: [SLA design, Support management, Performance measurement]
+keywords: ["service level", "SLA", "support", "commitments", "guarantees"]
 ---
 > **Clear SLAs prevent arguments. Define them upfront, track them religiously.** — Dan O'Leary
 

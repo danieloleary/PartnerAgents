@@ -4,19 +4,21 @@ section: Strategy
 category: strategic
 template_number: I.7
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: strategy
 time_required: 2-3 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Strategy plan, Sales leadership buy-in]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["one time event", "goal isn t", "re warm intros", "re more willing", "re actually easier", "one more ask"]
+  Align internal stakeholders (Sales, Marketing, Product) on partner program goals.
+  Internal alignment is the #1 killer of partner programs—fix it before launch.
+outcomes: [Stakeholder alignment, Sales buy-in, Cross-functional agreement]
+skills_gained: [Internal communication, Executive alignment, Political navigation]
+keywords: ["alignment", "internal", "stakeholders", "sales", "marketing", "cross-functional"]
 ---
 > **The Problem:** Most partner programs fail not because of the partners—but because internal teams (Sales, Marketing, Product) weren't aligned. Sales ignores partners. Marketing doesn't support partner campaigns. Product won't build integrations. This template fixes that. — Dan O'Leary
 

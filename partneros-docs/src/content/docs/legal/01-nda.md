@@ -4,24 +4,27 @@ section: Legal
 category: legal
 template_number: L.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: beginner
 purpose: operational
 phase: recruitment
 time_required: 1 hour
 difficulty: easy
-prerequisites: 
+prerequisites: [Legal review]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["share anything sensitive", "nda before", "about distrust", "s", "template"]
+  Mutual NDA for protecting confidential information during partnership discussions.
+  Sign before sharing sensitive information.
+outcomes: [Signed NDA, Legal protection, Professional boundary]
+skills_gained: [Contract management, Legal compliance, Confidentiality]
+keywords: ["NDA", "non-disclosure", "confidentiality", "legal", "agreement"]
 ---
+
 > **Sign the NDA before you share anything sensitive. It's not about distrust—it's about professionalism.** — Dan O'Leary
 
-:::caution[LEGAL REVIEW REQUIRED]
-Have your legal team review before use. This is a template, not legal advice.
+:::caution
+LEGAL REVIEW REQUIRED: Have your legal team review before use. This is a template, not legal advice.
 :::
 
 ---

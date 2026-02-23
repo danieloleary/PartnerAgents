@@ -4,24 +4,27 @@ section: Legal
 category: legal
 template_number: L.3
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Silver
 skill_level: advanced
 purpose: operational
 phase: recruitment
 time_required: 2-4 hours
 difficulty: hard
-prerequisites: 
+prerequisites: [Legal team, GDPR requirements]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["gdpr compliance work", "right"]
+  Data Processing Agreement for GDPR compliance when partners handle customer data.
+  Essential for EU partnerships.
+outcomes: [Signed DPA, GDPR compliance, Data protection]
+skills_gained: [Privacy compliance, Data handling, Legal requirements]
+keywords: ["DPA", "data processing", "GDPR", "privacy", "compliance"]
 ---
+
 > **Data protection isn't optional. Get this right or face serious consequences.** — Dan O'Leary
 
-:::caution[LEGAL REVIEW REQUIRED]
-Essential for GDPR compliance. Work with legal.
+:::caution
+LEGAL REVIEW REQUIRED: Essential for GDPR compliance. Work with legal.
 :::
 
 ---

@@ -4,19 +4,21 @@ section: Security
 category: compliance
 template_number: S.1
 version: 2.0.0
-last_updated: 2026-02-21
+last_updated: 2026-02-22
 author: PartnerOS Team
-tier: 
+tier: Bronze
 skill_level: intermediate
 purpose: operational
 phase: recruitment
 time_required: 1-2 hours
 difficulty: medium
-prerequisites: 
+prerequisites: [Security requirements, Compliance standards]
 description: >
-outcomes: 
-skills_gained: 
-keywords: ["potential risk assess", "template purpose", "use"]
+  Security questionnaire for assessing partner risk. Every partner is a potential
+  risk—assess them properly before sharing data.
+outcomes: [Risk assessment, Security clearance, Compliance verification]
+skills_gained: [Security assessment, Risk management, Compliance verification]
+keywords: ["security", "questionnaire", "assessment", "risk", "compliance"]
 ---
 > **Security isn't optional. Every partner is a potential risk—assess them properly.** — Dan O'Leary
 
