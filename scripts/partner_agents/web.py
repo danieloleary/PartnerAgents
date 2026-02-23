@@ -184,92 +184,245 @@ async def home():
         .markdown-body a { color: #22d3ee; text-decoration: underline; }
         .markdown-body hr { border: none; border-top: 1px solid #475569; margin: 1rem 0; }
     </style>
+    <style>
+        /* ChatGPT-like styles */
+        html, body { margin: 0; padding: 0; height: 100%; }
+        .chatgpt-container { 
+            display: flex; 
+            height: 100vh; 
+            background: #171717; 
+        }
+        .chatgpt-sidebar {
+            width: 260px; 
+            background: #202123; 
+            padding: 10px; 
+            display: flex; 
+            flex-direction: column;
+            border-right: 1px solid #2e2e2e;
+        }
+        .chatgpt-main { 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            background: #343541;
+        }
+        .chatgpt-messages { 
+            flex: 1; 
+            overflow-y: auto; 
+            padding: 20px;
+        }
+        .chatgpt-input-area { 
+            padding: 20px; 
+            background: #343541;
+        }
+        .chatgpt-input-wrapper {
+            max-width: 768px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .chatgpt-input {
+            width: 100%;
+            background: #40414f;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            padding: 14px 50px 14px 16px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+        }
+        .chatgpt-input:focus { box-shadow: 0 0 0 2px #10a37f; }
+        .chatgpt-send {
+            position: absolute;
+            right: 12px;
+            bottom: 10px;
+            background: #10a37f;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .chatgpt-send:hover { background: #0d8a6e; }
+        .chatgpt-message {
+            display: flex;
+            padding: 24px 0;
+            border-bottom: 1px solid #2e2e2e;
+        }
+        .chatgpt-message-user { background: #5436da; padding: 14px 16px; border-radius: 12px; }
+        .chatgpt-message-assistant { padding: 14px 16px; border-radius: 12px; }
+        .chatgpt-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .chatgpt-avatar-user { background: #5436da; }
+        .chatgpt-avatar-assistant { background: #10a37f; }
+        .chatgpt-content { 
+            max-width: 768px; 
+            line-height: 1.6;
+        }
+        .chatgpt-content p { margin: 0 0 12px 0; }
+        .chatgpt-welcome {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8e8ea0;
+        }
+        .chatgpt-welcome h1 { color: #fff; font-size: 32px; margin: 0 0 16px 0; }
+        .chatgpt-welcome-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .chatgpt-welcome-card {
+            background: #2e2e2e;
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chatgpt-welcome-card:hover { background: #3e3e3e; }
+        .chatgpt-welcome-card h3 { color: #fff; font-size: 14px; margin: 0 0 4px 0; }
+        .chatgpt-welcome-card p { color: #8e8ea0; font-size: 12px; margin: 0; }
+        .chatgpt-settings-btn {
+            background: #007acc;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .chatgpt-settings-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .chatgpt-settings-content {
+            background: #202123;
+            border-radius: 12px;
+            padding: 24px;
+            width: 400px;
+            max-width: 90vw;
+        }
+        .chatgpt-settings-content h2 { color: #fff; margin: 0 0 20px 0; }
+        .chatgpt-settings-content label { display: block; color: #8e8ea0; margin-bottom: 8px; font-size: 14px; }
+        .chatgpt-settings-content input, .chatgpt-settings-content select {
+            width: 100%;
+            background: #2e2e2e;
+            border: 1px solid #2e2e2e;
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .chatgpt-settings-content button {
+            background: #10a37f;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .chatgpt-typing {
+            display: flex;
+            padding: 24px 0;
+            align-items: center;
+        }
+        .chatgpt-typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #8e8ea0;
+            border-radius: 50%;
+            margin-right: 4px;
+            animation: typing 1.4s infinite;
+        }
+        .chatgpt-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .chatgpt-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+    </style>
 </head>
-<body class="gradient-bg min-h-screen text-white">
-    <div class="max-w-6xl mx-auto px-4 py-8">
-        <!-- Header -->
-        <header class="flex justify-between items-center mb-6 px-4">
-            <div class="flex-1"></div>
-            <h1 class="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                PartnerOS
-            </h1>
-            <div class="flex-1 flex justify-end">
-                <button onclick="showSettings()" class="text-slate-400 hover:text-white transition text-sm bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-700">
-                    ⚙️ Settings
-                </button>
+<body>
+    <div class="chatgpt-container">
+        <!-- Sidebar -->
+        <div class="chatgpt-sidebar">
+            <button class="chatgpt-settings-btn" onclick="showSettings()">
+                ⚙️ Settings
+            </button>
+        </div>
+        
+        <!-- Main Chat -->
+        <div class="chatgpt-main">
+            <div class="chatgpt-messages" id="messages">
+                <div class="chatgpt-welcome" id="welcome">
+                    <h1>PartnerOS</h1>
+                    <p>Your AI partner team. Try these:</p>
+                    <div class="chatgpt-welcome-grid">
+                        <div class="chatgpt-welcome-card" onclick="sendMessage('onboard Auror')">
+                            <h3>Onboard Partner</h3>
+                            <p>Start onboarding a new partner</p>
+                        </div>
+                        <div class="chatgpt-welcome-card" onclick="sendMessage('status of Auror')">
+                            <h3>Check Status</h3>
+                            <p>See where things stand</p>
+                        </div>
+                        <div class="chatgpt-welcome-card" onclick="sendMessage('launch campaign for Auror')">
+                            <h3>Launch Campaign</h3>
+                            <p>Start a co-marketing campaign</p>
+                        </div>
+                        <div class="chatgpt-welcome-card" onclick="sendMessage('register a deal for Auror, $50000')">
+                            <h3>Register Deal</h3>
+                            <p>Record a new deal</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>
-
-        <!-- Settings Modal -->
-        <div id="settingsModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div class="bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4 relative">
-                <button onclick="hideSettings()" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close settings">✕</button>
-                <h3 class="text-lg font-bold mb-4">⚙️ Settings</h3>
-                
-                <div class="space-y-4">
-                    <div>
-                        <label for="apiKey" class="block text-sm font-medium text-slate-400 mb-1">OpenRouter API Key</label>
-                        <input id="apiKey" type="password" placeholder="sk-or-..." class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 focus:border-cyan-500 outline-none">
-                        <p class="text-xs text-slate-500 mt-1">Stored locally in your browser</p>
-                    </div>
-                    
-                    <div>
-                        <label for="modelSelect" class="block text-sm font-medium text-slate-400 mb-1">AI Model</label>
-                        <select id="modelSelect" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 focus:border-cyan-500 outline-none">
-                            <option value="openai/gpt-4o-mini">GPT-4o Mini (Fast)</option>
-                            <option value="openai/gpt-4o">GPT-4o</option>
-                            <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-                            <option value="anthropic/claude-3-haiku">Claude 3 Haiku</option>
-                        </select>
-                    </div>
-                    
-                    <div class="flex items-center gap-2">
-                        <input id="enableCache" type="checkbox" checked class="w-4 h-4 rounded bg-slate-700 border-slate-600">
-                        <label for="enableCache" class="text-sm text-slate-400">Enable response caching (5 min)</label>
-                    </div>
-                    
-                    <button onclick="saveSettings()" class="w-full px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-colors">Save Settings</button>
+            
+            <div class="chatgpt-input-area">
+                <div class="chatgpt-input-wrapper">
+                    <textarea id="messageInput" class="chatgpt-input" placeholder="Message PartnerOS..." rows="1" onkeydown="if(event.key==='Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"></textarea>
+                    <button class="chatgpt-send" onclick="sendMessage()">↑</button>
                 </div>
             </div>
         </div>
-
-        <!-- Chat Container -->
-        <div class="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden mx-2 sm:mx-0">
-            <!-- Messages -->
-            <div id="messages" class="h-64 sm:h-96 overflow-y-auto p-4 sm:p-6 space-y-3 sm:space-y-4">
-                <div class="message-enter flex gap-3">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center flex-shrink-0">🤖</div>
-                    <div class="bg-slate-700/50 rounded-xl p-4 max-w-lg">
-                        <p class="text-sm">PartnerOS is ready. Try:</p>
-                        <ul class="text-sm mt-2 text-slate-400 space-y-1">
-                            <li>• "onboard [Partner]"</li>
-                            <li>• "status of [Partner]"</li>
-                            <li>• "launch campaign for [Partner]"</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Input -->
-            <div class="border-t border-slate-700 p-4">
-                <div class="flex gap-3">
-                    <label for="messageInput" class="sr-only">Type your message</label>
-                    <input 
-                        id="messageInput"
-                        type="text" 
-                        placeholder="Type your message..." 
-                        class="flex-1 bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-500 transition disabled:opacity-50"
-                        onkeypress="if(event.key==='Enter')sendMessage()"
-                    >
-                    <button 
-                        id="sendBtn"
-                        onclick="sendMessage()"
-                        class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        Send
-                    </button>
-                </div>
-            </div>
+    </div>
+    
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="chatgpt-settings-modal hidden">
+        <div class="chatgpt-settings-content">
+            <h2>Settings</h2>
+            <label>OpenRouter API Key</label>
+            <input id="apiKey" type="password" placeholder="sk-or-...">
+            <label>Model</label>
+            <select id="modelSelect">
+                <option value="openai/gpt-4o-mini">GPT-4o Mini</option>
+                <option value="openai/gpt-4o">GPT-4o</option>
+                <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
+                <option value="anthropic/claude-3-haiku">Claude 3 Haiku</option>
+            </select>
+            <button onclick="saveSettings()">Save</button>
         </div>
     </div>
 

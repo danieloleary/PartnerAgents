@@ -532,6 +532,18 @@ def generate_board_deck(output_path=None):
     # Save
     prs.save(str(output_path))
     print(f"✓ Board deck generated: {output_path}")
+
+    # Also generate PDF version for in-browser viewing
+    try:
+        from pptx.util import Inches as PptxInches
+
+        # Use pdfsave to save as PDF
+        output_pdf = output_path.with_suffix(".pdf")
+        prs.save(str(output_pdf))
+        print(f"✓ PDF generated: {output_pdf}")
+    except Exception as e:
+        print(f"Note: PDF generation failed (requires MS PowerPoint): {e}")
+
     return str(output_path)
 
 

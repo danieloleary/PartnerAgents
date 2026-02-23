@@ -28,241 +28,28 @@ Board meetings are not status reports. They're strategic reviews. Your deck shou
 
 ## Presentation
 
-<div class="presentation-controls">
-  <button class="present-btn" id="presentBtn">
-    <span class="icon">🎮</span>
-    <span class="text">Present in Browser</span>
-  </button>
-  
-  <a href="/assets/pptx/board-deck.pptx" download class="download-btn">
-    <span class="icon">📥</span>
-    <span class="text">Download PPTX</span>
-  </a>
-</div>
-
-<div id="present-modal" class="present-modal" hidden>
-  <div class="present-container">
-    <div class="present-header">
-      <span class="present-title">Board Deck - Q4 2025</span>
-      <button class="close-btn" id="closePresent">✕</button>
-    </div>
-    <div class="present-content">
-      <iframe 
-        id="presentFrame"
-        src="" 
-        frameborder="0" 
-        style="width: 100%; height: 100%;"
-      ></iframe>
-    </div>
-  </div>
-</div>
-
-<p style="font-size: 0.9em; color: var(--sl-color-gray-3); margin-top: 8px;">
-  <em>Edit the demo data in <code>examples/demo-company/board-deck-data.json</code> and run <code>python3 scripts/generate_pptx.py</code> to regenerate with your own metrics.</em>
-</p>
-
-<style>
-  .presentation-controls {
-    display: flex;
-    gap: 12px;
-    margin: 24px 0;
-    padding: 20px;
-    background: var(--sl-color-gray-6);
-    border-radius: 12px;
-    border: 1px solid var(--sl-color-gray-5);
-  }
-
-  .present-btn,
-  .download-btn {
-    display: flex;
+<div style="margin: 24px 0; padding: 40px; background: var(--sl-color-gray-6); border-radius: 12px; text-align: center;">
+  <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+  <h3 style="margin: 0 0 8px 0;">Board Deck Ready</h3>
+  <p style="color: var(--sl-color-gray-3); margin: 0 0 20px 0;">
+    Download the PPTX file to present to your board
+  </p>
+  <a href="/PartnerOS/assets/pptx/board-deck.pptx" download style="
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
+    padding: 14px 28px;
     border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    border: none;
-  }
-
-  .present-btn {
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
-    color: white;
-  }
-
-  .present-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-  }
-
-  .download-btn {
-    background: var(--sl-color-gray-5);
-    color: var(--sl-color-text);
-    border: 1px solid var(--sl-color-gray-4);
-  }
-
-  .download-btn:hover {
-    background: var(--sl-color-gray-4);
-  }
-
-  .icon {
-    font-size: 16px;
-  }
-
-  .present-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.9);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    box-sizing: border-box;
-  }
-
-  .present-container {
-    width: 100%;
-    max-width: 1200px;
-    aspect-ratio: 16/9;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .present-header {
-    padding: 16px 24px;
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .present-title {
-    color: white;
+    font-size: 15px;
     font-weight: 600;
-    font-size: 16px;
-  }
-
-  .close-btn {
-    background: rgba(255,255,255,0.2);
-    border: none;
+    text-decoration: none;
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
     color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  .close-btn:hover {
-    background: rgba(255,255,255,0.3);
-  }
-
-  .present-content {
-    flex: 1;
-    background: #f3f4f6;
-  }
-</style>
-
-<script>
-  const presentBtn = document.getElementById('presentBtn');
-  const closeBtn = document.getElementById('closePresent');
-  const modal = document.getElementById('present-modal');
-  const frame = document.getElementById('presentFrame');
-  
-  // PPTX file URL - use a relative URL for local dev
-  const pptxUrl = '/assets/pptx/board-deck.pptx';
-  
-  // Build Office Online embed URL
-  const baseUrl = 'https://view.officeapps.live.com/op/embed.aspx';
-  // For local development, we'd need to host the file publicly
-  // For now, show a message about downloading
-  
-  presentBtn?.addEventListener('click', () => {
-    // Try Office Online embed first
-    // Note: This requires the PPTX to be publicly accessible
-    // For local dev, we'll show a fallback message
-    
-    modal.hidden = false;
-    
-    // Check if we can use Office Online
-    // Since we can't easily host locally for Office Online,
-    // show a demo message
-    frame.src = 'data:text/html,' + encodeURIComponent(`
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <style>
-          body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 40px;
-          }
-          h1 { font-size: 32px; margin-bottom: 16px; }
-          p { font-size: 16px; opacity: 0.9; max-width: 500px; line-height: 1.6; }
-          .download-btn {
-            margin-top: 32px;
-            background: white;
-            color: #6366F1;
-            border: none;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>🎉 Presentation Ready!</h1>
-        <p>To present in browser with full features, you can:</p>
-        <ol style="text-align: left; max-width: 400px; margin: 24px auto;">
-          <li>Download the PPTX file</li>
-          <li>Open in PowerPoint or Google Slides</li>
-          <li>Present from there with animations</li>
-        </ol>
-        <a href="${pptxUrl}" download class="download-btn">
-          📥 Download Board Deck
-        </a>
-      </body>
-      </html>
-    `);
-    
-    document.body.style.overflow = 'hidden';
-  });
-  
-  closeBtn?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  
-  function closeModal() {
-    modal.hidden = true;
-    document.body.style.overflow = '';
-    frame.src = '';
-  }
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-  });
-</script>
+  ">
+    <span>📥</span>
+    <span>Download Board Deck</span>
+  </a>
+</div>
 
 ## How to Use This Template
 
