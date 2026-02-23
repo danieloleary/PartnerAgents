@@ -83,14 +83,16 @@ For each user request, analyze and return JSON with:
     "intents": [
         {{
             "type": "document|action|question",
-            "name": "nda|msa|dpa|onboard|recruit|qualify|qbr|chat",
+            "name": "nda|msa|dpa|onboard|recruit|qualify|qbr|deal|campaign|chat",
             "entities": {{
                 "partner_name": "extracted or null",
                 "tier": "Gold|Silver|Bronze or null",
                 "contact_name": "extracted or null",
                 "email": "extracted or null",
                 "effective_date": "YYYY-MM-DD or null",
-                "term_years": "number or null"
+                "term_years": "number or null",
+                "amount": "deal amount as number or null (e.g., 50000 from '$50,000' or '50k')",
+                "account": "company name for deal or null"
             }},
             "confidence": 0.0-1.0,
             "missing_fields": ["list of required fields not provided"]
@@ -100,10 +102,11 @@ For each user request, analyze and return JSON with:
 
 Rules:
 1. If user wants any document (NDA, MSA, DPA, agreement, contract), type = "document"
-2. If user wants a plan, onboarding, recruitment, type = "action"  
+2. If user wants a plan, onboarding, recruitment, deal, campaign, type = "action"  
 3. If user is just asking a question, type = "question"
 4. Be conservative - if unclear, set confidence < 0.7
 5. partner_name: extract company names from the message (e.g., "Acme Corp" from "for Acme Corp")
+6. For deal registration: extract amount (remove $, k, comma) and account name
 
 Return ONLY valid JSON, no explanation."""
 
@@ -243,17 +246,27 @@ class Router:
                 if word.lower() in ["for", "with", "to", "of"]:
                     if i + 1 < len(words):
                         partner = " ".join(words[i + 1 :]).strip(".,!?")
+                        # Stop at comma or amount (e.g., "BigCorp, $50000")
+                        partner = partner.split(",")[0].strip()
                         partner = " ".join(partner.split()[:2])
                         if partner and partner[0].isupper():
                             return partner
             # Try: action verb is followed directly by partner name
             # e.g., "onboard TestCo" -> partner is after "onboard"
-            action_words = ["onboard", "onboarding", "recruit", "add", "create"]
+            action_words = [
+                "onboard",
+                "onboarding",
+                "recruit",
+                "add",
+                "create",
+                "register",
+            ]
             for i, word in enumerate(words):
                 word_lower = word.lower().rstrip("s")  # handle "onboards" -> "onboard"
                 if word_lower in action_words:
                     if i + 1 < len(words):
                         partner = " ".join(words[i + 1 :]).strip(".,!?")
+                        partner = partner.split(",")[0].strip()  # Stop at comma
                         partner = " ".join(partner.split()[:2])
                         if partner and partner[0].isupper():
                             return partner
@@ -280,12 +293,37 @@ class Router:
             for action, keywords in action_keywords.items():
                 if any(k in msg for k in keywords):
                     partner_name = extract_partner(user_message)
+
+                    # Extract deal amount if this is a deal action
+                    entities = {"partner_name": partner_name}
+                    if action == "deal":
+                        import re
+
+                        # Match $X, $Xk, Xk, X,XXX patterns - simpler regex
+                        amount_match = re.search(
+                            r"\$?(\d+)(?:k)?", user_message, re.IGNORECASE
+                        )
+                        if amount_match:
+                            amount_str = amount_match.group(1)
+                            if not amount_str:
+                                continue
+                            # Check if it's in thousands (k)
+                            if amount_match.group(0).lower().endswith("k"):
+                                amount = int(amount_str) * 1000
+                            else:
+                                amount = int(amount_str)
+                            entities["amount"] = amount
+                            # Extract account name (everything after "for" before amount)
+                            account_match = re.search(r"for\s+([^,$]+)", user_message)
+                            if account_match:
+                                entities["account"] = account_match.group(1).strip()
+
                     intents.append(
                         Intent(
                             type="action",
                             name=action,
                             agents=["architect", "engine"],
-                            entities={"partner_name": partner_name},
+                            entities=entities,
                             confidence=0.8,
                             missing_fields=["partner_name"] if not partner_name else [],
                         )

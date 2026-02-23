@@ -143,7 +143,49 @@ async def chat(request: Request):
                     tier=intent.entities.get("tier", "Bronze"),
                 )
 
-            # Handle action types (onboard, campaign, etc.) - create NDA by default
+            # Handle action types specifically
+            if intent.name == "deal":
+                # Register a deal instead of creating a document
+                amount = intent.entities.get("amount", 0)
+                account = intent.entities.get("account", partner_name)
+
+                # Clean up amount - remove $, k, commas
+                if isinstance(amount, str):
+                    amount_str = (
+                        amount.replace("$", "")
+                        .replace(",", "")
+                        .replace("k", "000")
+                        .replace("K", "000")
+                    )
+                    try:
+                        amount = int(float(amount_str))
+                    except:
+                        amount = 0
+
+                deal = partner_state.register_deal(partner_name, amount, account)
+
+                if deal:
+                    return JSONResponse(
+                        {
+                            "response": f"Registered deal for **{partner_name}**!\n\nDeal Value: **${amount:,}**\nAccount: {account}\nStatus: {deal['status']}",
+                            "agent": "engine",
+                            "deal": {
+                                "partner": partner_name,
+                                "amount": amount,
+                                "account": account,
+                                "status": deal["status"],
+                            },
+                        }
+                    )
+                else:
+                    return JSONResponse(
+                        {
+                            "response": f"Could not register deal for {partner_name}.",
+                            "agent": "engine",
+                        }
+                    )
+
+            # Handle other action types (onboard, campaign, etc.) - create NDA by default
             doc_type = intent.name
             if intent.type == "action":
                 # Actions get an NDA document created
