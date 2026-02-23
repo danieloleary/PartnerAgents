@@ -123,8 +123,11 @@ async def chat(request: Request):
         context = {"partners": partner_state.list_partners()}
         route_result = await router_instance.route(sanitized, context)
 
-        # Check for document OR action requests
-        if route_result.is_document_request and route_result.intents:
+        # Check for document OR action OR skill requests
+        if route_result.intents and (
+            route_result.is_document_request
+            or route_result.intents[0].type in ["action", "skill"]
+        ):
             intent = route_result.intents[0]
             partner_name = intent.entities.get("partner_name")
 
@@ -228,7 +231,9 @@ async def chat(request: Request):
 
             for intent in route_result.intents:
                 if intent.type == "skill":
-                    skill_name = intent.entities.get("skill")
+                    skill_name = intent.entities.get("skill") or intent.name.replace(
+                        "skill_", ""
+                    )
                     partner_name = intent.entities.get("partner_name")
 
                     if skill_name == "status":

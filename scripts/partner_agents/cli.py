@@ -49,30 +49,37 @@ async def send_message(message: str, api_key: str, model: str) -> dict:
     # Use the web.py chat handler logic
     sanitized = message.strip()
 
-    # Route to document/action generation if detected
+    # Route to document/action/skills if detected
     try:
         router_instance = router.Router()
         context = {"partners": partner_state.list_partners()}
         route_result = await router_instance.route(sanitized, context)
 
-        # Check for document OR action requests
-        if route_result.is_document_request and route_result.intents:
+        # Check for document OR action OR skill requests
+        if route_result.intents and (
+            route_result.is_document_request
+            or route_result.intents[0].type in ["action", "skill"]
+        ):
             intent = route_result.intents[0]
             partner_name = intent.entities.get("partner_name")
 
-            if not partner_name:
+            # Only require partner_name for skills that need it (not roi)
+            skill_type = intent.entities.get("skill")
+            if not partner_name and skill_type != "roi":
                 return {
                     "response": "What's the partner company name?",
                     "agent": "system",
                 }
 
-            # Create partner if doesn't exist
-            partner = partner_state.get_partner(partner_name)
-            if not partner:
-                partner = partner_state.add_partner(
-                    name=partner_name,
-                    tier=intent.entities.get("tier", "Bronze"),
-                )
+            # Create partner if doesn't exist (skip for roi)
+            partner = None
+            if partner_name:
+                partner = partner_state.get_partner(partner_name)
+                if not partner:
+                    partner = partner_state.add_partner(
+                        name=partner_name,
+                        tier=intent.entities.get("tier", "Bronze"),
+                    )
 
             # Handle deal registration
             if intent.name == "deal":
@@ -105,42 +112,96 @@ async def send_message(message: str, api_key: str, model: str) -> dict:
                         },
                     }
 
-            # Handle action types - create NDA by default
-            doc_type = intent.name
+            # Handle action types - create NDA by default (skip for skills)
             if intent.type == "action":
-                doc_type = "nda"
+                doc_type = intent.name
+                if intent.type == "action":
+                    doc_type = "nda"
 
-            doc_result = document_generator.create_document(
-                doc_type=doc_type,
-                partner_name=partner_name,
-                fields=intent.entities,
-            )
-
-            if doc_result:
-                partner_state.add_document(
-                    partner_name=partner_name,
+                doc_result = document_generator.create_document(
                     doc_type=doc_type,
-                    template=doc_result["template"],
-                    file_path=doc_result["path"],
-                    fields=doc_result["fields"],
-                    status="draft",
+                    partner_name=partner_name,
+                    fields=intent.entities,
                 )
 
-                return {
-                    "response": f"Created **{doc_type.upper()}** for **{partner_name}**!\n\nSaved to: `{doc_result['relative_path']}`",
-                    "agent": "engine",
-                    "document": {
-                        "type": doc_type,
-                        "partner": partner_name,
-                        "path": doc_result["relative_path"],
-                    },
-                }
+                if doc_result:
+                    partner_state.add_document(
+                        partner_name=partner_name,
+                        doc_type=doc_type,
+                        template=doc_result["template"],
+                        file_path=doc_result["path"],
+                        fields=doc_result["fields"],
+                        status="draft",
+                    )
+
+                    return {
+                        "response": f"Created **{doc_type.upper()}** for **{partner_name}**!\n\nSaved to: `{doc_result['relative_path']}`",
+                        "agent": "engine",
+                        "document": {
+                            "type": doc_type,
+                            "partner": partner_name,
+                            "path": doc_result["relative_path"],
+                        },
+                    }
+            elif intent.type == "skill":
+                # Skip document creation for skills, handle directly below
+                pass
+            else:
+                # For documents (nda, msa, dpa)
+                doc_type = intent.name
+                doc_result = document_generator.create_document(
+                    doc_type=doc_type,
+                    partner_name=partner_name,
+                    fields=intent.entities,
+                )
+
+                if doc_result:
+                    partner_state.add_document(
+                        partner_name=partner_name,
+                        doc_type=doc_type,
+                        template=doc_result["template"],
+                        file_path=doc_result["path"],
+                        fields=doc_result["fields"],
+                        status="draft",
+                    )
+
+                    return {
+                        "response": f"Created **{doc_type.upper()}** for **{partner_name}**!\n\nSaved to: `{doc_result['relative_path']}`",
+                        "agent": "engine",
+                        "document": {
+                            "type": doc_type,
+                            "partner": partner_name,
+                            "path": doc_result["relative_path"],
+                        },
+                    }
 
         # Handle skill requests
         for intent in route_result.intents:
             if intent.type == "skill":
-                skill_name = intent.entities.get("skill")
+                skill_name = intent.entities.get("skill") or intent.name.replace(
+                    "skill_", ""
+                )
                 partner_name = intent.entities.get("partner_name")
+
+                # Handle skills that don't need a partner (roi)
+                if skill_name == "roi":
+                    return {
+                        "response": """## Program ROI
+
+Metrics to track:
+- Deal Pipeline
+- Closed Revenue
+- Partner-sourced Leads
+- Co-marketing Campaigns
+
+Calculate your specific ROI by entering values above.""",
+                        "agent": "champion",
+                        "skill": "roi",
+                    }
+
+                # Skip if no partner name for skills that need it
+                if not partner_name:
+                    continue
 
                 if skill_name == "status":
                     partner = (
@@ -204,6 +265,46 @@ Topics: Performance review, pipeline update, campaign results, integration statu
                         "skill": "qbr",
                     }
 
+                elif skill_name == "commission":
+                    partner = (
+                        partner_state.get_partner(partner_name)
+                        if partner_name
+                        else None
+                    )
+                    total = 0
+                    if partner:
+                        deals = partner.get("deals", [])
+                        total = sum(d.get("value", 0) for d in deals)
+
+                    if total >= 500000:
+                        rate = 0.20
+                        tier_name = "Gold"
+                    elif total >= 100000:
+                        rate = 0.15
+                        tier_name = "Silver"
+                    else:
+                        rate = 0.10
+                        tier_name = "Bronze"
+
+                    commission = total * rate
+
+                    return {
+                        "response": f"""## Commission Calculator for {partner_name}
+
+Total Deal Value: ${total:,}
+Partner Tier: {tier_name}
+Commission Rate: {rate * 100}%
+
+Total Commission: ${commission:,}
+
+Tier Thresholds:
+- Bronze: < $100K - 10%
+- Silver: $100K-$500K - 15%
+- Gold: > $500K - 20%""",
+                        "agent": "engine",
+                        "skill": "commission",
+                    }
+
                 elif skill_name == "roi":
                     return {
                         "response": """## Program ROI
@@ -220,6 +321,9 @@ Calculate your specific ROI by entering values above.""",
                     }
 
     except Exception as e:
+        import traceback
+
+        traceback.print_exc()
         pass
 
     # Fallback: use LLM if API key provided
