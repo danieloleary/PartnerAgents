@@ -30,6 +30,9 @@ from partner_agents.drivers import (
 )
 from partner_agents import Orchestrator
 from partner_agents import partner_state
+from partner_agents import router
+from partner_agents import document_generator
+from partner_agents import chat_orchestrator
 
 # In-memory rate limiting
 import time
@@ -187,90 +190,15 @@ async def home():
         <!-- Header -->
         <header class="flex justify-between items-center mb-6 px-4">
             <div class="flex-1"></div>
-            <div>
-                <h1 class="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-0">
-                    PartnerOS
-                </h1>
-                <p class="text-slate-400 text-sm sm:text-base">Your AI Partner Team</p>
-            </div>
+            <h1 class="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                PartnerOS
+            </h1>
             <div class="flex-1 flex justify-end">
                 <button onclick="showSettings()" class="text-slate-400 hover:text-white transition text-sm bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-700">
                     ⚙️ Settings
                 </button>
             </div>
         </header>
-
-        <!-- Team Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 mb-6">
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">👑</div>
-                <div class="font-semibold text-cyan-400 text-sm">The Owner</div>
-                <div class="text-xs text-slate-500">Executive</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">🏗️</div>
-                <div class="font-semibold text-cyan-400 text-sm">Partner Manager</div>
-                <div class="text-xs text-slate-500">Relationships</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">🎯</div>
-                <div class="font-semibold text-cyan-400 text-sm">Strategy</div>
-                <div class="text-xs text-slate-500">ICP & Tiers</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">⚙️</div>
-                <div class="font-semibold text-cyan-400 text-sm">Operations</div>
-                <div class="text-xs text-slate-500">Deals & Comms</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">✨</div>
-                <div class="font-semibold text-cyan-400 text-sm">Marketing</div>
-                <div class="text-xs text-slate-500">Campaigns</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">🏆</div>
-                <div class="font-semibold text-cyan-400 text-sm">Leader</div>
-                <div class="text-xs text-slate-500">Board & ROI</div>
-            </div>
-            <div class="agent-card bg-slate-800/50 rounded-lg p-3 text-center border border-slate-700">
-                <div class="text-lg mb-1">🔧</div>
-                <div class="font-semibold text-cyan-400 text-sm">Technical</div>
-                <div class="text-xs text-slate-500">Integrations</div>
-            </div>
-        </div>
-
-        <!-- Partners Section -->
-        <div class="mb-8">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold text-white">Partners</h2>
-                <button onclick="showAddPartnerForm()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg text-sm transition">+ Add Partner</button>
-            </div>
-            <div id="partnersList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="text-slate-400 text-sm">Loading partners...</div>
-            </div>
-        </div>
-
-        <!-- Add Partner Modal -->
-        <div id="addPartnerModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div class="bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4 relative">
-                <button onclick="hideAddPartnerForm()" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close modal">✕</button>
-                <h3 class="text-lg font-bold mb-4">Add New Partner</h3>
-                <label for="partnerName" class="block text-sm font-medium text-slate-400 mb-1">Company Name</label>
-                <input id="partnerName" type="text" placeholder="e.g. Acme Corp" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 mb-3 focus:border-cyan-500 outline-none">
-                <label for="partnerTier" class="block text-sm font-medium text-slate-400 mb-1">Partner Tier</label>
-                <select id="partnerTier" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 mb-3 focus:border-cyan-500 outline-none">
-                    <option value="Bronze">Bronze</option>
-                    <option value="Silver">Silver</option>
-                    <option value="Gold">Gold</option>
-                </select>
-                <label for="partnerEmail" class="block text-sm font-medium text-slate-400 mb-1">Contact Email</label>
-                <input id="partnerEmail" type="email" placeholder="contact@company.com" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 mb-4 focus:border-cyan-500 outline-none">
-                <div class="flex gap-3">
-                    <button id="addPartnerBtn" onclick="addPartner()" class="flex-1 px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Add Partner</button>
-                    <button onclick="hideAddPartnerForm()" class="px-4 py-2 bg-slate-600 hover:bg-slate-500 rounded-lg transition-colors">Cancel</button>
-                </div>
-            </div>
-        </div>
 
         <!-- Settings Modal -->
         <div id="settingsModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -289,8 +217,9 @@ async def home():
                         <label for="modelSelect" class="block text-sm font-medium text-slate-400 mb-1">AI Model</label>
                         <select id="modelSelect" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 focus:border-cyan-500 outline-none">
                             <option value="openai/gpt-4o-mini">GPT-4o Mini (Fast)</option>
+                            <option value="openai/gpt-4o">GPT-4o</option>
                             <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-                            <option value="google/gemini-flash-1.5-flash">Gemini Flash</option>
+                            <option value="anthropic/claude-3-haiku">Claude 3 Haiku</option>
                         </select>
                     </div>
                     
@@ -311,13 +240,12 @@ async def home():
                 <div class="message-enter flex gap-3">
                     <div class="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center flex-shrink-0">🤖</div>
                     <div class="bg-slate-700/50 rounded-xl p-4 max-w-lg">
-                        <p class="text-sm">Welcome to PartnerOS! 👋</p>
-                        <p class="text-sm mt-2 text-slate-300">I'm connected to your AI partner team. What would you like to do?</p>
-                        <div class="mt-3 flex flex-wrap gap-2">
-                            <button onclick="sendMessage('Onboard Acme Corp as Gold partner')" class="px-3 py-1 bg-cyan-600 hover:bg-cyan-500 rounded-full text-xs transition">Onboard partner</button>
-                            <button onclick="sendMessage('Register a deal for TechCorp, $50000')" class="px-3 py-1 bg-purple-600 hover:bg-purple-500 rounded-full text-xs transition">Register deal</button>
-                            <button onclick="sendMessage('Launch a welcome campaign')" class="px-3 py-1 bg-pink-600 hover:bg-pink-500 rounded-full text-xs transition">Launch campaign</button>
-                        </div>
+                        <p class="text-sm">PartnerOS is ready. Try:</p>
+                        <ul class="text-sm mt-2 text-slate-400 space-y-1">
+                            <li>• "onboard [Partner]"</li>
+                            <li>• "status of [Partner]"</li>
+                            <li>• "launch campaign for [Partner]"</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -342,11 +270,6 @@ async def home():
                     </button>
                 </div>
             </div>
-        </div>
-
-        <!-- Status -->
-        <div class="text-center mt-6 text-slate-500 text-sm">
-            <span id="status">● Ready</span> • 7 Agents • 36 Skills • LLM Connected
         </div>
     </div>
 
@@ -487,58 +410,7 @@ async def home():
             if (typing) typing.remove();
         }
         
-        // Partner management
-        async function loadPartners() {
-            try {
-                const response = await fetch('/api/partners');
-                if (!response.ok) throw new Error('Failed to load partners');
-                const data = await response.json();
-                const container = document.getElementById('partnersList');
-                
-                if (data.partners.length === 0) {
-                    container.innerHTML = `
-                        <div class="text-center py-8 px-4">
-                            <div class="text-4xl mb-3">📦</div>
-                            <div class="text-slate-400 text-sm mb-2">No partners yet</div>
-                            <div class="text-slate-500 text-xs">Add your first partner using the form above</div>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                container.innerHTML = data.partners.map(p => {
-                    const safeName = escapeHTML(p.name);
-                    const safeEmail = escapeHTML(p.email || 'No email');
-                    const safeTier = escapeHTML(p.tier || 'Bronze');
-                    const safeStatus = escapeHTML(p.status || 'Onboarding');
-                    return `
-                    <div class="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <div class="font-semibold text-white">${safeName}</div>
-                                <div class="text-xs text-slate-400">${safeEmail}</div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="px-2 py-1 rounded-full text-xs ${safeTier === 'Gold' ? 'bg-yellow-600' : safeTier === 'Silver' ? 'bg-gray-400' : 'bg-orange-600'}">${safeTier}</span>
-                                <button onclick="deletePartner('${escapeQuotes(safeName)}')" class="text-slate-500 hover:text-red-400 transition" title="Delete partner">🗑️</button>
-                            </div>
-                        </div>
-                        <div class="text-xs text-slate-500">${p.deals?.length || 0} deals • ${safeStatus}</div>
-                    </div>
-                `}).join('');
-            } catch (e) {
-                console.error('Error loading partners:', e);
-            }
-        }
-        
-        function showAddPartnerForm() {
-            document.getElementById('addPartnerModal').classList.remove('hidden');
-        }
-        
-        function hideAddPartnerForm() {
-            document.getElementById('addPartnerModal').classList.add('hidden');
-        }
-        
+        // Settings
         function showSettings() {
             document.getElementById('settingsModal').classList.remove('hidden');
             // Load saved settings from localStorage
@@ -567,52 +439,6 @@ async def home():
         
         function getApiKey() {
             return localStorage.getItem('partneros_api_key') || '';
-        }
-        
-        async function addPartner() {
-            const name = document.getElementById('partnerName').value;
-            const tier = document.getElementById('partnerTier').value;
-            const email = document.getElementById('partnerEmail').value;
-            const btn = document.getElementById('addPartnerBtn');
-            
-            if (!name) {
-                alert('Please enter a company name');
-                return;
-            }
-            
-            btn.disabled = true;
-            btn.innerText = 'Adding...';
-
-            try {
-                await fetch('/api/partners', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({name, tier, email})
-                });
-                hideAddPartnerForm();
-                loadPartners();
-                document.getElementById('partnerName').value = '';
-                document.getElementById('partnerEmail').value = '';
-            } catch (e) {
-                alert('Error adding partner: ' + e.message);
-            } finally {
-                btn.disabled = false;
-                btn.innerText = 'Add Partner';
-            }
-        }
-        
-        // Load partners on page load
-        loadPartners();
-        
-        // Delete partner
-        async function deletePartner(name) {
-            if (!confirm(`Delete partner "${name}"?`)) return;
-            try {
-                await fetch('/api/partners/' + encodeURIComponent(name), { method: 'DELETE' });
-                loadPartners();
-            } catch (e) {
-                alert('Error deleting partner: ' + e.message);
-            }
         }
         
         // Keyboard shortcuts
@@ -662,45 +488,156 @@ async def chat(request: Request):
             status_code=429,
         )
 
-    # Stronger API key validation - must be proper format
-    if not api_key:
-        return JSONResponse(
-            {
-                "response": "⚠️ No API key provided. Add one from https://openrouter.ai/keys to use live LLM responses.",
-                "agent": "system",
-            }
-        )
-
-    # Validate API key format (OpenRouter keys start with sk-or-)
-    api_key = api_key.strip()
-    if len(api_key) < 20 or not api_key.startswith("sk-"):
-        return JSONResponse(
-            {
-                "response": "⚠️ Invalid API key format. Please add a valid OpenRouter key from https://openrouter.ai/keys",
-                "agent": "system",
-            }
-        )
-
-    # TODO: Technical Debt - This currently bypasses the Orchestrator/Driver system
-    # and calls the LLM directly. Should be refactored to use orchestrator.call_driver()
-    # or a routing agent to maintain architectural consistency.
-
-    # Try LLM first, fallback on error
+    # Route to document generation if detected (works without API key!)
+    # This runs FIRST - keyword-based routing doesn't need LLM
     try:
-        # Get shared client from app state with defensive checks for shim compatibility
-        # Use sanitized message for LLM to prevent XSS injection in responses
-        app_state = getattr(request.app, "state", None)
-        http_client = getattr(app_state, "http_client", None) if app_state else None
+        # Use router to detect document intents
+        router_instance = router.Router()
 
-        response = await call_llm(
-            sanitized, api_key, model, use_cache, client=http_client
-        )
-        if response.get("response"):
-            return JSONResponse(response)
-        raise Exception("Empty response")
-    except Exception as e:
-        # Fallback on any error
-        return JSONResponse(get_fallback_response(sanitized))
+        # Get context for routing (existing partners)
+        context = {"partners": partner_state.list_partners()}
+
+        # Route the message
+        route_result = await router_instance.route(sanitized, context)
+
+        # Check if this is a document request
+        if route_result.is_document_request and route_result.intents:
+            intent = route_result.intents[0]
+
+            # Get partner name from entities
+            partner_name = intent.entities.get("partner_name")
+
+            if not partner_name:
+                # Ask for partner name
+                return JSONResponse(
+                    {
+                        "response": "I'd be happy to create that document! What's the partner company name?",
+                        "agent": "system",
+                        "awaiting_field": "partner_name",
+                    }
+                )
+
+            # Create the partner if they don't exist
+            partner = partner_state.get_partner(partner_name)
+            if not partner:
+                partner = partner_state.add_partner(
+                    name=partner_name,
+                    tier=intent.entities.get("tier", "Bronze"),
+                )
+
+            # Generate the document
+            doc_result = document_generator.create_document(
+                doc_type=intent.name,
+                partner_name=partner_name,
+                fields=intent.entities,
+            )
+
+            if doc_result:
+                # Track in partner state
+                partner_state.add_document(
+                    partner_name=partner_name,
+                    doc_type=intent.name,
+                    template=doc_result["template"],
+                    file_path=doc_result["path"],
+                    fields=doc_result["fields"],
+                    status="draft",
+                )
+
+                return JSONResponse(
+                    {
+                        "response": f"✅ Created **{intent.name.upper()}** for **{partner_name}**!\n\n"
+                        f"Document saved to: `{doc_result['relative_path']}`\n\n"
+                        f"The partner has been added to your dashboard.",
+                        "agent": "engine",
+                        "document": {
+                            "type": intent.name,
+                            "partner": partner_name,
+                            "path": doc_result["relative_path"],
+                        },
+                    }
+                )
+            else:
+                return JSONResponse(
+                    {
+                        "response": f"I understood you want a {intent.name}, but couldn't generate it. Please try again.",
+                        "agent": "system",
+                    }
+                )
+
+        # Not a document request - use the chat orchestrator with agent swarm
+        raise Exception("Not a document request - use orchestrator")
+
+    except Exception as router_error:
+        # Use the new Chat Orchestrator (agent swarm with memory)
+        try:
+            # Get shared client from app state
+            app_state = getattr(request.app, "state", None)
+            http_client = getattr(app_state, "http_client", None) if app_state else None
+
+            # Build LLM client wrapper for orchestrator
+            api_key_value = api_key  # Capture for closure
+
+            async def llm_wrapper(
+                system_prompt: str, user_message: str, history: list
+            ) -> str:
+                if not api_key_value:
+                    return chat_orchestrator.orchestrator._fallback_response(
+                        user_message
+                    )
+
+                # Validate API key
+                key = api_key_value.strip()
+                if len(key) < 20 or not key.startswith("sk-"):
+                    return "Please provide a valid OpenRouter API key in Settings."
+
+                # Build messages for LLM
+                messages = [{"role": "system", "content": system_prompt}]
+                for msg in history:
+                    messages.append({"role": msg["role"], "content": msg["content"]})
+                messages.append({"role": "user", "content": user_message})
+
+                try:
+                    response = await http_client.post(
+                        "https://openrouter.ai/api/v1/chat/completions",
+                        headers={
+                            "Authorization": f"Bearer {key}",
+                            "Content-Type": "application/json",
+                        },
+                        json={
+                            "model": model,
+                            "messages": messages,
+                        },
+                        timeout=30.0,
+                    )
+                    if response.status_code != 200:
+                        return f"API Error: {response.status_code}"
+
+                    result = response.json()
+                    choices = result.get("choices", [])
+                    if not choices:
+                        return "No response from AI."
+
+                    return choices[0].get("message", {}).get("content", "No response")
+                except Exception as e:
+                    return f"Error: {str(e)}"
+
+            # Call the orchestrator
+            result = await chat_orchestrator.chat(
+                sanitized,
+                conv_id="default",  # TODO: session-based
+                llm_client=llm_wrapper if api_key else None,
+            )
+
+            return JSONResponse(
+                {
+                    "response": result.get("response", "No response"),
+                    "agent": result.get("agent", "swarm"),
+                }
+            )
+
+        except Exception as e:
+            # Ultimate fallback
+            return JSONResponse(get_fallback_response(sanitized))
 
 
 @app.get("/api/partners")

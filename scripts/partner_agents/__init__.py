@@ -19,6 +19,10 @@ from .orchestrator import Orchestrator, RaceStrategy
 from .messages import TeamRadio, TeamMessage, MessageType
 from .state import Telemetry, PartnerState, ProgramMetrics
 from .config import TeamConfig
+from . import router
+from . import document_generator
+from . import partner_state
+from . import chat_orchestrator
 
 __all__ = [
     "BaseAgent",
@@ -35,4 +39,8 @@ __all__ = [
     "PartnerState",
     "ProgramMetrics",
     "TeamConfig",
+    "router",
+    "document_generator",
+    "partner_state",
+    "chat_orchestrator",
 ]

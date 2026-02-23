@@ -87,6 +87,7 @@ def add_partner(
         "deals": [],
         "campaigns": [],
         "notes": [],
+        "documents": [],
     }
 
     partners.append(partner)
@@ -183,3 +184,39 @@ def delete_partner(name: str) -> bool:
         save_partners(partners)
         return True
     return False
+
+
+def add_document(
+    partner_name: str,
+    doc_type: str,
+    template: str,
+    file_path: str,
+    fields: Dict[str, Any] = None,
+    status: str = "draft",
+) -> Optional[Dict]:
+    """Add a document to a partner's document list."""
+    partners = load_partners()
+    for p in partners:
+        if p["name"].lower() == partner_name.lower():
+            doc = {
+                "id": f"doc-{len(p.get('documents', [])) + 1}",
+                "type": doc_type,
+                "template": template,
+                "path": file_path,
+                "status": status,
+                "fields": fields or {},
+                "created_at": datetime.now().isoformat(),
+            }
+            p.setdefault("documents", []).append(doc)
+            p["updated_at"] = datetime.now().isoformat()
+            save_partners(partners)
+            return doc
+    return None
+
+
+def get_partner_documents(partner_name: str) -> List[Dict]:
+    """Get all documents for a partner."""
+    partner = get_partner(partner_name)
+    if partner:
+        return partner.get("documents", [])
+    return []
