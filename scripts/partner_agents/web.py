@@ -33,10 +33,10 @@ from partner_agents import partner_state
 
 # In-memory rate limiting
 import time
-from collections import deque
+from collections import deque, OrderedDict
 
-rate_limit_store = {}
-response_cache = {}
+rate_limit_store = OrderedDict()
+response_cache = OrderedDict()
 
 # Cache settings
 CACHE_ENABLED = True
@@ -47,19 +47,12 @@ def check_rate_limit(ip: str, max_requests: int = 20, window_seconds: int = 60) 
     """Simple rate limiter using deque for efficient pruning."""
     now = time.time()
 
-    # Defensive: prevent memory exhaustion if store grows too large
-    if len(rate_limit_store) > 1000:
-        # Clear entries older than the window
-        expired_ips = [
-            ip_key
-            for ip_key, times in rate_limit_store.items()
-            if not times or (now - times[-1] > window_seconds)
-        ]
-        for ip_key in expired_ips:
-            del rate_limit_store[ip_key]
-
     if ip not in rate_limit_store:
+        if len(rate_limit_store) >= 1000:
+            rate_limit_store.popitem(last=False)
         rate_limit_store[ip] = deque()
+    else:
+        rate_limit_store.move_to_end(ip)
 
     # Efficiently remove old requests from the left
     window_start = now - window_seconds
@@ -98,6 +91,24 @@ app.add_middleware(
     allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["Content-Type", "Authorization"],
 )
+
+
+@app.middleware("http")
+async def security_middleware(request: Request, call_next):
+    """Enforce payload size limits and add security headers."""
+    if request.method in ["POST", "PUT"]:
+        cl = request.headers.get("content-length")
+        if cl and int(cl) > 1_000_000:
+            return JSONResponse({"error": "Payload too large"}, status_code=413)
+    response = await call_next(request)
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; script-src 'self' 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+    )
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 # Initialize agents
 agents = {
@@ -650,8 +661,9 @@ async def chat(request: Request):
     # Sanitize: remove potentially dangerous HTML tags
     sanitized = re.sub(r"<[^>]*?>", "", user_message)
 
-    # Rate limiting check
-    client_ip = request.client.host if request.client else "unknown"
+    # Rate limiting check (proxy-aware)
+    fwd = request.headers.get("X-Forwarded-For")
+    client_ip = fwd.split(",")[0].strip() if fwd else (request.client.host or "unknown")
     if not check_rate_limit(client_ip):
         return JSONResponse(
             {
@@ -754,8 +766,9 @@ async def call_llm(
     """Call OpenRouter LLM with partner context."""
     import hashlib
 
-    # Simple cache - hash the message AND model
-    cache_key = hashlib.sha256(f"{model}:{message}".encode()).hexdigest()[:16]
+    # Secure cache: include hashed API key to prevent cross-user exposure
+    key_h = hashlib.sha256(api_key.encode()).hexdigest()[:8]
+    cache_key = hashlib.sha256(f"{key_h}:{model}:{message}".encode()).hexdigest()[:16]
 
     # Check cache settings - if cache disabled, skip it
     if use_cache:
@@ -832,6 +845,8 @@ Be helpful, concise, and actionable."""
 
             # Only cache if user has caching enabled
             if use_cache:
+                if len(response_cache) >= 1000:
+                    response_cache.popitem(last=False)
                 response_cache[cache_key] = {"result": result, "ts": time.time()}
 
             return result

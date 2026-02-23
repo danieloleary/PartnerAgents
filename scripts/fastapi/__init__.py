@@ -44,6 +44,9 @@ class FastAPI:
     def add_middleware(self, *args, **kwargs) -> None:
         return None
 
+    def middleware(self, name: str):
+        return lambda f: f
+
     def add_api_route(
         self, path: str, endpoint: Callable[..., Any], methods: list[str] = None
     ):
