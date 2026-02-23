@@ -17,7 +17,7 @@ description: >
   Guide for using the partner portal (PRM). Best portal is one partners actually use—
   if they can't find what they need, it's useless.
 outcomes: [Portal training, Self-service enable, Partner adoption]
-skills_gained: [Portal management", "Self-service", "Enablement"]
+skills_gained: [Portal management, Self-service, Enablement]
 keywords: ["portal", "PRM", "self-service", "training", "adoption"]
 ---
 > **The best partner portal is one partners actually use. If they can't find what they need, it's useless.** — Dan O'Leary

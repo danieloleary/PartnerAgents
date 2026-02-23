@@ -17,7 +17,7 @@ description: >
   Revenue sharing model for joint venture partnerships. Use when both sides
   bring unique value—not for transactional relationships.
 outcomes: [Revenue split, Joint value, Partnership economics]
-skills_gained: [Joint ventures", "Deal structuring", "Partnership economics]
+skills_gained: [Joint ventures, Deal structuring, Partnership economics]
 keywords: ["revenue share", "joint venture", "profit sharing", "partnership economics"]
 ---
 > **Revenue share is for partnerships where both sides bring unique value. It's not for transactional relationships.** — Dan O'Leary

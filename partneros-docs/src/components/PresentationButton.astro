@@ -1,0 +1,144 @@
+---
+import PptxViewer from './PptxViewer';
+
+interface Props {
+  pptxSrc?: string;
+  title?: string;
+}
+
+const { pptxSrc = '/assets/pptx/board-deck.pptx', title = 'Board Deck' } = Astro.props;
+---
+
+<div class="presentation-controls" data-pptx-src={pptxSrc} data-title={title}>
+  <button class="present-btn" id="presentBtn">
+    <span class="icon">🎮</span>
+    <span class="text">Present</span>
+  </button>
+  
+  <a href={pptxSrc} download class="download-btn">
+    <span class="icon">📥</span>
+    <span class="text">Download PPTX</span>
+  </a>
+</div>
+
+<div id="presentation-modal" class="modal" hidden>
+  <div id="viewer-container"></div>
+</div>
+
+<style>
+  .presentation-controls {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+    padding: 20px;
+    background: var(--sl-color-gray-6);
+    border-radius: 12px;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+
+  .present-btn,
+  .download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: none;
+  }
+
+  .present-btn {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    color: white;
+  }
+
+  .present-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  }
+
+  .download-btn {
+    background: var(--sl-color-gray-5);
+    color: var(--sl-color-text);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .download-btn:hover {
+    background: var(--sl-color-gray-4);
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+</style>
+
+<script>
+  import { createElement } from 'react';
+  import { createRoot } from 'react-dom/client';
+  import PptxViewer from './PptxViewer';
+
+  const controls = document.querySelector('.presentation-controls');
+  const modal = document.getElementById('presentation-modal');
+  const viewerContainer = document.getElementById('viewer-container');
+  
+  if (controls && modal && viewerContainer) {
+    const pptxSrc = controls.getAttribute('data-pptx-src') || '/assets/pptx/board-deck.pptx';
+    const title = controls.getAttribute('data-title') || 'Board Deck';
+    
+    const presentBtn = document.getElementById('presentBtn');
+    const root = createRoot(viewerContainer);
+    
+    let isViewerOpen = false;
+    
+    function openViewer() {
+      modal.hidden = false;
+      isViewerOpen = true;
+      
+      root.render(
+        createElement(PptxViewer, {
+          src: pptxSrc,
+          title: title,
+          onClose: closeViewer
+        })
+      );
+      
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeViewer() {
+      isViewerOpen = false;
+      modal.hidden = true;
+      root.render(null);
+      document.body.style.overflow = '';
+    }
+    
+    presentBtn?.addEventListener('click', openViewer);
+    
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isViewerOpen) {
+        closeViewer();
+      }
+    });
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeViewer();
+      }
+    });
+  }
+</script>

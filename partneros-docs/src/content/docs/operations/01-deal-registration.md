@@ -17,7 +17,7 @@ description: >
   Deal registration rules protecting partner opportunities. Clear rules prevent
   arguments—define upfront, enforce consistently.
 outcomes: [Deal protection, Registration rules, Conflict prevention]
-skills_gained: [Deal management", "Pipeline protection", "Policy enforcement]
+skills_gained: [Deal management, Pipeline protection, Policy enforcement]
 keywords: ["deal registration", "protection", "pipeline", "conflict", "policy"]
 ---
 > **Clear deal registration rules prevent arguments. Define them upfront, enforce them consistently.** — Dan O'Leary

@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import react from '@astrojs/react';
 
 export default defineConfig({
 	base: '/PartnerOS',
 	site: 'https://danieloleary.github.io',
 	integrations: [
+		react(),
 		starlight({
 			title: 'PartnerOS',
 			description: 'The complete playbook for building and scaling strategic partnerships with AI-powered automation.',
