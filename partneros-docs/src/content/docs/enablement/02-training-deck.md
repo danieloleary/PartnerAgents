@@ -14,11 +14,9 @@ time_required: 4-8 hours
 difficulty: medium
 prerequisites: [Product knowledge, Sales methodology]
 description: >
-  Training deck for partner sales and technical teams. Partners represent your brand—
-  invest in training or risk poor representation.
 outcomes: [Training deck, Certified partners, Product knowledge]
 skills_gained: [Training creation, Content development, Sales enablement]
-keywords: ["training", "deck", "sales enablement", "certification", "education"]
+keywords: ["trained poorly represent", "poorly invest", "template purpose", "partner sales", "training", "s"]
 ---
 > **Partners who are trained poorly represent you poorly. Invest in training—it's your brand on the line.** — Dan O'Leary
 

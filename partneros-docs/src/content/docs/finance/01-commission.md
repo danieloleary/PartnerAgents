@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Compensation strategy, Revenue model]
 description: >
-  Commission structure for partner payouts. Keep it simple—partners should calculate
-  earnings in their head. Reward behavior you want.
 outcomes: [Commission rates, Tier structure, Payout framework]
 skills_gained: [Compensation design, Financial modeling, Incentive structures]
-keywords: ["commission", "compensation", "payout", "revenue share", "incentives"]
+keywords: ["simple partners should", "want keep", "template purpose", "able", "calculate", "earnings"]
 ---
 > **Commission structures should reward behavior you want. Keep it simple—partners should be able to calculate their earnings in their head.** — Dan O'Leary
 

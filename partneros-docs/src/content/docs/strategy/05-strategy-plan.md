@@ -14,11 +14,9 @@ time_required: 8-16 hours
 difficulty: hard
 prerequisites: [Business case, ICP, Program architecture]
 description: >
-  Create a comprehensive partner strategy that translates business objectives into
-  actionable plans. Keep it concise enough to execute—5 pages max.
 outcomes: [Executable strategy document, Stakeholder alignment, Clear priorities]
 skills_gained: [Strategic planning, Executive communication, GTM strategy]
-keywords: ["strategy", "plan", "GTM", "go-to-market", "partner strategy"]
+keywords: ["actually execute because", "measures program success", "translates business objectives", "most urgent go", "sharepoint i used", "got comments approvals"]
 ---
 > **Your partner strategy isn't a document—it's a commitment. Write something you can actually execute, because your partners will read it and decide whether to invest in you.** — Dan O'Leary
 

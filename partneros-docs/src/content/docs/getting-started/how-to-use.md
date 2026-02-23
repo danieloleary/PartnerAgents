@@ -14,7 +14,7 @@ prerequisites: [Text editor]
 description: Tips for customizing templates for your organization.
 outcomes: [Customize templates, Use placeholders, Adapt to needs]
 skills_gained: [Template customization, Placeholder usage, Document adaptation]
-keywords: ["how to use", "templates", "customize", "placeholder", "adapt"]
+keywords: ["information placeholder what", "startup pitch differs", "enterprise pitch keep", "first main content", "one workflow integration", "branding correct dates"]
 ---
 # How to Use Templates
 

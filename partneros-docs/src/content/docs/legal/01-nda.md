@@ -14,13 +14,10 @@ time_required: 1 hour
 difficulty: easy
 prerequisites: [Legal review]
 description: >
-  Mutual NDA for protecting confidential information during partnership discussions.
-  Sign before sharing sensitive information.
 outcomes: [Signed NDA, Legal protection, Professional boundary]
 skills_gained: [Contract management, Legal compliance, Confidentiality]
-keywords: ["NDA", "non-disclosure", "confidentiality", "legal", "agreement"]
+keywords: ["share anything sensitive", "nda before", "about distrust", "s", "template"]
 ---
-
 > **Sign the NDA before you share anything sensitive. It's not about distrust—it's about professionalism.** — Dan O'Leary
 
 :::caution

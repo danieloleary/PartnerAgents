@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Competitive analysis, Win/loss data]
 description: >
-  Transform competitive advantages into sellable scenarios for partners.
-  Create battle cards and objection handlers specific to competitor situations.
 outcomes: [Battle cards, Objection handlers, Competitive positioning]
 skills_gained: [Competitive analysis, Sales enablement, Objection handling]
-keywords: ["competitive", "differentiation", "battle cards", "objections", "competitor"]
+keywords: ["ll fail building", "makes sense price", "capabilities integrations uptime", "don t track", "useless without action", "don t want"]
 ---
 > **Your partners won't sell against competitors they don't understand. Give them the specific scenarios, the exact objections, and the precise counters—and watch win rates double.** — Dan O'Leary
 

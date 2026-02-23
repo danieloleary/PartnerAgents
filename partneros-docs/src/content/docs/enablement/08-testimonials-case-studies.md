@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: easy
 prerequisites: [Success stories, Customer contacts]
 description: >
-  Capture partner success stories as testimonials and case studies.
-  A great case study is worth 100 sales calls.
 outcomes: [Testimonials, Case studies, Social proof]
 skills_gained: [Storytelling, Content creation, Reference development]
-keywords: ["testimonials", "case studies", "success stories", "references", "social proof"]
+keywords: ["great case study", "solution what did", "template purpose", "solution", "re", "use"]
 ---
 > **A great case study is worth 100 sales calls. Invest in capturing partner success stories—they're your most powerful sales tool.** — Dan O'Leary
 

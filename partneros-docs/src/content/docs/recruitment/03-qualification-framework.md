@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [ICP definition, Evaluation criteria]
 description: >
-  Qualify potential partners using a structured framework. Avoid spending 18 months
-  on partners who were never going to work.
 outcomes: [Qualification criteria, Scoring matrix, Go/No-Go decision]
 skills_gained: [Partner evaluation, Qualification, Decision frameworks]
-keywords: ["qualification", "framework", "MEDDIC", "partner evaluation", "scoring"]
+keywords: ["sales team uses", "sales both qualify", "kills partnerships before", "evaluate potential partners", "data driven decisions", "solution integration skills"]
 ---
 > **Qualifying partners isn't about saying no—it's about saying yes to the right partners. Skip qualification and you'll spend 18 months pursuing partners who were never going to work.** — Dan O'Leary
 

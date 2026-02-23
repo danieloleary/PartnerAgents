@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: medium
 prerequisites: [Revenue targets, Volume thresholds]
 description: >
-  Volume-based rebate program rewarding performance. Rebates are for partners
-  who are all-in—not just participation.
 outcomes: [Rebate tiers, Volume thresholds, Performance incentives]
 skills_gained: [Volume incentives, Financial planning, Partner motivation]
-keywords: ["rebate", "volume", "bonus", "performance", "incentives"]
+keywords: ["just participation", "partners who", "template purpose", "re", "all", "use"]
 ---
 > **Rebates reward performance, not just participation. They're for partners who are all-in.** — Dan O'Leary
 

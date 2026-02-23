@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: easy
 prerequisites: [CRM access, Reporting tools]
 description: >
-  Key metrics to track partner program success. Pick 5 metrics that matter and
-  track them religiously—what gets measured gets managed.
 outcomes: [KPI dashboard, Success metrics, Performance tracking]
 skills_gained: [Metrics design, Performance measurement, Data analysis]
-keywords: ["metrics", "KPIs", "success", "measurement", "tracking"]
+keywords: ["template purpose", "partner involvement", "metrics", "matter", "track", "use"]
 ---
 > **What gets measured gets managed. Pick the 5 metrics that matter and track them religiously.** — Dan O'Leary
 

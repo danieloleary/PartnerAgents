@@ -14,11 +14,9 @@ time_required: 4-8 hours
 difficulty: medium
 prerequisites: [Training materials, Assessment criteria]
 description: >
-  Certification program establishing standards for partner expertise.
-  Ensure every partner deliverable meets your quality standards.
 outcomes: [Certification levels, Assessment criteria, Quality standards]
 skills_gained: [Program design, Quality assurance, Competency testing]
-keywords: ["certification", "standards", "quality", "assessment", "expertise"]
+keywords: ["program establishes standards", "template purpose", "partner expertise", "use"]
 ---
 > **Certification isn't about checking boxes—it's about ensuring every partner deliverable meets your standards. Cut corners here and your brand suffers.** — Dan O'Leary
 

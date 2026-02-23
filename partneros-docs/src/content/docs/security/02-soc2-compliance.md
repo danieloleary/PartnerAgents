@@ -14,11 +14,9 @@ time_required: 2-4 hours
 difficulty: medium
 prerequisites: [Compliance requirements, Audit support]
 description: >
-  Guide for SOC 2 compliance requirements. SOC 2 isn't a checkbox—it's a
-  commitment to security. Help partners understand the journey.
 outcomes: [Compliance roadmap, Audit preparation, Security standards]
 skills_gained: [SOC 2, Compliance, Audit preparation, Security standards]
-keywords: ["SOC 2", "compliance", "audit", "security", "certification"]
+keywords: ["template purpose", "checkbox", "s", "commitment", "use"]
 ---
 > **SOC 2 isn't a checkbox—it's a commitment to security. Help partners understand the journey.** — Dan O'Leary
 

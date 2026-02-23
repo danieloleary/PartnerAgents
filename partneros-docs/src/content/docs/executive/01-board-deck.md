@@ -14,12 +14,10 @@ time_required: 4-8 hours
 difficulty: hard
 prerequisites: [Partner program data, QBR metrics]
 description: >
-  Board presentation template for partner program strategic reviews.
 outcomes: [Secure board buy-in, Demonstrate ROI, Obtain resource approval]
 skills_gained: [Executive presentation, Strategic communication, Board-level storytelling]
-keywords: ["board presentation", "partner program", "executive summary", "board deck", "strategic update"]
+keywords: ["story numbers matter", "glance active partners", "approach brief summary", "gantt style visual", "other teams slide", "partners compare cac"]
 ---
-
 > **Board presentations should tell a story. Numbers matter—but narrative matters more.** — Dan O'Leary
 
 :::tip[Insider Tip]

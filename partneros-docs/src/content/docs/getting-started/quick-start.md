@@ -14,7 +14,7 @@ prerequisites: [Web browser]
 description: Get up and running with PartnerOS in 10 minutes—no install required.
 outcomes: [Browse templates, Understand structure, Launch quickly]
 skills_gained: [Platform navigation, Template discovery, Quick start]
-keywords: ["quick start", "getting started", "fast", "minutes", "browse"]
+keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
 ---
 # PartnerOS Quick Start
 

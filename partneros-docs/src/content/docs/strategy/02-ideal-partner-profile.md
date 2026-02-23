@@ -14,11 +14,10 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Market research, Top partner analysis]
 description: >
-  Define your perfect partner using a structured framework across 5 key attributes:
-  foundational fit, capability, go-to-market, commitment, and economics.
+Define your perfect partner using a structured framework across 5 key attributes:
 outcomes: [Objective partner criteria, Scoring matrix, Prioritized prospect list]
 skills_gained: [Partner evaluation, Scoring frameworks, Strategic filtering]
-keywords: ["ICP", "ideal partner profile", "partner selection", "partner criteria", "scoring"]
+keywords: ["structured objective framework", "fit primary vertical", "requires hand holding", "measure certified professionals", "offer ongoing support", "lead flow slowed"]
 ---
 > **The partner you choose in Year 1 will define your channel for years. Get this wrong, and you'll spend Years 2-4 digging yourself out.** — Dan O'Leary
 
@@ -419,3 +418,4 @@ These categories require a minimum score of 3—or automatic disqualification:
 - [3C/4C Evaluation Framework](../strategy/03-evaluation-framework/) — Detailed scoring for partner selection
 - [Strategy Plan](../strategy/05-strategy-plan/) — Full go-to-market strategy using IPP
 - [Partner Program Glossary](../resources/glossary/) — Definitions of all terms used here
+

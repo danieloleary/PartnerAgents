@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Training materials, Certification program]
 description: >
-  Timeline for partner enablement from signing to first deal. Best programs get
-  partners to revenue in 30 days—90+ days kills momentum.
 outcomes: [Enablement timeline, Training plan, Fast ramp]
 skills_gained: [Enablement planning, Training design, Program management]
-keywords: ["roadmap", "enablement", "training", "timeline", "onboarding"]
+keywords: ["x more likely", "year speed matters", "days lose momentum", "partner enablement roadmap", "days programs", "roadmap provides"]
 ---
 > **The best enablement programs get partners to first deal in 30 days. Programs that stretch to 90 days lose momentum—and partners.** — Dan O'Leary
 

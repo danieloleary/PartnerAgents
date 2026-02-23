@@ -14,11 +14,9 @@ time_required: 2-4 hours
 difficulty: medium
 prerequisites: [Signed agreement, Partner contact]
 description: >
-  Structured onboarding for new partners. First 30 days define the partnership—
-  get them productive fast or watch momentum die.
 outcomes: [Onboarding plan, Productive partner, Fast ramp]
 skills_gained: [Onboarding, Enablement, Relationship management]
-keywords: ["onboarding", "checklist", "activation", "ramp", "new partner"]
+keywords: ["x more likely", "orientation week training", "certification week enablement", "partner onboarding checklist", "first days define", "onboarding why"]
 ---
 > **The first 30 days define the partnership. Get them productive fast or watch momentum die.** — Dan O'Leary
 

@@ -14,11 +14,9 @@ time_required: 2-4 hours
 difficulty: hard
 prerequisites: [API documentation, Technical resources]
 description: >
-  Guide for technical integration between your platform and partner systems.
-  Best integrations are invisible—make it easy for partners.
 outcomes: [Integration docs, Technical enablement, Partner capability]
 skills_gained: [Technical writing, API integration, Developer experience]
-keywords: ["integration", "API", "technical", "developer", "connectors"]
+keywords: ["technical integration guide", "best integrations", "customer value", "apis make", "template purpose", "wrestling"]
 ---
 > **The best integrations are invisible. Partners should focus on customer value, not wrestling with APIs. Make it easy.** — Dan O'Leary
 

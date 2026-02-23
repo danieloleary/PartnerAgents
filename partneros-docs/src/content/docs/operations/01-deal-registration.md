@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: easy
 prerequisites: [CRM system, Protection period]
 description: >
-  Deal registration rules protecting partner opportunities. Clear rules prevent
-  arguments—define upfront, enforce consistently.
 outcomes: [Deal protection, Registration rules, Conflict prevention]
 skills_gained: [Deal management, Pipeline protection, Policy enforcement]
-keywords: ["deal registration", "protection", "pipeline", "conflict", "policy"]
+keywords: ["upfront enforce", "template purpose", "use"]
 ---
 > **Clear deal registration rules prevent arguments. Define them upfront, enforce them consistently.** — Dan O'Leary
 

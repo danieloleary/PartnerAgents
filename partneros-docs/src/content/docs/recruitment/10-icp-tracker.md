@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: easy
 prerequisites: [ICP definition, Prospect list]
 description: >
-  Track which accounts partners can access. Map overlap AND complementary coverage—
-  best partners sell to accounts you can't reach.
 outcomes: [Account mapping, Coverage analysis, Priority accounts]
 skills_gained: [Account planning, ICP alignment, Territory mapping]
-keywords: ["ICP", "tracker", "account mapping", "coverage", "overlap"]
+keywords: ["re leaving money", "t reach map", "complementary coverage how", "icp alignment tracker", "tracker maps", "template purpose"]
 ---
 > **If you don't know which accounts your partners can access, you're leaving money on the table.** — Dan O'Leary
 

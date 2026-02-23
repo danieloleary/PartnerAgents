@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: medium
 prerequisites: [Qualification framework, ICP]
 description: >
-  Structured discovery call script for evaluating partner fit. Ask the right questions,
-  listen more than you talk, and leave with clear next steps.
 outcomes: [Call script, Qualification notes, Next steps]
 skills_gained: [Discovery calls, Questioning techniques, Relationship building]
-keywords: ["discovery", "call script", "qualification", "first meeting", "conversation"]
+keywords: ["propose something valuable", "structured framework effectively", "balances information gathering", "rapport building why", "natural fit between", "cover quick overview"]
 ---
 > **The discovery call is where partnerships are won or lost. Ask the right questions, listen more than you talk, and always leave with a clear next step.** — Dan O'Leary
 

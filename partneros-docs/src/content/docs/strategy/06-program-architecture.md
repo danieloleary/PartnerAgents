@@ -14,11 +14,9 @@ time_required: 4-8 hours
 difficulty: medium
 prerequisites: [Strategy plan, Compensation structure]
 description: >
-  Design your partner program tiers (Bronze/Silver/Gold) with meaningful benefits
-  and clear progression paths. Make promises you can keep.
 outcomes: [Tier structure, Benefit definitions, Progression criteria]
 skills_gained: [Program design, Tier strategy, Benefits structuring]
-keywords: ["tiers", "program architecture", "Bronze", "Silver", "Gold", "benefits"]
+keywords: ["t articulate why", "progression paths why", "re building capability", "ve demonstrated commitment", "met month path", "don t audit"]
 ---
 > **Your program architecture is a promise to partners. Make promises you can keep—and keep every promise you make. A broken promise destroys more trust than a bad product.** — Dan O'Leary
 

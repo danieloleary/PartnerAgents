@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Target prospect list, ICP definition]
 description: >
-  A 4-email sequence for cold outreach to potential partners. Follow-up is key—
-  most people give up after one email.
 outcomes: [Email templates, Follow-up sequence, Meeting bookings]
 skills_gained: [Cold outreach, Email writing, Sales prospecting]
-keywords: ["email", "outreach", "recruitment", "sequence", "cold email"]
+keywords: ["follow up gets", "converts cold prospects", "meeting steps research", "optimize weekly review", "thought there might", "natural fit between"]
 ---
 > **The first email gets you read. The follow-up gets you replied to. Most people give up after one email—and that's why they fail at partner recruitment.** — Dan O'Leary
 

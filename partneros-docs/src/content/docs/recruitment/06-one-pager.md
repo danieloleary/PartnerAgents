@@ -14,11 +14,9 @@ time_required: 1 hour
 difficulty: easy
 prerequisites: [Value proposition, Partner benefits]
 description: >
-  One-page leave-behind that explains partnership value in 2 minutes.
-  If you can't explain it in one page, you don't understand it well enough.
 outcomes: [One-page summary, Leave-behind document, Executive overview]
 skills_gained: [Messaging, Executive communication, Content creation]
-keywords: ["one-pager", "leave-behind", "summary", "executive summary"]
+keywords: ["gets read how", "access enterprise customers", "one pager should", "works one pagers", "don t understand", "reach more customers"]
 ---
 > **If you can't explain your partnership value in one page, you don't understand it well enough.** — Dan O'Leary
 

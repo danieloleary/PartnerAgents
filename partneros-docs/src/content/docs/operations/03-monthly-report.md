@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: easy
 prerequisites: [Metrics data, CRM exports]
 description: >
-  Monthly roll-up of partner program metrics and performance. Keep it honest—the
-  numbers don't lie, use them to improve.
 outcomes: [Monthly metrics, Performance dashboard, Trend analysis]
 skills_gained: [Reporting, Data analysis, Performance tracking]
-keywords: ["monthly report", "metrics", "dashboard", "performance", "rollup"]
+keywords: ["template purpose", "honest", "use"]
 ---
 > **Monthly reports keep you honest. The numbers don't lie—use them to improve.** — Dan O'Leary
 

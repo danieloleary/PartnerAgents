@@ -14,7 +14,7 @@ prerequisites: []
 description: Understanding the end-to-end partner journey from strategy to exit.
 outcomes: [Lifecycle overview, Phase understanding, Journey mapping]
 skills_gained: [Lifecycle understanding, Strategic planning, Phase management]
-keywords: ["lifecycle", "phases", "journey", "stages", "partner journey"]
+keywords: ["part ways do", "need partners", "re looking", "re building", "partner program", "scratch start"]
 ---
 # Partner Lifecycle
 

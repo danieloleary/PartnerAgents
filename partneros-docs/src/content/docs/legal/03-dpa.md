@@ -14,13 +14,10 @@ time_required: 2-4 hours
 difficulty: hard
 prerequisites: [Legal team, GDPR requirements]
 description: >
-  Data Processing Agreement for GDPR compliance when partners handle customer data.
-  Essential for EU partnerships.
 outcomes: [Signed DPA, GDPR compliance, Data protection]
 skills_gained: [Privacy compliance, Data handling, Legal requirements]
-keywords: ["DPA", "data processing", "GDPR", "privacy", "compliance"]
+keywords: ["gdpr compliance work", "right"]
 ---
-
 > **Data protection isn't optional. Get this right or face serious consequences.** — Dan O'Leary
 
 :::caution

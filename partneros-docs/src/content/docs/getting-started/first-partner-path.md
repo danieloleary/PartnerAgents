@@ -16,7 +16,7 @@ prerequisites: []
 description: The exact sequence to go from zero to your first signed partner in 4 weeks.
 outcomes: [First partner signed, Complete onboarding, Revenue]
 skills_gained: [Onboarding execution, Partner recruitment, Program launch]
-keywords: ["first partner", "onboarding", "path", "4 weeks", "getting started"]
+keywords: ["first signed partner", "first partner signed", "defines company size", "guide adjust based", "common questions what", "prospect list start"]
 ---
 > **The exact sequence to go from zero to your first signed partner in 4 weeks.**
 

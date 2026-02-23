@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Ideal Partner Profile, Partner financial data]
 description: >
-  Score partners objectively using the 3C (Capacity, Capability, Commitment) or 4C framework.
-  Create defensible, comparable evaluations for partner decisions.
 outcomes: [Scored partner evaluations, Defensible decisions, Tiering criteria]
 skills_gained: [Partner scoring, Objective evaluation, Decision frameworks]
-keywords: ["3C", "4C", "evaluation framework", "partner scoring", "objective evaluation"]
+keywords: ["c framework originated", "objective comparable scores", "defensible decisions whether", "designated practice lead", "warning sign profitability", "profitable burning cash"]
 ---
 > **The partner evaluation score is only as good as the questions you ask. Skip the hard questions now, and you'll be explaining the partnership failure later.** — Dan O'Leary
 

@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: medium
 prerequisites: [Security requirements, Compliance standards]
 description: >
-  Security questionnaire for assessing partner risk. Every partner is a potential
-  risk—assess them properly before sharing data.
 outcomes: [Risk assessment, Security clearance, Compliance verification]
 skills_gained: [Security assessment, Risk management, Compliance verification]
-keywords: ["security", "questionnaire", "assessment", "risk", "compliance"]
+keywords: ["potential risk assess", "template purpose", "use"]
 ---
 > **Security isn't optional. Every partner is a potential risk—assess them properly.** — Dan O'Leary
 

@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [MDF budget, Marketing materials]
 description: >
-  Joint marketing campaigns with partners. Co-marketing is about telling a story
-  you couldn't tell alone—find that story and double down.
 outcomes: [Campaign ideas, Joint events, Lead generation]
 skills_gained: [Joint marketing, Campaign planning, Event coordination]
-keywords: ["co-marketing", "campaign", "MDF", "joint marketing", "events"]
+keywords: ["s about telling", "template purpose", "story", "use"]
 ---
 > **Co-marketing isn't about spending money together—it's about telling a story you couldn't tell alone. Find that story and double down.** — Dan O'Leary
 

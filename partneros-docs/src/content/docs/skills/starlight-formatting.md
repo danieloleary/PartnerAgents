@@ -7,15 +7,15 @@ template_number: SK.2
 version: 1.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: operations
 time_required: 30 minutes
 difficulty: easy
-prerequisites: 
-outcomes: 
-skills_gained: 
+prerequisites:
+outcomes:
+skills_gained:
 keywords: ["starlight formatting guide", "standard markdown following", "frontmatter title start", "important information caution", "roi when presenting", "email note md"]
 ---
 > **"The difference between a template that looks amateur and one that looks professional is in the formatting details."**
@@ -269,3 +269,4 @@ Before submitting a template, verify:
 - [Template Quality Audit Skill](./template-quality-audit/)
 - [Find and Fix Broken Links Skill](./find-broken-links/)
 - [Partner Program Glossary](../resources/glossary/)
+

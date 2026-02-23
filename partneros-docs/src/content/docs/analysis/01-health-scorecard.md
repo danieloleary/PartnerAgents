@@ -14,11 +14,9 @@ time_required: 1-2 hours
 difficulty: medium
 prerequisites: [Metrics data, Engagement data]
 description: >
-  Quarterly assessment of partner health across engagement, capability, and growth.
-  Best partners aren't just profitable—they're healthy.
 outcomes: [Health scores, Risk identification, Intervention plan]
 skills_gained: [Health assessment, Risk management, Performance analysis]
-keywords: ["health", "scorecard", "engagement", "capability", "assessment"]
+keywords: ["partner health scorecard", "template purpose", "growth", "use", "executives"]
 ---
 > **The best partners aren't just profitable—they're healthy. Track engagement, capability, and growth—not just revenue.** — Dan O'Leary
 

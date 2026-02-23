@@ -6,7 +6,7 @@ template_number: R.1
 version: 1.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: beginner
 purpose: strategic
 phase: strategy
@@ -14,8 +14,8 @@ time_required: 1-2 hours
 difficulty: easy
 prerequisites: []
 purpose_detailed: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["low barrier entry", "reducing cac compared", "sustainable competitive advantage", "predictable recurring nature", "one year period", "leads generated lead"]
 ---
 > **"The difference between a novice and expert partner leader is vocabulary. When you use the right terms with the right metrics, you sound like someone who has done this before—and people trust that."**
@@ -471,3 +471,4 @@ A comparison of a metric to the same period in the previous year.
 - [Ideal Partner Profile](../strategy/02-ideal-partner-profile/)
 - [Partner Program Architecture](../strategy/06-program-architecture/)
 - [Partner Success Metrics](../enablement/06-success-metrics/)
+

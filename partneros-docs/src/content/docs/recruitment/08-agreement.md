@@ -14,11 +14,9 @@ time_required: 4-8 hours
 difficulty: hard
 prerequisites: [Legal team, Proposal terms]
 description: >
-  Partnership agreement template protecting both parties. Work with legal to customize
-  for your jurisdiction and risk tolerance.
 outcomes: [Signed agreement, Legal protection, Partnership launch]
 skills_gained: [Contract management, Legal review, Negotiation]
-keywords: ["agreement", "contract", "partnership", "legal", "MSA"]
+keywords: ["don t rush", "specific situation jurisdiction", "things go wrong", "legal advice how", "framework work", "legal team"]
 ---
 > **The agreement protects both parties. Don't skip it, don't rush it, and always involve legal.** — Dan O'Leary
 

@@ -14,11 +14,9 @@ time_required: 2-3 hours
 difficulty: medium
 prerequisites: [Support definitions, Legal review]
 description: >
-  Service Level Agreement defining support commitments and response times.
-  Clear SLAs prevent arguments—define upfront, track religiously.
 outcomes: [SLA terms, Support commitments, Performance standards]
 skills_gained: [SLA design, Support management, Performance measurement]
-keywords: ["service level", "SLA", "support", "commitments", "guarantees"]
+keywords: ["upfront track", "template purpose", "use"]
 ---
 > **Clear SLAs prevent arguments. Define them upfront, track them religiously.** — Dan O'Leary
 

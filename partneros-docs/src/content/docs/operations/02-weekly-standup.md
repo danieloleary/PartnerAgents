@@ -14,11 +14,9 @@ time_required: 30 minutes
 difficulty: easy
 prerequisites: [Partner updates, Pipeline data]
 description: >
-  Weekly team sync for partner program operations. Short, focused standups prevent
-  small issues from becoming big problems.
 outcomes: [Weekly priorities, Issue identification, Quick decisions]
 skills_gained: [Team coordination, Issue management, Quick standups]
-keywords: ["standup", "weekly", "sync", "meeting", "operations"]
+keywords: ["short focused", "template purpose", "use"]
 ---
 > **Weekly stands prevent small issues from becoming big problems. Keep them short, focused, and action-oriented.** — Dan O'Leary
 

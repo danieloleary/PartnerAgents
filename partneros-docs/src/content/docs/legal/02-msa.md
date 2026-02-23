@@ -14,13 +14,10 @@ time_required: 4-8 hours
 difficulty: hard
 prerequisites: [Legal team, Commercial terms]
 description: >
-  Master Service Agreement governing the partnership terms and conditions.
-  Get legal involved early—this protects both sides.
 outcomes: [Signed MSA, Legal protection, Partnership framework]
 skills_gained: [Contract negotiation, Legal review, Agreement management]
-keywords: ["MSA", "master service agreement", "contract", "terms", "legal"]
+keywords: ["master service agreement", "conditions term duration", "legal", "customize"]
 ---
-
 > **The MSA protects both sides. Don't rush it—get legal involved early.** — Dan O'Leary
 
 :::caution

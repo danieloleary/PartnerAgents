@@ -14,11 +14,9 @@ time_required: 2-4 hours
 difficulty: medium
 prerequisites: [Legal review, Partner manager involvement]
 description: >
-  Execute partner exits gracefully with a structured checklist. Protects your business,
-  maintains relationships, and avoids legal liability.
 outcomes: [Clean exit process, Legal protection, Relationship preservation]
 skills_gained: [Contract management, Legal compliance, Relationship management]
-keywords: ["exit", "termination", "offboarding", "partner exit", "churn"]
+keywords: ["end partnerships matters", "protects all parties", "make hasty decisions", "coordinated team assign", "ending effective date", "crm access date"]
 ---
 > **How you end partnerships matters as much as how you start them. A messy exit creates enemies; a graceful exit creates potential future allies.** — Dan O'Leary
 

@@ -6,16 +6,16 @@ template_number: III.7
 version: 2.0.0
 last_updated: 2026-02-21
 author: PartnerOS Team
-tier: 
+tier:
 skill_level: intermediate
 purpose: operational
 phase: enablement
 time_required: 2-4 hours
 difficulty: medium
-prerequisites: 
+prerequisites:
 description: >
-outcomes: 
-skills_gained: 
+outcomes:
+skills_gained:
 keywords: ["broken come prepared", "partner qbr template", "template purpose", "where partnerships", "always leave", "qbr"]
 ---
 > **The QBR is where partnerships are made or broken. Come prepared, be honest, and always leave with clear next steps.** — Dan O'Leary
@@ -82,3 +82,4 @@ This template structures quarterly business reviews with partners.
 - [Success Metrics](../enablement/06-success-metrics/) — Metrics to review
 - [Internal Alignment](../strategy/07-internal-alignment/) — Stakeholder alignment
 - [Partner Program Glossary](../resources/glossary/) — Definitions
+
