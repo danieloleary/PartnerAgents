@@ -2,6 +2,23 @@
 """
 PartnerOS Web Interface
 Founder's Cockpit - Chat-based partner management with AI swarm
+
+Features:
+- Three-column layout: Nav, Chat Arena, Inspector
+- Obsidian dark theme (#09090b)
+- Command Palette (Cmd+K)
+- API key stored in localStorage
+- Rate limiting: 20 requests per minute
+
+API Endpoints:
+- GET / - Serve HTML UI
+- POST /chat - Process chat message
+- GET /api/partners - List all partners
+- POST /api/partners - Create partner
+- GET /api/partners/{name} - Get partner details
+- DELETE /api/partners/{name} - Delete partner
+- GET /api/memory - Get conversation memory
+- DELETE /api/memory - Clear conversation memory
 """
 
 import os
@@ -9,6 +26,11 @@ import sys
 import re
 import time
 import hashlib
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -24,10 +46,16 @@ from partner_agents import partner_state, router, document_generator, chat_orche
 rate_limit_store = {}
 RATE_LIMIT = 20
 RATE_WINDOW = 60
-response_cache = {}
-CACHE_TTL_SECONDS = 300
 
+# CORS middleware to allow browser requests
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def check_rate_limit(client_ip: str) -> bool:
@@ -54,11 +82,19 @@ async def root():
 
 @app.post("/chat")
 async def chat(request: Request):
-    data = await request.json()
+    try:
+        data = await request.json()
+    except Exception:
+        return JSONResponse(
+            {"response": "Invalid JSON in request body.", "agent": "system"},
+            status_code=400,
+        )
+
     user_message = data.get("message", "")
     api_key = data.get("apiKey", "") or os.environ.get("OPENROUTER_API_KEY", "")
     model = data.get("model", "qwen/qwen3.5-plus-02-15")
 
+    # Validate message length FIRST before rate limiting (security best practice)
     if not user_message or len(user_message.strip()) == 0:
         return JSONResponse({"response": "Please enter a message.", "agent": "system"})
 
@@ -215,7 +251,14 @@ async def get_partners():
 
 @app.post("/api/partners")
 async def create_partner(request: Request):
-    data = await request.json()
+    try:
+        data = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON in request body."}, status_code=400)
+
+    if not data.get("name"):
+        return JSONResponse({"error": "Partner name is required."}, status_code=400)
+
     partner = partner_state.add_partner(
         name=data.get("name", ""),
         tier=data.get("tier", "Bronze"),
@@ -840,7 +883,7 @@ HTML = """<!DOCTYPE html>
             
             <div class="input-area">
                 <div class="input-wrapper">
-                    <textarea class="input-field" id="input" placeholder="Message PartnerOS..." rows="1" onkeydown="if(event.key==='Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"></textarea>
+                    <textarea class="input-field" id="input" placeholder="Message PartnerOS..." rows="1" onkeydown="handleEnterKey(event)"></textarea>
                     <button class="input-send" onclick="sendMessage()">↑</button>
                 </div>
             </div>
@@ -993,8 +1036,18 @@ HTML = """<!DOCTYPE html>
             });
         }
         
-        // Send message
+        // Send message - handles both quick actions and manual input
         async function sendMessage(text) {
+            // Get message from text param or input field
+            const input = document.getElementById('input');
+            let msg = text;
+            
+            // If no text param, get from input field
+            if (msg === undefined || msg === null || msg === '') {
+                msg = input.value.trim();
+                if (!msg) return;
+            }
+            
             // Check for API key first - prompt if missing
             let apiKey = getApiKey();
             if (!apiKey) {
@@ -1005,10 +1058,6 @@ HTML = """<!DOCTYPE html>
                     return;
                 }
             }
-            
-            const input = document.getElementById('input');
-            const msg = text || input.value.trim();
-            if (!msg) return;
             
             input.value = '';
             
@@ -1067,6 +1116,14 @@ HTML = """<!DOCTYPE html>
             
             container.appendChild(div);
             container.scrollTop = container.scrollHeight;
+        }
+        
+        // Handle Enter key in input field
+        function handleEnterKey(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
         }
         
         function showTyping() {

@@ -2,6 +2,14 @@
 """
 Router Agent - Intent detection and entity extraction for PartnerOS
 Uses LLM to understand user requests and route to appropriate actions.
+
+Detection patterns:
+- onboard X -> action intent
+- NDA/MSA/DPA for X -> document intent
+- campaign for X -> action intent
+- deal for X, $amount -> action intent
+
+Fallback: Keyword-based routing when no LLM available
 """
 
 import json
@@ -16,11 +24,11 @@ class Intent:
     """Represents a detected user intent"""
 
     type: str  # "document", "action", "question"
-    name: str  # "nda", "onboard", "qualify", etc.
+    name: str  # "nda", "msa", "dpa", "onboard", "campaign", "deal", "chat"
     agents: List[str]  # Which agents should handle this
-    entities: Dict[str, Any]  # Extracted entities
-    confidence: float
-    missing_fields: List[str]
+    entities: Dict[str, Any]  # Extracted entities (partner_name, tier, amount, etc.)
+    confidence: float  # 0.0-1.0 certainty of detection
+    missing_fields: List[str]  # Required fields not provided by user
 
 
 @dataclass
@@ -29,7 +37,7 @@ class RouterResult:
 
     intents: List[Intent]
     is_document_request: bool
-    response: str  # What to tell the user
+    response: Optional[str]  # What to tell the user
 
 
 # Template type to file mapping (MVP: just NDA)
@@ -52,7 +60,9 @@ TEMPLATE_MAP = {
 }
 
 
-def _build_router_prompt(user_message: str, context: Dict = None) -> str:
+def _build_router_prompt(
+    user_message: str, context: Optional[Dict[str, Any]] = None
+) -> str:
     """Build the prompt for intent detection."""
 
     partners_info = ""
@@ -162,7 +172,9 @@ class Router:
     def __init__(self, llm_client=None):
         self.llm_client = llm_client
 
-    async def route(self, user_message: str, context: Dict = None) -> RouterResult:
+    async def route(
+        self, user_message: str, context: Optional[Dict[str, Any]] = None
+    ) -> RouterResult:
         """Route user message to appropriate action."""
 
         # Build prompt
@@ -195,12 +207,12 @@ class Router:
                 action = intents[0]
                 response = f"I'll help you {action.name} for {action.entities.get('partner_name', 'your partner')}."
         else:
-            response = None  # Fall back to chat
+            response = ""  # Fall back to chat
 
         return RouterResult(
             intents=intents,
             is_document_request=is_document,
-            response=response,
+            response=response or "",
         )
 
     def _fallback_route(self, user_message: str) -> List[Intent]:

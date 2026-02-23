@@ -2,6 +2,18 @@
 """
 Document Generator - Load, fill, and save templates for PartnerOS
 Handles template loading from Starlight docs and saves filled documents.
+
+Supported document types:
+- nda: Mutual Non-Disclosure Agreement (legal/01-nda.md)
+- msa: Master Service Agreement (legal/02-msa.md)
+- dpa: Data Processing Agreement (legal/03-dpa.md)
+
+Placeholder patterns supported:
+- [Placeholder Name] - bracket style
+- $variable or ${variable} - dollar style
+- ___field___ - underscore style
+
+Output: partners/<partner-slug>/documents/<date>-<type>.md
 """
 
 import re
@@ -254,7 +266,7 @@ generator = DocumentGenerator()
 
 
 def create_document(
-    doc_type: str, partner_name: str, fields: Dict[str, Any] = None
+    doc_type: str, partner_name: str, fields: Optional[Dict[str, Any]] = None
 ) -> Optional[Dict[str, Any]]:
     """Quick function to create a document."""
     return generator.create_document(doc_type, partner_name, fields or {})

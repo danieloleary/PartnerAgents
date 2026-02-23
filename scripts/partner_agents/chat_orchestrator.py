@@ -2,6 +2,26 @@
 """
 Chat Orchestrator - Main brain for the PartnerOS agent swarm
 Handles conversation memory, agent coordination, and skill execution.
+
+Agent Swarm (7 agents):
+- ARCHITECT: Partner Program Manager (onboarding, QBR, qualification)
+- ENGINE: Partner Operations (deal registration, commissions, compliance)
+- STRATEGIST: Partner Strategy (ICP, tier structure, competitive analysis)
+- SPARK: Partner Marketing (campaigns, email sequences, pitch decks)
+- CHAMPION: Partner Leader (board presentations, ROI, executive summaries)
+- BUILDER: Partner Technical (integrations, API docs, technical support)
+- DAN: The Owner (decisions, approvals, escalations)
+
+Conversation Memory:
+- Persists to partners/.memory/<conv_id>.json
+- Stores messages, context (current partner), timestamps
+
+Usage:
+    result = await chat_orchestrator.chat(
+        "onboard Acme Corp",
+        conv_id="default",
+        llm_client=my_llm_wrapper
+    )
 """
 
 import json
@@ -105,7 +125,7 @@ class ConversationMemory:
         role: str,
         content: str,
         agent: str = "",
-        skills: List[str] = None,
+        skills: Optional[List[str]] = None,
     ):
         """Add a message to conversation"""
         conv = self.get_or_create(conv_id)
