@@ -3,12 +3,13 @@
     "id": "partner-1",
     "name": "Acme Corp",
     "tier": "Gold",
-    "contact": "John Smith",
-    "email": "john@acmecorp.com",
+    "contact": "",
+    "email": "",
     "status": "Active",
     "created_at": "2026-02-21T15:09:07.952107",
     "deals": [],
     "campaigns": [],
-    "notes": []
+    "notes": [],
+    "documents": []
   }
 ]
