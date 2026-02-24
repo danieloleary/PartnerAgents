@@ -616,8 +616,22 @@ Calculate your specific ROI by entering values above.""",
             "agent": "system",
         }
 
-    # Use simple response for now
-    return {"response": f"I received your message: '{message}'", "agent": "swarm"}
+    # Fallback: suggest valid commands
+    valid_commands = [
+        "onboard [Partner]",
+        "status [Partner]",
+        "register deal [Partner], $[amount]",
+        "email [Partner]",
+        "qbr [Partner]",
+        "roi",
+        "/help",
+        "/partners",
+    ]
+    return {
+        "response": f"Sorry, I didn't understand that. Try one of these commands:\n\n"
+        + "\n".join(f"  • {cmd}" for cmd in valid_commands),
+        "agent": "system",
+    }
 
 
 def print_response(response: dict):

@@ -3,16 +3,16 @@ title: Configuration
 category: operational
 version: 1.0.0
 author: PartnerAgents Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: operational
 time_required: 1-2 hours
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: Customize the Partner Agent for your organization
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["configuration configuration customize", "workflow configuration file", "enterprise partnership consultant", "product value prop", "partner agent", "agent reads"]
 ---
 # Configuration
@@ -272,4 +272,3 @@ Company: Your Company
 
 No partners tracked yet.
 ```
-

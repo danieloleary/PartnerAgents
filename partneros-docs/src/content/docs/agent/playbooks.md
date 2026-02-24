@@ -3,16 +3,16 @@ title: Playbooks
 category: operational
 version: 1.0.0
 author: PartnerAgents Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: operational
 time_required: 1-2 hours
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: Detailed guide to each Partner Agent playbook
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["playbooks playbooks playbooks", "pre defined workflows", "mermaid graph lr", "creating yaml files", "more customization options", "newly signed partner"]
 ---
 # Playbooks
@@ -348,4 +348,3 @@ steps:
 ```
 
 See [Configuration](configuration/) for more customization options.
-

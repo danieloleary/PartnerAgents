@@ -3,16 +3,16 @@ title: Agent Setup
 category: operational
 version: 1.0.0
 author: PartnerAgents Team
-tier:
+tier: 
 skill_level: intermediate
 purpose: operational
 phase: operational
 time_required: 1-2 hours
 difficulty: easy
-prerequisites:
+prerequisites: 
 description: Install and configure the Partner Agent
-outcomes:
-skills_gained:
+outcomes: 
+skills_gained: 
 keywords: ["repository settings secrets", "form playbook select", "workflow run summary", "set make sure", "agent directly", "ve exported"]
 ---
 # Setup Guide
@@ -159,4 +159,3 @@ pip install rich
 ```bash
 chmod +x agent.py
 ```
-

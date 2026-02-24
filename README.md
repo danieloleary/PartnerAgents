@@ -168,7 +168,7 @@ python scripts/partner_agents/web.py
 
 ### Option 3: Browse Online
 
-**[danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)** — Full documentation with all templates.
+**[danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)** — Full documentation with all templates.
 
 ---
 
