@@ -4,6 +4,30 @@ keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prer
 ---
 # PartnerAgents CHANGELOG
 
+## Version 2.2 (2026-02-23) - PartnerAgents Brand Launch
+
+### 🎉 Brand Update
+- **Renamed from PartnerOS to PartnerAgents**
+- New tagline: "AI Agents for Partner Programs"
+- Updated all branding, CLI, web UI, docs
+
+### 💬 Chat CLI - Killer Feature
+- Interactive + one-shot modes
+- Natural language commands: "onboard Acme", "register deal for Acme, $50k"
+- 5 working AI skills: status, email, commission, qbr, roi
+
+### 🔧 Technical
+- 110 tests passing
+- Starlight build passes
+- CLI help now shows "PartnerAgents CLI"
+
+### 📝 Files Changed
+- 172 files updated
+- All scripts auto-insert "PartnerAgents Team" as author
+- All AI prompts say "PartnerAgents"
+
+---
+
 ## Version 2.1 (2026-02-22) - Web UI Enhancements
 
 ### 🖥️ Web UI Improvements
