@@ -1,12 +1,12 @@
 [
   {
     "id": "partner-1",
-    "name": "Acme Corp",
+    "name": "TestPartner_1771903657",
     "tier": "Gold",
     "contact": "",
-    "email": "",
-    "status": "Active",
-    "created_at": "2026-02-21T15:09:07.952107",
+    "email": "test@example.com",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T19:27:37.668402",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -14,12 +14,12 @@
   },
   {
     "id": "partner-2",
-    "name": "TestPartner_1771887272",
-    "tier": "Gold",
+    "name": "GetTest_1771903657",
+    "tier": "Silver",
     "contact": "",
-    "email": "test@example.com",
+    "email": "",
     "status": "Onboarding",
-    "created_at": "2026-02-23T14:54:32.855645",
+    "created_at": "2026-02-23T19:27:37.669227",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -27,25 +27,12 @@
   },
   {
     "id": "partner-3",
-    "name": "GetTest_1771887272",
-    "tier": "Silver",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T14:54:32.856053",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-4",
-    "name": "DocTest_1771887272",
+    "name": "DocTest_1771903657",
     "tier": "Bronze",
     "contact": "",
     "email": "",
     "status": "Onboarding",
-    "created_at": "2026-02-23T14:54:32.856420",
+    "created_at": "2026-02-23T19:27:37.669684",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -54,24 +41,37 @@
         "id": "doc-1",
         "type": "nda",
         "template": "legal/01-nda.md",
-        "path": "partners/DocTest_1771887272/documents/test-nda.md",
+        "path": "partners/DocTest_1771903657/documents/test-nda.md",
         "status": "draft",
         "fields": {
-          "partner_name": "DocTest_1771887272"
+          "partner_name": "DocTest_1771903657"
         },
-        "created_at": "2026-02-23T14:54:32.856511"
+        "created_at": "2026-02-23T19:27:37.669791"
       }
     ],
-    "updated_at": "2026-02-23T14:54:32.856513"
+    "updated_at": "2026-02-23T19:27:37.669793"
   },
   {
-    "id": "partner-5",
-    "name": "IntegrationTest_1771887272",
+    "id": "partner-4",
+    "name": "IntegrationTest_1771903657",
     "tier": "Bronze",
     "contact": "",
     "email": "",
     "status": "Onboarding",
-    "created_at": "2026-02-23T14:54:32.861459",
+    "created_at": "2026-02-23T19:27:37.686824",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": []
+  },
+  {
+    "id": "partner-5",
+    "name": "DupTest_1771903657",
+    "tier": "Bronze",
+    "contact": "",
+    "email": "",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T19:27:37.703299",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -79,12 +79,12 @@
   },
   {
     "id": "partner-6",
-    "name": "DupTest_1771887272",
+    "name": "slalom",
     "tier": "Bronze",
     "contact": "",
     "email": "",
     "status": "Onboarding",
-    "created_at": "2026-02-23T14:54:32.866748",
+    "created_at": "2026-02-23T19:27:37.779104",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -92,38 +92,12 @@
   },
   {
     "id": "partner-7",
-    "name": "TestPartner_1771888353",
-    "tier": "Gold",
-    "contact": "",
-    "email": "test@example.com",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T15:12:33.125764",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-8",
-    "name": "GetTest_1771888353",
-    "tier": "Silver",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T15:12:33.126157",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-9",
-    "name": "DocTest_1771888353",
+    "name": "IBM",
     "tier": "Bronze",
     "contact": "",
     "email": "",
     "status": "Onboarding",
-    "created_at": "2026-02-23T15:12:33.126552",
+    "created_at": "2026-02-23T19:30:05.541141",
     "deals": [],
     "campaigns": [],
     "notes": [],
@@ -132,274 +106,71 @@
         "id": "doc-1",
         "type": "nda",
         "template": "legal/01-nda.md",
-        "path": "partners/DocTest_1771888353/documents/test-nda.md",
+        "path": "/Users/teddyclaw/PartnerOS/PartnerAgents/partners/ibm/documents/2026-02-23-nda.md",
         "status": "draft",
         "fields": {
-          "partner_name": "DocTest_1771888353"
+          "Partner Name": "IBM",
+          "partner_name": "IBM",
+          "[Partner Name]": "IBM",
+          "Effective Date": "February 23, 2026",
+          "effective_date": "2026-02-23",
+          "Term Years": "2",
+          "term_years": "2",
+          "Date": "February 23, 2026",
+          "today_date": "February 23, 2026"
         },
-        "created_at": "2026-02-23T15:12:33.126679"
-      }
-    ],
-    "updated_at": "2026-02-23T15:12:33.126681"
-  },
-  {
-    "id": "partner-10",
-    "name": "IntegrationTest_1771888353",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T15:12:33.131804",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-11",
-    "name": "DupTest_1771888353",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T15:12:33.136741",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-12",
-    "name": "TestPartner_1771894478",
-    "tier": "Gold",
-    "contact": "",
-    "email": "test@example.com",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T16:54:38.653945",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-13",
-    "name": "GetTest_1771894478",
-    "tier": "Silver",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T16:54:38.654444",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-14",
-    "name": "DocTest_1771894478",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T16:54:38.654893",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": [
+        "created_at": "2026-02-23T19:30:05.542155"
+      },
       {
-        "id": "doc-1",
-        "type": "nda",
-        "template": "legal/01-nda.md",
-        "path": "partners/DocTest_1771894478/documents/test-nda.md",
+        "id": "doc-2",
+        "type": "msa",
+        "template": "legal/02-msa.md",
+        "path": "/Users/teddyclaw/PartnerOS/PartnerAgents/partners/ibm/documents/2026-02-23-msa.md",
         "status": "draft",
         "fields": {
-          "partner_name": "DocTest_1771894478"
+          "Partner Name": "IBM",
+          "partner_name": "IBM",
+          "[Partner Name]": "IBM",
+          "Effective Date": "February 23, 2026",
+          "effective_date": "2026-02-23",
+          "Term Years": "2",
+          "term_years": "2",
+          "Date": "February 23, 2026",
+          "today_date": "February 23, 2026"
         },
-        "created_at": "2026-02-23T16:54:38.655079"
-      }
-    ],
-    "updated_at": "2026-02-23T16:54:38.655080"
-  },
-  {
-    "id": "partner-15",
-    "name": "IntegrationTest_1771894478",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T16:54:38.660913",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-16",
-    "name": "DupTest_1771894478",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T16:54:38.666466",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-17",
-    "name": "TestPartner_1771896034",
-    "tier": "Gold",
-    "contact": "",
-    "email": "test@example.com",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:20:34.007300",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-18",
-    "name": "GetTest_1771896034",
-    "tier": "Silver",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:20:34.007855",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-19",
-    "name": "DocTest_1771896034",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:20:34.008344",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": [
+        "created_at": "2026-02-23T19:30:05.542682"
+      },
       {
-        "id": "doc-1",
-        "type": "nda",
-        "template": "legal/01-nda.md",
-        "path": "partners/DocTest_1771896034/documents/test-nda.md",
+        "id": "doc-3",
+        "type": "dpa",
+        "template": "legal/03-dpa.md",
+        "path": "/Users/teddyclaw/PartnerOS/PartnerAgents/partners/ibm/documents/2026-02-23-dpa.md",
         "status": "draft",
         "fields": {
-          "partner_name": "DocTest_1771896034"
+          "Partner Name": "IBM",
+          "partner_name": "IBM",
+          "[Partner Name]": "IBM",
+          "Effective Date": "February 23, 2026",
+          "effective_date": "2026-02-23",
+          "Term Years": "2",
+          "term_years": "2",
+          "Date": "February 23, 2026",
+          "today_date": "February 23, 2026"
         },
-        "created_at": "2026-02-23T17:20:34.008568"
-      }
-    ],
-    "updated_at": "2026-02-23T17:20:34.008570"
-  },
-  {
-    "id": "partner-20",
-    "name": "IntegrationTest_1771896034",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:20:34.014606",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-21",
-    "name": "DupTest_1771896034",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:20:34.019726",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-22",
-    "name": "TestPartner_1771897310",
-    "tier": "Gold",
-    "contact": "",
-    "email": "test@example.com",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:41:50.613140",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-23",
-    "name": "GetTest_1771897310",
-    "tier": "Silver",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:41:50.613737",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-24",
-    "name": "DocTest_1771897310",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:41:50.614276",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": [
+        "created_at": "2026-02-23T19:30:05.543172"
+      },
       {
-        "id": "doc-1",
-        "type": "nda",
-        "template": "legal/01-nda.md",
-        "path": "partners/DocTest_1771897310/documents/test-nda.md",
+        "id": "doc-4",
+        "type": "checklist",
+        "template": "recruitment/09-onboarding.md",
+        "path": "partners/ibm/documents/2026-02-23-onboarding-checklist.md",
         "status": "draft",
         "fields": {
-          "partner_name": "DocTest_1771897310"
+          "partner_name": "IBM"
         },
-        "created_at": "2026-02-23T17:41:50.614555"
+        "created_at": "2026-02-23T19:30:05.543472"
       }
     ],
-    "updated_at": "2026-02-23T17:41:50.614557"
-  },
-  {
-    "id": "partner-25",
-    "name": "IntegrationTest_1771897310",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:41:50.620990",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
-  },
-  {
-    "id": "partner-26",
-    "name": "DupTest_1771897310",
-    "tier": "Bronze",
-    "contact": "",
-    "email": "",
-    "status": "Onboarding",
-    "created_at": "2026-02-23T17:41:50.626227",
-    "deals": [],
-    "campaigns": [],
-    "notes": [],
-    "documents": []
+    "updated_at": "2026-02-23T19:30:05.543474"
   }
 ]

@@ -22,18 +22,130 @@ import os
 import sys
 from pathlib import Path
 
+# Try to import readline for input history (arrow keys)
+try:
+    import readline
+
+    READLINE_AVAILABLE = True
+except ImportError:
+    READLINE_AVAILABLE = False
+
+# Try to import rich for pretty output
+try:
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.table import Table
+    from rich.markdown import Markdown
+
+    RICH_AVAILABLE = True
+except ImportError:
+    RICH_AVAILABLE = False
+
 # Add scripts to path
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from partner_agents import router, partner_state, document_generator
 
+console = Console() if RICH_AVAILABLE else None
+
+
+def print_banner():
+    """Print a beautiful banner."""
+    if RICH_AVAILABLE:
+        banner = """
+[bold cyan]██████╗ ███████╗████████╗██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+█████╔╝█████╗     ██║   ██████╔╝██║   ██║██████╔╝██║  ██║██████╔╝
+██╔══██╗██╔══╝      ██║   ██╔══██╗██║   ██║██╔══██╗██║  ██║██╔══██╗
+██║  ██║███████╗    ██║   ██║  ██║╚██████╔╝██║  ██║██║  ██║
+╚═╝  ╚═╝╚══════╝    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝[/bold cyan]
+
+[bold white]PartnerAgents CLI[/bold white] — [italic]Tell the agent swarm what you need. Watch it happen.[/italic]
+"""
+        console.print(
+            Panel.fit(banner.strip(), border_style="cyan", title="PartnerAgents")
+        )
+    else:
+        print("=" * 50)
+        print("PartnerAgents CLI - Chat with the agent swarm")
+        print("=" * 50)
+
+
+def print_help():
+    """Print available commands."""
+    if RICH_AVAILABLE:
+        table = Table(
+            title="Available Commands", show_header=True, header_style="bold magenta"
+        )
+        table.add_column("Command", style="cyan")
+        table.add_column("Description", style="white")
+
+        table.add_row("onboard [Partner]", "Onboard a new partner")
+        table.add_row("status of [Partner]", "Check partner status")
+        table.add_row("register deal for [Partner], $[amount]", "Register a deal")
+        table.add_row("email to [Partner]", "Generate outreach email")
+        table.add_row("qbr for [Partner]", "Schedule QBR")
+        table.add_row("roi", "Show program ROI analysis")
+        table.add_row("/help", "Show this help")
+        table.add_row("quit/exit", "Exit")
+
+        console.print(table)
+    else:
+        print("Commands:")
+        print("  onboard [Partner]  - Onboard a new partner")
+        print("  status of [Partner] - Check partner status")
+        print("  email to [Partner] - Generate outreach email")
+        print("  deal for [Partner], $[amount] - Register deal")
+        print("  qbr for [Partner]  - Schedule QBR")
+        print("  quit/exit          - Exit")
+
+
+def print_response(response: dict):
+    """Print the response nicely using rich."""
+    if not response:
+        return
+
+    if RICH_AVAILABLE:
+        if "response" in response:
+            msg = response["response"]
+            if "##" in msg or "**" in msg:
+                console.print(Markdown(msg))
+            else:
+                console.print(
+                    Panel.fit(msg.strip(), border_style="green", title="Response")
+                )
+
+        if response.get("agent"):
+            console.print(f"[dim]Agent:[/dim] [bold]{response['agent']}[/bold]")
+        if response.get("skill"):
+            console.print(f"[dim]Skill:[/dim] [bold]{response['skill']}[/bold]")
+    else:
+        print()
+        print("=" * 50)
+        if "response" in response:
+            print(response["response"])
+        else:
+            print(response)
+        print("=" * 50)
+        if response.get("agent"):
+            print(f"Agent: {response['agent']}")
+        if response.get("skill"):
+            print(f"Skill: {response['skill']}")
+        print()
+
 
 def get_api_key(required: bool = False) -> str:
     """Get API key from env or prompt."""
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if not key and required:
-        key = input("Enter OpenRouter API key (starts with sk-or-v1-): ").strip()
+        if RICH_AVAILABLE:
+            console.print(
+                "[yellow]Enter your OpenRouter API key (starts with sk-or-v1-):[/yellow]"
+            )
+            key = input().strip()
+        else:
+            key = input("Enter OpenRouter API key (starts with sk-or-v1-): ").strip()
     return key
 
 
@@ -42,8 +154,17 @@ def get_model() -> str:
     return os.environ.get("OPENROUTER_MODEL", "qwen/qwen3.5-plus-02-15")
 
 
-async def send_message(message: str, api_key: str, model: str) -> dict:
-    """Send a message to the chat orchestrator."""
+async def send_message(
+    message: str, api_key: str, model: str, last_partner: str = None
+) -> dict:
+    """Send a message to the chat orchestrator.
+
+    Args:
+        message: The user's message
+        api_key: OpenRouter API key
+        model: Model to use
+        last_partner: Previous partner name from conversation context
+    """
     from partner_agents import web
 
     # Use the web.py chat handler logic
@@ -63,13 +184,20 @@ async def send_message(message: str, api_key: str, model: str) -> dict:
             intent = route_result.intents[0]
             partner_name = intent.entities.get("partner_name")
 
-            # Only require partner_name for skills that need it (not roi)
+            # Use conversation context if no partner specified
             skill_type = intent.entities.get("skill")
             if not partner_name and skill_type != "roi":
-                return {
-                    "response": "What's the partner company name?",
-                    "agent": "system",
-                }
+                # Try to use last_partner from context
+                if last_partner:
+                    partner_name = last_partner
+                    intent.entities["partner_name"] = partner_name
+                else:
+                    return {
+                        "response": "What's the partner company name?",
+                        "agent": "system",
+                        "needs_input": True,
+                        "missing_field": "partner_name",
+                    }
 
             # Create partner if doesn't exist (skip for roi)
             partner = None
@@ -357,6 +485,7 @@ Total Deal Value: ${total_deal_value:,}
 Documents: {len(docs)}""",
                             "agent": "architect",
                             "skill": "status",
+                            "partner": partner["name"],
                         }
 
                 elif skill_name == "email":
@@ -381,6 +510,7 @@ Would you be open to a 15-minute call?
 Best regards""",
                         "agent": "spark",
                         "skill": "email",
+                        "partner": partner_name,
                     }
 
                 elif skill_name == "qbr":
@@ -395,6 +525,7 @@ Recommended Schedule:
 Topics: Performance review, pipeline update, campaign results, integration status, goals.""",
                         "agent": "architect",
                         "skill": "qbr",
+                        "partner": partner_name,
                     }
 
                 elif skill_name == "commission":
@@ -435,6 +566,7 @@ Tier Thresholds:
 - Gold: > $500K - 20%""",
                         "agent": "engine",
                         "skill": "commission",
+                        "partner": partner_name,
                     }
 
                 elif skill_name == "roi":
@@ -455,8 +587,21 @@ Calculate your specific ROI by entering values above.""",
     except Exception as e:
         import traceback
 
+        if RICH_AVAILABLE:
+            console.print(
+                f"[bold red]Error:[/bold red] {str(e) or 'Something went wrong. Please try again.'}"
+            )
+        else:
+            print(f"Error: {str(e) or 'Something went wrong. Please try again.'}")
+
+        # Log full traceback to stderr for debugging
         traceback.print_exc()
-        pass
+
+        return {
+            "response": "I encountered an error processing your request. Please try again or rephrase your message.",
+            "agent": "system",
+            "error": str(e),
+        }
 
     # Fallback: use LLM if API key provided
     if not api_key:
@@ -493,39 +638,142 @@ def print_response(response: dict):
 
 async def interactive_mode(api_key: str, model: str):
     """Run interactive chat mode."""
-    # Prompt for API key if not available
     if not api_key:
         api_key = get_api_key(required=True)
 
-    print("=" * 50)
-    print("PartnerAgents CLI - Chat with the agent swarm")
-    print("=" * 50)
-    print()
-    print("Commands:")
-    print("  onboard [Partner]  - Onboard a new partner")
-    print("  status of [Partner] - Check partner status")
-    print("  email to [Partner] - Generate outreach email")
-    print("  deal for [Partner], $[amount] - Register deal")
-    print("  qbr for [Partner]  - Schedule QBR")
-    print("  quit/exit          - Exit")
-    print()
+    print_banner()
+    print_help()
+
+    # Setup input history with readline
+    if READLINE_AVAILABLE:
+        histfile = Path.home() / ".partneragents" / "history"
+        histfile.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            readline.read_history_file(str(histfile))
+            readline.set_history_length(1000)
+        except FileNotFoundError:
+            pass
+
+    # Setup tab completion for partners and commands
+    if READLINE_AVAILABLE:
+        # Command keywords for completion
+        COMMAND_COMPLETIONS = [
+            "onboard",
+            "status",
+            "email",
+            "register deal",
+            "qbr",
+            "roi",
+            "commission",
+            "/help",
+            "/partners",
+            "quit",
+            "exit",
+        ]
+
+        def get_completions(text, state):
+            # Get partner names
+            try:
+                partners = partner_state.list_partners()
+                partner_names = [p["name"] for p in partners]
+            except:
+                partner_names = []
+
+            # Combine all completions
+            all_completions = COMMAND_COMPLETIONS + partner_names
+            matches = [c for c in all_completions if c.startswith(text.lower())]
+            if state < len(matches):
+                return matches[state]
+            return None
+
+        try:
+            readline.set_completer(get_completions)
+            readline.parse_and_bind("tab: complete")
+        except:
+            pass
+
+    # Conversation context - partner name persists (never expires)
+    last_partner = None
+    pending_intent = None  # For clarification flow
 
     while True:
         try:
-            message = input("\n> ").strip()
+            if RICH_AVAILABLE:
+                message = console.input("\n[bold cyan]>[/bold cyan] ").strip()
+            else:
+                message = input("\n> ").strip()
         except (EOFError, KeyboardInterrupt):
-            print("\nGoodbye!")
+            # Save input history before exiting
+            if READLINE_AVAILABLE:
+                try:
+                    readline.write_history_file(str(histfile))
+                except:
+                    pass
+            if RICH_AVAILABLE:
+                console.print("[yellow]Goodbye![/yellow]")
+            else:
+                print("\nGoodbye!")
             break
 
         if not message:
             continue
 
+        # Basic input validation
+        if len(message) > 1000:
+            print_response(
+                {
+                    "response": "Your message is too long. Please keep it under 1000 characters.",
+                    "agent": "system",
+                }
+            )
+            continue
+
         if message.lower() in ["quit", "exit", "q"]:
-            print("Goodbye!")
+            # Save input history before exiting
+            if READLINE_AVAILABLE:
+                try:
+                    readline.write_history_file(str(histfile))
+                except:
+                    pass
+            if RICH_AVAILABLE:
+                console.print("[yellow]Goodbye![/yellow]")
+            else:
+                print("Goodbye!")
             break
 
-        response = await send_message(message, api_key, model)
+        if message.lower() == "/help":
+            print_help()
+            continue
+
+        # Handle clarification - if we need partner name, use this input
+        if pending_intent:
+            message = f"{pending_intent} {message}"
+            pending_intent = None
+
+        response = await send_message(message, api_key, model, last_partner)
         print_response(response)
+
+        # Extract partner from response to maintain context
+        if response.get("partner"):
+            last_partner = response["partner"]
+
+        # Handle needs_input for clarification
+        if response.get("needs_input"):
+            # Ask for the missing field
+            if RICH_AVAILABLE:
+                partner_input = console.input(
+                    "\n[bold yellow]Partner name:[/bold yellow] "
+                ).strip()
+            else:
+                partner_input = input("\nPartner name: ").strip()
+
+            if partner_input:
+                # Re-send with partner name
+                response = await send_message(message, api_key, model, last_partner)
+                print_response(response)
+                if response.get("partner"):
+                    last_partner = response["partner"]
+            pending_intent = None
 
 
 async def one_shot_mode(message: str, api_key: str, model: str):

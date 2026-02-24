@@ -9,6 +9,7 @@ Run with: pytest tests/test_web_api.py -v
 """
 
 import sys
+import pytest
 from pathlib import Path
 from starlette.testclient import TestClient
 

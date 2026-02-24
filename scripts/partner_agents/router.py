@@ -249,7 +249,7 @@ class Router:
                         # Stop at comma or amount (e.g., "BigCorp, $50000")
                         partner = partner.split(",")[0].strip()
                         partner = " ".join(partner.split()[:2])
-                        if partner and partner[0].isupper():
+                        if partner:
                             return partner
             # Try: action verb is followed directly by partner name
             # e.g., "onboard TestCo" -> partner is after "onboard"
@@ -294,7 +294,7 @@ class Router:
                                 break
                             filtered_parts.append(part)
                         partner = " ".join(filtered_parts)
-                        if partner and partner[0].isupper():
+                        if partner:
                             return partner
             return None
 
