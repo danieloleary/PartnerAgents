@@ -145,7 +145,6 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 - Partner extraction works without prepositions (`status Acme` works)
 - Full onboarding creates NDA + MSA + DPA + checklist
 - Deal registration works with `$50,000` format
-- 78 tests passing
 
 ---
 
