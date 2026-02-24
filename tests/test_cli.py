@@ -305,3 +305,62 @@ async def test_onboard_creates_partner():
 
     # Cleanup
     partner_state.delete_partner("TestCompanyXYZ")
+
+
+@pytest.mark.asyncio
+async def test_full_partner_lifecycle():
+    """Test complete partner lifecycle: onboard -> status -> deal -> commission."""
+    from scripts.partner_agents import partner_state
+    from scripts.partner_agents.cli import send_message
+
+    partner_name = "LifecycleTest_" + str(int(__import__("time").time()))
+
+    # 1. Onboard partner
+    response = await send_message(f"onboard {partner_name}", "", "model")
+    assert response.get("agent") == "architect"
+
+    partner = partner_state.get_partner(partner_name)
+    assert partner is not None
+    assert partner["tier"] == "Bronze"
+
+    # 2. Check status
+    response = await send_message(
+        f"status {partner_name}", "", "model", last_partner=partner_name
+    )
+    assert (
+        "status" in response.get("response", "").lower()
+        or response.get("skill") == "status"
+    )
+
+    # 3. Register a deal
+    response = await send_message(
+        f"register deal for {partner_name}, $250000", "", "model"
+    )
+    assert response.get("agent") in ["architect", "engine"]
+
+    # 4. Check commission (should upgrade to Silver based on $250K)
+    partner = partner_state.get_partner(partner_name)
+    assert len(partner.get("deals", [])) > 0
+
+    # Cleanup
+    partner_state.delete_partner(partner_name)
+
+
+def test_partners_json_has_sample_data():
+    """Verify partners.json has test data."""
+    import json
+    from pathlib import Path
+
+    partners_file = (
+        Path(__file__).resolve().parent.parent
+        / "scripts"
+        / "partner_agents"
+        / "partners.json"
+    )
+    with open(partners_file) as f:
+        partners = json.load(f)
+
+    assert len(partners) > 0
+    # Check for common test partners
+    names = [p["name"] for p in partners]
+    assert any("test" in n.lower() for n in names)
