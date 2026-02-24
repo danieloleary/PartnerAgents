@@ -165,15 +165,25 @@ async def send_message(
         model: Model to use
         last_partner: Previous partner name from conversation context
     """
-    from partner_agents import web
+    import httpx
 
     # Use the web.py chat handler logic
     sanitized = message.strip()
 
+    # Build partner context for LLM
+    partners = partner_state.list_partners()
+    partner_info = ""
+    if partners:
+        partner_info = "\n\nCurrent Partners:\n"
+        for p in partners:
+            deals = p.get("deals", [])
+            total = sum(d.get("value", 0) for d in deals)
+            partner_info += f"- {p['name']} ({p.get('tier', 'Bronze')}, {p.get('status', 'Active')}, ${total:,} revenue)\n"
+
     # Route to document/action/skills if detected
     try:
         router_instance = router.Router()
-        context = {"partners": partner_state.list_partners()}
+        context = {"partners": partners}
         route_result = await router_instance.route(sanitized, context)
 
         # Check for document OR action/skills if detected
@@ -616,22 +626,70 @@ Calculate your specific ROI by entering values above.""",
             "agent": "system",
         }
 
-    # Fallback: suggest valid commands
-    valid_commands = [
-        "onboard [Partner]",
-        "status [Partner]",
-        "register deal [Partner], $[amount]",
-        "email [Partner]",
-        "qbr [Partner]",
-        "roi",
-        "/help",
-        "/partners",
-    ]
-    return {
-        "response": f"Sorry, I didn't understand that. Try one of these commands:\n\n"
-        + "\n".join(f"  • {cmd}" for cmd in valid_commands),
-        "agent": "system",
-    }
+    # Fallback: use LLM for any unrecognized input
+    system_prompt = f"""You are a helpful partner program management assistant for a B2B company.
+
+You help users manage their partner program including:
+- Onboarding new partners
+- Checking partner status and health
+- Registering deals and calculating commissions
+- Generating outreach emails
+- Scheduling QBRs (Quarterly Business Reviews)
+- Analyzing program ROI
+
+Partner Tiers:
+- Bronze: < $100K revenue - 10% commission
+- Silver: $100K-$500K - 15% commission  
+- Gold: > $500K - 20% commission{partner_info}
+
+Available commands the user can use:
+- "onboard [Partner Name]" - Create new partner account
+- "status [Partner Name]" - Check partner status
+- "register deal for [Partner], $[amount]" - Record a deal
+- "email [Partner]" - Generate outreach email
+- "qbr [Partner]" - Get QBR scheduling info
+- "commission [Partner]" - Calculate commission
+- "roi" - Show ROI analysis
+
+Be concise and helpful. If the user asks something outside of partner management, politely redirect to what you can help with."""
+
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                "https://openrouter.ai/api/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": sanitized},
+                    ],
+                },
+                timeout=30.0,
+            )
+            if response.status_code == 200:
+                result = response.json()
+                choices = result.get("choices", [])
+                if choices:
+                    content = (
+                        choices[0].get("message", {}).get("content", "No response")
+                    )
+                    return {
+                        "response": content,
+                        "agent": "ai_assistant",
+                    }
+            return {
+                "response": f"AI Error: {response.status_code}",
+                "agent": "system",
+            }
+    except Exception as e:
+        return {
+            "response": f"Error calling AI: {str(e)}",
+            "agent": "system",
+        }
 
 
 def print_response(response: dict):
