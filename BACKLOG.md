@@ -38,6 +38,91 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 
 ---
 
+## Honest Assessment (Feb 24, 2026)
+
+*An unvarnished read of the project at this point in time.*
+
+---
+
+### The Fundamental Problem
+
+**Phase 0 (Customer Discovery) is CRITICAL and fully PENDING.** Everything below should be read through that lens: we are building a distribution layer on top of a product whose demand has not been validated. The backlog knows this and hasn't acted on it.
+
+---
+
+### What's Actually Working
+
+| Asset | Why It Matters |
+|-------|----------------|
+| **85+ templates** | Production-quality domain knowledge — more durable than any code in this repo |
+| **document_generator.py** | The one feature that delivers on the "watch it happen" promise — generates real NDA/MSA/DPA with filled fields |
+| **YAML playbooks** | The most thoughtful artifact: a state machine for partner lifecycle with steps, templates, and success criteria |
+| **7-field frontmatter schema** | Forces consistency; CI enforces it; this is architectural discipline that will pay off |
+
+**The templates are the moat.** Models change, FastAPI versions break, frameworks get replaced. A well-written Partner Business Case template doesn't.
+
+---
+
+### The Positioning vs. Reality Gap
+
+The README says: *"Tell PartnerAgents what you need. Watch it happen."*
+
+What actually happens when you type `"onboard Acme"`:
+1. Router detects intent
+2. ARCHITECT agent is selected
+3. `skills.py` returns a hardcoded template string
+4. Partner state JSON is updated
+
+That's a state machine with a pretty interface — not "watch it happen." The document_generator is the exception. It should be the pattern.
+
+---
+
+### What's Premature
+
+**The 7-agent swarm** makes sense if you have concurrent requests, genuine domain separation, and enough volume to justify routing complexity. Today it routes single requests to a single agent that returns a string. The `RaceStrategy` pattern exists but doesn't do anything observable.
+
+**The two-system problem**: `scripts/partner_agent/` and `scripts/partner_agents/` have irreconcilable state models and LLM backends. Worse: the YAML playbooks — the best domain model — are only wired to the legacy agent, not the swarm.
+
+| | Legacy (`partner_agent/`) | Swarm (`partner_agents/`) |
+|---|---|---|
+| LLM | Anthropic/OpenAI/Ollama | OpenRouter |
+| State | `state/<slug>/metadata.json` | `partners/<name>.json` |
+| Playbooks | Connected | **Not connected** |
+| Templates | Used as LLM prompts | Mostly unused |
+
+**The FastAPI shim** (`scripts/fastapi/`) means the web tests run against a mock, not the real framework. Tests may pass while real behavior diverges silently.
+
+---
+
+### Velocity Debt Signals
+
+Signs this project is being built fast with AI assistance and accumulating technical debt:
+
+- 5 test modules fail to collect (as of Feb 24, 2026)
+- ARCHITECTURE.md describes the old single-agent system with wrong file counts
+- README says "67 Ready-to-Use Templates" when there are 85+
+- Sprint artifacts committed to repo root (`SPRINT_PLAN.md`, `FIXES.md`)
+- `.Jules/` and `.jules/` both exist — different AI agents leaving config
+- `force-rebuild` file in repo root
+
+High velocity is a feature, not a bug — but consolidation phases matter.
+
+---
+
+### The Three Product Options
+
+Before building more, choose one:
+
+| Option | Description | Honest Status |
+|--------|-------------|---------------|
+| **A — Content site** | Partner managers use the template library as reference. Agent = smart search. | This is what actually exists today. |
+| **B — Document generation** | "Generate an NDA for Acme Corp, Silver tier, $120K" → real filled document. Extend `document_generator.py` to all 85 templates. | Closest to working, highest near-term value. |
+| **C — Playbook runner** | Connect YAML playbooks to real state + outputs. "Run onboard for Acme" creates checklist, generates training deck, tracks completion. | Highest ambition, requires unifying the two systems. |
+
+**Recommendation:** Option B extends what already works. Option C is the right long-term shape but requires unifying the two agent systems first. Do Phase 0 before committing to either.
+
+---
+
 ## Technical Debt & Cleanup 🔧
 
 *Ongoing maintenance and improvements*

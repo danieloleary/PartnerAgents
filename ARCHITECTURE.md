@@ -3,7 +3,7 @@ title: PartnerAgents Architecture
 keywords: ["own create new", "specific playbooks train", "clone run locally", "scaling strategic partnerships", "key templates option", "company training how"]
 ---
 # PartnerAgents Architecture
-*Last Updated: February 21, 2026*
+*Last Updated: February 24, 2026*
 
 ---
 
@@ -34,44 +34,67 @@ PartnerAgents is designed to be dropped into any company and immediately provide
 
 ```
 PartnerAgents/
-├── docs/                          # Templates (the core product) — 47 templates, 72 .md files
-│   ├── strategy/                  # Strategy templates (8) + index
-│   ├── recruitment/               # Recruitment templates (10) + index
-│   ├── enablement/                # Enablement templates (7) + index
-│   ├── legal/                     # Legal templates (4) + index
-│   ├── finance/                   # Finance templates (3) + index
-│   ├── security/                  # Security templates (2) + index
-│   ├── operations/                # Operations templates (4) + index
-│   ├── executive/                 # Executive templates (1) + index
-│   ├── analysis/                  # Analysis templates (1) + index
-│   ├── getting-started/           # Onboarding docs (4)
-│   ├── agent/                     # Agent docs (5) + index
-│   └── resources/                 # Reference docs (4)
-├── examples/                      # Example fills (what good looks like)
-│   ├── complete-examples/         # Fully filled templates
-│   ├── demo-company/              # Fake company data for demos
-│   └── test-partner/              # TechStart Inc test case
+├── partneros-docs/                # Starlight/Astro docs site (PRIMARY)
+│   ├── src/content/docs/         # 85+ templates across 15 categories
+│   │   ├── strategy/             # 10 templates
+│   │   ├── recruitment/          # 10 templates
+│   │   ├── enablement/           # 10 templates
+│   │   ├── legal/                # 5 templates
+│   │   ├── finance/              # 4 templates
+│   │   ├── security/             # 2 templates
+│   │   ├── operations/           # 8 templates
+│   │   ├── executive/            # 1 template
+│   │   ├── analysis/             # 3 templates
+│   │   ├── agent/                # 12 agent docs
+│   │   ├── workflows/            # 7 workflow templates
+│   │   ├── skills/               # 4 skill docs
+│   │   ├── resources/            # 2 reference docs
+│   │   └── getting-started/      # 4 onboarding docs
+│   └── astro.config.mjs          # Starlight configuration
+├── docs/                         # Symlink → partneros-docs/src/content/docs
 ├── scripts/
-│   ├── partner_agent/             # The AI agent
-│   │   ├── agent.py               # Main agent (~985 lines)
-│   │   ├── config.yaml            # Agent configuration
-│   │   └── playbooks/             # 7 playbook definitions
-│   ├── onboard.py                 # Company onboarding script
-│   ├── fill_template.py           # Template variable replacement
-│   ├── generate_template.py       # Create new templates
-│   ├── generate_report.py         # Partner report generation
-│   ├── standardize_templates.py   # Fix frontmatter
-│   ├── demo_mode.py               # Demo mode with fake data
-│   ├── export_pdf.py              # Markdown to PDF conversion
-│   └── package_zip.py             # Package as distributable .zip
-├── .company-config/               # Company customization (gitignored)
-│   └── customize.yaml             # Their company name, logo, colors
-├── tests/                         # Quality gates (163 tests)
-├── partneros-docs/                  # Starlight/Astro docs site
-│   ├── src/content/docs/           # Documentation source
-│   └── astro.config.mjs           # Starlight configuration
-└── README.md                      # Entry point
+│   ├── partner_agents/           # Multi-agent swarm (ACTIVE — v2.x)
+│   │   ├── drivers/              # 7 specialized agents (DAN, ARCHITECT, etc.)
+│   │   ├── orchestrator.py       # Intent routing + RaceStrategy
+│   │   ├── chat_orchestrator.py  # Conversation memory
+│   │   ├── router.py             # LLM-based intent detection
+│   │   ├── document_generator.py # NDA/MSA/DPA generation (the right pattern)
+│   │   ├── web.py                # FastAPI web UI
+│   │   └── cli.py                # Terminal interface
+│   ├── partner_agent/            # Legacy single-agent (v1.x — LEGACY)
+│   │   ├── agent.py              # Main agent (~1092 lines)
+│   │   ├── config.yaml           # Agent configuration
+│   │   └── playbooks/            # 7 YAML playbook definitions (not connected to swarm)
+│   ├── fastapi/                  # Lightweight FastAPI shim for testing
+│   └── [20+ utility scripts]     # fill_template.py, generate_report.py, etc.
+├── examples/                     # Example fills (what good looks like)
+│   ├── complete-examples/
+│   ├── demo-company/
+│   └── test-partner/             # TechStart Inc test case
+├── tests/                        # 206 collected tests across 20 modules
+└── README.md
 ```
+
+---
+
+## Two Active Systems (Known Tension)
+
+As of Feb 2026, there are two parallel agent systems with incompatible state and LLM backends:
+
+| | Legacy (`partner_agent/`) | Swarm (`partner_agents/`) |
+|---|---|---|
+| Status | Stable, feature-complete | Active development |
+| LLM | Anthropic / OpenAI / Ollama | OpenRouter |
+| State | `state/<slug>/metadata.json` | `partners/<name>.json` |
+| Playbooks | Connected (7 YAML playbooks) | **Not connected** |
+| Templates | Used as LLM prompts | Mostly unused |
+| Interface | CLI (`--playbook`, `--partner`) | Chat CLI + Web UI |
+
+**The critical gap:** The YAML playbooks — the best domain model — are wired only to the legacy agent. The swarm doesn't run playbooks. This means the better architecture (swarm) is disconnected from the better domain model (playbooks).
+
+**The path forward:** Connect swarm orchestration to the YAML playbook engine, and unify state storage. See `BACKLOG.md` items 9.1 and P3 (Interactive Web Playbooks).
+
+**The `document_generator.py` pattern is the right model** — it generates real, filled documents (NDA/MSA/DPA) rather than template strings. This should be extended to all 85 templates.
 
 ---
 
@@ -196,14 +219,20 @@ python scripts/fill_template.py --template docs/recruitment/01-email-sequence.md
 
 ## Quality Assurance
 
-### Test Suite (144 tests)
-- Template structure and frontmatter validation (63 tests)
-- Multi-agent skill and driver tests (32 tests)
-- Web interface and fallback tests (18 tests)
-- CLI agent unit tests (14 tests)
-- Onboarding and lifecycle tests (11 tests)
-- Playbook schema and references
-- Script compilation checks
+### Test Suite (206 collected tests across 20 modules)
+- CLI behavior, slash commands, partner lifecycle (~60 tests)
+- Multi-agent swarm — all 7 drivers, orchestrator (32 tests)
+- Content quality — headings, placeholders, code blocks (~14 tests)
+- Internal link integrity (~17 tests)
+- Built-site link validation (~7 tests)
+- ROI formula and edge cases (10 tests)
+- Legacy agent: sanitization, path validation, state (18 tests)
+- Starlight build verification (5 tests)
+- Script imports and compilation (~8 tests)
+
+**Note (Feb 24, 2026):** Five modules fail to collect:
+`test_chat_orchestrator.py`, `test_security_audit.py`, `test_sentinel_security.py`,
+`test_templates.py`, `test_web_api.py`. See `BACKLOG.md` items T.1–T.6.
 
 ### CI/CD
 - Tests run on every push
