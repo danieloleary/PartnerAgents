@@ -42,6 +42,9 @@ except ImportError:
     RICH_AVAILABLE = False
 
 # Add scripts to path
+import json
+import re
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
@@ -653,43 +656,121 @@ Available commands the user can use:
 
 Be concise and helpful. If the user asks something outside of partner management, politely redirect to what you can help with."""
 
-    try:
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://openrouter.ai/api/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "model": model,
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": sanitized},
-                    ],
-                },
-                timeout=30.0,
-            )
-            if response.status_code == 200:
-                result = response.json()
-                choices = result.get("choices", [])
-                if choices:
-                    content = (
-                        choices[0].get("message", {}).get("content", "No response")
-                    )
-                    return {
-                        "response": content,
-                        "agent": "ai_assistant",
-                    }
+    # Streaming response collector
+    full_content = ""
+
+    # Show typing indicator
+    if RICH_AVAILABLE:
+        with console.status("[bold green]Thinking...", spinner="dots") as status:
+            try:
+                async with httpx.AsyncClient() as client:
+                    async with client.stream(
+                        "POST",
+                        "https://openrouter.ai/api/v1/chat/completions",
+                        headers={
+                            "Authorization": f"Bearer {api_key}",
+                            "Content-Type": "application/json",
+                        },
+                        json={
+                            "model": model,
+                            "messages": [
+                                {"role": "system", "content": system_prompt},
+                                {"role": "user", "content": sanitized},
+                            ],
+                            "stream": True,
+                        },
+                        timeout=60.0,
+                    ) as response:
+                        if response.status_code == 200:
+                            buffer = ""
+
+                            async for line in response.aiter_lines():
+                                if not line or not line.startswith("data: "):
+                                    continue
+
+                                if line == "data: [DONE]":
+                                    break
+
+                                try:
+                                    data = json.loads(line[6:])
+                                    delta = data.get("choices", [{}])[0].get(
+                                        "delta", {}
+                                    )
+                                    content = delta.get("content", "")
+                                    if content:
+                                        buffer += content
+
+                                        # Buffer chunks before displaying (wait for complete words)
+                                        if " " in buffer or "\n" in buffer:
+                                            full_content += buffer
+                                            buffer = ""
+
+                                except json.JSONDecodeError:
+                                    continue
+                        else:
+                            return {
+                                "response": f"AI Error: {response.status_code}",
+                                "agent": "system",
+                            }
+            except Exception as e:
+                return {
+                    "response": f"Error calling AI: {str(e)}",
+                    "agent": "system",
+                }
+    else:
+        # Fallback for non-rich environments
+        try:
+            async with httpx.AsyncClient() as client:
+                async with client.stream(
+                    "POST",
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": model,
+                        "messages": [
+                            {"role": "system", "content": system_prompt},
+                            {"role": "user", "content": sanitized},
+                        ],
+                        "stream": True,
+                    },
+                    timeout=60.0,
+                ) as response:
+                    if response.status_code == 200:
+                        buffer = ""
+                        async for line in response.aiter_lines():
+                            if not line or not line.startswith("data: "):
+                                continue
+                            if line == "data: [DONE]":
+                                break
+                            try:
+                                data = json.loads(line[6:])
+                                delta = data.get("choices", [{}])[0].get("delta", {})
+                                content = delta.get("content", "")
+                                if content:
+                                    buffer += content
+                                    if " " in buffer or "\n" in buffer:
+                                        full_content += buffer
+                                        buffer = ""
+                            except json.JSONDecodeError:
+                                continue
+        except Exception as e:
             return {
-                "response": f"AI Error: {response.status_code}",
+                "response": f"Error calling AI: {str(e)}",
                 "agent": "system",
             }
-    except Exception as e:
+
+    if full_content:
         return {
-            "response": f"Error calling AI: {str(e)}",
-            "agent": "system",
+            "response": full_content,
+            "agent": "ai_assistant",
         }
+    return {
+        "response": "No response from AI",
+        "agent": "ai_assistant",
+    }
 
 
 def print_response(response: dict):
