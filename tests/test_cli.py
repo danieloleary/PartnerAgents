@@ -364,3 +364,13 @@ def test_partners_json_has_sample_data():
     # Check for common test partners
     names = [p["name"] for p in partners]
     assert any("test" in n.lower() for n in names)
+
+
+def test_slash_commands_defined():
+    """Test that slash commands are defined."""
+    from scripts.partner_agents.cli import SLASH_COMMANDS
+
+    assert len(SLASH_COMMANDS) >= 20
+    assert "/help" in [f"/{k}" for k in SLASH_COMMANDS.keys()]
+    assert "/partners" in [f"/{k}" for k in SLASH_COMMANDS.keys()]
+    assert "/clear" in [f"/{k}" for k in SLASH_COMMANDS.keys()]

@@ -701,18 +701,342 @@ def print_response(response: dict):
         print("=" * 50)
         return
 
-    print()
-    print("=" * 50)
-    if response.get("response"):
-        print(response["response"])
+    if RICH_AVAILABLE:
+        # Rich formatted output
+        if response.get("response"):
+            msg = response["response"]
+            if "##" in msg or "**" in msg or "`" in msg:
+                console.print(Markdown(msg))
+            else:
+                console.print(
+                    Panel.fit(msg.strip(), border_style="green", title="Response")
+                )
+
+        if response.get("agent"):
+            console.print(f"[dim]Agent:[/dim] [bold]{response['agent']}[/bold]")
+        if response.get("skill"):
+            console.print(f"[dim]Skill:[/dim] [bold]{response['skill']}[/bold]")
     else:
-        print(response)
-    print("=" * 50)
-    if response.get("agent"):
-        print(f"Agent: {response['agent']}")
-    if response.get("skill"):
-        print(f"Skill: {response['skill']}")
-    print()
+        # Plain text fallback
+        print()
+        print("=" * 50)
+        if response.get("response"):
+            print(response["response"])
+        else:
+            print(response)
+        print("=" * 50)
+        if response.get("agent"):
+            print(f"Agent: {response['agent']}")
+        if response.get("skill"):
+            print(f"Skill: {response['skill']}")
+        print()
+
+
+# Slash commands - 20 common commands
+SLASH_COMMANDS = {
+    "help": ("Show all available commands", "Show this help message"),
+    "clear": ("Clear the screen", "Clear all output from the terminal"),
+    "partners": ("List all partners", "Show all partners in your program"),
+    "status": ("Check partner status", "Usage: /status <partner_name>"),
+    "onboard": ("Onboard a partner", "Usage: /onboard <partner_name>"),
+    "deal": ("Register a deal", "Usage: /deal <partner>, $<amount>"),
+    "email": ("Generate outreach email", "Usage: /email <partner_name>"),
+    "qbr": ("Schedule QBR", "Usage: /qbr <partner_name>"),
+    "commission": ("Calculate commission", "Usage: /commission <partner_name>"),
+    "roi": ("Show ROI analysis", "Show program ROI metrics"),
+    "model": ("Show/change model", "Usage: /model <model_name>"),
+    "models": ("List available models", "Show all available AI models"),
+    "api": ("API settings", "Show or set API key"),
+    "history": ("Show conversation history", "Show previous messages in this session"),
+    "export": ("Export conversation", "Usage: /export <filename>"),
+    "quit": ("Exit the CLI", "Exit PartnerAgents"),
+    "exit": ("Exit the CLI", "Exit PartnerAgents"),
+    "source": ("Manage data sources", "Connect/disconnect data sources"),
+    "think": ("Toggle thinking mode", "Show AI reasoning process"),
+    "tokens": ("Show token usage", "Display token count for this session"),
+}
+
+
+async def handle_slash_command(
+    command: str, console, api_key: str, model: str, last_partner: str
+) -> dict:
+    """Handle slash commands."""
+    parts = command.strip().split()
+    cmd = parts[0].lower() if parts else ""
+    args = parts[1:] if len(parts) > 1 else []
+
+    response = {"response": "", "agent": "system"}
+
+    if cmd == "help":
+        table = Table(
+            title="Slash Commands", show_header=True, header_style="bold magenta"
+        )
+        table.add_column("Command", style="cyan", width=15)
+        table.add_column("Description", style="white")
+
+        for name, (short, long_desc) in SLASH_COMMANDS.items():
+            table.add_row(f"/{name}", short)
+
+        if RICH_AVAILABLE:
+            console.print(table)
+        else:
+            console.print("Available commands:")
+            for name, (short, _) in SLASH_COMMANDS.items():
+                console.print(f"  /{name} - {short}")
+        response["response"] = "Use /help <command> for detailed info"
+
+    elif cmd == "clear":
+        if RICH_AVAILABLE:
+            console.clear()
+            console.print(print_banner())
+        else:
+            import os
+
+            os.system("cls" if os.name == "nt" else "clear")
+        response["response"] = "Screen cleared"
+
+    elif cmd == "partners" or cmd == "partner":
+        partners = partner_state.list_partners()
+        if not partners:
+            response["response"] = "No partners found. Use /onboard to add one."
+        else:
+            if RICH_AVAILABLE:
+                table = Table(title="Partners", show_header=True)
+                table.add_column("Name", style="cyan")
+                table.add_column("Tier", style="yellow")
+                table.add_column("Status", style="green")
+                table.add_column("Revenue", style="magenta")
+
+                for p in partners:
+                    deals = p.get("deals", [])
+                    total = sum(d.get("value", 0) for d in deals)
+                    table.add_row(
+                        p["name"],
+                        p.get("tier", "Bronze"),
+                        p.get("status", "Active"),
+                        f"${total:,}",
+                    )
+                console.print(table)
+            else:
+                response["response"] = "Partners:\n" + "\n".join(
+                    f"  - {p['name']} ({p.get('tier', 'Bronze')})" for p in partners
+                )
+
+    elif cmd == "status":
+        if args:
+            partner = partner_state.get_partner(args[0])
+            if partner:
+                deals = partner.get("deals", [])
+                total = sum(d.get("value", 0) for d in deals)
+                response["response"] = f"""## {partner["name"]}
+
+- **Tier:** {partner.get("tier", "Bronze")}
+- **Status:** {partner.get("status", "Active")}
+- **Deals:** {len(deals)}
+- **Revenue:** ${total:,}
+- **Documents:** {len(partner.get("documents", []))}"""
+            else:
+                response["response"] = f"Partner '{args[0]}' not found."
+        else:
+            response["response"] = "Usage: /status <partner_name>"
+
+    elif cmd == "onboard":
+        if args:
+            partner_name = " ".join(args)
+            response = {
+                "response": f"Onboarding {partner_name}...",
+                "agent": "architect",
+                "partner": partner_name,
+            }
+        else:
+            response["response"] = "Usage: /onboard <partner_name>"
+
+    elif cmd == "deal":
+        if args:
+            # Parse "partner, $amount"
+            deal_text = " ".join(args)
+            if "," in deal_text:
+                parts = deal_text.split(",")
+                partner_name = parts[0].strip()
+                amount_str = parts[1].strip().replace("$", "").replace(",", "")
+                try:
+                    amount = int(amount_str)
+                    response = {
+                        "response": f"Registering deal for {partner_name}: ${amount:,}",
+                        "agent": "architect",
+                        "partner": partner_name,
+                    }
+                except:
+                    response["response"] = (
+                        "Invalid amount. Usage: /deal <partner>, $<amount>"
+                    )
+            else:
+                response["response"] = "Usage: /deal <partner>, $<amount>"
+        else:
+            response["response"] = "Usage: /deal <partner>, $<amount>"
+
+    elif cmd == "email":
+        if args:
+            partner_name = " ".join(args)
+            partner = partner_state.get_partner(partner_name)
+            tier = partner.get("tier", "Bronze") if partner else "Bronze"
+            response["response"] = f"""## Outreach Email for {partner_name}
+
+**Subject:** Partnership Opportunity
+
+Hi [Partner Name],
+
+I'd love to explore how we could collaborate. Our {tier} tier partnership offers:
+
+- Lead sharing
+- Technical support
+- Competitive commissions
+
+Would you be open to a 15-minute call?
+
+Best regards"""
+            response["partner"] = partner_name
+        else:
+            response["response"] = "Usage: /email <partner_name>"
+
+    elif cmd == "qbr":
+        if args:
+            partner_name = " ".join(args)
+            partner = partner_state.get_partner(partner_name)
+            tier = partner.get("tier", "Bronze") if partner else "Bronze"
+
+            schedule = {
+                "Gold": "Quarterly",
+                "Silver": "Bi-annually",
+                "Bronze": "Annually",
+            }
+            response["response"] = f"""## QBR Schedule for {partner_name}
+
+**Tier:** {tier}
+**Recommended:** {schedule.get(tier, "Annually")}
+
+**Topics to cover:**
+1. Performance review
+2. Pipeline update
+3. Campaign results
+4. Integration status
+5. Goals for next period"""
+            response["partner"] = partner_name
+        else:
+            response["response"] = "Usage: /qbr <partner_name>"
+
+    elif cmd == "commission":
+        if args:
+            partner_name = " ".join(args)
+            partner = partner_state.get_partner(partner_name)
+            deals = partner.get("deals", []) if partner else []
+            total = sum(d.get("value", 0) for d in deals)
+
+            if total >= 500000:
+                rate = 0.20
+                tier_name = "Gold"
+            elif total >= 100000:
+                rate = 0.15
+                tier_name = "Silver"
+            else:
+                rate = 0.10
+                tier_name = "Bronze"
+
+            commission = total * rate
+            response["response"] = f"""## Commission for {partner_name}
+
+**Total Deal Value:** ${total:,}
+**Tier:** {tier_name}
+**Rate:** {rate * 100}%
+
+**Commission:** ${commission:,}
+
+**Tier thresholds:**
+- Bronze: < $100K → 10%
+- Silver: $100K-$500K → 15%
+- Gold: > $500K → 20%"""
+            response["partner"] = partner_name
+        else:
+            response["response"] = "Usage: /commission <partner_name>"
+
+    elif cmd == "roi":
+        response["response"] = """## Program ROI
+
+**Key Metrics:**
+- Deal Pipeline
+- Closed Revenue
+- Partner-sourced Leads
+- Co-marketing Campaign Results
+
+Enter your values to calculate specific ROI."""
+
+    elif cmd == "model":
+        if args:
+            response["response"] = f"Model changed to: {args[0]}"
+        else:
+            response["response"] = f"Current model: {model}\nUsage: /model <model_name>"
+
+    elif cmd == "models":
+        models = [
+            ("qwen/qwen3.5-plus-02-15", "Default, fast"),
+            ("anthropic/claude-3.5-sonnet", "Best quality"),
+            ("google/gemini-2.0-flash", "Google's fastest"),
+            ("openai/gpt-4o", "OpenAI's best"),
+        ]
+        if RICH_AVAILABLE:
+            table = Table(title="Available Models")
+            table.add_column("Model ID", style="cyan")
+            table.add_column("Description", style="white")
+            for m_id, desc in models:
+                table.add_row(m_id, desc)
+            console.print(table)
+        else:
+            response["response"] = "Models:\n" + "\n".join(
+                f"  {m} - {d}" for m, d in models
+            )
+
+    elif cmd == "api":
+        if args and args[0] == "show":
+            response["response"] = (
+                f"API key: {api_key[:10]}..." if api_key else "No API key set"
+            )
+        else:
+            response["response"] = "Usage: /api show"
+
+    elif cmd == "history":
+        response["response"] = (
+            "History feature coming soon - use arrow keys to navigate previous commands"
+        )
+
+    elif cmd == "export":
+        response["response"] = (
+            f"Export to {args[0] if args else 'file.json'} - coming soon"
+        )
+
+    elif cmd == "quit" or cmd == "exit":
+        response["response"] = "__QUIT__"
+
+    elif cmd == "source":
+        response["response"] = """## Data Sources
+
+Current sources:
+- partners.json (local database)
+
+Connect more sources:
+- Salesforce
+- HubSpot
+- Slack"""
+
+    elif cmd == "think":
+        response["response"] = "Thinking mode: Shows AI reasoning - coming soon"
+
+    elif cmd == "tokens":
+        response["response"] = "Token tracking - coming soon"
+
+    else:
+        response["response"] = f"Unknown command: /{cmd}\nUse /help for all commands"
+
+    return response
 
 
 async def interactive_mode(api_key: str, model: str):
@@ -730,7 +1054,7 @@ async def interactive_mode(api_key: str, model: str):
         try:
             readline.read_history_file(str(histfile))
             readline.set_history_length(1000)
-        except FileNotFoundError:
+        except (FileNotFoundError, PermissionError, OSError):
             pass
 
     # Setup tab completion for partners and commands
@@ -805,6 +1129,29 @@ async def interactive_mode(api_key: str, model: str):
                     "agent": "system",
                 }
             )
+            continue
+
+        # Handle slash commands
+        if message.startswith("/"):
+            slash_response = await handle_slash_command(
+                message[1:], console, api_key, model, last_partner
+            )
+            # Check for quit
+            if slash_response.get("response") == "__QUIT__":
+                if READLINE_AVAILABLE:
+                    try:
+                        readline.write_history_file(str(histfile))
+                    except:
+                        pass
+                if RICH_AVAILABLE:
+                    console.print("[yellow]Goodbye![/yellow]")
+                else:
+                    print("Goodbye!")
+                break
+            print_response(slash_response)
+            # Update last_partner from slash command response
+            if slash_response.get("partner"):
+                last_partner = slash_response["partner"]
             continue
 
         if message.lower() in ["quit", "exit", "q"]:
