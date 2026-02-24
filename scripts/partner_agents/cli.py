@@ -636,9 +636,16 @@ Calculate your specific ROI by entering values above.""",
 
 def print_response(response: dict):
     """Print the response nicely."""
+    if not response:
+        print()
+        print("=" * 50)
+        print("No response")
+        print("=" * 50)
+        return
+
     print()
     print("=" * 50)
-    if "response" in response:
+    if response.get("response"):
         print(response["response"])
     else:
         print(response)
