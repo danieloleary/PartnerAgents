@@ -323,5 +323,83 @@
     "campaigns": [],
     "notes": [],
     "documents": []
+  },
+  {
+    "id": "partner-22",
+    "name": "TestPartner_1771897310",
+    "tier": "Gold",
+    "contact": "",
+    "email": "test@example.com",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T17:41:50.613140",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": []
+  },
+  {
+    "id": "partner-23",
+    "name": "GetTest_1771897310",
+    "tier": "Silver",
+    "contact": "",
+    "email": "",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T17:41:50.613737",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": []
+  },
+  {
+    "id": "partner-24",
+    "name": "DocTest_1771897310",
+    "tier": "Bronze",
+    "contact": "",
+    "email": "",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T17:41:50.614276",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": [
+      {
+        "id": "doc-1",
+        "type": "nda",
+        "template": "legal/01-nda.md",
+        "path": "partners/DocTest_1771897310/documents/test-nda.md",
+        "status": "draft",
+        "fields": {
+          "partner_name": "DocTest_1771897310"
+        },
+        "created_at": "2026-02-23T17:41:50.614555"
+      }
+    ],
+    "updated_at": "2026-02-23T17:41:50.614557"
+  },
+  {
+    "id": "partner-25",
+    "name": "IntegrationTest_1771897310",
+    "tier": "Bronze",
+    "contact": "",
+    "email": "",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T17:41:50.620990",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": []
+  },
+  {
+    "id": "partner-26",
+    "name": "DupTest_1771897310",
+    "tier": "Bronze",
+    "contact": "",
+    "email": "",
+    "status": "Onboarding",
+    "created_at": "2026-02-23T17:41:50.626227",
+    "deals": [],
+    "campaigns": [],
+    "notes": [],
+    "documents": []
   }
 ]

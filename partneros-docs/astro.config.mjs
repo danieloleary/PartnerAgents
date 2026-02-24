@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 
 export default defineConfig({
-	base: '/PartnerOS',
+	base: '/PartnerAgents',
 	site: 'https://danieloleary.github.io',
 	integrations: [
 		react(),
