@@ -66,12 +66,12 @@ Building a world-class partner program is hard. Most companies:
 | Benefit | Description |
 |---------|-------------|
 | **Chat CLI** | Natural language commands: `onboard Acme`, `register deal for X, $50k` |
-| **5 Ready Skills** | status, email, commission, qbr, roi — all tested and working |
+| **5 Ready Skills** | status, email, commission, qbr, roi — all working |
 | **Interactive + One-Shot** | Chat sessions or single commands |
 | **67 Ready-to-Use Templates** | Strategy (10), recruitment (10), enablement (9), legal (5), finance (4), security (2), operations (8), executive (1), analysis (2) |
 | **7 Automation Playbooks** | recruit, onboard, qbr, expand, exit, co-marketing, support-escalation |
 | **Enterprise-Ready** | Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths |
-| **78 Tests Passing** | Every skill verified — run `pytest tests/test_chat_organizer.py -v` |
+| **Save 10+ Hours/Week** | Automate onboarding, deal registration, commissions, QBRs |
 | **Beautiful Web UI** | Chat interface at http://localhost:8000 |
 
 ---
