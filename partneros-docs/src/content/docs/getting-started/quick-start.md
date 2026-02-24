@@ -24,7 +24,7 @@ keywords: ["code block paste", "recruitment qualification framework", "specific 
 
 ## Step 1: Browse Online (2 minutes)
 
-**No install needed.** Just explore at [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents/)
+**No install needed.** Just explore at [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
 
 Browse the template categories:
 
@@ -107,7 +107,7 @@ python agent.py --playbook recruit --partner "Acme Corp"
 
     **Best for:** Just need a few templates, no setup.
 
-    1. Browse [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents/)
+    1. Browse [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
     2. Find templates that fit your needs
     3. Copy and customize
 

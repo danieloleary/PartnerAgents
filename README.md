@@ -135,7 +135,7 @@ result = agents['partner_manager'].call_skill('architect_onboard', {
 
 ## Live Demo
 
-**👉 [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)**
+**👉 [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)**
 
 Browse the full documentation, explore templates, and see the AI Agent in action.
 
@@ -168,7 +168,7 @@ python scripts/partner_agents/web.py
 
 ### Option 3: Browse Online
 
-**[danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)** — Full documentation with all templates.
+**[danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)** — Full documentation with all templates.
 
 ---
 
@@ -337,6 +337,6 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 ## Resources
 
-- **Documentation:** [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)
+- **Documentation:** [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)
 - **GitHub:** [github.com/danieloleary/PartnerAgents](https://github.com/danieloleary/PartnerAgents)
 - **Issues:** Report bugs and feature requests on GitHub

@@ -85,7 +85,7 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 ## Current State (v2.2 - February 23, 2026)
 
 **Platform:** Starlight/Astro (no more MkDocs!)
-**Live Site:** https://danieloleary.github.io/PartnerAgents/
+**Live Site:** https://danieloleary.github.io/PartnerOS/
 
 ### What's Built
 - 67 templates across 9 categories (A+ quality standard)
