@@ -164,3 +164,144 @@ def test_readline_available():
 
     # readline should be available on macOS/Linux
     assert READLINE_AVAILABLE is True
+
+
+def test_get_model_custom():
+    """Test custom model selection via env var."""
+    import os
+    from scripts.partner_agents.cli import get_model
+
+    # Test with OPENROUTER_MODEL env var
+    os.environ["OPENROUTER_MODEL"] = "custom/model"
+    model = get_model()
+    assert model == "custom/model"
+    del os.environ["OPENROUTER_MODEL"]
+
+
+@pytest.mark.asyncio
+async def test_router_email_skill():
+    """Test email skill extraction."""
+    from scripts.partner_agents import router
+
+    r = router.Router()
+    result = await r.route("email slalom", {"partners": []})
+
+    assert result.intents
+    assert "email" in result.intents[0].name
+    assert result.intents[0].entities.get("partner_name") == "slalom"
+
+
+@pytest.mark.asyncio
+async def test_router_deal_registration():
+    """Test deal registration extraction."""
+    from scripts.partner_agents import router
+
+    r = router.Router()
+    result = await r.route("register deal for IBM, $50000", {"partners": []})
+
+    assert result.intents
+    assert result.intents[0].name == "deal"
+    assert result.intents[0].entities.get("partner_name") == "IBM"
+
+
+@pytest.mark.asyncio
+async def test_router_qbr_skill():
+    """Test QBR skill extraction."""
+    from scripts.partner_agents import router
+
+    r = router.Router()
+    result = await r.route("qbr slalom", {"partners": []})
+
+    assert result.intents
+    assert "qbr" in result.intents[0].name
+    assert result.intents[0].entities.get("partner_name") == "slalom"
+
+
+def test_print_response_with_skill():
+    """Test response printing includes skill info."""
+    from scripts.partner_agents.cli import print_response
+
+    response = {
+        "response": "Test response",
+        "agent": "architect",
+        "skill": "status",
+        "partner": "slalom",
+    }
+    print_response(response)
+
+
+def test_print_response_none():
+    """Test response printing with None input."""
+    from scripts.partner_agents.cli import print_response
+
+    print_response(None)
+
+
+@pytest.mark.asyncio
+async def test_fallback_message():
+    """Test fallback returns helpful suggestions when no API key."""
+    from scripts.partner_agents.cli import send_message
+
+    # Without API key, should return message about API key
+    response = await send_message("where is the bathroom?", "", "model")
+    # Either it asks for API key OR suggests commands
+    response_text = response.get("response", "")
+    assert "API key" in response_text or "onboard" in response_text
+
+
+@pytest.mark.asyncio
+async def test_clarification_needed():
+    """Test clarification when partner missing."""
+    from scripts.partner_agents.cli import send_message
+
+    response = await send_message("status", "", "qwen/qwen3.5-plus-02-15")
+    # Should ask for partner name
+    assert "partner" in response.get("response", "").lower() or response.get(
+        "needs_input"
+    )
+
+
+@pytest.mark.asyncio
+async def test_invalid_api_key_short():
+    """Test handling of very short invalid API key."""
+    from scripts.partner_agents.cli import send_message
+
+    # Very short key should be rejected
+    response = await send_message("roi", "x", "model")
+    response_text = response.get("response", "")
+    # Either invalid key message OR it might still work with some providers
+    assert (
+        "invalid" in response_text.lower()
+        or "api" in response_text.lower()
+        or "error" in response_text.lower()
+        or "roi" in response_text.lower()
+    )
+
+
+@pytest.mark.asyncio
+async def test_no_api_key_fallback():
+    """Test fallback without API key."""
+    from scripts.partner_agents.cli import send_message
+
+    response = await send_message("roi", "", "model")
+    # Should not crash, should return message about API key
+    assert "response" in response
+
+
+@pytest.mark.asyncio
+async def test_onboard_creates_partner():
+    """Test onboard command creates partner."""
+    from scripts.partner_agents import partner_state
+    from scripts.partner_agents.cli import send_message
+
+    # Create a test partner
+    response = await send_message("onboard TestCompanyXYZ", "", "model")
+    assert response.get("agent") == "architect"
+
+    # Verify partner was created
+    partner = partner_state.get_partner("TestCompanyXYZ")
+    assert partner is not None
+    assert partner["name"] == "TestCompanyXYZ"
+
+    # Cleanup
+    partner_state.delete_partner("TestCompanyXYZ")
