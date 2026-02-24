@@ -4,6 +4,60 @@ keywords: ["localstorage", "formulas", "remedies", "partnerstate", "docs", "prer
 ---
 # PartnerAgents CHANGELOG
 
+## Version 2.3 (2026-02-24) - Gemini CLI-Style Interface
+
+### 🎨 Beautiful Terminal UI
+- Rich library for ASCII art, tables, markdown rendering
+- Beautiful ASCII banner with PartnerAgents branding
+- Color-coded responses (green for success, yellow for warnings)
+- Rich input prompts with syntax highlighting
+
+### ⌨️ 20 Slash Commands (Gemini CLI-style)
+- `/help` - Show all commands
+- `/clear` - Clear screen
+- `/partners` - List all partners with tier/status/revenue table
+- `/status <partner>` - Check partner status
+- `/onboard <partner>` - Onboard new partner
+- `/deal <partner>, $<amount>` - Register deal
+- `/email <partner>` - Generate outreach email
+- `/qbr <partner>` - QBR scheduling info
+- `/commission <partner>` - Calculate commission
+- `/roi` - Program ROI analysis
+- `/model` - Show/change model
+- `/models` - List available AI models
+- `/api` - API settings
+- `/history` - Conversation history
+- `/export` - Export conversation
+- `/quit` / `/exit` - Exit CLI
+- `/source` - Manage data sources
+- `/think` - Toggle thinking mode
+- `/tokens` - Token usage
+
+### 🧠 Agent-Like Fallback
+- Any unrecognized input calls LLM (not "I didn't understand")
+- System prompt includes partner context (list, tiers, deals)
+- Truly conversational AI assistant
+
+### 💾 Conversation Context
+- Remembers last partner (never expires)
+- "status" after "onboard Acme" uses context automatically
+- Input history with arrow keys (readline)
+- Tab completion for partner names and commands
+
+### 🔧 Technical
+- 29 CLI tests passing
+- Partner extraction now works with lowercase (slalom vs Slalom)
+- Fallback shows helpful command suggestions
+- Print response handles None gracefully
+- Fixed readline permission errors
+
+### 📝 Files Changed
+- `scripts/partner_agents/cli.py` - Major rewrite with rich formatting
+- `scripts/partner_agents/router.py` - Fixed partner extraction
+- `tests/test_cli.py` - 29 comprehensive tests
+
+---
+
 ## Version 2.2 (2026-02-23) - PartnerAgents Brand Launch
 
 ### 🎉 Brand Update

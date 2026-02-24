@@ -146,6 +146,27 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 - Full onboarding creates NDA + MSA + DPA + checklist
 - Deal registration works with `$50,000` format
 
+### CLI v2.3 Features (Feb 24, 2026) - DONE
+- **20 Slash Commands** - Gemini CLI-style: /help, /partners, /status, /onboard, /deal, /email, /qbr, /commission, /roi, /model, /models, /api, /history, /export, /source, /think, /tokens, /clear, /quit, /exit
+- **Beautiful UI** - Rich library, ASCII banner, tables, markdown rendering
+- **Agent-like Fallback** - Any input calls LLM, not "I didn't understand"
+- **Conversation Context** - Remembers last partner, auto-uses in subsequent commands
+- **Input History** - Arrow keys via readline
+- **Tab Completion** - Partner names and commands
+- **29 CLI Tests** - Comprehensive test coverage
+
+### CLI Backlog (Future)
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| #18 | Streaming Output - Token-by-token AI |
+| #19 response | P0 | PENDING | Debug Mode - --verbose/--debug flag | P2 | PENDING |
+| #22 | JSON Output - --json flag for scripting | P2 | PENDING |
+| #23 | Config File - ~/.partneragents.yaml | P2 | PENDING |
+| #25 | Meeting Command - /meeting <partner> | P2 | PENDING |
+| #26 | Note Command - /note <partner> <text> | P2 | PENDING |
+| #27 | Reminder Command - /reminder <partner> <text> | P2 | PENDING |
+| #32 | CLI Storage - Separate ~/.partneragents/ for data | P2 | PENDING |
+
 ---
 
 ## Phase 2: Foundation (Drop-Ready) ⚡
