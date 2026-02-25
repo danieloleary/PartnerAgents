@@ -70,6 +70,51 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 
 ---
 
+## FOCUS: What We're Actually Building
+
+*Last Updated: February 24, 2026*
+
+### Core Philosophy
+- **CLI-first** - This is what YOU use
+- **Document generation works** - Make it better (document_generator.py)
+- **Don't build for ghosts** - Validate later, build now what you'd use
+
+### Completed This Session ✅
+
+| # | Feature | Status |
+|---|---------|--------|
+| 1 | CLI Storage (meetings, notes, reminders) | ✅ storage.py created |
+| 2 | /meeting command | ✅ Implemented |
+| 3 | /note command | ✅ Implemented |
+| 4 | /reminder command | ✅ Implemented |
+| 5 | Command aliases (/h, /p, /q, etc.) | ✅ Implemented |
+| 6 | JSON output (/partners --json) | ✅ Implemented |
+| 7 | Config file (/config show/set/alias) | ✅ Implemented |
+| 8 | Tests fixed | ✅ 298 passing |
+
+### Active Priorities (What's Left)
+
+| # | Focus | Status |
+|---|-------|--------|
+| **1** | Document Gen (#144) | Planned - extend to 20+ types |
+| **2** | Legacy Cleanup (#145) | Pending - wire or kill |
+| **3** | Template Enhancements (#64-69) | Pending - add placeholders |
+
+### Open Issues
+
+| # | Title | Priority |
+|---|-------|----------|
+| #144 | Document Generator | p1 |
+| #145 | Legacy Cleanup | p2 |
+| #64-69 | Template Enhancements | p2 |
+
+### What We're NOT Doing (Yet)
+- Customer discovery (#143) - Do later
+- Web expansion - CLI is enough
+- Agent swarms at scale - When you have users
+
+---
+
 ## Vision
 
 **"Give them the playbook + the coach"**
@@ -85,7 +130,7 @@ keywords: ["issues vision give", "advisor help customize", "implement target com
 ## Current State (v2.2 - February 23, 2026)
 
 **Platform:** Starlight/Astro (no more MkDocs!)
-**Live Site:** https://danieloleary.github.io/PartnerOS/
+**Live Site:** https://danieloleary.github.io/PartnerAgents/
 
 ### What's Built
 - 67 templates across 9 categories (A+ quality standard)
@@ -751,6 +796,73 @@ Add "Tell Your Agent To..." section to existing templates:
 | Q3 | **Link verification** | All templates | p1 | 2 hrs |
 | Q4 | **Template consistency audit** | All 53 templates | p2 | 4 hrs |
 | Q5 | **Cross-reference verification** | All templates | p2 | 2 hrs |
+
+---
+
+## Refactoring: Break the Monoliths
+
+*Identified: February 2026*
+
+### The Problems
+
+| File | Lines | Issue |
+|------|-------|-------|
+| **web.py** | 1,432 | 800+ lines inline HTML/CSS/JS |
+| **cli.py** | 1,414 | Does routing, LLM, UI, streaming - everything |
+| **orchestrator.py** | 140 | "F1 Dream Team" - what is this? |
+| **chat_orchestrator.py** | 468 | Similar to orchestrator.py - duplicate? |
+| **agent.py** | 1,092 | Original partner agent vs new system |
+
+### Proposed Fixes
+
+| Priority | Item | Current | Target | Issue |
+|----------|------|---------|--------|-------|
+| P1 | **Unify LLM Entry Points** | CLI + Web separate | Shared llm.py | #140 |
+| P1 | **Decouple Web Frontend** | 800 lines inline HTML | Jinja2 templates | #139 (config file) |
+| P2 | **Merge Orchestrators** | 2 files | 1 orchestrator | New |
+| P3 | **Consolidate Agent Systems** | 2 systems | 1 unified | New |
+
+### Details
+
+#### 1. Unify LLM Entry Points (#140)
+- CLI (`cli.py`) has inline LLM code (~100 lines)
+- Web (`web.py`) uses `chat_orchestrator.py`
+- Create shared `llm.py` module
+
+#### 2. Decouple Web Frontend
+- web.py contains massive inline HTML/CSS/JS
+- Should use Jinja2 templates
+- Separate static assets
+
+#### 3. Merge Orchestrators
+- `orchestrator.py` - "F1 Dream Team" - seems demo/legacy?
+- `chat_orchestrator.py` - actively used by web.py
+- Evaluate which to keep, merge or deprecate
+
+#### 4. Consolidate Agent Systems
+- `partner_agent/agent.py` - Original CLI agent
+- `partner_agents/` - New system (cli.py, router.py, drivers/)
+- Decide: Keep both? Deprecate one? Merge?
+
+---
+
+## Future Ideas - Agent Orchestration
+
+*Researched: February 2026*
+
+Inspired by [ComposioHQ/agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) - a system for managing parallel AI coding agents.
+
+### Potential Use Cases for PartnerAgents
+
+| Idea | Description | Effort |
+|------|-------------|--------|
+| **Multi-Partner Onboarding** | Run parallel agents to onboard multiple partners simultaneously | TBD |
+| **CI/CD Integration** | Auto-trigger partner workflows on deal registration, tier changes | TBD |
+| **Review Bot** | AI agent reviews partner submissions, contracts, compliance | TBD |
+
+### Not Immediately Relevant
+
+The agent-orchestrator is designed for coordinating 30+ coding agents. PartnerAgents is single-user partner management - no immediate need. But good reference for scaling.
 
 ---
 

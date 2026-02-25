@@ -141,7 +141,7 @@ def build_manifest(files: list, version: str, templates_only: bool) -> dict:
         "file_count": len(files),
         "template_categories": categories,
         "source": "https://github.com/danieloleary/PartnerAgents",
-        "docs": "https://danieloleary.github.io/PartnerOS",
+        "docs": "https://danieloleary.github.io/PartnerAgents",
     }
 
 
@@ -193,7 +193,7 @@ def main():
             "2. Follow the setup guide\n"
             "3. Run `python scripts/onboard.py` to customize for your company\n\n"
             "## Documentation\n\n"
-            "- Online: https://danieloleary.github.io/PartnerOS\n"
+            "- Online: https://danieloleary.github.io/PartnerAgents\n"
             "- GitHub: https://github.com/danieloleary/PartnerAgents\n\n"
             f"Package version: {args.version}\n"
             f"Packaged: {manifest['packaged_at'][:10]}\n"

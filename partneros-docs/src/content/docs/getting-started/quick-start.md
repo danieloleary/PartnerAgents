@@ -1,195 +1,115 @@
 ---
 title: Quick Start
-category: operational
-version: 1.1.0
-last_updated: 2026-02-22
-author: PartnerAgents Team
-tier: Bronze
-skill_level: beginner
-purpose: operational
-phase: onboarding
-time_required: 10 minutes
-difficulty: easy
-prerequisites: [Web browser]
-description: Get up and running with PartnerAgents in 10 minutes—no install required.
-outcomes: [Browse templates, Understand structure, Launch quickly]
-skills_gained: [Platform navigation, Template discovery, Quick start]
-keywords: ["code block paste", "recruitment qualification framework", "specific partner qualify", "template categories what", "template minutes find", "step instructions what"]
----
-# PartnerAgents Quick Start
-
-*From zero to your first partner in 10 minutes — no install required*
-
+description: Get started with PartnerAgents in 30 seconds — no install required.
+template: splash
+hero:
+  tagline: From zero to partner in 30 seconds
+  image:
+    file: /src/assets/logo.svg
+  actions:
+    - text: Try Web UI (Recommended)
+      link: /PartnerAgents/getting-started/quick-start/#web-ui
+      icon: rocket
+      variant: primary
+    - text: Browse Templates
+      link: /PartnerAgents/strategy/
+      icon: open-book
 ---
 
-## Step 1: Browse Online (2 minutes)
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 
-**No install needed.** Just explore at [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
+## 1. Pick Your Path
 
-Browse the template categories:
+<Tabs syncKey="path">
+<TabItem label="⚡ Web UI (Recommended)">
 
-| What You Need | Start Here |
-|--------------|------------|
-| Don't know where to start | [Strategy Templates](../strategy/index.mdx) |
-| Need to find partners | [Recruitment Templates](../recruitment/index.mdx) |
-| Need to train partners | [Enablement Templates](../enablement/index.mdx) |
-| Need contracts | [Legal Templates](../legal/index.mdx) |
-| Need commission structure | [Finance Templates](../finance/index.mdx) |
-
----
-
-## Step 2: Pick a Template (5 minutes)
-
-Find the template that fits your need. Each template includes:
-
-- **What it is** - Purpose and use case
-- **How to use it** - Step-by-step instructions
-- **What to fill in** - Brackets like `[Your Company]` where you add your info
-- **Related templates** - Other templates that pair well
-
-### Most Popular Starting Points
-
-For new partner programs:
-
-1. [Ideal Partner Profile](../strategy/02-ideal-partner-profile/) — Who do you want as partners?
-2. [Partner Business Case](../strategy/01-partner-business-case/) — Justify the investment
-3. [Program Architecture](../strategy/06-program-architecture/) — Design your tiers and benefits
-
----
-
-## Step 3: Copy & Customize (10 minutes)
-
-### Option A: Copy Directly (Easiest)
-
-1. Open any template
-2. Click "Copy" on the code block
-3. Paste into your document
-4. Replace `[bracketed text]` with your info
-
-### Option B: Use Variables (If You Clone the Repo)
+**No install. Works in your browser.**
 
 ```bash
-# See all variables in a template
-python scripts/fill_template.py --list-vars
-
-# Fill a template with your company info
-python scripts/fill_template.py --template partneros-docs/src/content/docs/recruitment/01-email-sequence.md
+# Clone and run
+git clone https://github.com/danieloleary/PartnerAgents.git
+cd PartnerAgents
+python scripts/partner_agents/web.py
 ```
 
-**Common variables:** `{{company_name}}`, `{{contact_name}}`, `{{contact_email}}`, `{{today_date}}`
+Then open http://localhost:8000
 
----
+**What you get:**
+- Chat interface with your partner program
+- Natural language commands: "onboard Acme", "register deal for Acme $50k"
+- Full partner state management
 
-## Step 4: Optional Full Setup
+</TabItem>
+<TabItem label="💻 CLI">
 
-Want more power? Clone the repo:
+**For developers who want automation.**
 
 ```bash
-# Clone the repo
+# Clone and run
 git clone https://github.com/danieloleary/PartnerAgents.git
 cd PartnerAgents
 
-# Set up your company info
-python scripts/onboard.py
+# One-shot command
+python scripts/partner_agents/cli.py "onboard Acme"
 
-# Run the AI Partner Agent
-cd scripts/partner_agent
-pip install -r requirements.txt
-export ANTHROPIC_API_KEY=sk-ant-...
-python agent.py --playbook recruit --partner "Acme Corp"
+# Or interactive mode
+python scripts/partner_agents/cli.py
 ```
 
----
+**Commands:**
+| Command | Output |
+|---------|--------|
+| `onboard Acme` | Creates partner + NDA/MSA/DPA |
+| `register deal Acme $50k` | Deal with 90-day protection |
+| `status Acme` | Partner health & deals |
+| `email Acme about renewal` | Personalized email |
 
-## Choose Your Path
+</TabItem>
+<TabItem label="📋 Templates Only">
 
-=== ":globe_with_meridians: Browse Only"
+**No install needed.**
 
-    **Best for:** Just need a few templates, no setup.
+Browse 40+ ready-to-use templates:
 
-    1. Browse [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS/)
-    2. Find templates that fit your needs
-    3. Copy and customize
+- [Strategy Templates](/PartnerAgents/strategy/) — Business case, ICP, tier design
+- [Recruitment Templates](/PartnerAgents/recruitment/) — Outreach, pitch deck, proposal
+- [Legal Templates](/PartnerAgents/legal/) — NDA, MSA, DPA
+- [Enablement Templates](/PartnerAgents/enablement/) — Training, certification, QBR
 
-    **Time:** 5 minutes
-
-=== ":computer: Full Setup"
-
-    **Best for:** Want to use the AI agent and automation.
-
-    1. Clone the repo
-    2. Run `python scripts/onboard.py`
-    3. Use `python scripts/fill_template.py` to fill templates
-    4. Run AI agent with `python agent.py`
-
-    **Time:** 30 minutes
-
-=== ":robot: AI Partner Agent"
-
-    **Best for:** Want AI to help execute playbooks.
-
-    ```bash
-    cd PartnerAgents/scripts/partner_agent
-    pip install -r requirements.txt
-    export ANTHROPIC_API_KEY=sk-ant-...
-    python agent.py --playbook recruit --partner "Your Partner"
-    ```
-
-    **Time:** 15 minutes
+</TabItem>
+</Tabs>
 
 ---
 
-## What's Next?
+## 2. What Can PartnerAgents Do?
 
-### For New Partner Programs
-
-1. [Define your Ideal Partner](../strategy/02-ideal-partner-profile/) — Who do you want?
-2. [Build the Business Case](../strategy/01-partner-business-case/) — Why is this worth it?
-3. [Design Your Program](../strategy/06-program-architecture/) — Tiers and benefits
-
-### For Signing a Specific Partner
-
-1. [Qualify them](../recruitment/03-qualification-framework/) — Are they a good fit?
-2. [Discovery Call](../recruitment/04-discovery-call/) — Learn about them
-3. [Send Proposal](../recruitment/07-proposal/) — Make it official
-
-### For Ongoing Management
-
-- [QBR Template](../enablement/07-qbr-template/) — Quarterly reviews
-- [Success Metrics](../enablement/06-success-metrics/) — Track performance
-
----
-
-## Need Help?
-
-- **Questions?** Open an issue on [GitHub](https://github.com/danieloleary/PartnerAgents/issues)
-- **Want a specific template?** Suggest it on GitHub
-- **Found an issue?** Fix it and PR!
+<CardGrid stagger>
+	<Card title="🤖 Onboard Partners" icon="rocket">
+		`onboard Acme` → Creates partner, generates NDA/MSA/DPA, creates checklist
+	</Card>
+	<Card title="📝 Register Deals" icon="pencil">
+		`register deal Acme $50k` → Deal with 90-day protection, auto-updates partner state
+	</Card>
+	<Card title="📊 Partner Status" icon="chart">
+		`status Acme` → Tier, deals, revenue, health score
+	</Card>
+	<Card title="✉️ Generate Emails" icon="email">
+		`email Acme about renewal` → Personalized outreach
+	</Card>
+	<Card title="💰 Commission Calc" icon="money">
+		`commission Acme Q4` → Payout calculation with accelerators
+	</Card>
+	<Card title="📊 Build QBRs" icon="presentation">
+		`qbr Acme` → Quarterly business review deck
+	</Card>
+</CardGrid>
 
 ---
 
-## Template Structure
+## 3. What's Next?
 
-Every template follows this pattern:
-
-```markdown
----
-title: Template Name
-description: What this template is for
----
-
-## How to Use This Template
-Step-by-step instructions...
-
----
-
-# Template Name
-
-## Section 1
-[Content with placeholders like [Your Company]]
-
-## Section 2
-[More content...]
-```
-
-**Tip:** Look for text in `[brackets]` — that's where you add your specific info.
+| If you... | Then explore... |
+|----------|-----------------|
+| ✅ Ran a command | [AI Skills](/PartnerAgents/skills/) — All available commands |
+| ✅ Want templates | [Browse 40+ Templates](/PartnerAgents/strategy/) |
+| ✅ Need help | [GitHub Issues](https://github.com/danieloleary/PartnerAgents/issues) |

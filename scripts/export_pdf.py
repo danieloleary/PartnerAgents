@@ -87,7 +87,7 @@ blockquote {
 @page {
     margin: 2cm;
     @bottom-center {
-        content: "PartnerAgents — danieloleary.github.io/PartnerOS";
+        content: "PartnerAgents — danieloleary.github.io/PartnerAgents";
         font-size: 8pt;
         color: #94a3b8;
     }

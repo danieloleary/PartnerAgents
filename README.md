@@ -12,40 +12,48 @@ keywords: ["partner program automation", "chat with partner program", "AI partne
 
 ---
 
-## Chat CLI — The Killer Feature
+## 20 Slash Commands — Gemini CLI-Style
 
 ```bash
-# One-shot: tell PartnerAgents what you need
-$ python scripts/partner_agents/cli.py "onboard Acme"
-✅ Created partner: Acme Corp (Silver tier)
-✅ Generated NDA, MSA, DPA from templates
-✅ Created onboarding checklist
-
-$ python scripts/partner_agents/cli.py "register deal for Acme, $50,000"
-✅ Deal registered: Acme Corp - $50,000 (90-day protection)
-
-$ python scripts/partner_agents/cli.py "show status for Acme"
-📊 Acme Corp Status:
-   Tier: Silver | Deals: 3 | Revenue: $125,000 | Health: 85%
-
 # Interactive: chat session with memory
 $ python scripts/partner_agents/cli.py
 🤖 PartnerAgents > email Acme about QBR
 📧 Generated QBR invitation email for Acme Corp
    Subject: QBR Schedule - Acme Corp Q4 2025
+
+# Or use slash commands
+🤖 PartnerAgents > /help
+🤖 PartnerAgents > /partners
+🤖 PartnerAgents > /onboard Acme Corp
+🤖 PartnerAgents > /deal Acme, $50,000
+🤖 PartnerAgents > /commission Acme
 ```
 
 ---
 
-## 5 AI Skills Ready to Go
+## 20 Slash Commands
 
-| Skill | Command Example | What It Does |
-|-------|-----------------|--------------|
-| **status** | `status Acme` | Partner health, deal count, revenue, health score |
-| **email** | `email Acme about renewal` | Generates personalized outreach emails |
-| **commission** | `commission for Acme Q4` | Calculates payouts, structures deals |
-| **qbr** | `qbr for Acme` | Builds quarterly business review deck |
-| **roi** | `roi for partner program` | Analyzes partner program ROI & metrics |
+| Command | Example | What It Does |
+|---------|---------|--------------|
+| **/help** | `/help` | Show all commands |
+| **/partners** | `/partners` | List all partners |
+| **/status** | `/status Acme` | Partner health, deals, revenue |
+| **/onboard** | `/onboard Acme Gold` | Onboard new partner |
+| **/deal** | `/deal Acme, $50,000` | Register deal |
+| **/email** | `/email Acme` | Generate outreach email |
+| **/qbr** | `/qbr Acme` | Quarterly business review |
+| **/commission** | `/commission Acme` | Calculate commissions |
+| **/roi** | `/roi` | Program ROI analysis |
+| **/clear** | `/clear` | Clear screen |
+| **/history** | `/history` | Conversation history |
+| **/export** | `/export` | Export conversation |
+| **/model** | `/model` | Show/change model |
+| **/models** | `/models` | List available models |
+| **/api** | `/api` | API settings |
+| **/source** | `/source` | Manage data sources |
+| **/think** | `/think` | Toggle thinking mode |
+| **/tokens** | `/tokens` | Token usage |
+| **/quit** | `/quit` | Exit CLI |
 
 ---
 
@@ -65,10 +73,11 @@ Building a world-class partner program is hard. Most companies:
 
 | Benefit | Description |
 |---------|-------------|
-| **Chat CLI** | Natural language commands: `onboard Acme`, `register deal for X, $50k` |
-| **5 Ready Skills** | status, email, commission, qbr, roi — all working |
+| **20 Slash Commands** | /help, /partners, /status, /onboard, /deal, /email, /qbr, /commission, /roi... | Gemini CLI-style interface |
+| **Agent-Like Fallback** | Any input calls LLM | Truly conversational AI |
 | **Interactive + One-Shot** | Chat sessions or single commands |
 | **67 Ready-to-Use Templates** | Strategy (10), recruitment (10), enablement (9), legal (5), finance (4), security (2), operations (8), executive (1), analysis (2) |
+| **344 Automated Tests** | Comprehensive coverage including CLI, web, templates, security |
 | **7 Automation Playbooks** | recruit, onboard, qbr, expand, exit, co-marketing, support-escalation |
 | **Enterprise-Ready** | Three-tier partner framework (Bronze/Silver/Gold) with clear progression paths |
 | **Save 10+ Hours/Week** | Automate onboarding, deal registration, commissions, QBRs |
@@ -135,7 +144,7 @@ result = agents['partner_manager'].call_skill('architect_onboard', {
 
 ## Live Demo
 
-**👉 [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)**
+**👉 [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)**
 
 Browse the full documentation, explore templates, and see the AI Agent in action.
 
@@ -150,11 +159,14 @@ Browse the full documentation, explore templates, and see the AI Agent in action
 git clone https://github.com/danieloleary/PartnerAgents.git
 cd PartnerAgents
 
-# One-shot: tell PartnerAgents what you need
-python scripts/partner_agents/cli.py "onboard Acme Corp"
+# Interactive mode
+./partner
 
-# Interactive: start a chat session
-python scripts/partner_agents/cli.py
+# One-shot: tell PartnerAgents what you need
+./partner "onboard Acme Corp"
+
+# Start Web UI
+./partner --web
 ```
 
 ### Option 2: Web UI
@@ -260,14 +272,14 @@ PartnerAgents/
 ## Testing
 
 ```bash
-# Run all 124 tests
+# Run all 344 tests
 pytest tests/ -v
 
 # Run by test file
-pytest tests/test_templates.py -v   # 35 template/structure tests
-pytest tests/test_agents_comprehensive.py -v # 40 agent tests
-pytest tests/test_web_comprehensive.py -v    # 15 web interface tests
-pytest tests/test_starlight.py -v           # 14 Starlight-specific tests
+pytest tests/test_cli.py -v        # 64 CLI tests
+pytest tests/test_templates.py -v  # Template/structure tests
+pytest tests/test_agent.py -v      # Agent tests
+pytest tests/test_web_comprehensive.py -v # Web interface tests
 ```
 
 ---
@@ -337,6 +349,6 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 ## Resources
 
-- **Documentation:** [danieloleary.github.io/PartnerOS](https://danieloleary.github.io/PartnerOS)
+- **Documentation:** [danieloleary.github.io/PartnerAgents](https://danieloleary.github.io/PartnerAgents)
 - **GitHub:** [github.com/danieloleary/PartnerAgents](https://github.com/danieloleary/PartnerAgents)
 - **Issues:** Report bugs and feature requests on GitHub
