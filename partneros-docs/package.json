@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@astrojs/starlight": "^0.37.6",
+    "@astrojs/starlight": "^0.37.7",
     "@kandiforge/pptx-renderer": "^3.3.0",
     "astro": "^5.6.1",
     "mermaid": "^11.12.3",
